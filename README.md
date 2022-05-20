@@ -1,26 +1,4 @@
 ```
-
-       ▄████████ ▄██   ▄      ▄████████ ███▄▄▄▄           ▄████████    ▄████████ ████████▄  ████████▄  ▄██   ▄   
-      ███    ███ ███   ██▄   ███    ███ ███▀▀▀██▄        ███    ███   ███    ███ ███   ▀███ ███   ▀███ ███   ██▄ 
-      ███    ███ ███▄▄▄███   ███    ███ ███   ███        ███    ███   ███    █▀  ███    ███ ███    ███ ███▄▄▄███ 
-     ▄███▄▄▄▄██▀ ▀▀▀▀▀▀███   ███    ███ ███   ███       ▄███▄▄▄▄██▀  ▄███▄▄▄     ███    ███ ███    ███ ▀▀▀▀▀▀███ 
-    ▀▀███▀▀▀▀▀   ▄██   ███ ▀███████████ ███   ███      ▀▀███▀▀▀▀▀   ▀▀███▀▀▀     ███    ███ ███    ███ ▄██   ███ 
-    ▀███████████ ███   ███   ███    ███ ███   ███      ▀███████████   ███    █▄  ███    ███ ███    ███ ███   ███ 
-      ███    ███ ███   ███   ███    ███ ███   ███        ███    ███   ███    ███ ███   ▄███ ███   ▄███ ███   ███ 
-      ███    ███  ▀█████▀    ███    █▀   ▀█   █▀         ███    ███   ██████████ ████████▀  ████████▀   ▀█████▀  
-      ███    ███                                         ███    ███                                              
-
-            
-            eeeeeee..eee...eee..eeeeee..eeeeeee.....eeeeeee..eeeeee.eeeeeee..eeeeeee..eee...eee.
-            @@@@@@@@:@@@:::@@@.@@@@@@@@:@@@@@@@@::::@@@@@@@@:@@@@@@:@@@@@@@@:@@@@@@@@:@@@:::@@@.
-            %%%--%%%-%%%---%%%-%%%--%%%-%%%--%%%----%%%--%%%-%%%----%%%--%%%-%%%--%%%-%%%---%%%-
-            &&&&&&&+++&&&&&&&++&&&&&&&&+&&&++&&&++++&&&&&&&++&&&&&++&&&++&&&+&&&++&&&++&&&&&&&++
-            ||||||*****|||||***||||||||*|||**|||****||||||***|||||**|||**|||*|||**|||***|||||***
-            !!!=!!!=====!!!====!!!==!!!=!!!==!!!====!!!=!!!==!!!====!!!==!!!=!!!==!!!====!!!====
-            :::##:::####:::####:::##:::#:::##:::####:::##:::#::::::#::::::::#::::::::####:::####
-            ...@@...@@@@...@@@@...@@...@...@@...@@@@...@@...@......@.......@@.......@@@@@...@@@@
-                                                                                                
-
 ooooooooo.                                          ooooooooo.                   .o8        .o8              
 `888   `Y88.                                        `888   `Y88.                "888       "888              
  888   .d88' oooo    ooo  .oooo.   ooo. .oo.         888   .d88'  .ooooo.   .oooo888   .oooo888  oooo    ooo 
@@ -30,23 +8,48 @@ ooooooooo.                                          ooooooooo.                  
 o888o  o888o     .8'     `Y888""8o o888o o888o      o888o  o888o `Y8bod8P' `Y8bod88P" `Y8bod88P"     .8'     
              .o..P'                                                                              .o..P'      
              `Y8P'                                                                               `Y8P'       
+
+      .o.                          oooo         o8o                                             
+     .888.                         `888         `"'                                             
+    .8"888.     oooo d8b  .ooooo.   888 .oo.   oooo  oooo    ooo  .ooooo.   
+   .8' `888.    `888""8P d88' `"Y8  888P"Y88b  `888   `88.  .8'  d88' `88b  
+  .88ooo8888.    888     888        888   888   888    `88..8'   888ooo888      
+ .8'     `888.   888     888   .o8  888   888   888     `888'    888    .o      
+o88o     o8888o d888b    `Y8bod8P' o888o o888o o888o     `8'     `Y8bod8P'     
+                                                                                        
+                            ooooooooooooo                                     oooo
+                            8'   888   `8                                     `888
+                                 888      oooo d8b  .oooo.   oooo oooo    ooo  888   .ooooo.  oooo d8b
+                                 888      `888""8P `P  )88b   `88. `88.  .8'   888  d88' `88b `888""8P
+                                 888       888      .oP"888    `88..]88..8'    888  888ooo888  888
+                                 888       888     d8(  888     `888'`888'     888  888    .o  888
+                                o888o     d888b    `Y888""8o     `8'  `8'     o888o `Y8bod8P' d888b     
+     
+     
+     
+                                                                                                                                                      
+                                                                                                                                                      
+             
                                                                                                       
                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
                   
-                                       The Avengers (c) Hogeschool Utrecht
+                                       Archive Trawler (c) Hogeschool Utrecht
 
-                           04/2022 :..... RELEASE.DATE .. LICENSE ..........: PIRATE
-                                 0 :.......... DISC(S) .. Arch.TYPE ........: Desktop
-                         JAVA,JFX :.....PROGRAMLANG(S) .. Est. Cost ........: 9999 million
+                           02/2022 :..... RELEASE.DATE .. LICENSE ..........: PIRATE
+                                 0 :.......... DISC(S) .. Arch.TYPE ........: Desktop, web
+                     JAVA,JFX,Jsc :.....PROGRAMLANG(S) .. Est. Cost ........: 9999 million
                                  
 
                                            ▀ ▄▀▀▄ ▄▀▀▄ ▄▀▀▄ ▄▀
                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ █ █  ▓ ▓▀   █  ▓ ▀▀▀█ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
                                            ▀ ▀    ▀     ▀▀   ▀▀                                                         
 
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                      The goal of this project is,
+                       to make it easy to search across several databases at once. 
+                      
+                      As added feature you can then save and manage search queries. 
+                      Once saved the system will regularly search for your query,
+                       and notify the user once there are new findings. 
 
 
                              ▀ ▄▀▀▄ ▄▀   ▓▄▄  ▄▀▀▄ ▓   ▓   ▄▀▀▄ ▄▀▀▄ ▓▄▄  ▄▀▀  ▄▀
@@ -54,23 +57,19 @@ o888o  o888o     .8'     `Y888""8o o888o o888o      o888o  o888o `Y8bod8P' `Y8bo
                              ▀ ▀     ▀▀   ▀▀▀ ▀    ▀▀▀ ▀▀▀ ▀     ▀▀   ▀▀▀ ▀▀▀▀  ▀▀
 
 
-                    1.  Clone the repository from GitHub.
-                    2.  Create a virtual environment.
-                    3.  Install all dependencies. (noted in requirements.txt)
+                    1.  XXXXClone the repository from GitHub.
+                    2.  XXXXCreate a virtual environment.
+                    3.  XXXXInstall all dependencies. (noted in requirements.txt)
                     4.  xxx
-                    5.  Play.
-                    6.  Support the software developers. If you like this game, BUY IT!
+                    5.  XXXXPlay.
+                    6.  xxXXxXXXSupport the software developers. If you like this game, BUY IT!
 
                                ▄▀▀  ▄▀▀█ ▄▀▀▄ ▓  ▄ ▄▀▀█ ▄▀▀▄ ▄▀▀▄ ▓▄▄  ▄▀▀  ▄▀
                   ▀▀▀▀▀▀▀▀▀▀▀▀ █ ▀▓ █▀▓  █  ▓ █  ▓ █▀▀  █  ▓ █  ▓ █  ▄ ▓▀ ▄ ▀▀▀█ ▀▀▀▀▀▀▀▀▀▀▀▀▀
                                 ▀▀    █   ▀▀   ▀▀  ▀    ▀     ▀▀   ▀▀▀ ▀▀▀▀  ▀▀
 
-                                * Ryan 1818885 (Ryan Reddy, klugook)
-                                * Bayan 1805499 (Baian)
-                                * Oussama 1782498 (oussama9796)
-                                * Thijs 1784009 (thijsvm03)
-					  * Mohamed 1805541 (mo ell)
-            
+                                * Ryan van Lil 1818885 (Ryan Reddy, klugook)
+
                                 The project is licensed under PIRATE License(c) [2022]
                
                   ÜÛÛÜ                                                                   ÜÛÛÜ
@@ -83,18 +82,17 @@ o888o  o888o     .8'     `Y888""8o o888o o888o      o888o  o888o `Y8bod8P' `Y8bo
                       ßÛÛÛß        ßß         ß                 ß         ßß        ßÛÛÛß
 
                                     THE AVENGERS are currently looking for
-
                                ÜÛÛÜ                                         ÜÛÛÜ
                               ²ÛÛ ßß  Ü    nothing but competition!     Ü  ßß ÛÛ²
                                ²ÛÛÜ Ü²ß²                               ²ß²Ü ÜÛÛ²
-                             ÜÛÛÛÛÛÛ²ß   Greetings to MARTIJN & JOS      ß²ÛÛÛÛÛÛÜ
+                             ÜÛÛÛÛÛÛ²ß     Greetings to STEF & JOS       ß²ÛÛÛÛÛÛÜ
 
                             ²ÛÛß  ßÛÛÜÜ ÜÜ                           ÜÜ ÜÜÛÛß  ßÛÛ²
                             ÛÛ   Ü ßÛ²ÛÛ²ßÛÜÛßÛÜÜ   Ü  Ü  Ü   ÜÜÛßÛÜÛß²ÛÛ²Ûß Ü   ÛÛ
                             ßÛÛÜÜß Ü Û Û Ü ßÜ  ßß²ÛÜ Û ² Û ÜÛ²ßß  Üß Ü Û Û Ü ßÜÜÛÛß
                               ßß    ß   ß     Üß   ßß  ß  ßß   ßÜ     ß   ß    ßß
                                                ßÛ²Ü AVG^HUI  Ü²Ûß
-                                                 Üß 02/2022 ßÜ
+                                                 Üß 05/2022 ßÜ
                                                 ²      Ü      ²
                                                  ß   ²ßÜß²   ß
                                                  Ü  Û  ²  Û  Ü
