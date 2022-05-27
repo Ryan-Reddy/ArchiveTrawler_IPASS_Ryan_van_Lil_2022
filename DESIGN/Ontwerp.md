@@ -19,30 +19,33 @@
  |
 
 ## Inhoudsopgave
-| nr.   | Naam                                                   |
-|-------|--------------------------------------------------------|
- | 1     | [Inleiding](#1-inleiding)                              |
- | 1.1   | [Optionele paragrafen](#1.1-optionele-paragrafen)      |
- | 1.1.1 | [Doelgroep (lezersgroep)](#1.1.1-doelgroep-(lezersgroep)) |
- | 1.1.2 | [Leeswijzer](#1.1.2-leeswijzer)              |
-| 2     | [Overzicht         ](#2-overzicht)                     |
-| 3     | [Uses cases        ](#3-use-cases)                     |
-| 3.1   | [Actoren           ](#3.1-actoren)                     |
-| 3.2   | [Use case templates](#3.2-use-case-templates)          |
-| 3.3   | [Wireframes        ](#3.3-wireframes)                  |
-| 4     | [Domeinmodel       ](#4-domeinmodel)                   |
-| 5     | [Technologieën     ](#5-technologieën)                 |
-| 6     | [Overdracht        ](#6-overdracht)                    |
-| 7     | [Referenties       ](#7-referenties)                   | 
+| nr.   | Naam                                                      |
+|-------|-----------------------------------------------------------|
+ | 1     | [Inleiding](#1-inleiding)                                 |
+ | 1.1   | [Optionele paragrafen](#1.1-optionele-paragrafen)         |
+ | 1.1.1 | [Doelgroep (lezersgroep)](#1.1.1-doelgroep) |
+ | 1.1.2 | [Leeswijzer](#1.1.2-leeswijzer)                           |
+| 2     | [Overzicht         ](#2-overzicht)                        |
+| 3     | [Uses cases        ](#3-use-cases)                        |
+| 3.1   | [Actoren           ](#3.1-actoren)                        |
+| 3.2   | [Use case templates](#3.2-use-case-templates)             |
+| 3.3   | [Wireframes        ](#3.3-wireframes)                     |
+| 4     | [Domeinmodel       ](#4-domeinmodel)                      |
+| 5     | [Technologieën     ](#5-technologieën)                    |
+| 6     | [Overdracht        ](#6-overdracht)                       |
+| 7     | [Referenties       ](#7-referenties)                      | 
 
 ## 1 Inleiding
 
 Neem hier op hoe het ontwerp tot stand gekomen is alsmede voor wie het bedoeld is met eventueel een lezersadvies.
 
-### 1.1 Optionele paragrafen
+### 1.1 Optionele Paragrafen
 
-#### 1.1.1 Doelgroep (lezersgroep)
+kowabunga xxxxxx
 
+#### 1.1.1 Doelgroep
+
+kowabunga xxxxxx
 
 #### 1.1.2 Leeswijzer
 
@@ -59,7 +62,7 @@ Use case diagram met een korte toelichting. Zie bij de cursus modelling hoe je d
 
 Bij een actor hoort ook een beschrijving, de actor description. In een actor template wordt naast de rolnaam een beschrijving van de rol ingevuld en daarmee een role description geschreven.
 
-### 3.2 Use case templates
+### 3.2 Use Case Templates
 
 Use case templates, per use case een paragraaf met de template beschrijving e.d. zoals geleerd bij Modelling.
 
