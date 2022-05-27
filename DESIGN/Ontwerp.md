@@ -17,7 +17,7 @@
 | 27-05 | 1.0 | Eerste Ontwerp, alles ingevuld en opgeschreven. |
 | 00-00 | 1.1 |
  |
-[click on this link](#3use-cases)
+[click on this link](#2Overzicht)
 
 ##Inhoudsopgave
 | nr  | Naam                  |
