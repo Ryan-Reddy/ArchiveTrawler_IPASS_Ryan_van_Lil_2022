@@ -1,21 +1,21 @@
 ```
-    ooooooooo.                                          ooooooooo.                   .o8        .o8              
-    `888   `Y88.                                        `888   `Y88.                "888       "888              
-     888   .d88' oooo    ooo  .oooo.   ooo. .oo.         888   .d88'  .ooooo.   .oooo888   .oooo888  oooo    ooo 
-     888ooo88P'   `88.  .8'  `P  )88b  `888P"Y88b        888ooo88P'  d88' `88b d88' `888  d88' `888   `88.  .8'  
-     888`88b.      `88..8'    .oP"888   888   888        888`88b.    888ooo888 888   888  888   888    `88..8'   
-     888  `88b.     `888'    d8(  888   888   888        888  `88b.  888    .o 888   888  888   888     `888'    
-    o888o  o888o     .8'     `Y888""8o o888o o888o      o888o  o888o `Y8bod8P' `Y8bod88P" `Y8bod88P"     .8'     
-                 .o..P'                                                                              .o..P'      
-                 `Y8P'                                                                               `Y8P'       
-    
-          .o.                          oooo         o8o                                             
-         .888.                         `888         `"'                                             
-        .8"888.     oooo d8b  .ooooo.   888 .oo.   oooo  oooo    ooo  .ooooo.   
-       .8' `888.    `888""8P d88' `"Y8  888P"Y88b  `888   `88.  .8'  d88' `88b  
-      .88ooo8888.    888     888        888   888   888    `88..8'   888ooo888      
-     .8'     `888.   888     888   .o8  888   888   888     `888'    888    .o      
-    o88o     o8888o d888b    `Y8bod8P' o888o o888o o888o     `8'     `Y8bod8P'     
+ooooooooo.                                          ooooooooo.                   .o8        .o8              
+`888   `Y88.                                        `888   `Y88.                "888       "888              
+ 888   .d88' oooo    ooo  .oooo.   ooo. .oo.         888   .d88'  .ooooo.   .oooo888   .oooo888  oooo    ooo 
+ 888ooo88P'   `88.  .8'  `P  )88b  `888P"Y88b        888ooo88P'  d88' `88b d88' `888  d88' `888   `88.  .8'  
+ 888`88b.      `88..8'    .oP"888   888   888        888`88b.    888ooo888 888   888  888   888    `88..8'   
+ 888  `88b.     `888'    d8(  888   888   888        888  `88b.  888    .o 888   888  888   888     `888'    
+o888o  o888o     .8'     `Y888""8o o888o o888o      o888o  o888o `Y8bod8P' `Y8bod88P" `Y8bod88P"     .8'     
+             .o..P'                                                                              .o..P'      
+             `Y8P'                                                                               `Y8P'       
+
+      .o.                          oooo         o8o                                             
+     .888.                         `888         `"'                                             
+    .8"888.     oooo d8b  .ooooo.   888 .oo.   oooo  oooo    ooo  .ooooo.   
+   .8' `888.    `888""8P d88' `"Y8  888P"Y88b  `888   `88.  .8'  d88' `88b  
+  .88ooo8888.    888     888        888   888   888    `88..8'   888ooo888      
+ .8'     `888.   888     888   .o8  888   888   888     `888'    888    .o      
+o88o     o8888o d888b    `Y8bod8P' o888o o888o o888o     `8'     `Y8bod8P'     
                                                                                         
                             ooooooooooooo                                     oooo
                             8'   888   `8                                     `888
@@ -24,13 +24,18 @@
                                  888       888      .oP"888    `88..]88..8'    888  888ooo888  888
                                  888       888     d8(  888     `888'`888'     888  888    .o  888
                                 o888o     d888b    `Y888""8o     `8'  `8'     o888o `Y8bod8P' d888b     
-         
+     
+     
+     
+                                                                                                                                                      
+                                                                                                                                                      
+             
                                                                                                       
                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
                   
                                        Archive Trawler (c) Hogeschool Utrecht
 
-                           02/2022 :..... RELEASE.DATE .. LICENSE ..........: PIRATE
+                           04/2022 :..... RELEASE.DATE .. LICENSE ..........: PIRATE
                                  0 :.......... DISC(S) .. Arch.TYPE ........: Desktop, web
                      JAVA,JFX,Jsc :.....PROGRAMLANG(S) .. Est. Cost ........: 9999 million
                                  
@@ -77,6 +82,7 @@
                       ßÛÛÛß        ßß         ß                 ß         ßß        ßÛÛÛß
 
                                     THE AVENGERS are currently looking for
+
                                ÜÛÛÜ                                         ÜÛÛÜ
                               ²ÛÛ ßß  Ü    nothing but competition!     Ü  ßß ÛÛ²
                                ²ÛÛÜ Ü²ß²                               ²ß²Ü ÜÛÛ²
