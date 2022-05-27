@@ -44,7 +44,7 @@
 
 [5Referenties 8](#_Toc35506926)
 
-# 1Inleiding
+# 1 Inleiding
 
 Mijn klant in deze casus is mijn vader, Ton van Lil.
 
@@ -54,64 +54,60 @@ Hiervoor beheert hij zijn eigen database en verwerkt deze data op zijn eigen web
 Hiervoor zoekt hij in meerdere (stads)archieven en bezoekt deze ook. 
 
 
-# 2Project beschrijving
+# 2 Project beschrijving
 
 Het doel is dus om vraag afhankelijk van meerdere archieven URL&#39;s/informatie te verzamelen en te tonen.
 
 De archieven worden nog steeds doorgaand bijgevuld dus een herhaaldelijke zoekfunctie zou handig zijn.
 
-Goed mogelijk doen:
+####Goed mogelijk doen:
 
 - Ik wil het zo maken dat een user kan inloggen en zijn eigen instellingen heeft.
 - Ik wil het mogelijk maken om zoekacties te beheren en te wijzigen.
 - Ik wil het mogelijk maken om te kunnen zoeken zonder op slaan. Zo kan de gebruiker zoekfuncties vrij testen.
 
-Minder goed:
+####Minder goed:
 
 - Het lijkt me fijn als de gebruiker alerts kan instellen en hier veel keuze in krijgt, maar ik vermoed dat dit voorlopig nog geautomatiseerd zal zijn.
 - Voldoende beveiliging op de gebruikersdata, maar dit wordt niet de hoofdmissie.
 
-Minder user-vriendelijk uitgevoerd:
+## 2.1 Afbakening
 
-- Het toevoegen van nieuwe archieven is meer iets voor de beheerder. Ultiem zou de gebruiker dit ook kunnen, maar in de scope van deze opdracht lijkt me dat wat veel.
+###Binnen dit project valt:
 
-## 2.1Afbakening
+####- Een gebruikersdatabase met:
 
-Binnen dit project valt:
-
-- Een gebruikersdatabase met:
-
-1.
+1. Inlogmogelijkheid.
 2. Nieuwe gebruikers profiel toevoegen.
 3. Persoonlijke account informatiepagina, inclusief wijzigingen doorgeven.
 4. Wachtwoord wijzigen.
 5. Wachtwoord vergeten.
 
-- Het aanmaken van zoekvragen die:
+####- Het aanmaken van zoekvragen die:
 
-1. Naar wens uit te voeren zijn.
-2. Daarnaast ook herbruikbaar zijn.
-3. Toegepast kunnen worden op meerdere websites.
-4. Automatisch door het systeem herhaald worden.
+1. Live uitvoerbaar/aanpasbaar zijn.
+2. Herbruikbare zoekacties.
+3. Toegepast kunnen worden op meerdere websites tegelijk.
+4. Automatisch door het systeem herhaald kunnen worden.
 5. Het systeem de gebruiker melding geeft wanneer er nieuwe zoekresultaten zijn.
 
-- Het weergeven van een lijst URL&#39;s met de gevraagde content.
+####- Het weergeven van een lijst URL&#39;s met de gevraagde content.
 
 1. Een log bijhoudt van links waar de gebruiker al eerder op heeft geklikt.
 2. Deze kan je als gebruiker zien dat er nieuwe/wijzigingen zijn.
 
 - Als gebruiker een &quot;notificatie&quot; pagina met nieuwe bevindingen gebaseerd op opgeslagen zoekresultaten.
 
-Buiten de voorlopige scope van dit huidige project, valt:
+###Buiten de voorlopige scope van dit huidige project, valt:
 
 - Het verwerken en weergeven wat er op deze pagina&#39;s staat, hier zal nog een archivist aan te pas komen.
-- Het als gebruiker toevoegen van websites waarop gezocht wordt.
+- Het als gebruiker toevoegen van websites waarop gezocht wordt. Dit is voorlopig alleen voor dev-team.
 
 ![](RackMultipart20220527-1-5f8315_html_19423ad0d41fa099.png)
 
-## 2.2Op te leveren eindresultaat
+## 2.2 Op te leveren eindresultaat
 
-User-Cases met samenvatting:
+### Use-Cases met samenvatting:
 
 - Inloggen
 _Inloggen in het systeem als gebruiker. Hierin worden je eigen instellingen opgeslagen, en afgeschermd voor het publiek._ ![](RackMultipart20220527-1-5f8315_html_90ed1369e2f4dab2.png)
