@@ -46,9 +46,13 @@
 
 # 1Inleiding
 
-Voor deze casus heb ik een klant gekozen, mijn vader Ton van Lil.
+Mijn klant in deze casus is mijn vader, Ton van Lil.
 
-Een jarenlange hobby genealoog, beheert hierin zijn eigen database en verwerkt deze data op zijn eigen website. Hij vertelde dat in zijn zoektocht naar een bepaald persoon hij soms wil zoeken op een aantal websites tegelijkertijd.
+Een jarenlange hobby genealoog, verzamelt data over zijn voorouders.
+Hiervoor beheert hij zijn eigen database en verwerkt deze data op zijn eigen website. 
+
+Hiervoor zoekt hij in meerdere (stads)archieven en bezoekt deze ook. 
+
 
 # 2Project beschrijving
 
