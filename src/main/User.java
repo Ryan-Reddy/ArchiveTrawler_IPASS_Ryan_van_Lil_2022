@@ -1,5 +1,7 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -8,13 +10,16 @@ public class User {
     private String voorNaam;
     private String achterNaam;
     private String wachtwoord;
+    private String userID;
+    private ArrayList<Zoekopdrachten> zoekertjes;
 
-    public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord) {
+    public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord, String userID) {
         this.userName = userName;
         this.emailAdres = emailAdres;
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
         this.wachtwoord = wachtwoord;
+        this.userID = userID;
     }
 
     public String getUserName() {
@@ -57,17 +62,46 @@ public class User {
         this.wachtwoord = wachtwoord;
     }
 
+    public String getID() {
+        return userID;
+    }
+
+    public void setID(String userID) {
+        this.userID = userID;
+    }
+
+    public List<Zoekopdrachten> getZoekertjes() {
+        return zoekertjes;
+    }
+//
+//    public void setZoekertjes(ArrayList<Zoekopdrachten> zoekertjes) {
+//        this.zoekertjes = zoekertjes;
+//    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(getUserName(), user.getUserName()) && Objects.equals(getEmailAdres(), user.getEmailAdres()) && Objects.equals(getVoorNaam(), user.getVoorNaam()) && Objects.equals(getAchterNaam(), user.getAchterNaam()) && Objects.equals(getWachtwoord(), user.getWachtwoord());
+        return Objects.equals(userName,
+                              user.userName) && Objects.equals(emailAdres,
+                                                               user.emailAdres) && Objects.equals(voorNaam,
+                                                                                                  user.voorNaam) && Objects.equals(achterNaam,
+                                                                                                                                   user.achterNaam) && Objects.equals(wachtwoord,
+                                                                                                                                                                      user.wachtwoord) && Objects.equals(userID,
+                                                                                                                                                                                                         user.userID) && Objects.equals(zoekertjes,
+                                                                                                                                                                                                                                        user.zoekertjes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getUserName(), getEmailAdres(), getVoorNaam(), getAchterNaam(), getWachtwoord());
+        return Objects.hash(userName,
+                            emailAdres,
+                            voorNaam,
+                            achterNaam,
+                            wachtwoord,
+                            userID,
+                            zoekertjes);
     }
 
     @Override
@@ -78,6 +112,8 @@ public class User {
                 ", voorNaam='" + voorNaam + '\'' +
                 ", achterNaam='" + achterNaam + '\'' +
                 ", wachtwoord='" + wachtwoord + '\'' +
+                ", userID='" + userID + '\'' +
+                ", zoekertjes=" + zoekertjes +
                 '}';
     }
 }

@@ -2,22 +2,36 @@ package main;
 
 import java.time.Year;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Zoekopdrachten {
+    private List<Archieven> archiefKeuzes;
     private String keyWords;
     private String voorNaam;
     private String achterNaam;
     private Year jaarVan;
     private Year jaarTot;
-    private ArrayList<Archieven> archiefKeuzes;
+    private String zoekOpdrachtID;
+    private String userID;
 
-    public Zoekopdrachten(String keyWords, String voorNaam, String achterNaam, Year jaarVan, Year jaarTot, ArrayList<Archieven> archiefKeuzes ) {
+    public Zoekopdrachten(List<Archieven> archiefKeuzes, String keyWords, String voorNaam, String achterNaam,
+                          Year jaarVan, Year jaarTot, String zoekOpdrachtID, String userID) {
+        this.archiefKeuzes = archiefKeuzes;
         this.keyWords = keyWords;
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
         this.jaarVan = jaarVan;
         this.jaarTot = jaarTot;
+        this.zoekOpdrachtID = zoekOpdrachtID;
+        this.userID = userID;
+    }
+
+    public List<Archieven> getArchiefKeuzes() {
+        return archiefKeuzes;
+    }
+
+    public void setArchiefKeuzes(List<Archieven> archiefKeuzes) {
         this.archiefKeuzes = archiefKeuzes;
     }
 
@@ -61,36 +75,61 @@ public class Zoekopdrachten {
         this.jaarTot = jaarTot;
     }
 
-    public ArrayList<Archieven> getArchiefKeuzes() {
-        return archiefKeuzes;
+    public String getZoekOpdrachtID() {
+        return zoekOpdrachtID;
     }
 
-    public void setArchiefKeuzes(ArrayList<Archieven> archiefKeuzes) {
-        this.archiefKeuzes = archiefKeuzes;
+    public void setZoekOpdrachtID(String zoekOpdrachtID) {
+        this.zoekOpdrachtID = zoekOpdrachtID;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Zoekopdrachten)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Zoekopdrachten that = (Zoekopdrachten) o;
-        return Objects.equals(getKeyWords(), that.getKeyWords()) && Objects.equals(getVoorNaam(), that.getVoorNaam()) && Objects.equals(getAchterNaam(), that.getAchterNaam()) && Objects.equals(getJaarVan(), that.getJaarVan()) && Objects.equals(getJaarTot(), that.getJaarTot()) && Objects.equals(getArchiefKeuzes(), that.getArchiefKeuzes());
+        return Objects.equals(archiefKeuzes,
+                              that.archiefKeuzes) && Objects.equals(keyWords,
+                                                                    that.keyWords) && Objects.equals(voorNaam,
+                                                                                                     that.voorNaam) && Objects.equals(achterNaam,
+                                                                                                                                      that.achterNaam) && Objects.equals(jaarVan,
+                                                                                                                                                                         that.jaarVan) && Objects.equals(jaarTot,
+                                                                                                                                                                                                         that.jaarTot) && Objects.equals(zoekOpdrachtID,
+                                                                                                                                                                                                                                         that.zoekOpdrachtID) && Objects.equals(userID,
+                                                                                                                                                                                                                                                                                that.userID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getKeyWords(), getVoorNaam(), getAchterNaam(), getJaarVan(), getJaarTot(), getArchiefKeuzes());
+        return Objects.hash(archiefKeuzes,
+                            keyWords,
+                            voorNaam,
+                            achterNaam,
+                            jaarVan,
+                            jaarTot,
+                            zoekOpdrachtID,
+                            userID);
     }
 
     @Override
     public String toString() {
         return "Zoekopdrachten{" +
-                "keyWords='" + keyWords + '\'' +
+                "archiefKeuzes=" + archiefKeuzes +
+                ", keyWords='" + keyWords + '\'' +
                 ", voorNaam='" + voorNaam + '\'' +
                 ", achterNaam='" + achterNaam + '\'' +
                 ", jaarVan=" + jaarVan +
                 ", jaarTot=" + jaarTot +
-                ", archiefKeuzes=" + archiefKeuzes +
+                ", ID='" + zoekOpdrachtID + '\'' +
+                ", userID='" + userID + '\'' +
                 '}';
     }
 }

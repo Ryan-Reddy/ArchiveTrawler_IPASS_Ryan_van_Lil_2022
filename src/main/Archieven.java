@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Archieven {
     private String naam;
-    private String APIofURIConstructor;
+    private String basisURI;
 
-     public Archieven(String naam, String APIofURIConstructor) {
+     public Archieven(String naam, String basisURI) {
          this.naam = naam;
-         this.APIofURIConstructor = APIofURIConstructor;
+         this.basisURI = basisURI;
      }
 
     public String getNaam() {
@@ -19,32 +19,35 @@ public class Archieven {
         this.naam = naam;
     }
 
-    public String getAPIofURIConstructor() {
-        return APIofURIConstructor;
+    public String getBasisURI() {
+        return basisURI;
     }
 
-    public void setAPIofURIConstructor(String APIofURIConstructor) {
-        this.APIofURIConstructor = APIofURIConstructor;
+    public void setBasisURI(String basisURI) {
+        this.basisURI = basisURI;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Archieven)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Archieven archieven = (Archieven) o;
-        return Objects.equals(getNaam(), archieven.getNaam()) && Objects.equals(getAPIofURIConstructor(), archieven.getAPIofURIConstructor());
+        return Objects.equals(naam,
+                              archieven.naam) && Objects.equals(basisURI,
+                                                                archieven.basisURI);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNaam(), getAPIofURIConstructor());
+        return Objects.hash(naam,
+                            basisURI);
     }
 
     @Override
     public String toString() {
         return "Archieven{" +
                 "naam='" + naam + '\'' +
-                ", APIofURIConstructor='" + APIofURIConstructor + '\'' +
+                ", APIofURIConstructor='" + basisURI + '\'' +
                 '}';
     }
 }
