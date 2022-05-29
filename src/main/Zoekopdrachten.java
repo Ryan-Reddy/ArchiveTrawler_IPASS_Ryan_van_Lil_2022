@@ -1,7 +1,5 @@
 package main;
 
-import java.time.Year;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,20 +8,20 @@ public class Zoekopdrachten {
     private String keyWords;
     private String voorNaam;
     private String achterNaam;
-    private Year jaarVan;
-    private Year jaarTot;
+    private int jaarVan;
+    private int jaarTot;
     private String zoekOpdrachtID;
     private String userID;
 
     public Zoekopdrachten(List<Archieven> archiefKeuzes, String keyWords, String voorNaam, String achterNaam,
-                          Year jaarVan, Year jaarTot, String zoekOpdrachtID, String userID) {
+                          int jaarVan, int jaarTot, String zoekOpdrachtID, String userID) {
         this.archiefKeuzes = archiefKeuzes;
         this.keyWords = keyWords;
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
         this.jaarVan = jaarVan;
         this.jaarTot = jaarTot;
-        this.zoekOpdrachtID = zoekOpdrachtID;
+        this.zoekOpdrachtID = zoekOpdrachtID; //TODO automatiseer zoekOpdrachtID
         this.userID = userID;
     }
 
@@ -59,19 +57,19 @@ public class Zoekopdrachten {
         this.achterNaam = achterNaam;
     }
 
-    public Year getJaarVan() {
+    public int getJaarVan() {
         return jaarVan;
     }
 
-    public void setJaarVan(Year jaarVan) {
+    public void setJaarVan(int jaarVan) {
         this.jaarVan = jaarVan;
     }
 
-    public Year getJaarTot() {
+    public int getJaarTot() {
         return jaarTot;
     }
 
-    public void setJaarTot(Year jaarTot) {
+    public void setJaarTot(int jaarTot) {
         this.jaarTot = jaarTot;
     }
 

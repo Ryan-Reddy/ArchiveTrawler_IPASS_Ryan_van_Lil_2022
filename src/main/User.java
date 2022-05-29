@@ -1,6 +1,8 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,13 +15,13 @@ public class User {
     private String userID;
     private ArrayList<Zoekopdrachten> zoekertjes;
 
-    public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord, String userID) {
+    public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord) {
         this.userName = userName;
         this.emailAdres = emailAdres;
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
         this.wachtwoord = wachtwoord;
-        this.userID = userID;
+        this.userID = userName + emailAdres;
     }
 
     public String getUserName() {

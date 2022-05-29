@@ -293,7 +293,7 @@ De wireframes bij de use cases.
 
 ## 4 Domeinmodel
 
-![](DIAGRAMS/Class Diagram Domein Model.png)
+![](DIAGRAMS/Class Diagram1.png)
 
 [//]: # (De meeste entiteiten uit het conceptueel datamodel hebben een tegenhanger in de vorm van een JAVA domeinklasse. Van de student wordt verwacht dat er een UML klassen diagram wordt opgeleverd voor de domeinklassen. Zorg dat je UML klassendiagram volledig is.)
 
@@ -326,9 +326,11 @@ De wireframes bij de use cases.
 - Per email-adres OF user-naam mag er maar 1 user zijn.
 - De entiteit Websites zullen altijd gebruikersgebonden zijn. <br/>
 Er kunnen dus meerdere keren dezelfde link voorkomen, maar met andere gebruikers.
+- Als een website link wordt aangeklikt, moet de datum en tijd opgeslagen worden, en het aantal keer geklikt +1
 - De entiteit Zoekopdrachten zullen ook altijd gebruikersgebonden zijn,  <br/>
 dit om te voorkomen dat er door een gebruiker een zoekopdracht gewijzigd worden  <br/>
 die een andere gebruiker ook toevallig had opgeslagen.
+
 
 ## 5 Technologieën
 

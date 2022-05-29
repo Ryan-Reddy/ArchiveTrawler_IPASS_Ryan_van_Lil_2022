@@ -1,20 +1,26 @@
 package main;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.*;
 
 public class Websites {
     private String resultaatURL;
     private int aantalKeerBezocht;
-    private int websiteID;
+//    private int websiteID;
     private String userID;
-    private List<Date> datumBezocht;
+    private ArrayList<LocalDateTime> datumBezocht = new ArrayList<LocalDateTime>();
 
 
-    public Websites(String resultaatURL, int aantalKeerBezocht) {
+    public Websites(String resultaatURL, String userID) {
         this.resultaatURL = resultaatURL;
-        this.aantalKeerBezocht = aantalKeerBezocht;
+        this.aantalKeerBezocht = 0;
+        this.userID = userID;
+    }
+
+    public void websiteDoorgelinkt(){
+        this.aantalKeerBezocht += 1;
+        datumBezocht.add(LocalDateTime.now());
     }
 
     public String getResultaatURL() {
@@ -33,14 +39,6 @@ public class Websites {
         this.aantalKeerBezocht = aantalKeerBezocht;
     }
 
-    public int getWebsiteID() {
-        return websiteID;
-    }
-
-    public void setWebsiteID(int websiteID) {
-        this.websiteID = websiteID;
-    }
-
     public String getUserID() {
         return userID;
     }
@@ -49,11 +47,11 @@ public class Websites {
         this.userID = userID;
     }
 
-    public List<Date> getDatumBezocht() {
+    public ArrayList<LocalDateTime> getDatumBezocht() {
         return datumBezocht;
     }
 
-    public void setDatumBezocht(List<Date> datumBezocht) {
+    public void setDatumBezocht(ArrayList<LocalDateTime> datumBezocht) {
         this.datumBezocht = datumBezocht;
     }
 
@@ -62,17 +60,16 @@ public class Websites {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Websites websites = (Websites) o;
-        return aantalKeerBezocht == websites.aantalKeerBezocht && websiteID == websites.websiteID && Objects.equals(resultaatURL,
-                                                                                                                    websites.resultaatURL) && Objects.equals(userID,
-                                                                                                                                                             websites.userID) && Objects.equals(datumBezocht,
-                                                                                                                                                                                                websites.datumBezocht);
+        return aantalKeerBezocht == websites.aantalKeerBezocht && Objects.equals(resultaatURL,
+                                                                                 websites.resultaatURL) && Objects.equals(userID,
+                                                                                                                          websites.userID) && Objects.equals(datumBezocht,
+                                                                                                                                                             websites.datumBezocht);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(resultaatURL,
                             aantalKeerBezocht,
-                            websiteID,
                             userID,
                             datumBezocht);
     }
@@ -82,7 +79,6 @@ public class Websites {
         return "Websites{" +
                 "resultaatURL='" + resultaatURL + '\'' +
                 ", aantalKeerBezocht=" + aantalKeerBezocht +
-                ", websiteID=" + websiteID +
                 ", userID='" + userID + '\'' +
                 ", datumBezocht=" + datumBezocht +
                 '}';
