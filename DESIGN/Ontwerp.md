@@ -293,39 +293,74 @@ De wireframes bij de use cases.
 
 ## 4 Domeinmodel
 
-![](DIAGRAMS/Conceptueel Class Diagram.png)
+![](DIAGRAMS/Class Diagram Domein Model.png)
 
-De meeste entiteiten uit het conceptueel datamodel hebben een tegenhanger in de vorm van een JAVA domeinklasse. Van de student wordt verwacht dat er een UML klassen diagram wordt opgeleverd voor de domeinklassen. Zorg dat je UML klassendiagram volledig is.
+[//]: # (De meeste entiteiten uit het conceptueel datamodel hebben een tegenhanger in de vorm van een JAVA domeinklasse. Van de student wordt verwacht dat er een UML klassen diagram wordt opgeleverd voor de domeinklassen. Zorg dat je UML klassendiagram volledig is.)
 
-Aandachtspunten:
+[//]: # ()
+[//]: # (Aandachtspunten:)
 
-Neem alle attributen op met bijbehorende types
+[//]: # ()
+[//]: # (Neem alle attributen op met bijbehorende types)
 
-Neem bij elke associatie de multipliciteiten en de rolnamen op.
+[//]: # ()
+[//]: # (Neem bij elke associatie de multipliciteiten en de rolnamen op.)
 
-Maak gebruik van de juiste notatie. Zie de cursus OOAD
+[//]: # ()
+[//]: # (Maak gebruik van de juiste notatie. Zie de cursus OOAD)
 
-Neem het diagram op met daarbij een korte beschrijving van alle entiteiten. Zie bij de cursus modelling hoe je dit model maakt.
+[//]: # ()
+[//]: # (Neem het diagram op met daarbij een korte beschrijving van alle entiteiten. Zie bij de cursus modelling hoe je dit model maakt.)
 
-Entiteit	Beschrijving
-| | | | | | | | |
+| Entiteit       | 	Beschrijving                                                                                                                                                                                                                                                                                                            |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| User           | De gebruikers zelf, hierin worden alle gebruikersgegevens beheerd. Inclusief wachtwoord.                                                                                                                                                                                                                                 |
+| ZoekOpdrachten | Door de gebruiker ingevoerde zoekopdrachten, worden hier gemaakt en beheerd. <br/>Er zit een methode in die met de ingevoerde informatie een URI aanmaakt dmv entiteit Archieven.<br/> En slaat deze vervolgens op in zijn eigen URI lijst.                                                                              |
+| Archieven      | Hier worden de bruikbare archieven opgeslagen. Dit zijn externe archieven waar de developer toegang toe heeft gegeven. Er wordt hier op basis van de ingevoerde zoekopdracht een URI aangemaakt en terug gegeven.<br/>Deze kan vervolgens zelfstandig vanuit de Zoekopdracht uitgevoerd worden.                          |
+| Zoekresultaten | Hier worden de response URLs opgeslagen. Ook wordt er de eerste keer gelijk een telling gemaakt van de URLs(oudeTellingURLS), en elke keer worden de nieuwe resultaten weer vergeleken. <br/>Mocht er dan een verschil tussen nieuw en oud zijn in de positief, dan wordt hier een melding van gegeven aan de gebruiker. |
+| Websites       | Hier worden alle response URLs afzonderlijk opgeslagen, opdat er bij nieuwe zoekresultaten of zoekresultaten van andere ZoekOpdrachten kan worden weergegeven wanneer, en hoe vaak deze door de gebruiker al bekeken zijn.                                                                                               |
 
-Daarnaast kent een domein model eventueel extra regels op het domein (business rules) die je niet goed in UML kan vertalen. Deze regels neem je hier puntsgewijs op.
+
+[//]: # (Daarnaast kent een domein model eventueel extra regels op het domein &#40;business rules&#41; die je niet goed in UML kan vertalen. Deze regels neem je hier puntsgewijs op.)
+
+- Per email-adres OF user-naam mag er maar 1 user zijn.
+- De entiteit Websites zullen altijd gebruikersgebonden zijn. <br/>
+Er kunnen dus meerdere keren dezelfde link voorkomen, maar met andere gebruikers.
+- De entiteit Zoekopdrachten zullen ook altijd gebruikersgebonden zijn,  <br/>
+dit om te voorkomen dat er door een gebruiker een zoekopdracht gewijzigd worden  <br/>
+die een andere gebruiker ook toevallig had opgeslagen.
 
 ## 5 Technologieën
 
-Voor het realiseren van de applicatie wordt gebruik van de volgende methodieken en technieken: UML, Java, SQL, HTML, CSS, J2EE (Servlets), Rest (Jax-RS), Applicatieserver
+Voor het realiseren van de applicatie wordt gebruik van de volgende methodieken en technieken: 
+<br/> UML, Java, ~~SQL~~, HTML, CSS, J2EE (Servlets), Rest (Jax-RS), Applicatieserver
 
-& HTTP-protocol en een datastore. Beschrijf ook welke frameworks je gebruikt, hiervan neem je ook de versie en het licentiemodel op.
+& HTTP-protocol en een datastore. 
+
+Qua frameworks wordt gebruik gemaakt van:
+
+_**Vooralsnog geen frameworks**_
+
+[//]: # (Beschrijf ook welke frameworks je gebruikt, hiervan neem je ook de versie en het licentiemodel op.)
 
 ## 6 Overdracht
 
-Hier wordt een installatiehandleiding en een sumiere gebruikershandleiding beschreven. Ook eventuele gebruikersnamen en wachtwoorden moet bekend worden om de werking van het programma aan te tonen.
+De website kan worden bezocht door een gebruiker.  <br/>
+Deze is vrij toegankelijk voor iedereen met de juiste link. <br/>
+Om gebruik te maken van de functionaliteit daarentegen zal een log in wel vereist zijn.
+
+1. Maak een gebruikers-account aan.
+2. Bevestig het email adres.
+3. Log in op de website.
+4. Van nu af aan kunt u alle functionaliteiten gebruiken zoals het aanmaken van een nieuwe zoekopdracht,  <br/>het opslaan en beheren van deze, zoekresultaten bekijken etc. etc..
+
+_een test account zal te bereiken zijn via: <br/>
+gebruikersnaam: Test <br/>
+wachtwoord: Wachtwoord123!@# <br/>_
 
 ## 7 Referenties
 
-Bronnenlijst in APA stijl.
-
+_Bronnenlijst in APA stijl._
 
 HU. (2022). _IPASS - Plan van Aanpak Template_.docx
 HU. (2022). _IPASS - Ontwerp Template_.docx
