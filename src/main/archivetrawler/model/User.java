@@ -1,8 +1,6 @@
-package main;
+package main.archivetrawler.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,15 +11,19 @@ public class User {
     private String achterNaam;
     private String wachtwoord;
     private String userID;
+    private String role;
     private ArrayList<Zoekopdrachten> zoekertjes;
 
-    public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord) {
+
+    public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord,
+                String role) {
         this.userName = userName;
         this.emailAdres = emailAdres;
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
         this.wachtwoord = wachtwoord;
         this.userID = userName + emailAdres;
+        this.role = role;
     }
 
     public String getUserName() {
@@ -75,9 +77,13 @@ public class User {
     public List<Zoekopdrachten> getZoekertjes() {
         return zoekertjes;
     }
-//
-//    public void setZoekertjes(ArrayList<Zoekopdrachten> zoekertjes) {
-//        this.zoekertjes = zoekertjes;
+
+    public void setZoekertjes(ArrayList<Zoekopdrachten> zoekertjes) {
+        this.zoekertjes = zoekertjes;
+    }
+
+//    public boolean verifyUser(String userName,String userPassword) {
+//        for
 //    }
 
     @Override

@@ -1,4 +1,4 @@
-package main;
+package main.archivetrawler.model;
 
 import java.util.Objects;
 

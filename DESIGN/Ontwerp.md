@@ -341,6 +341,21 @@ Voor het realiseren van de applicatie wordt gebruik van de volgende methodieken 
 
 Qua frameworks wordt gebruik gemaakt van:
 
+| Framework                        | Version | Licensemodel |
+|----------------------------------|---------|-------------|
+| javax.servlet                    | 4.0.1   ||
+| org.glassfish.jersey.media       | 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception|
+|org.glassfish.jersey.containers| 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception|
+|org.glassfish.jersey.inject| 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception|
+|com.azure| 12.6.1  |MIT license|
+|org.junit.jupiter| 5.8.2   |EPL-2.0|
+|io.jsonwebtoken| 0.9.1   |jsonwebtoken|
+|org.glassfish| 1.0.4   |Artistic-1.0/GPL-2.0|
+|org.slf4j| 1.7.30  |Apache-2.0|
+
+
+
+
 _**Vooralsnog geen frameworks**_
 
 [//]: # (Beschrijf ook welke frameworks je gebruikt, hiervan neem je ook de versie en het licentiemodel op.)

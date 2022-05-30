@@ -1,12 +1,13 @@
 package main;
 
+import main.archivetrawler.model.Websites;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class WebsitesTest {
-        Websites websites1 = new Websites("www.ttt.ttt/honoluluGold","111");
+        Websites websites1 = new Websites("www.ttt.ttt/honoluluGold", "111");
         Websites websites2 = new Websites("www.ttt.ttt/honoluluGold","222");
         Websites websites3 = new Websites("www.ttt.ttt/honoluluGold","333");
 

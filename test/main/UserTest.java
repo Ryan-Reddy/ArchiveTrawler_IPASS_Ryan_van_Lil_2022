@@ -1,5 +1,6 @@
 package main;
 
+import main.archivetrawler.model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
 
-    User Ryan = new User("Reddy", "ryan@google.com","Ryan","Reddy","PrenticeHall22");
+    User Ryan = new User("Reddy", "ryan@google.com", "Ryan", "Reddy", "PrenticeHall22", "user");
     @BeforeEach
     void setUp() {
         System.out.println("testing USERclass");
@@ -15,11 +16,11 @@ class UserTest {
 
     @Test
     void testNewUserCreated(){
-        assertEquals(Ryan.getUserName(),"Reddy");
-        assertEquals(Ryan.getEmailAdres(),"ryan@google.com");
-        assertEquals(Ryan.getVoorNaam(),"Ryan");
-        assertEquals(Ryan.getAchterNaam(),"Reddy");
-        assertEquals(Ryan.getWachtwoord(),"PrenticeHall22");
+        assertEquals("Reddy",Ryan.getUserName());
+        assertEquals("ryan@google.com",Ryan.getEmailAdres());
+        assertEquals("Ryan",Ryan.getVoorNaam());
+        assertEquals("Reddy",Ryan.getAchterNaam());
+        assertEquals("PrenticeHall22",Ryan.getWachtwoord());
     }
 
     @Test
@@ -27,7 +28,7 @@ class UserTest {
         // deze test moet eigenlijk falen, want er is al een gebruiker met deze data
         // TODO zorg er voor dat er geen
         //  twee users kunnen zijn met dezelfde email en gebruikersnaam
-        User hank = new User("Reddy", "ryan@google.com","Ryan","Reddy","PrenticeHall22");
-        assertEquals(hank,null);
+        User hank = new User("Reddy", "ryan@google.com","Ryan","Reddy","PrenticeHall22","user");
+        assertEquals(null,hank);
     }
 }

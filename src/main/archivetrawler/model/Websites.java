@@ -1,13 +1,11 @@
-package main;
+package main.archivetrawler.model;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
 public class Websites {
     private String resultaatURL;
     private int aantalKeerBezocht;
-//    private int websiteID;
     private String userID;
     private ArrayList<LocalDateTime> datumBezocht = new ArrayList<LocalDateTime>();
 
