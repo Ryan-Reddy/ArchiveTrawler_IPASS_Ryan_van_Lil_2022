@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Ryan_Java_Template_JFX_JUNIT:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Ryan_Java_Template_JFX_JUNIT</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ArchiveTrawler_IPASS_Ryan_van_Lil_2022-1.0.war">
+      <element id="artifact" artifact-name="Ryan_Java_Template_JFX_JUNIT:war exploded" />
+    </root>
+  </artifact>
+</component>
