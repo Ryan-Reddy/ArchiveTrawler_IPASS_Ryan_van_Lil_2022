@@ -56,13 +56,22 @@ o88o     o8888o d888b    `Y8bod8P' o888o o888o o888o     `8'     `Y8bod8P'
                   ▀▀▀▀▀▀▀▀▀▀ █ █  ▓ ▀▀▀█ █  ▄ █▀▀▓ █   █   █  ▓ █  ▓ █  ▄ ▓▀ ▄ ▀▀▀█ ▀▀▀▀▀▀▀▀▀▀
                              ▀ ▀     ▀▀   ▀▀▀ ▀    ▀▀▀ ▀▀▀ ▀     ▀▀   ▀▀▀ ▀▀▀▀  ▀▀
 
-
-                    1.  XXXXClone the repository from GitHub.
-                    2.  XXXXCreate a virtual environment.
-                    3.  XXXXInstall all dependencies. (noted in requirements.txt)
-                    4.  xxx
-                    5.  XXXXPlay.
-                    6.  xxXXxXXXSupport the software developers. If you like this game, BUY IT!
+                                De website kan worden bezocht door een gebruiker.
+                                Deze is vrij toegankelijk voor iedereen met de juiste link.
+                                Om gebruik te maken van de functionaliteit 
+                                zal een log in vereist zijn.
+                                
+                                1. Maak een gebruikers-account aan.
+                                2. Bevestig het email adres.
+                                3. Log in op de website.
+                                
+                                Van nu af aan kunt u alle functionaliteiten gebruiken zoals 
+                                het aanmaken van een nieuwe zoekopdracht,
+                                het opslaan en beheren van deze, zoekresultaten bekijken etc. etc..
+                                een test account zal te bereiken zijn via:
+                                
+                                gebruikersnaam: Test
+                                wachtwoord: Wachtwoord123!@#
 
                                ▄▀▀  ▄▀▀█ ▄▀▀▄ ▓  ▄ ▄▀▀█ ▄▀▀▄ ▄▀▀▄ ▓▄▄  ▄▀▀  ▄▀
                   ▀▀▀▀▀▀▀▀▀▀▀▀ █ ▀▓ █▀▓  █  ▓ █  ▓ █▀▀  █  ▓ █  ▓ █  ▄ ▓▀ ▄ ▀▀▀█ ▀▀▀▀▀▀▀▀▀▀▀▀▀
