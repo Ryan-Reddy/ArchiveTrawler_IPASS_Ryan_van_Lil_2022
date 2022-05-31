@@ -12,7 +12,7 @@ public class User {
     private String wachtwoord;
     private String userID;
     private String role;
-    private ArrayList<Zoekopdrachten> zoekertjes;
+    private ArrayList<Zoekopdracht> zoekertjes;
 
 
     public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord,
@@ -70,11 +70,11 @@ public class User {
         this.wachtwoord = wachtwoord;
     }
 
-    public List<Zoekopdrachten> getZoekertjes() {
+    public List<Zoekopdracht> getZoekertjes() {
         return zoekertjes;
     }
 
-    public void setZoekertjes(ArrayList<Zoekopdrachten> zoekertjes) {
+    public void setZoekertjes(ArrayList<Zoekopdracht> zoekertjes) {
         this.zoekertjes = zoekertjes;
     }
 

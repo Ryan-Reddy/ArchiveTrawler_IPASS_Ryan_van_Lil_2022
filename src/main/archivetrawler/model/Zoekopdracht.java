@@ -3,7 +3,7 @@ package main.archivetrawler.model;
 import java.util.List;
 import java.util.Objects;
 
-public class Zoekopdrachten {
+public class Zoekopdracht {
     private List<Archieven> archiefKeuzes;
     private String keyWords;
     private String voorNaam;
@@ -13,8 +13,8 @@ public class Zoekopdrachten {
     private String zoekOpdrachtID;
     private String userID;
 
-    public Zoekopdrachten(List<Archieven> archiefKeuzes, String keyWords, String voorNaam, String achterNaam,
-                          int jaarVan, int jaarTot, String zoekOpdrachtID, String userID) {
+    public Zoekopdracht(List<Archieven> archiefKeuzes, String keyWords, String voorNaam, String achterNaam,
+                        int jaarVan, int jaarTot, String zoekOpdrachtID, String userID) {
         this.archiefKeuzes = archiefKeuzes;
         this.keyWords = keyWords;
         this.voorNaam = voorNaam;
@@ -93,7 +93,7 @@ public class Zoekopdrachten {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Zoekopdrachten that = (Zoekopdrachten) o;
+        Zoekopdracht that = (Zoekopdracht) o;
         return Objects.equals(archiefKeuzes,
                               that.archiefKeuzes) && Objects.equals(keyWords,
                                                                     that.keyWords) && Objects.equals(voorNaam,

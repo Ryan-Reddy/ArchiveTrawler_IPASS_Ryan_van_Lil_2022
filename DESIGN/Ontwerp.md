@@ -323,7 +323,8 @@ De wireframes bij de use cases.
 
 [//]: # (Daarnaast kent een domein model eventueel extra regels op het domein &#40;business rules&#41; die je niet goed in UML kan vertalen. Deze regels neem je hier puntsgewijs op.)
 
-- Per email-adres OF user-naam mag er maar 1 user zijn.
+### Business rules
+- Per email-adres EN user-naam mag er maar 1 user zijn.
 - De entiteit Websites zullen altijd gebruikersgebonden zijn. <br/>
 Er kunnen dus meerdere keren dezelfde link voorkomen, maar met andere gebruikers.
 - Als een website link wordt aangeklikt, moet de datum en tijd opgeslagen worden, en het aantal keer geklikt +1

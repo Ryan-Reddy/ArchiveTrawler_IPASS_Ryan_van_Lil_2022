@@ -38,6 +38,9 @@ class WebsitesTest {
         assertEquals(1,websites1.getAantalKeerBezocht());
         websites1.websiteDoorgelinkt();
         assertEquals(2,websites1.getAantalKeerBezocht());
+        websites1.websiteDoorgelinkt();
+        websites1.websiteDoorgelinkt();
+        assertEquals(4,websites1.getAantalKeerBezocht());
     }
 
     @Test

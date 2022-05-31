@@ -3,15 +3,15 @@ package main.archivetrawler.model;
 import java.util.List;
 import java.util.Objects;
 
-public class ZoekResultaten {
+public class ZoekResultaat {
     private List<String> resultatenURLsLijst;
     private boolean bekeken;
     private int oudeTellingURLs;
     private int nieuweTellingURLs;
     private int verschilTelling;
 
-    public ZoekResultaten(List<String> resultatenURLsLijst, boolean bekeken, int oudeTellingURLs, int nieuweTellingURLs,
-                          int verschilTelling) {
+    public ZoekResultaat(List<String> resultatenURLsLijst, boolean bekeken, int oudeTellingURLs, int nieuweTellingURLs,
+                         int verschilTelling) {
         this.resultatenURLsLijst = resultatenURLsLijst;
         this.bekeken = bekeken;
         this.oudeTellingURLs = oudeTellingURLs;
@@ -63,7 +63,7 @@ public class ZoekResultaten {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ZoekResultaten that = (ZoekResultaten) o;
+        ZoekResultaat that = (ZoekResultaat) o;
         return bekeken == that.bekeken && oudeTellingURLs == that.oudeTellingURLs && nieuweTellingURLs == that.nieuweTellingURLs && verschilTelling == that.verschilTelling && Objects.equals(resultatenURLsLijst,
                                                                                                                                                                                               that.resultatenURLsLijst);
     }
