@@ -332,6 +332,7 @@ Er kunnen dus meerdere keren dezelfde link voorkomen, maar met andere gebruikers
 dit om te voorkomen dat er door een gebruiker een zoekopdracht gewijzigd worden  <br/>
 die een andere gebruiker ook toevallig had opgeslagen.
 
+![img.png](img.png)
 
 ## 5 Technologieën
 
