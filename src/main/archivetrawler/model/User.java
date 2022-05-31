@@ -17,6 +17,8 @@ public class User {
 
     public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord,
                 String role) {
+
+        if(Community.getCompany().getAccount(userName)==null) {
         this.userName = userName;
         this.emailAdres = emailAdres;
         this.voorNaam = voorNaam;
@@ -24,6 +26,8 @@ public class User {
         this.wachtwoord = wachtwoord;
         this.userID = userName + emailAdres;
         this.role = role;
+        Community.getCompany().addAccount(this);}
+
     }
 
     public String getUserName() {
@@ -66,14 +70,6 @@ public class User {
         this.wachtwoord = wachtwoord;
     }
 
-    public String getID() {
-        return userID;
-    }
-
-    public void setID(String userID) {
-        this.userID = userID;
-    }
-
     public List<Zoekopdrachten> getZoekertjes() {
         return zoekertjes;
     }
@@ -82,7 +78,23 @@ public class User {
         this.zoekertjes = zoekertjes;
     }
 
-//    public boolean verifyUser(String userName,String userPassword) {
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    //    public boolean verifyUser(String userName,String userPassword) {
 //        for
 //    }
 
