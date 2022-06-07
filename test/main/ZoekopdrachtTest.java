@@ -1,7 +1,7 @@
 package main;
 
-import main.Java.model.Archieven;
-import main.Java.model.Zoekopdracht;
+import trawler.model.Archieven;
+import trawler.model.Zoekopdracht;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
 package main;
 
-import main.Java.model.User;
+import trawler.model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

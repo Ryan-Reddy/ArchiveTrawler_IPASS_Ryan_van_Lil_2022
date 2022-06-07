@@ -1,4 +1,4 @@
-package main.Java.model;
+package trawler.model;
 
 import java.util.List;
 import java.util.Objects;

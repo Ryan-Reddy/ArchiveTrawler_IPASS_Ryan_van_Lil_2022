@@ -1,4 +1,4 @@
-package main.Java.model;
+package trawler.model;
 
 import java.time.LocalDateTime;
 import java.util.*;

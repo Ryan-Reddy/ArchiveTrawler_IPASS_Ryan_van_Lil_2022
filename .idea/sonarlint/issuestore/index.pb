@@ -1,15 +1,48 @@
 
 M
 .idea/azure/azureSettings.xml,8\f\8ffefcd27b7a105a8611aa8c1662342b4281ef07
-i
-9src/main/archivetrawler/webservices/AccountsResource.java,5\2\52fa04012f1800c5ef54a5709258d4ac701586d9
-h
-8src/main/archivetrawler/webservices/AccountResource.java,0\d\0d68b7603aa1f5eddbc6b572d68b0be9163c3628
+A
+DESIGN/Ontwerp.md,6\b\6b1562336bb725a456866e6d9e1fde33b59beed7
+:
+
+LICENSE.md,4\a\4a8486805915245bbbe2e3c8c1a9d680c6843a82
+8
+Procfile,b\c\bc3c68e880d1a01632bce79f69dd1387c7ba9c54
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+t
+D.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml,f\7\f7708b974a0374187f3cf558c1e70622c0fe474a
+p
+@.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_2.xml,f\6\f61094b53302baba08ee5c0f75609797b82fd17a
+w
+G.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_2.xml,3\1\31baef506cff1853242c5f0f32d899e23878fb09
+y
+I.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml,6\1\61fd4918157c43bb5dbdf05064045724fbe374c2
+w
+G.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml,2\7\270540527cb59d1fbe8bdf590204d75131c28ef1
+p
+@.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml,7\8\78b158d79d4a615b8bf614d6ee88675e25eba276
+P
+ Ryan_Java_Template_JFX_JUNIT.iml,0\2\025b972a60f09238476d2057f0b31281eed08caf
+z
+J.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml,0\b\0b3b5cd49de0f52301920d5a796e81fc32cd48a6
 \
-,src/main/archivetrawler/model/Community.java,0\5\0521a9bf59813d9d9798e89ca4fe6ad0f3c90924
-[
-+src/main/archivetrawler/model/Websites.java,8\a\8afa3f5137b734c385c85159a303218d357663af
+,src/main/Java/persistance/DecodedBase64.java,1\4\145546a971abc371ee47907ac77ecdb22bdb6153
+\
+,src/main/Java/persistance/EncodedBase64.java,f\8\f8d8010d57d254205adb0fc25752c8d3603828fd
 W
-'src/main/archivetrawler/model/User.java,0\6\062374cb7317476b04eec6ad1222238cee750a80
-`
-0src/main/archivetrawler/model/ZoekResultaat.java,b\7\b70a3d40052d0dcd4f2bcbd8590ce9476b9e90d5
+'src/main/Java/servlets/InfoServlet.java,f\8\f8cd0ad9200e20fc1a26a9953ce827bb64fac86d
+^
+.src/main/Java/listeners/MyContextListener.java,3\6\369805e39e19aba25d78a5288b043a72804e4241
+a
+1src/main/Java/setup/MyServletContextListener.java,0\6\06d6c2172628a705c78a1245f806bbe9bf27fac3
+]
+-src/main/Java/persistance/UploadsManager.java,9\3\93f5d89257e77c18a7ea521beadf87e95d96a540
+A
+system.properties,a\5\a5db35984da8ffa0e255c16a2e31ae7b26e7d222
+M
+src/main/webapp/css/style.css,2\c\2c1f525046eaa5ad3e39cc3d3b2f4c4fab4ff318
+O
+src/main/webapp/js/functions.js,7\6\760dcf81322f64a052ce3afe5bc488a74f3bf721
+J
+src/main/webapp/index.html,1\3\1337d72a3b1928dba82aa5210f5cdc0e88ce895b

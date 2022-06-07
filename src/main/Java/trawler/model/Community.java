@@ -1,4 +1,4 @@
-package main.Java.model;
+package trawler.model;
 
 import java.util.HashMap;
 import java.util.Map;
