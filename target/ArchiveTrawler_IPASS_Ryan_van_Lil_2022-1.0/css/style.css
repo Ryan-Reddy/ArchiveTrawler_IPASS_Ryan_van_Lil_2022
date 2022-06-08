@@ -10,3 +10,14 @@
     float: left;
     width: 150px;
 }
+
+body {
+    background-color: lightgoldenrodyellow;
+    font-family: "Bookman Old Style";
+
+}
+
+h1 {
+    color: black;
+    margin-left: 20px;
+}

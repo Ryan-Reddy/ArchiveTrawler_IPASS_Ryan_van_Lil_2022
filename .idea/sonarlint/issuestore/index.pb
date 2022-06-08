@@ -68,3 +68,7 @@ W
 'src/main/Java/servlets/InfoServlet.java,f\8\f8cd0ad9200e20fc1a26a9953ce827bb64fac86d
 U
 %src/main/Java/trawler/model/User.java,c\7\c7d30015aaec0325351510e09b7ec5c51df25bd2
+f
+6src/main/Java/trawler/webservices/AccountResource.java,f\0\f0b69f3743917abc70eeb0564125b9f1a6b73e97
+K
+.idea/dictionaries/RyRy.xml,f\1\f1a30f45669b4520bebb47de8148e347380110a1
