@@ -38,8 +38,6 @@ a
 -src/main/Java/persistance/UploadsManager.java,9\3\93f5d89257e77c18a7ea521beadf87e95d96a540
 A
 system.properties,a\5\a5db35984da8ffa0e255c16a2e31ae7b26e7d222
-M
-src/main/webapp/css/style.css,2\c\2c1f525046eaa5ad3e39cc3d3b2f4c4fab4ff318
 O
 src/main/webapp/js/functions.js,7\6\760dcf81322f64a052ce3afe5bc488a74f3bf721
 Z
@@ -62,3 +60,11 @@ O
 .src/main/Java/trawler/model/ZoekResultaat.java,6\b\6be0700058f3922342f0525cee55f354194ded9a
 g
 7src/main/Java/trawler/webservices/AccountsResource.java,3\f\3f8d6c1d47fc383f94d2c32f27644a4fdeff96df
+Z
+*src/main/Java/trawler/model/Community.java,6\e\6e0cfd9ac16bf2f61bfcd02232e0c7ac4dc55efa
+c
+3src/main/Java/trawler/webservices/FileResource.java,2\0\20f5d5276151c5c0848e8ce1941accdb1bbb28d7
+W
+'src/main/Java/servlets/InfoServlet.java,f\8\f8cd0ad9200e20fc1a26a9953ce827bb64fac86d
+U
+%src/main/Java/trawler/model/User.java,c\7\c7d30015aaec0325351510e09b7ec5c51df25bd2
