@@ -12,12 +12,21 @@
 }
 
 body {
-    background-color: lightgoldenrodyellow;
-    font-family: "Bookman Old Style";
+    background-color: black;
+    caret-color: white;
+    accent-color: white;
+    color: white;
+    font-family: "Bookman Old Style", serif;
 
 }
 
+.inputfield {
+    background-color: inherit;
+    color: inherit;
+}
+
+
 h1 {
-    color: black;
+    color: inherit;
     margin-left: 20px;
 }

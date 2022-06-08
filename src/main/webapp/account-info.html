@@ -3,32 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/style.css" />
+    <link href="/css/style.css" rel="stylesheet"/>
 
     <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
             href="assets/icons/favicon-16x16.png"
+            rel="icon"
+            sizes="16x16"
+            type="image/png"
     />
     <title>Account info</title>
 </head>
 
 <body>
-    <h1>Account info</h1>
-    <form id="postaccount">
-        <label for="firstname">Voornaam:</label><input type="text" id="firstname" name="firstname" />
-        <label for="achternaam">Achternaam:</label><input type="text" id="achternaam" name="achternaam" /><br>
-        <label for="email">E-mail adres:</label><input type="text" id="email" name="email" /><br>
+<h1>Account info</h1>
+<form id="postaccount">
+    <label for="firstname">Voornaam:</label><input class="inputfield" id="firstname" name="firstname" type="text"/>
+    <label for="achternaam">Achternaam:</label><input class="inputfield" id="achternaam" name="achternaam" type="text"/><br>
+    <label for="email">E-mail adres:</label><input class="inputfield" id="email" name="email" type="text"/><br>
 
-        <input type="button" id="send_json" value="send json" onclick="sendJsonData()" />
-        <input type="button" id="send_formdata" value="send formdata" onclick="sendFormData()" />
-        <span id="postresponse"></span>
-    </form>
-    <hr><br>
-    <a href="reset-password.html">
-        <button>Wachtwoord resetten</button>
-    </a>
+    <input id="send_json" onclick="sendJsonData()" type="button" value="send json"/>
+    <input id="send_formdata" onclick="sendFormData()" type="button" value="send formdata"/>
+    <span id="postresponse"></span>
+</form>
+<hr>
+<br>
+<a href="reset-password.html">
+    <button>Wachtwoord resetten</button>
+</a>
 </body>
 
 </html>
