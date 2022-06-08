@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Account</title>
+</head>
+<body>
+<form id="postaccount">
+    <label for="firstname">Voornaam:</label><input type="text" id="firstname" name="firstname" />
+    <label for="achternaam">Achternaam:</label><input type="text" id="achternaam" name="achternaam" /><br>
+    <label for="email">E-mail addres:</label><input type="text" id="email" name="email" /><br>
+    <label for="wachtwoord">Nieuw wachtwoord:</label><input type="text" id="wachtwoord" name="wachtwoord" /><br>
+
+    <input type="button" id="send_json" value="Registreren--send json" onclick="sendJsonData()"/>
+    <input type="button" id="send_formdata" value="Registreren--send formdata" onclick="sendFormData()" />
+    <span id="postresponse"></span>
+</form>
+</body>
+</html>

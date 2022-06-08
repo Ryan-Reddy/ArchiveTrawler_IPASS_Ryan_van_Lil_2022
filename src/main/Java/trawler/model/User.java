@@ -18,7 +18,7 @@ public class User {
     public User(String userName, String emailAdres, String voorNaam, String achterNaam, String wachtwoord,
                 String role) {
 
-        if(Community.getCompany().getAccount(userName)==null) {
+        if(Community.getCommunity().getAccount(userName)==null) {
         this.userName = userName;
         this.emailAdres = emailAdres;
         this.voorNaam = voorNaam;
@@ -26,7 +26,7 @@ public class User {
         this.wachtwoord = wachtwoord;
         this.userID = userName + emailAdres;
         this.role = role;
-        Community.getCompany().addAccount(this);}
+        Community.getCommunity().addAccount(this);}
 
     }
 

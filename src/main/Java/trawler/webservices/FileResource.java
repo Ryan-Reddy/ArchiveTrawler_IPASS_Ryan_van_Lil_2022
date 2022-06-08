@@ -14,7 +14,7 @@
 //    @GET
 //    public Response getFile(@PathParam("fileId") String fileId) {
 //        try {
-//            DecodedBase64 file = UploadsManager.loadDecodedUploadFromAzure(fileId);
+//            main.Java.persistance.DecodedBase64 file = UploadsManager.loadDecodedUploadFromAzure(fileId);
 //
 //            return Response
 //                    .status(Response.Status.OK)

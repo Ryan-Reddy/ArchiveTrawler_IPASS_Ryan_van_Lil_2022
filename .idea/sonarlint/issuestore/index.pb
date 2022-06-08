@@ -30,8 +30,6 @@ J.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml,0\b
 ,src/main/Java/persistance/DecodedBase64.java,1\4\145546a971abc371ee47907ac77ecdb22bdb6153
 \
 ,src/main/Java/persistance/EncodedBase64.java,f\8\f8d8010d57d254205adb0fc25752c8d3603828fd
-W
-'src/main/Java/servlets/InfoServlet.java,f\8\f8cd0ad9200e20fc1a26a9953ce827bb64fac86d
 ^
 .src/main/Java/listeners/MyContextListener.java,3\6\369805e39e19aba25d78a5288b043a72804e4241
 a
@@ -44,5 +42,23 @@ M
 src/main/webapp/css/style.css,2\c\2c1f525046eaa5ad3e39cc3d3b2f4c4fab4ff318
 O
 src/main/webapp/js/functions.js,7\6\760dcf81322f64a052ce3afe5bc488a74f3bf721
-J
-src/main/webapp/index.html,1\3\1337d72a3b1928dba82aa5210f5cdc0e88ce895b
+Z
+*src/main/Java/trawler/model/Archieven.java,3\f\3f1bf2622351766f46283a35b77b0bcaf113c695
+U
+%src/main/Java/setup/JerseyConfig.java,1\c\1cdb6b5904eea13f1d60369efe7a13e5b9abb311
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+G
+test/main/UserTest.java,6\6\66c88825b3d71bd489214ef66117f541ebb7e16f
+Y
+)src/main/Java/trawler/model/Websites.java,e\6\e6757b4ada6f7fea790a72920d3bddcf1e73f19c
+K
+test/main/WebsitesTest.java,e\4\e48019a295f73a7611ffc9267fe73cc95b968eea
+O
+test/main/ZoekopdrachtTest.java,1\f\1f0ee683dd2d2cfaa1f88a7e6cf0e1739db919c6
+]
+-src/main/Java/trawler/model/Zoekopdracht.java,f\a\fa25a1afb243adb4ffd6a6e6af03bcaae314a2a5
+^
+.src/main/Java/trawler/model/ZoekResultaat.java,6\b\6be0700058f3922342f0525cee55f354194ded9a
+g
+7src/main/Java/trawler/webservices/AccountsResource.java,3\f\3f8d6c1d47fc383f94d2c32f27644a4fdeff96df

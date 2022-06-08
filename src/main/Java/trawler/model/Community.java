@@ -8,7 +8,7 @@ public class Community {
 
     private Map<String, User> users = new HashMap<>();
 
-    public static Community getCompany() {
+    public static Community getCommunity() {
         return community;
     }
 

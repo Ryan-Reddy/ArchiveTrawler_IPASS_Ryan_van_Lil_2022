@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+</head>
+<body>
+<h1>Log in</h1>
+    <form id="postaccount">
+        <label for="firstname">Voornaam:</label><input type="text" id="firstname" name="firstname" /><br>
+        <label for="password">Wachtwoord:</label><input type="text" id="password" name="password" /><br><br>
+
+        <input type="button" id="send_json" value="send json" onclick="sendJsonData()"/>
+        <input type="button" id="send_formdata" value="send formdata" onclick="sendFormData()" />
+        <span id="postresponse"></span>
+        <br>
+        <a href="/reset-password.html">Wachtwoord vergeten</a>
+
+        <hr>
+    </form>
+    <button role="link">HTML button pretending to be a link</button>
+    <button name="button" role=link onclick="window.location.href='new-account.html'">Creeer een nieuw account</button>
+</body>
+</html>
