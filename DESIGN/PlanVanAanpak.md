@@ -51,14 +51,14 @@ Mijn klant in deze casus is mijn vader, Ton van Lil.
 Een jarenlange hobby genealoog, verzamelt data over zijn voorouders.
 Hiervoor beheert hij zijn eigen database en verwerkt deze data op zijn eigen website. 
 
-Hiervoor zoekt hij in meerdere (stads)archieven en bezoekt deze ook. 
+Hiervoor zoekt hij in meerdere (stads)archief en bezoekt deze ook. 
 
 
 # 2 Project beschrijving
 
-Het doel is dus om vraag afhankelijk van meerdere archieven URL&#39;s/informatie te verzamelen en te tonen.
+Het doel is dus om vraag afhankelijk van meerdere archief URL&#39;s/informatie te verzamelen en te tonen.
 
-De archieven worden nog steeds doorgaand bijgevuld dus een herhaaldelijke zoekfunctie zou handig zijn.
+De archief worden nog steeds doorgaand bijgevuld dus een herhaaldelijke zoekfunctie zou handig zijn.
 
 ####Goed mogelijk doen:
 

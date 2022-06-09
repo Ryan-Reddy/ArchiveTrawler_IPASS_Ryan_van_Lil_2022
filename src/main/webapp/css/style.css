@@ -24,6 +24,28 @@ body {
     background-color: inherit;
     color: inherit;
 }
+.wachtwoord-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+.wachtwoord-tooltip .ww-tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.wachtwoord-tooltip:hover .ww-tooltiptext {
+    visibility: visible;
+}
 
 
 h1 {

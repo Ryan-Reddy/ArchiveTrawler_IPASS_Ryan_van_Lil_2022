@@ -46,7 +46,7 @@ Het type klant dat ik probeer te bereiken:
 ##### Psychografie
 
 - Wil graag van bepaalde historische mensen informatie vinden.
-- Wil graag in bepaalde archieven zoeken.
+- Wil graag in bepaalde archief zoeken.
 - Vindt het belangrijk dat ze niet dubbel werk verrichten.
 
 
@@ -251,7 +251,7 @@ Use case templates, per use case een paragraaf met de template beschrijving e.d.
 #### ID 2.4.2   Naam Kiezen welke websites.
 | Actoren              | User                                                                                  |
 |----------------------|---------------------------------------------------------------------------------------|
-| Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv keuze welke archieven te doorzoeken. |
+| Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv keuze welke archief te doorzoeken. |
 | Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                    |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
 | Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.                                                                                                             |
@@ -261,7 +261,7 @@ Use case templates, per use case een paragraaf met de template beschrijving e.d.
 #### ID 3.0   Naam Websites om te doorzoeken toevoegen.
 | Actoren              | Developer                                                                                                                                                                                                                                                                                                    |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Er zijn altijd nieuwe archieven om te doorspitten, deze kunnen worden toegevoegd aan het systeem. Het is in de scope van dit project vooralsnog iets voor de programmeur.                                                                                                                                    |
+| Samenvatting         | Er zijn altijd nieuwe archief om te doorspitten, deze kunnen worden toegevoegd aan het systeem. Het is in de scope van dit project vooralsnog iets voor de programmeur.                                                                                                                                    |
 | Precondities         | De actor heeft toegang tot het systeem.                                                                                                                                                                                                                                                                      |
 | Stappenplan/scenario | 1. Er is een onderzoek gedaan naar wat hiervoor nodig is vanuit het nieuwe archief.<br/>2. De actor voegt deze toe aan het systeem.<br/>3. Het systeem geeft de user de optie deze toe te voegen aan de zoekopdrachten.<br/>4. Het systeem voegt deze ook automatisch toe aan alle bestaande zoekopdrachten. |
 | Postcondities        | Er is nu een nieuwe optie voor keuze van websites die doorgespit moeten worden. <br/>Ook zijn alle bestaande zoekopdrachten nu uitgebreid met een nieuwe zoekopdracht.<br/> Zo kan de user zonder extra werk nu wellicht nieuwe zoekresultaten ontvangen.                                                    |
@@ -316,7 +316,7 @@ De wireframes bij de use cases.
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | User           | De gebruikers zelf, hierin worden alle gebruikersgegevens beheerd. Inclusief wachtwoord.                                                                                                                                                                                                                                 |
 | ZoekOpdrachten | Door de gebruiker ingevoerde zoekopdrachten, worden hier gemaakt en beheerd. <br/>Er zit een methode in die met de ingevoerde informatie een URI aanmaakt dmv entiteit Archieven.<br/> En slaat deze vervolgens op in zijn eigen URI lijst.                                                                              |
-| Archieven      | Hier worden de bruikbare archieven opgeslagen. Dit zijn externe archieven waar de developer toegang toe heeft gegeven. Er wordt hier op basis van de ingevoerde zoekopdracht een URI aangemaakt en terug gegeven.<br/>Deze kan vervolgens zelfstandig vanuit de Zoekopdracht uitgevoerd worden.                          |
+| Archieven      | Hier worden de bruikbare archief opgeslagen. Dit zijn externe archief waar de developer toegang toe heeft gegeven. Er wordt hier op basis van de ingevoerde zoekopdracht een URI aangemaakt en terug gegeven.<br/>Deze kan vervolgens zelfstandig vanuit de Zoekopdracht uitgevoerd worden.                          |
 | Zoekresultaten | Hier worden de response URLs opgeslagen. Ook wordt er de eerste keer gelijk een telling gemaakt van de URLs(oudeTellingURLS), en elke keer worden de nieuwe resultaten weer vergeleken. <br/>Mocht er dan een verschil tussen nieuw en oud zijn in de positief, dan wordt hier een melding van gegeven aan de gebruiker. |
 | Websites       | Hier worden alle response URLs afzonderlijk opgeslagen, opdat er bij nieuwe zoekresultaten of zoekresultaten van andere ZoekOpdrachten kan worden weergegeven wanneer, en hoe vaak deze door de gebruiker al bekeken zijn.                                                                                               |
 
