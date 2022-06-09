@@ -12,20 +12,23 @@
     />
     <title>New Account</title>
     <script type ="text/javascript" src="js/newAccount-utils.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
-<form id="postaccount">
-    <label for="firstname">Voornaam:</label><input class="inputfield" id="firstname" name="firstname" type="text"/>
-    <label for="achternaam">Achternaam:</label><input class="inputfield" id="achternaam" name="achternaam" type="text"/><br>
+<form id="postaccount" autocomplete="on">
+    <label for="name">Voornaam:</label>
+        <input placeholder="Voornaam" class="inputfield" id="name" name="name" type="text" autocomplete="name"/>
+    <label for="surname">Achternaam:</label>
+        <input placeholder="Achternaam"  class="inputfield" id="surname" name="surname" autocomplete="surname"/><br>
     <div class="tooltip">
-    <label for="email">E-mail adres:</label><input class="inputfield" id="email" name="email" type="email"/><br>
+    <label for="email">E-mail adres:</label><input placeholder="jouwnaam@voorbeeld.com" required class="inputfield" id="email" name="email" type="email" autocomplete="email" /><br>
         <span class="tooltiptext-mail">Voer een geldig email adres in.</span></div>
     <br>
 
     <div class="tooltip">
         <label for="wachtwoord">Nieuw wachtwoord:</label>
-        <input class="inputfieldPassword" id="wachtwoord" name="wachtwoord" type="text"/>
+        <input placeholder="Wachtwoord" required class="inputfieldPassword" id="wachtwoord" name="wachtwoord" type="text" autocomplete="password"/>
     <span class="tooltiptext-ww">Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals ! en &).</span></div>
     <br>
 

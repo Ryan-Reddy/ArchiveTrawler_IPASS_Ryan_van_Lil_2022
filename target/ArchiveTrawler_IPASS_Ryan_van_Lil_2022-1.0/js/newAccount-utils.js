@@ -24,7 +24,7 @@ function wachtwoordCheck() {
 
     }
     if (ww.length > 5 && emailEcht === true && check===true) {
-        accountAangemaaktMelding()
+        sendEmail(email);
         sendJsonData();
     }
 }
@@ -63,4 +63,25 @@ function accountAangemaaktMelding() {
 function checkEmailIsEchtEmail(email) {
     const re = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
     return re.test(email);
+}
+/** Deze functie stuurt een mail
+ *   @Function checkAccountconfirmatie
+ *   @param email
+ *   @returns boolean
+ */
+function sendEmail(email) {
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "noresp.archivetrawler@gmail.com",
+        Password: "sWsmanu5MXtzuBe",
+        // To: email,
+        To: "ryanreddy@hotmail.com",
+        From: "noresp.archivetrawler@gmail.com",
+        Subject: "Accountbevestiging",
+        Body: "Well that was easy!!",
+    })
+        .then(console.log('yo sent that mail'))
+        .then(function () {
+            accountAangemaaktMelding();
+        });
 }
