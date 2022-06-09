@@ -20,30 +20,33 @@
         <input placeholder="Naam" class="inputfield" id="name" name="name" type="text" autocomplete="name" />
 
         <div class="tooltip">
+            <!-- omschrijvende lebel van bijbehorende inputveld -->
             <label for="email">E-mail adres:</label>
             <input placeholder="jouwnaam@voorbeeld.com" required class="inputfield" id="email" name="email" type="email"
-                autocomplete="email" /><br>
-            <span class="tooltiptext-mail">Voer een geldig email adres in.</span>
-        </div> <br>
+                autocomplete="email" onclick="switchIncompleteNormaleStijl('email')"/>sdasdasdas<br>
+                <!-- tooltip tekst -->
+            <span class="tooltiptext-mail">Voer een geldig email adres in, bijvoorbeeld jouwnaam@voorbeeld.com.</span>
+        </div> 
+        <br>
 
         <div class="tooltip">
+            <!-- omschrijvende lebel van bijbehorende inputveld -->
             <label for="password">Nieuw wachtwoord:</label>
             <input placeholder="Nieuw wachtwoord" required class="inputfield" id="password" name="new-password"
-                type="password" autocomplete="password" />
+                type="password" autocomplete="password" onclick="switchIncompleteNormaleStijl('password')"/><br>
+                    <!-- tooltip tekst -->
             <span class="tooltiptext-ww">Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals
                 ! en &).</span>
         </div>
-        <br>
+        <input id="toggle" type="checkbox" onclick="wwZichtbaarToggle()">
+        <label for="toggle">Toggle wachtwoordzichtbaarheid</label><br><br>
 
         <input id="send_json" onclick="formulierCheck()" type="button"
             value="Registreren-- incl wachtwoordchecksend json" />
         <input id="send_formdata" onclick="sendFormData()" type="button" value="Registreren--send formdata" />
         <span id="postresponse"></span>
     </form>
-
-    <input id="toggle" type="button" value="Toggle wachtwoordzichtbaarheid" onclick="wwZichtbaarToggle()"><br><br>
-
-    <input id="createAccButton" type="button" onclick="formulierCheck()" value="Create the account"></input>
+    <input id="createAccButton" type="button" onclick="formulierCheck()" value="formulierCheck, Create the account"></input>
 </body>
 
 </html>

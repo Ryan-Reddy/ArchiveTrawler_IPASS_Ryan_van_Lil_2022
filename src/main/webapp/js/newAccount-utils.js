@@ -18,17 +18,26 @@ function formulierCheck() {
     const emailElement = document.getElementById("email");
     const passwordElement = document.getElementById("password");
     
+    //check of de email een email format heeft, geeft boolean terug
     let emailEcht = checkEmailIsEchtEmail(email);
-    
+
+    console.log('start formulierCheck()');
+    //reset alle css waarschuwingen
+    passwordElement.classList.replace("formIncomplete",'inputfield');
+    emailElement.classList.replace("formIncomplete",'inputfield');
+
+
     if (emailEcht === false) {
-        emailElement.classList.add("formIncomplete");
-        alert("Uw klopt niet, \r\n voer aub een geldig e-mail adres in.");
+        console.log('email is nep');
+        emailElement.classList.replace('inputfield',"formIncomplete");
+        // alert("Uw klopt niet, \r\n voer aub een geldig e-mail adres in.");
     }
     if (ww.length < 6 ) {
-        passwordElement.classList.add("formIncomplete");
-        alert("Uw wachtwoord is niet veilig genoeg. \r\n  Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals ! en &).")
+        console.log('ww incompleet');
+        passwordElement.classList.replace('inputfield',"formIncomplete");
+        // alert("Uw wachtwoord is niet veilig genoeg. \r\n  Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals ! en &).")
     }
-
+    
     if (ww.length > 5 && emailEcht === true) {
         alert("Uw account is aangemaakt, u ontvangt van ons een email met daarin een bevestigingslink. Om uw account te kunnen gebruiken, moet u bevestigen dat uw opgegeven e-mailadres geldig is, door klikken op de bevestigingslink die in uw e-mail is verzonden.\n" +
         "Als u op de bevestigingslink klikt, wordt u doorgestuurd naar de inlogpagina van uw account. Typ uw inloggegevens en klik op Inloggen om je account te activeren.")
@@ -37,28 +46,24 @@ function formulierCheck() {
     }
 }
 
-// /** Deze functie moet een alert te tonen dat het wachtwoord te kort is
-// *   @Function wachtWoordTeKort
-//  *   @returns null
-//  */
-// function wachtWoordTeKortMelding() {
+
+/** Deze functie zorgt ervoor dat het klikken op een invoerveld hem weer een normale stijl geeft
+ * @Function terugNaarNormaleStijl()
+ * @param id:String
+ * @returns null
+ */
+ function switchIncompleteNormaleStijl(id) {
+    let fromIdElement = document.getElementById('id');
+
+    fromIdElement.classList.toggle('inputfield')
+    // // const typeAttribute = fromIdElement.getAttribute('class');
+
+    // fromIdElement.classList.replace("formIncomplete",'inputfield');
     
-// }
-
-// /** Deze functie moet een alert te tonen dat het email te kort is
-// *   @Function emailFoutMelding
-//  *   @returns null
-//  */
-// function emailFoutMelding() {
-// }
-
-
-// /** Deze functie moet een popup melding geven dat het account is aangemaakt
-// *   @Function accountAangemaaktMelding
-//  *   @returns null
-//  */
-// function accountAangemaaktMelding() {
-// }
+    // // if(typeAttribute==="formIncomplete") {
+    //     fromIdElement.setAttribute('class','inputfield');
+    // // }
+}
 
 /** Deze functie controleert of een email echt een email is
  *   @Function checkEmailIsEchtEmail
@@ -69,39 +74,7 @@ function checkEmailIsEchtEmail(email) {
     return re.test(email);
 }
 
-/** Deze functie stuurt een mail
- *   @Function checkAccountconfirmatie
- *   @param email
- *   @returns boolean
- */
-function sendEmail(email) {
-    // Email.send({
-        // Host: "smtp.gmail.com",
-        // Username: "noresp.archivetrawler@gmail.com",
-        // Password: "sWsmanu5MXtzuBe",
-        // // To: email,
-        // To: "ryanreddy@hotmail.com",
-        // From: "noresp.archivetrawler@gmail.com",
-        // Subject: "Accountbevestiging",
-        // Body: "Well that was easy!!",
 
-        nodemailer.createTransport({
-            host: "smtp.mailtrap.io",
-            port: 2525,
-            auth: {
-              user: "2e726d380b8965",
-              pass: "1af43b7b73b93b"
-            }
-        })
-    // })
-        .then(console.log('yo sent that mail'))
-        .then(function () {
-            accountAangemaaktMelding();
-        })
-    ;
-}
-const passwordEle = document.getElementById('password');
-const toggleEle = document.getElementById('toggle');
 
 /** Deze functie togglet de zichtbaarheid van het wachtwoord heen en weer
  *   @Function wwZichtbaarToggle()
