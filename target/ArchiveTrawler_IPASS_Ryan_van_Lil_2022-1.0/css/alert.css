@@ -1,0 +1,11 @@
+.formIncomplete {
+    border-color: crimson;
+    border-style: double;
+    background-color: black;
+    color: white;
+}
+
+.inputfield {
+    background-color: black;
+    color: white;
+}
