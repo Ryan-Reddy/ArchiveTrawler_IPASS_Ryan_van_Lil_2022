@@ -14,7 +14,7 @@ package trawler.webservices;
 //import java.util.AbstractMap;
 //
 //@Path("/accounts")
-//public class AccountsResource {
+public class AccountsResourceINCLencryption {                              }
 //    @POST
 //    @Consumes(MediaType.APPLICATION_JSON)
 //    @Produces(MediaType.APPLICATION_JSON)

@@ -6,8 +6,8 @@ import java.util.Objects;
 
 public class User {
     private String emailAdres;
-    private String voorNaam;
-    private String achterNaam;
+//    private String voorNaam;
+    private String naam;
     private String wachtwoord;
     private String userID;
     private String role;
@@ -15,18 +15,27 @@ public class User {
 
 
 
-    public User(String emailAdres, String voorNaam, String achterNaam, String wachtwoord, String role) {
+    public User(String emailAdres, String naam, String wachtwoord, String role) {
 
         if (!Community.getCommunity().getUsers().containsKey(emailAdres)) {
             this.emailAdres = emailAdres;
-            this.voorNaam = voorNaam;
-            this.achterNaam = achterNaam;
+//            this.voorNaam = voorNaam;
+            this.naam = naam;
             this.wachtwoord = wachtwoord;
             this.userID = String.valueOf(Community.getCommunitySize()) + 1;
             this.role = role;
             Community.getCommunity().addAccount(this);
         }
 
+    }
+    public static boolean removeShopper(String emailAdress) {
+        for (User sh : Community.getCommunity().getUsersAsList()) {
+            if(sh.getEmailAdres().equals(emailAdress)){
+                Community.getCommunity().getUsersAsList().remove(sh);
+                return true;
+            }
+        }
+        return false;
     }
 
     public String getEmailAdres() {
@@ -36,21 +45,21 @@ public class User {
     public void setEmailAdres(String emailAdres) {
         this.emailAdres = emailAdres;
     }
+//
+//    public String getVoorNaam() {
+//        return voorNaam;
+//    }
+//
+//    public void setVoorNaam(String voorNaam) {
+//        this.voorNaam = voorNaam;
+//    }
 
-    public String getVoorNaam() {
-        return voorNaam;
+    public String getNaam() {
+        return naam;
     }
 
-    public void setVoorNaam(String voorNaam) {
-        this.voorNaam = voorNaam;
-    }
-
-    public String getAchterNaam() {
-        return achterNaam;
-    }
-
-    public void setAchterNaam(String achterNaam) {
-        this.achterNaam = achterNaam;
+    public void setNaam(String naam) {
+        this.naam = naam;
     }
 
     public String getWachtwoord() {
@@ -89,21 +98,29 @@ public class User {
 //        for
 //    }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof User)) return false;
         User user = (User) o;
-        return Objects.equals(emailAdres, user.emailAdres) && Objects.equals(voorNaam, user.voorNaam) && Objects.equals(achterNaam, user.achterNaam) && Objects.equals(wachtwoord, user.wachtwoord) && Objects.equals(userID, user.userID) && Objects.equals(zoekertjes, user.zoekertjes);
+        return Objects.equals(getEmailAdres(), user.getEmailAdres()) && Objects.equals(getNaam(), user.getNaam()) && Objects.equals(getWachtwoord(), user.getWachtwoord()) && Objects.equals(getUserID(), user.getUserID()) && Objects.equals(getRole(), user.getRole()) && Objects.equals(getZoekertjes(), user.getZoekertjes());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(emailAdres, voorNaam, achterNaam, wachtwoord, userID, zoekertjes);
+        return Objects.hash(getEmailAdres(), getNaam(), getWachtwoord(), getUserID(), getRole(), getZoekertjes());
     }
 
     @Override
     public String toString() {
-        return "User{" + "userName='" + '\'' + ", emailAdres='" + emailAdres + '\'' + ", voorNaam='" + voorNaam + '\'' + ", achterNaam='" + achterNaam + '\'' + ", wachtwoord='" + wachtwoord + '\'' + ", userID='" + userID + '\'' + ", zoekertjes=" + zoekertjes + '}';
+        return "User{" +
+                "emailAdres='" + emailAdres + '\'' +
+                ", naam='" + naam + '\'' +
+                ", wachtwoord='" + wachtwoord + '\'' +
+                ", userID='" + userID + '\'' +
+                ", role='" + role + '\'' +
+                ", zoekertjes=" + zoekertjes +
+                '}';
     }
 }

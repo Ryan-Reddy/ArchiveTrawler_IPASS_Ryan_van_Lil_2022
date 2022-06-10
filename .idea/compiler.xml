@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ArchiveTrawler" />
+        <module name="ArchiveTrawler_IPASS_Ryan_van_Lil_2022" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ArchiveTrawler" target="13" />
+      <module name="ArchiveTrawler_IPASS_Ryan_van_Lil_2022" target="13" />
+      <module name="Ryan_Java_Template_JFX_JUNIT" target="13" />
     </bytecodeTargetLevel>
   </component>
 </project>
