@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Ryan_Java_Template_JFX_JUNIT.iml" filepath="$PROJECT_DIR$/Ryan_Java_Template_JFX_JUNIT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArchiveTrawler.iml" filepath="$PROJECT_DIR$/ArchiveTrawler.iml" />
     </modules>
   </component>
 </project>
