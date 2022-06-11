@@ -7,7 +7,7 @@ import javax.ws.rs.ApplicationPath;
 @ApplicationPath("restservices")
 public class JerseyConfig  extends ResourceConfig {
     public JerseyConfig() {
-        packages("Java.trawler.webservices");
+        packages("trawler.webservices");
     }
 
 }

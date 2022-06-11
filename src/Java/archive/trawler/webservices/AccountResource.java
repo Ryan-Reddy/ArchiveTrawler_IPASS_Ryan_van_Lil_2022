@@ -1,7 +1,7 @@
-package trawler.webservices;
+package archive.trawler.webservices;
 
-import trawler.model.Community;
-import trawler.model.User;
+import archive.trawler.model.Community;
+import archive.trawler.model.User;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

@@ -1,4 +1,4 @@
-package trawler.webservices;
+package archive.trawler.webservices;
 
 //import nl.hu.bep.referenceproject.model.Account;
 //import nl.hu.bep.referenceproject.model.Company;

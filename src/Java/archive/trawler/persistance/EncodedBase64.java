@@ -1,4 +1,4 @@
-package main.Java.persistance;
+package archive.trawler.persistance;
 
 public class EncodedBase64 {
     private String base64str;

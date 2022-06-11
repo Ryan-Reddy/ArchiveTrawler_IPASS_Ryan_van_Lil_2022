@@ -1,4 +1,4 @@
-package main.Java.persistance;
+package archive.trawler.persistance;
 
 public class DecodedBase64 {
     public final byte[] bytez;
