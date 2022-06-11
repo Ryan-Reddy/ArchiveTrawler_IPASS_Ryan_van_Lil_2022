@@ -1,0 +1,31 @@
+{
+  "name": "archivetrawler_ipass_ryan_van_lil_2022version200",
+  "version": "1.0.0",
+  "description": "```\r ooooooooo.                                          ooooooooo.                   .o8        .o8              \r `888   `Y88.                                        `888   `Y88.                \"888       \"888              \r  888   .d88' oooo    ooo  .oooo.   ooo. .oo.         888   .d88'  .ooooo.   .oooo888   .oooo888  oooo    ooo \r  888ooo88P'   `88.  .8'  `P  )88b  `888P\"Y88b        888ooo88P'  d88' `88b d88' `888  d88' `888   `88.  .8'  \r  888`88b.      `88..8'    .oP\"888   888   888        888`88b.    888ooo888 888   888  888   888    `88..8'   \r  888  `88b.     `888'    d8(  888   888   888        888  `88b.  888    .o 888   888  888   888     `888'    \r o888o  o888o     .8'     `Y888\"\"8o o888o o888o      o888o  o888o `Y8bod8P' `Y8bod88P\" `Y8bod88P\"     .8'     \r              .o..P'                                                                              .o..P'      \r              `Y8P'                                                                               `Y8P'",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryan-Reddy/ArchiveTrawler_IPASS_Ryan_van_Lil_2022.git"
+  },
+  "author": "Ryan van Lil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ryan-Reddy/ArchiveTrawler_IPASS_Ryan_van_Lil_2022/issues"
+  },
+  "homepage": "https://github.com/Ryan-Reddy/ArchiveTrawler_IPASS_Ryan_van_Lil_2022#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "scripts": {
+    "test:eslint": "eslint src/**/*.js"
+  }
+}

@@ -24,3 +24,7 @@ h1 {
     color: inherit;
     margin-left: 20px;
 }
+
+.right-side-of-page {
+    float: right;
+}

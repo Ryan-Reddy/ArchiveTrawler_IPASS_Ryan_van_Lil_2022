@@ -29,3 +29,7 @@ replay_pid*
 
 #intellij files
 .idea
+
+# gets generated when running npm install on each system
+node_modules/
+
