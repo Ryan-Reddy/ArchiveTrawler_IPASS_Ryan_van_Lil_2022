@@ -57,20 +57,30 @@
 <!--            <version>1.0.4</version>-->
 <!--        </dependency>-->
         <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId> <!-- jjwt goede security token maker-->
+            <version>0.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId> <!-- Lombok for easy getters/setters -->
+            <version>1.18.22</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-nop</artifactId>
-            <version>2.0.0-alpha1</version>
+            <artifactId>slf4j-api</artifactId> <!-- ultimate java logging tool -->
+            <version>2.0.0-alpha7</version>
         </dependency>
 
         <dependency>
             <groupId>com.azure</groupId>
-            <artifactId>azure-storage-blob</artifactId>
+            <artifactId>azure-storage-blob</artifactId> <!-- azure blob storage -->
             <version>12.16.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
+            <artifactId>junit-jupiter</artifactId> <!-- junit tests -->
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>

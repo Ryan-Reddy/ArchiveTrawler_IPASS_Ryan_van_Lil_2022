@@ -41,7 +41,7 @@ public class AccountResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAccount(@PathParam("userId") String accountId) {
-        User user = Community.getCommunity().getAccount(accountId);
+        User user = Community.getCommunity().getUserByName(accountId);
 
         if (user != null) {
             return Response.ok(user).build();

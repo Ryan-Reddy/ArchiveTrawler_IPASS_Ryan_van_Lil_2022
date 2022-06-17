@@ -27,14 +27,14 @@ async function sendJsonData(event) {
   const element = document.querySelector('#postresponse');
 
   const file = document.querySelector('#fileupload').files[0];
-  const jsonRequestBody = { avatarBase64: await toBase64(file) };
+  const jsonRequestBody = {avatarBase64: await toBase64(file)};
   const formData = new FormData(document.querySelector('#postaccount'));
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
   const fetchOptions = {
     method: 'POST',
     body: JSON.stringify(jsonRequestBody),
-    headers: { 'Content-Type': 'application/json' },
+    headers: {'Content-Type': 'application/json'},
   };
 
   const response = await fetch('/restservices/accounts', fetchOptions);

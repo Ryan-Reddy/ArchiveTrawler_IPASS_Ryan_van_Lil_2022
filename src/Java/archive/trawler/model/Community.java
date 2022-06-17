@@ -30,7 +30,7 @@ public class Community {
         return l.size();
     }
 
-    public User getAccount(String username) {
+    public static User getUserByName(String username) {
         return users.get(username);
     }
 
