@@ -1,4 +1,4 @@
-package Security;
+package archive.trawler.Security;
 
 
 import archive.trawler.model.Community;

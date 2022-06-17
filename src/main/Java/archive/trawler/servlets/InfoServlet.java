@@ -1,4 +1,4 @@
-package servlets;
+package archive.trawler.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +12,11 @@ import java.io.IOException;
 public class InfoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("ItWorks");
+        try {
+            resp.getWriter().println("ItWorks");
+
+        } catch (Exception exception) {
+            System.out.println(exception);
+        }
     }
 }
