@@ -26,5 +26,7 @@ h1 {
 }
 
 .right-side-of-page {
+    position: absolute;
+    left: 1rem;
     float: right;
 }
