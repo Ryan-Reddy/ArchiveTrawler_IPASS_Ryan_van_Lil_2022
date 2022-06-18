@@ -1,5 +1,5 @@
 function login() {
-  let formData = new FormData(document.querySelector("#loginform"));
+  let formData = new FormData(document.querySelector("#login_account"));
   let jsonRequestBody = {}
   formData.forEach((value, key) => jsonRequestBody[key] = value);
   console.log(JSON.stringify(jsonRequestBody));
@@ -10,8 +10,12 @@ function login() {
   })
 
     .then(function (response) {
-      if (response.ok) return response.json(); //if 200 there will be a body
-      else throw "Wrong username/password";    //if !200 there will be no body
+      if (response.ok) {
+        return response.json();
+      } //if 200 there will be a body
+      else {
+        throw "Wrong username/password";
+      }    //if !200 there will be no body
     })
     .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
     .then(res => console.log(res))
