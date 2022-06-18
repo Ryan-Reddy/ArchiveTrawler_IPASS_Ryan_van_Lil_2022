@@ -9,6 +9,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
 
+import static java.lang.String.format;
 import static javax.ws.rs.core.Response.ok;
 
 
@@ -29,7 +30,6 @@ public class AccountResource {
             interMessage.put("Naam", p.getNaam());
             interMessage.put("Email", p.getEmailAdres());
             interMessage.put("role", p.getRole());
-
             totaalMessages.add(interMessage);
         }
         return ok(totaalMessages).build();
@@ -68,12 +68,15 @@ try {
         return ok(messages).build();
     }
 
-//    @DELETE
-//    @Path("shopper/delete={name}")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response deleteUserAccount(@PathParam("name")String name) {
-//        return User.removeShopper(name)
-//                ?Response.ok().build()
-//                : Response.status(Response.Status.NOT_FOUND).build();
-//    }
+    /** @function deleteUserAccount
+     * will delete the MyUser account associated with this email adres.
+     * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user. */
+    @DELETE
+    @Path("delete={email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteUserAccount(@PathParam("email")String email) {
+        return MyUser.deleteMyUserAccount(email)
+                ? Response.ok(String.format("the user %s has been deleted..",email)).build()        // give ok http response if it works
+                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+    }
 }
