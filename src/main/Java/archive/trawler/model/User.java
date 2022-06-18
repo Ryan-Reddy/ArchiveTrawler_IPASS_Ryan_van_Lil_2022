@@ -33,7 +33,7 @@ public class User implements NamedObject {
 
     public String getRole() { return role; }
 
-    public List<User> getAllUsers() {
+    public static List<User> getAllUsers() {
         return allUsers;
     }
 

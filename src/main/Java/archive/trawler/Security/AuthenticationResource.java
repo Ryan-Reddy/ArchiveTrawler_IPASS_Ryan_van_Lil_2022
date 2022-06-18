@@ -29,10 +29,10 @@ public class AuthenticationResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response authenticateUser(LoginRequest logonRequest) {
         try {
-            String role = MyUser.validateLogin(logonRequest.username, logonRequest.password);
+            String role = MyUser.validateLogin(logonRequest.email, logonRequest.password);
             if (role == null) throw new IllegalArgumentException("No user found");
 
-            String token = createToken(logonRequest.username, role);
+            String token = createToken(logonRequest.email, role);
 
             return Response.ok(new AbstractMap.SimpleEntry<>("JWT", token)).build();
         } catch (JwtException | IllegalArgumentException e) {

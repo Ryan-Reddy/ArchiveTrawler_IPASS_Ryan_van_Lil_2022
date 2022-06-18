@@ -17,21 +17,16 @@ public class AccountResource {
     @Path("getall")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllShoppers() {
-        Community com = Community.getCommunity();
-        List<Object> totaalMessages = new ArrayList<>();
 
-        List<User> allUsers = com.getUsersAsList();
+        List<Object> totaalMessages = new ArrayList<>();
+        List<User> allUsers = User.getAllUsers();
 
         for (User p : allUsers) {
 
             LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
-
-//            interMessage.put("UserID", p.getUserID());
-            interMessage.put("Achternaam", p.getNaam());
-//            interMessage.put("Email", p.getEmailAdres());
+            interMessage.put("Naam", p.getNaam());
+            interMessage.put("Email", p.getEmailAdres());
             interMessage.put("role", p.getRole());
-            interMessage.put("Hoeveelheid zoekopdrachten/zoekertjes", p.getAlleZoekertjes().size());
-
 
             totaalMessages.add(interMessage);
         }
