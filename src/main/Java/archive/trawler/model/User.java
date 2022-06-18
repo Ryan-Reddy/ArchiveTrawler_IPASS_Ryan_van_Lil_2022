@@ -39,7 +39,7 @@ public class User implements NamedObject {
 
     /** Zoekt de user die hoort bij dit emailadres
      * @return de User  */
-    public User getUserByEmail(String email) {
+    public static User getUserByEmail(String email) {
         return allUsers.stream()
                 .filter(user -> user.email.equals(email))
                 .findFirst().orElse(null);

@@ -9,6 +9,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.*;
 
+import static javax.ws.rs.core.Response.ok;
+
 
 @Path("users")
 public class AccountResource {
@@ -30,26 +32,31 @@ public class AccountResource {
 
             totaalMessages.add(interMessage);
         }
-        return Response.ok(totaalMessages).build();
+        return ok(totaalMessages).build();
     }
 
-    @Path("/{userId}")
+    @Path("find_user/email={email}")
     @GET
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAccount(@PathParam("userId") String accountId) {
-        User user = Community.getCommunity().getUserByName(accountId);
+    /** The resource getAccount willreturn the user and its data.
+     * @function getAccount
+     * @param email = the email connected to the users account.
+     * @return User or NOT_FOUND */
+    public Response getAccount(@PathParam("email") String email) {
+        User theUser = User.getUserByEmail(email);
 
-        if (user != null) {
-            return Response.ok(user).build();
+        if (theUser != null) {
+            return Response.ok(theUser).build();
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
 
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/addnew?name={name}&email={email}&wachtwoord={wachtwoord}")
-
+    @Path("addnew/name={name}&email={email}&wachtwoord={wachtwoord}")
     public Response createNewUser(@PathParam("name") String name, @PathParam("email") String email, @PathParam("wachtwoord") String wachtwoord) {
 try {
         MyUser.registerUser(email, wachtwoord, name);
@@ -58,7 +65,7 @@ try {
         }
         Map<String, String> messages = new HashMap<>();
         messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, "+name);
-        return Response.ok(messages).build();
+        return ok(messages).build();
     }
 
 //    @DELETE

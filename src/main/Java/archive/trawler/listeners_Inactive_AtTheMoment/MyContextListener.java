@@ -18,10 +18,9 @@ public class MyContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        String testMail = "Coyote";
-        String testPassword = "CasaSuCasa";
-        String testName = "Ryan";
-        MyUser.registerUser(testMail, testPassword, "andereNaam");
+        MyUser.registerUser("Coyote", "CasaSuCasa", "Wilde");
+        MyUser.registerUser("syd@barrett.com", "CrazyDiamond", "Floyd");
+        MyUser.registerUser("snoop@log.bomb", "pickItUpLikeItsCold", "Ryan");
     }
 
     @Override
