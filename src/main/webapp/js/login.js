@@ -11,6 +11,7 @@ function login() {
 
     .then(function (response) {
       if (response.ok) {
+        open("http://localhost:8080/html/zoeken.html")
         return response.json();
       } //if 200 there will be a body
       else {
