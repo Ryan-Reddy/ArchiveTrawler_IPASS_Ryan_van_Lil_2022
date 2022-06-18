@@ -1,5 +1,6 @@
 package archive.trawler.webservices;
 
+import archive.trawler.Security.MyUser;
 import archive.trawler.model.Community;
 import archive.trawler.model.User;
 
@@ -25,11 +26,11 @@ public class AccountResource {
 
             LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
 
-            interMessage.put("UserID", p.getUserID());
+//            interMessage.put("UserID", p.getUserID());
             interMessage.put("Achternaam", p.getNaam());
-            interMessage.put("Email", p.getEmailAdres());
+//            interMessage.put("Email", p.getEmailAdres());
             interMessage.put("role", p.getRole());
-            interMessage.put("Hoeveelheid zoekopdrachten/zoekertjes", p.getZoekertjes().size());
+            interMessage.put("Hoeveelheid zoekopdrachten/zoekertjes", p.getAlleZoekertjes().size());
 
 
             totaalMessages.add(interMessage);
@@ -52,25 +53,25 @@ public class AccountResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("shopper/addnew/name={name}&email={email}&wachtwoord={wachtwoord}")
+    @Path("/addnew?name={name}&email={email}&wachtwoord={wachtwoord}")
 
     public Response createNewUser(@PathParam("name") String name, @PathParam("email") String email, @PathParam("wachtwoord") String wachtwoord) {
-
-        if(Community.getCommunity().getUsersAsList().stream().anyMatch(x -> name.equals(x.getEmailAdres()))){
+try {
+        MyUser.registerUser(email, wachtwoord, name);
+        } catch(Exception e) {
             return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
         }
-        new User(email,name,wachtwoord,"user");
         Map<String, String> messages = new HashMap<>();
         messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, "+name);
         return Response.ok(messages).build();
     }
 
-    @DELETE
-    @Path("shopper/delete={name}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserAccount(@PathParam("name")String name) {
-        return User.removeShopper(name)
-                ?Response.ok().build()
-                : Response.status(Response.Status.NOT_FOUND).build();
-    }
+//    @DELETE
+//    @Path("shopper/delete={name}")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response deleteUserAccount(@PathParam("name")String name) {
+//        return User.removeShopper(name)
+//                ?Response.ok().build()
+//                : Response.status(Response.Status.NOT_FOUND).build();
+//    }
 }

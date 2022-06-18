@@ -1,6 +1,6 @@
 package main;
 
-import trawler.model.Websites;
+import archive.trawler.model.Websites;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

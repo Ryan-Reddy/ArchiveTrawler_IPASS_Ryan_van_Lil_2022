@@ -1,126 +1,87 @@
 package archive.trawler.model;
 
+import archive.trawler.Security.MyUser;
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class User {
-    private String emailAdres;
-//    private String voorNaam;
+/** Klasse die gebruikt word om de users te creeeren. */
+public class User implements NamedObject {
     private String naam;
-    private String wachtwoord;
-    private String userID;
+    private String email;
     private String role;
-    private List<AlleZoekopdracht> zoekertjes;
+    private List<AlleZoekopdracht> alleZoekertjes;
+    private static List<User> allUsers = new ArrayList<>();
 
+    private @Getter User user;
 
+    /**
+     * @param emailAdres email adres, is gelijk ook de username van de inlog
+     * @param naam persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
+     */
 
-    public User(String emailAdres, String naam, String wachtwoord, String role) {
-
-        if (!Community.getCommunity().getUsers().containsKey(emailAdres)) {
-            this.emailAdres = emailAdres;
-//            this.voorNaam = voorNaam;
+    public User(String emailAdres, String naam) {
+        if (getUserByEmail(emailAdres)==null) {
+            this.email = emailAdres;
             this.naam = naam;
-            this.wachtwoord = wachtwoord;
-            this.userID = String.valueOf(Community.getCommunitySize()) + 1;
-            this.role = role;
-            Community.getCommunity().addAccount(this);
+            this.role = "user";
+            allUsers.add(this);
         }
 
     }
-    public static boolean removeShopper(String emailAdress) {
-        for (User sh : Community.getCommunity().getUsersAsList()) {
-            if(sh.getEmailAdres().equals(emailAdress)){
-                Community.getCommunity().getUsersAsList().remove(sh);
-                return true;
-            }
-        }
-        return false;
+
+    public String getRole() { return role; }
+
+    public List<User> getAllUsers() {
+        return allUsers;
     }
 
-    public String getEmailAdres() {
-        return emailAdres;
+    /** Zoekt de user die hoort bij dit emailadres
+     * @return de User  */
+    public User getUserByEmail(String email) {
+        return allUsers.stream()
+                .filter(user -> user.email.equals(email))
+                .findFirst().orElse(null);
     }
 
-    public void setEmailAdres(String emailAdres) {
-        this.emailAdres = emailAdres;
-    }
-//
-//    public String getVoorNaam() {
-//        return voorNaam;
-//    }
-//
-//    public void setVoorNaam(String voorNaam) {
-//        this.voorNaam = voorNaam;
-//    }
-
+/** geeft de naam van deze gebruiker
+ * @return String met de naam */
     public String getNaam() {
         return naam;
     }
-
+    /** kan gebruikt worden om de naam van deze gebruiker te wijzigen */
     public void setNaam(String naam) {
         this.naam = naam;
     }
 
-    public String getWachtwoord() {
-        return wachtwoord;
+    /** Zoekt alle zoekopdrachten van deze User
+     * @return lijst met alleZoekopdrachten */
+    public List<AlleZoekopdracht> getAlleZoekertjes() {
+        return alleZoekertjes;
     }
 
-    public void setWachtwoord(String wachtwoord) {
-        this.wachtwoord = wachtwoord;
-    }
-
-    public List<AlleZoekopdracht> getZoekertjes() {
-        return zoekertjes;
-    }
-
-    public void setZoekertjes(ArrayList<AlleZoekopdracht> zoekertjes) {
-        this.zoekertjes = zoekertjes;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    //    public boolean verifyUser(String userName,String userPassword) {
-//        for
-//    }
-
-
+    /** returned de naam van deze User, dit bevat meestal voor en achternaam
+     * @return String met de naam*/
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return Objects.equals(getEmailAdres(), user.getEmailAdres()) && Objects.equals(getNaam(), user.getNaam()) && Objects.equals(getWachtwoord(), user.getWachtwoord()) && Objects.equals(getUserID(), user.getUserID()) && Objects.equals(getRole(), user.getRole()) && Objects.equals(getZoekertjes(), user.getZoekertjes());
+    public String getName() {
+        return naam;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getEmailAdres(), getNaam(), getWachtwoord(), getUserID(), getRole(), getZoekertjes());
+    /** returned emailadres van deze User
+     * @return String van het email adres*/
+    public String getEmailAdres() {
+        return email;
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "emailAdres='" + emailAdres + '\'' +
-                ", naam='" + naam + '\'' +
-                ", wachtwoord='" + wachtwoord + '\'' +
-                ", userID='" + userID + '\'' +
-                ", role='" + role + '\'' +
-                ", zoekertjes=" + zoekertjes +
-                '}';
+    /** kan gebruikt worden om een email adres bij dit account te wijzigen
+     * @return boolean of het gelukt is */
+    public boolean setEmail(String newEmail) {
+        try {
+            this.email = email;
+            MyUser.getMyUserByEmail(email).setEmail(email);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

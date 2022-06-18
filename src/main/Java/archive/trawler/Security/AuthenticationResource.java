@@ -28,17 +28,17 @@ public class AuthenticationResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response authenticateUser(LoginRequest logonRequest) {
-//        try {
-//            String role = MyUser.validateLogin(logonRequest.username, logonRequest.password);
-//            if (role == null) throw new IllegalArgumentException("No user found");
-//
-//            String token = createToken(logonRequest.username, role);
-//
-//            return Response.ok(new AbstractMap.SimpleEntry<>("JWT", token)).build();
-//        } catch (JwtException | IllegalArgumentException e) {
-//            return Response.status(Response.Status.UNAUTHORIZED).build(); //let op: geen body
-//        }
-        return Response.ok("Allllgooood authentication resource").build();
+        try {
+            String role = MyUser.validateLogin(logonRequest.username, logonRequest.password);
+            if (role == null) throw new IllegalArgumentException("No user found");
+
+            String token = createToken(logonRequest.username, role);
+
+            return Response.ok(new AbstractMap.SimpleEntry<>("JWT", token)).build();
+        } catch (JwtException | IllegalArgumentException e) {
+            return Response.status(Response.Status.UNAUTHORIZED).build(); //let op: geen body
+        }
+//        return Response.ok("Allllgooood authentication resource").build();
     }
 
     private String createToken(String username, String role) throws JwtException {
