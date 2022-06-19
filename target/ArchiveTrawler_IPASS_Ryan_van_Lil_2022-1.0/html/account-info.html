@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="../style-index.css" rel="stylesheet"/>
+
+    <link
+            href="assets/icons/favicon-16x16.png"
+            rel="icon"
+            sizes="16x16"
+            type="image/png"
+    />
+    <title>Account info</title>
+</head>
+
+<body>
+<h1>Account info</h1>
+<form id="postaccount">
+    <label for="firstname">Voornaam:</label><input class="inputfield" id="firstname" name="firstname" type="text"/>
+    <label for="achternaam">Achternaam:</label><input class="inputfield" id="achternaam" name="achternaam" type="text"/><br>
+    <label for="email">E-mail adres:</label><input class="inputfield" id="email" name="email" type="text"/><br>
+
+    <input id="send_json" onclick="sendJsonData()" type="button" value="send json"/>
+    <input id="send_formdata" onclick="sendFormData()" type="button" value="send formdata"/>
+    <span id="postresponse"></span>
+</form>
+<hr>
+<br>
+<a href="reset-password.html">
+    <button>Wachtwoord resetten</button>
+</a>
+</body>
+
+</html>
