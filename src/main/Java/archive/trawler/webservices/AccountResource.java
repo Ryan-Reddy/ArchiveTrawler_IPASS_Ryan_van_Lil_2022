@@ -16,10 +16,17 @@ import static javax.ws.rs.core.Response.ok;
 @Path("/users")
 public class AccountResource {
 
+    /** function getAllUsers
+     * This function returns all users into one neat JSON
+     * @return JSON
+     */
     @GET
     @Path("/getall")
+    // TODO functie getAllUsers
+    //  werkt niet meer sinds implementatie van de BLOB
+    //  labels: RESOURCES
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllShoppers() {
+    public Response getAllUsers() {
 
         List<Object> totaalMessages = new ArrayList<>();
         List<User> allUsers = User.getAllUsers();
@@ -36,14 +43,13 @@ public class AccountResource {
         return ok(totaalMessages).build();
     }
 
+     /** The resource getAccount willreturn the user and its data.
+     * @param email = the email connected to the users account.
+     * @return User or NOT_FOUND */
     @Path("find_user/{email}")
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    /** The resource getAccount willreturn the user and its data.
-     * @function getAccount
-     * @param email = the email connected to the users account.
-     * @return User or NOT_FOUND */
     public Response getAccount(@PathParam("email") String email) {
         User theUser = User.getUserByEmail(email);
 
@@ -54,8 +60,7 @@ public class AccountResource {
         }
     }
 
-    /**
-     * @function deleteUserAccount
+    /** deleteUserAccount
      * will delete the MyUser account associated with this email adres.
      * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
      */

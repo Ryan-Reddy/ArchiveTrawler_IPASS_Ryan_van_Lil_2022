@@ -21,7 +21,6 @@ public class User implements NamedObject, Serializable {
      * @param emailAdres email adres, is gelijk ook de username van de inlog
      * @param naam persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
      */
-
     public User(String emailAdres, String naam) {
         if (getUserByEmail(emailAdres)==null) {
             this.email = emailAdres;
@@ -84,11 +83,13 @@ public class User implements NamedObject, Serializable {
      * @return boolean of het gelukt is */
     public boolean setEmail(String newEmail) {
         try {
-            this.email = email;
-            MyUser.getMyUserByEmail(email).setEmail(email);
+            MyUser.getMyUserByEmail(email).setEmail(newEmail);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
+    // TODO schrijf functie addZoekertjeAanAlleZoekrtjes
+    //  scrhijf een functie die het mogelijk maakt een zoekopdracht op te slaan in de lijst
+    //  labels: User, zoekopdracht opslaan
 }
