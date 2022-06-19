@@ -2,6 +2,7 @@ package archive.trawler.webservices;
 
 import archive.trawler.security.MyUser;
 import archive.trawler.model.User;
+import archive.trawler.webservices.dto.NewAccount;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -70,15 +71,28 @@ public class AccountResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("addnew/name={name}&email={email}&wachtwoord={wachtwoord}")
-    public Response createNewUser(@PathParam("name") String name, @PathParam("email") String email, @PathParam("wachtwoord") String wachtwoord) {
+    @Path("addnew")
+    public Response createNewUser(NewAccount info) {
         try {
-            MyUser.registerUser(email, wachtwoord, name);
+            MyUser.registerUser(info.email, info.password, info.name);
         } catch (Exception e) {
             return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
         }
         Map<String, String> messages = new HashMap<>();
-        messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, "+name);
+        messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, "+info.name);
         return ok(messages).build();
     }
+//    @POST
+//    @Produces(MediaType.APPLICATION_JSON)
+//    @Path("addnew/name={name}&email={email}&wachtwoord={wachtwoord}")
+//    public Response createNewUser(@PathParam("name") String name, @PathParam("email") String email, @PathParam("wachtwoord") String wachtwoord) {
+//        try {
+//            MyUser.registerUser(email, wachtwoord, name);
+//        } catch (Exception e) {
+//            return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
+//        }
+//        Map<String, String> messages = new HashMap<>();
+//        messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, "+name);
+//        return ok(messages).build();
+//    }
 }

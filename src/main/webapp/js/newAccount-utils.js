@@ -35,7 +35,7 @@ function formulierCheck() {
   if (emailEcht === false) {
     console.log('email is nep');
     emailElement.classList.replace('inputfield', 'formIncomplete');
-    // alert("Uw klopt niet, \r\n voer aub een geldig e-mail adres in.");
+    // alert("Uw email klopt niet, \r\n voer aub een geldig e-mail adres in.");
   }
   if (ww.length < 6) {
     console.log('ww incompleet');

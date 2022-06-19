@@ -36,8 +36,8 @@ async function sendJsonData(event) {
     body: JSON.stringify(jsonRequestBody),
     headers: {'Content-Type': 'application/json'},
   };
-
-  const response = await fetch('/restservices/accounts', fetchOptions);
+  // http://localhost:8080/restservices/users/addnew/name=Ryry&email=ruru@fufu.mumu&wachtwoord=magicword
+  const response = await fetch('/restservices/users/addnew/', fetchOptions);
   element.textContent = `Statuscode: ${response.status}`;
 }
 
