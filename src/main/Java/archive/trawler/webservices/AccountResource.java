@@ -24,7 +24,6 @@ public class AccountResource {
         List<User> allUsers = User.getAllUsers();
 
         for (User p : allUsers) {
-
             LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
             interMessage.put("Naam", p.getNaam());
             interMessage.put("Email", p.getEmailAdres());

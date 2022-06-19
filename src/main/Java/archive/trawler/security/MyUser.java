@@ -5,6 +5,7 @@ import archive.trawler.model.User;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +13,13 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 /** Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata */
-public class MyUser implements Principal {
+public class MyUser implements Principal, Serializable {
     private @Getter @Setter String email;  //
     private String password; //plz only store hashed password
     private @Getter String role;
     private @Getter User user;
+
+    private static @Getter List<MyUser> allMyUsers = new ArrayList<>();
 
     /**
      * Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata.
@@ -39,7 +42,6 @@ public class MyUser implements Principal {
         return role;
     }
 
-    private static List<MyUser> allMyUsers = new ArrayList<>();
 
     public static String validateLogin(String email, String password) {
         MyUser toLogin = getMyUserByEmail(email);
@@ -77,6 +79,7 @@ public class MyUser implements Principal {
             MyUser newUser;
             try {
                 newUser = new MyUser(email, password);
+                System.out.println(newUser);
                 return addUser(newUser);
             } catch (IllegalArgumentException e) {
                 return false;
@@ -107,6 +110,9 @@ public class MyUser implements Principal {
                 catch (Exception e) {
                     return false;
                 }
+    }
 
+    public static void setAllMyUsers(List<MyUser> newAllMyUsers) {
+        MyUser.allMyUsers = newAllMyUsers;
     }
 }

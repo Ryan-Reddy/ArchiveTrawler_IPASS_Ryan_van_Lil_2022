@@ -65,10 +65,15 @@
             <artifactId>lombok</artifactId> <!-- Lombok for easy getters/setters -->
             <version>1.18.22</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-api</artifactId> &lt;!&ndash; ultimate java logging tool &ndash;&gt;-->
+<!--            <version>2.0.0-alpha7</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId> <!-- ultimate java logging tool -->
-            <version>2.0.0-alpha7</version>
+            <artifactId>slf4j-nop</artifactId> <!-- secondary logger for azure -->
+            <version>2.0.0-alpha1</version>
         </dependency>
 
         <dependency>

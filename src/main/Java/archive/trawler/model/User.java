@@ -3,11 +3,12 @@ package archive.trawler.model;
 import archive.trawler.security.MyUser;
 import lombok.Getter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /** Klasse die gebruikt word om de users te creeeren. */
-public class User implements NamedObject {
+public class User implements NamedObject, Serializable {
     private String naam;
     private String email;
     private String role;
@@ -26,9 +27,15 @@ public class User implements NamedObject {
             this.email = emailAdres;
             this.naam = naam;
             this.role = "user";
-            allUsers.add(this);
+            addUserToList(this);
         }
+    }
 
+    public static void setUsers(List<User> loadedMyUsers) {
+    }
+
+    public void addUserToList(User userToList){
+        allUsers.add(userToList);
     }
 
     public String getRole() { return role; }

@@ -1,9 +1,10 @@
 package archive.trawler.model;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class AlleZoekopdracht {
+public class AlleZoekopdracht implements Serializable {
     private List<Archief> archiefKeuzes;
     private String keyWords;
     private String voorNaam;

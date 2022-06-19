@@ -1,26 +1,31 @@
-package archive.trawler.model;
-
-import archive.trawler.security.MyUser;
-
-import java.util.List;
-
-public class Community {
-    private static Community community = new Community();
-
-//    private static Map<String, User> users = new HashMap<>();
-//    private static Map<String, MyUser> MyUsers = new HashMap<>();
-
-    private static List<User> users;
-    private static List<MyUser> MyUsers;
-
-    public static Community getCommunity() {
-        return community;
-    }
-
-    public static void setCommunity(Community community) {
-        Community.community = community;
-    }
-
+//package archive.trawler.model;
+//
+//import archive.trawler.security.MyUser;
+//
+//import java.util.List;
+//
+//public class Community {
+//    private static Community community = new Community();
+//
+////    private static Map<String, User> users = new HashMap<>();
+////    private static Map<String, MyUser> MyUsers = new HashMap<>();
+//
+//    private static List<User> users;
+//    private static List<MyUser> MyUsers;
+//
+//    public static Community getCommunity() {
+//        return community;
+//    }
+//
+//    public static void setCommunity(Community community) {
+//        Community.community = community;
+//    }
+//
+//
+//
+//
+//
+//
 //    public List<User> getUsers() {
 //        return User.getAllUsers();
 //    }
@@ -30,12 +35,12 @@ public class Community {
 //                .collect(Collectors.toList());
 //        return userslist;
 //    }
-
+//
 //    public static int getCommunitySize() {
 //        List l = (List) users;
 //        return l.size();
 //    }
-
+//
 //    public static User getUserByName(String username) {
 //        return users.get(username);
 //    }
@@ -49,8 +54,11 @@ public class Community {
 //        }
 //    }
 //
+//    public static void setMyUsers(List<MyUser> myUsers) {
+//        MyUsers = myUsers;
+//    }
 //
-//    public void setUsers(Map<String, User> users) {
+//    public void setUsers(List<User> users) {
 //        this.users = users;
 //    }
-}
+//}
