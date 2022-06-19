@@ -35,7 +35,7 @@ public class AccountResource {
         return ok(totaalMessages).build();
     }
 
-    @Path("find_user/email={email}")
+    @Path("find_user/{email}")
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -53,30 +53,32 @@ public class AccountResource {
         }
     }
 
+    /**
+     * @function deleteUserAccount
+     * will delete the MyUser account associated with this email adres.
+     * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
+     */
+    @DELETE
+    @Path("find_user/{email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteUserAccount(@PathParam("email") String email) {
+        return MyUser.deleteMyUserAccount(email)
+                ? Response.ok(String.format("the user %s has been deleted..", email)).build()        // give ok http response if it works
+                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+    }
+
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("addnew/name={name}&email={email}&wachtwoord={wachtwoord}")
     public Response createNewUser(@PathParam("name") String name, @PathParam("email") String email, @PathParam("wachtwoord") String wachtwoord) {
-try {
-        MyUser.registerUser(email, wachtwoord, name);
-        } catch(Exception e) {
+        try {
+            MyUser.registerUser(email, wachtwoord, name);
+        } catch (Exception e) {
             return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
         }
         Map<String, String> messages = new HashMap<>();
         messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, "+name);
         return ok(messages).build();
-    }
-
-    /** @function deleteUserAccount
-     * will delete the MyUser account associated with this email adres.
-     * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user. */
-    @DELETE
-    @Path("delete={email}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserAccount(@PathParam("email")String email) {
-        return MyUser.deleteMyUserAccount(email)
-                ? Response.ok(String.format("the user %s has been deleted..",email)).build()        // give ok http response if it works
-                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
     }
 }

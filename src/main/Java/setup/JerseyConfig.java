@@ -9,5 +9,4 @@ public class JerseyConfig  extends ResourceConfig {
     public JerseyConfig() {
         packages("archive.trawler.webservices", "archive.trawler.Security");
     }
-
 }
