@@ -1,6 +1,6 @@
 package MyUser;
 
-import archive.trawler.Security.MyUser;
+import archive.trawler.security.MyUser;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package archive.trawler.Security;
+package archive.trawler.security;
 
 
 import archive.trawler.model.User;

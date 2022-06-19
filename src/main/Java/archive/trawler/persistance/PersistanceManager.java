@@ -2,11 +2,13 @@ package archive.trawler.persistance;
 
 
 import archive.trawler.model.Community;
+import archive.trawler.model.User;
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
 
 import java.io.*;
+import java.util.List;
 
 public class PersistanceManager {
 //    private final static String ENDPOINT = "https://ryanreddyipass.blob.core.windows.net//";
@@ -19,10 +21,16 @@ public class PersistanceManager {
 //            .containerName(CONTAINER)
 //            .buildClient();
 
-    private static BlobContainerClient blobContainer = new BlobContainerClientBuilder()
+    private static BlobContainerClient usersContainer = new BlobContainerClientBuilder()
             .endpoint("https://ryanreddyipass.blob.core.windows.net/")
-            .sasToken("sp=racwdli&st=2022-06-11T01:06:50Z&se=2030-06-11T09:06:50Z&spr=https&sv=2020-08-04&sr=c&sig=c0EznArgul0zY%2FCfXzCrNxjWYtkmH0de%2FLdd5gUcm68%3D")
-            .containerName("communitycontainer")
+            .sasToken("sp=racwdli&st=2022-06-19T16:01:49Z&se=2032-06-20T00:01:49Z&spr=https&sv=2021-06-08&sr=c&sig=CbL68sVcm6GMYXKpRRiygECE3HY5q0YDeW83MkiJtrs%3D")
+            .containerName("userscontainer")
+            .buildClient();
+
+    private static BlobContainerClient myusersContainer = new BlobContainerClientBuilder()
+            .endpoint("https://ryanreddyipass.blob.core.windows.net/")
+            .sasToken("sp=racwdli&st=2022-06-19T16:07:15Z&se=2032-06-20T00:07:15Z&spr=https&sv=2021-06-08&sr=c&sig=aOESXwnMC8jGF8oB1pu4J5llyfpusCkmQtf0Nz4%2BCys%3D")
+            .containerName("myuserscontainer")
             .buildClient();
     //=========================================================================================================
 
@@ -30,15 +38,15 @@ public class PersistanceManager {
     public static void loadCommunityFromAzure() throws IOException, ClassNotFoundException {
 
         // creeert een blobcontainer als deze nog niet bestond
-        if(!blobContainer.exists()) {
-            blobContainer.create();
+        if (!usersContainer.exists()) {
+            usersContainer.create();
         }
 
 
-        if (blobContainer.exists()) {
+        if (usersContainer.exists()) {
 
             /* Maak een blobclient aan */
-            BlobClient blob = blobContainer.getBlobClient("loaded_community");
+            BlobClient blob = usersContainer.getBlobClient("loaded_user");
             if (blob.exists()) {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 blob.download(baos);
@@ -58,18 +66,21 @@ public class PersistanceManager {
     }
 
 
-    public static void saveCommunityFromAzure() throws IOException {
+    public static void saveCommunityToAzure() throws IOException {
         // creeert een blobcontainer als deze nog niet bestond
-        if(!blobContainer.exists()) {
-            blobContainer.create();
+        if (!usersContainer.exists()) {
+            usersContainer.create();
         }
 
-        BlobClient blob = blobContainer.getBlobClient("world_blob");
-        Community communityToSave = Community.getCommunity();
+
+        BlobClient blob = usersContainer.getBlobClient("users");
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(communityToSave);
+
+        List UserstoSave = User.getAllUsers();
+//        Community communityToSave = Community.getCommunity();
+        oos.writeObject(UserstoSave);
 
         byte[] bytez = baos.toByteArray();
 

@@ -1,6 +1,6 @@
 package archive.trawler.model;
 
-import archive.trawler.Security.MyUser;
+import archive.trawler.security.MyUser;
 import lombok.Getter;
 
 import java.util.ArrayList;

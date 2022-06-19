@@ -148,7 +148,7 @@ Use case templates, per use case een paragraaf met de template beschrijving e.d.
 
 <br/>
 
-#### ID 1.2   Naam Wachtwoord wijzigen of opvragen.
+#### ID 1.2   Naam Wachtwoord wijzigen.
 | Actoren              | User                                                                                                                                                                             |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Wachtwoord van een bestaand account wijzigen.                                                                                                                                    |

@@ -1,6 +1,6 @@
-package archive.trawler.Security;
+package archive.trawler.security;
 
-import archive.trawler.Security.dto.LoginRequest;
+import archive.trawler.security.dto.LoginRequest;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

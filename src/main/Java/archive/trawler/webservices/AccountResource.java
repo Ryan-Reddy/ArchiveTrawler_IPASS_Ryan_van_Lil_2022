@@ -1,7 +1,6 @@
 package archive.trawler.webservices;
 
-import archive.trawler.Security.MyUser;
-import archive.trawler.model.Community;
+import archive.trawler.security.MyUser;
 import archive.trawler.model.User;
 
 import javax.ws.rs.*;
@@ -13,11 +12,11 @@ import static java.lang.String.format;
 import static javax.ws.rs.core.Response.ok;
 
 
-@Path("users")
+@Path("/users")
 public class AccountResource {
 
     @GET
-    @Path("getall")
+    @Path("/getall")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllShoppers() {
 

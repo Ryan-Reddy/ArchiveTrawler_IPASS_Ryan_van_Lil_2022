@@ -1,4 +1,4 @@
-package archive.trawler.Security.dto;
+package archive.trawler.security.dto;
 
 public class LoginRequest {
     public String email;
