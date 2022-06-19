@@ -1,5 +1,5 @@
 // Bind pagina elementen aan const
-const doc = document.getElementById.bind(document);
+// let doc = document.getElementById.bind(document);
 
 /** Deze functie controleert of een email echt een email is
  *   @Function checkEmailIsEchtEmail
@@ -12,17 +12,23 @@ function checkEmailIsEchtEmail(email) {
 
 /** This function should check wether the password is correct.
  * rules:
- * -password is at least 6 digits
+ * -password is ten minste 6 tekens lang
+ * - email is echt
  *
  * @Function wachtwoordCheck
  * @returns boolean
  */
 function formulierCheck() {
+  // let doc = document.getElementById.bind(document);
+
   // Bind pagina elementen aan const
-  const ww = doc.getElementById('password').value;
-  const email = doc.getElementById('email').value;
-  const emailElement = doc.getElementById('email');
-  const passwordElement = doc.getElementById('password');
+  const ww = document.getElementById('password').value;
+  const email = document.getElementById('email').value;
+  const emailElement = document.getElementById('email');
+  const passwordElement = document.getElementById('password');
+  emailElement.addEventListener("mouseover", function(){
+    emailElement.style.backgroundColor = "#ccc";
+  }, false);
 
   // check of de email een email format heeft, geeft boolean terug
   const emailEcht = checkEmailIsEchtEmail(email);
