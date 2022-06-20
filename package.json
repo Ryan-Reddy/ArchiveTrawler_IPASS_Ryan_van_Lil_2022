@@ -23,10 +23,6 @@
     "eslint-plugin-import": "^2.26.0"
   },
   "scripts": {
-    "test:eslint": "eslint src/**/*.js",
-
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch",
-    "start": "node server.js"
+    "test:eslint": "eslint src/**/*.js"
   }
 }
