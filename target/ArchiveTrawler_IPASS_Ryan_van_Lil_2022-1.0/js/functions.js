@@ -63,7 +63,7 @@ async function sendNewAccount(event) {
   };
 
   // http://localhost:8080/restservices/users/addnew/name=Ryry&email=ruru@fufu.mumu&wachtwoord=magicword
-  let response = await fetch('/restservices/users/addnew', fetchOptions)
+  let response = await fetch('/restservices/users/addnew/', fetchOptions)
 //
 //     .then(async function (response) {
 //       if (response.ok) { // als er een nieuw account gecreeerd is dan inloggen
