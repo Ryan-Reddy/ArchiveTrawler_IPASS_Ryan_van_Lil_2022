@@ -1,5 +1,4 @@
 // Bind pagina elementen aan const
-// let doc = document.getElementById.bind(document);
 
 /** Deze functie controleert of een email echt een email is
  *   @Function checkEmailIsEchtEmail
@@ -19,7 +18,6 @@ function checkEmailIsEchtEmail(email) {
  * @returns boolean
  */
 function formulierCheck() {
-  // let doc = document.getElementById.bind(document);
 
   // Bind pagina elementen aan const
   const ww = document.getElementById('password').value;
@@ -55,8 +53,8 @@ function formulierCheck() {
       'Uw account is aangemaakt, u ontvangt van ons een email met daarin een bevestigingslink. Om uw account te kunnen gebruiken, moet u bevestigen dat uw opgegeven e-mailadres geldig is, door klikken op de bevestigingslink die in uw e-mail is verzonden.\n'
       + 'Als u op de bevestigingslink klikt, wordt u doorgestuurd naar de inlogpagina van uw account. Typ uw inloggegevens en klik op Inloggen om je account te activeren.',
     );
-    sendEmail(email);
-    sendJsonData();
+    // sendEmail(email);
+    sendNewAccount();
   }
 }
 

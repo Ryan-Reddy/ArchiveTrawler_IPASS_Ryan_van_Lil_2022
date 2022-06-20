@@ -7,27 +7,28 @@ const toBase64 = (file) => new Promise((resolve, reject) => {
   reader.addEventListener('error', (error) => reject(error));
 });
 
-async function sendFormData(event) {
-  const element = document.querySelector('#postresponse');
+// async function sendFormData(event) {
+//   const element = document.querySelector('#postresponse');
+//
+//   const file = document.querySelector('#fileupload').files[0];
+//   const formData = new FormData(document.querySelector('#postaccount'));
+//   formData.append('avatarBase64', await toBase64(file));
+//
+//   const fetchOptions = {
+//     method: 'POST',
+//     body: new URLSearchParams(formData),
+//   };
+//
+//   const response = await fetch('/restservices/accounts', fetchOptions);
+//   element.textContent = `Statuscode: ${response.status}`;
+// }
 
-  const file = document.querySelector('#fileupload').files[0];
-  const formData = new FormData(document.querySelector('#postaccount'));
-  formData.append('avatarBase64', await toBase64(file));
+async function sendNewAccount(event) {
+  // const element = document.querySelector('#postresponse');
+  // const file = document.querySelector('#fileupload').files[0];
+  // const jsonRequestBody = {avatarBase64: await toBase64(file)}; // TODO re implement for security
 
-  const fetchOptions = {
-    method: 'POST',
-    body: new URLSearchParams(formData),
-  };
 
-  const response = await fetch('/restservices/accounts', fetchOptions);
-  element.textContent = `Statuscode: ${response.status}`;
-}
-
-async function sendJsonData(event) {
-  const element = document.querySelector('#postresponse');
-
-  const file = document.querySelector('#fileupload').files[0];
-  const jsonRequestBody = {avatarBase64: await toBase64(file)};
   const formData = new FormData(document.querySelector('#postaccount'));
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
@@ -37,7 +38,7 @@ async function sendJsonData(event) {
     headers: {'Content-Type': 'application/json'},
   };
   // http://localhost:8080/restservices/users/addnew/name=Ryry&email=ruru@fufu.mumu&wachtwoord=magicword
-  const response = await fetch('/restservices/users/addnew/', fetchOptions);
+  const response = await fetch('/restservices/users/addnew', fetchOptions);
   element.textContent = `Statuscode: ${response.status}`;
 }
 
