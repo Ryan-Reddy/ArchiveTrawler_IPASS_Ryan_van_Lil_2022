@@ -12,7 +12,7 @@ import java.util.*;
 import static java.lang.String.format;
 import static javax.ws.rs.core.Response.ok;
 
-
+// TODO fix the fact that these restresources will run on tomcat locally but not on heroku
 @Path("users")
 public class AccountResource {
 
