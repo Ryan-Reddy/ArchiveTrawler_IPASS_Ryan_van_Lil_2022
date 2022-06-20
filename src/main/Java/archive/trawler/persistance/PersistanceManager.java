@@ -8,6 +8,7 @@ import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PersistanceManager {
@@ -97,6 +98,10 @@ public class PersistanceManager {
                 ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
                 ObjectInputStream ois = new ObjectInputStream(bais);
                 List<User> loadedUsers = (List<User>) ois.readObject();
+
+                System.out.println("~~~~~loadedMyUsers");
+                System.out.println(loadedUsers.stream().iterator());
+                System.out.println("~~~~~loadedMyUsers");
                 User.setAllUsers(loadedUsers);
                 baos.close();
                 bais.close();
@@ -111,6 +116,11 @@ public class PersistanceManager {
                     ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
                     ObjectInputStream ois = new ObjectInputStream(bais);
                     List<MyUser> loadedMyUsers = (List<MyUser>) ois.readObject();
+
+                    System.out.println("~~~~~loadedMyUsers");
+                    System.out.println(loadedMyUsers.stream().iterator());
+                    System.out.println("~~~~~loadedMyUsers");
+
                     MyUser.setAllMyUsers(loadedMyUsers);
                     baos.close();
                     bais.close();

@@ -41,7 +41,6 @@ public class AccountResource {
             interMessage.put("allUsers",allUsers.toString());
             totaalMessages.add(interMessage);
         }
-        totaalMessages.add("AccountResource.java 44:9 - WTF WHY U NO WORK ?");
         return ok(totaalMessages).build();
     }
 

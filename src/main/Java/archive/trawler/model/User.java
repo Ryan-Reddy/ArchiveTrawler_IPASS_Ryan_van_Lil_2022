@@ -13,7 +13,7 @@ public class User implements NamedObject, Serializable {
     private String email;
     private String role;
     private List<AlleZoekopdracht> alleZoekertjes;
-    private static List<User> allUsers = new ArrayList<>();
+    private static List<User> allUsers;
 
     private @Getter User user;
 
@@ -22,7 +22,6 @@ public class User implements NamedObject, Serializable {
      * @param naam persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
      */
     public User(String email, String naam) {
-//        if (getUserByEmail(email)==null) {
             this.email = email;
             this.naam = naam;
             this.role = "user";
