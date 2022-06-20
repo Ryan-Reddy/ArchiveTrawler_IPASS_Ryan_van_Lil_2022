@@ -41,8 +41,6 @@ public class PersistanceManager {
 //        if (!usersContainer.exists()) {
 //            usersContainer.create(); TODO reinsert
 //        }
-
-
         if (myusersContainer.exists()) {
             System.out.println("loading MyUsers from azure");
             /* Maak een blobclient aan */
@@ -58,34 +56,31 @@ public class PersistanceManager {
                 List<MyUser> loadedMyUsers = (List<MyUser>) ois.readObject();
                 MyUser.setAllMyUsers(loadedMyUsers);
 
-                                baos.close();
+                baos.close();
                 bais.close();
                 ois.close();
             }
         }
     }
 
-
     public static void saveMyUsersToAzure() throws IOException {
         // creeert een blobcontainer als deze nog niet bestond
 //        if (!myusersContainer.exists()) {
 //            myusersContainer.create(); TODO reinsert
 //        }
-
         BlobClient blob = myusersContainer.getBlobClient("myUsers12");
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
-
 //        List myUserstoSave = MyUser.getAllMyUsers();
         oos.writeObject(MyUser.getAllMyUsers());
-
-                byte[] bytez = baos.toByteArray();
+        byte[] bytez = baos.toByteArray();
         ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
         blob.upload(bais, bytez.length, true);
         baos.close();
         oos.close();
         bais.close();
     }
+
     public static void loadUsersFromAzure() throws IOException, ClassNotFoundException {
 //
 //        // creeert een blobcontainer als deze nog niet bestond
@@ -113,6 +108,7 @@ public class PersistanceManager {
             }
         }
     }
+
     public static void saveUsersToAzure() throws IOException {
         // creeert een blobcontainer als deze nog niet bestond
 //        if (!myusersContainer.exists()) {
@@ -120,13 +116,13 @@ public class PersistanceManager {
 //        }
 
         BlobClient blob = usersContainer.getBlobClient("userlist");
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
 
 //        List myUserstoSave = MyUser.getAllMyUsers();
         oos.writeObject(User.getAllUsers());
 
-                byte[] bytez = baos.toByteArray();
+        byte[] bytez = baos.toByteArray();
         ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
         blob.upload(bais, bytez.length, true);
         baos.close();

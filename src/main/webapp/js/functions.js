@@ -52,7 +52,6 @@ async function sendNewAccount(event) {
 
   let formData = new FormData(document.querySelector('#newaccount-form'));
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
-  console.log(formData.stringify);
 
   const fetchOptions = {
     method: 'POST',
@@ -64,10 +63,13 @@ async function sendNewAccount(event) {
 
   // http://localhost:8080/restservices/users/addnew/name=Ryry&email=ruru@fufu.mumu&wachtwoord=magicword
   let response = await fetch('/restservices/users/addnew/', fetchOptions)
-//
-//     .then(async function (response) {
-//       if (response.ok) { // als er een nieuw account gecreeerd is dan inloggen
-//         let authJsonRequestBody = {};
+
+
+    .then(async function (response) {
+      if (response.ok) { // als er een nieuw account gecreeerd is dan inloggen
+        throw "welcome! je nieuwe account is aangemaakt"
+      }
+        // let authJsonRequestBody = {};
 //         authJsonRequestBody.put(formData.email);
 //         authJsonRequestBody.put(formData.password);
 //         const autFetchOptions = {
@@ -81,16 +83,16 @@ async function sendNewAccount(event) {
 //       open("http://localhost:8080/html/zoeken.html")
 //       return response.json();
 //     } //if 200 there will be a body
-// else
-//   {
-//     throw "Wrong username/password";
-//   }    //if !200 there will be no body
-// }
-// )
-
-.then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
-  .then(res => console.log(res))
-  .catch(error => console.log(error)); //to handle the possibly thrown error
+else
+  {
+    throw "Wrong username/password";
+  }    //if !200 there will be no body
+}
+)
+//
+// .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
+//   .then(res => console.log(res))
+//   .catch(error => console.log(error)); //to handle the possibly thrown error
 }
 
 

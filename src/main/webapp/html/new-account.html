@@ -18,7 +18,10 @@
 </head>
 
 <body>
-<form autocomplete="on" id="newaccount-form">
+<main>
+    <h1>Maak een nieuw account.</h1>
+
+    <form autocomplete="on" id="newaccount-form">
 
     <label for="name">Naam:</label>
     <input autocomplete="name" class="inputfield" id="name" name="name" placeholder="Naam" type="text"/>
@@ -28,7 +31,7 @@
         <label for="email">E-mail adres:</label>
         <input autocomplete="email" class="inputfield" id="email" name="email"
                onclick="switchIncompleteNormaleStijl('email')" placeholder="jouwnaam@voorbeeld.com"
-               required type="email"/>sdasdasdas<br>
+               required type="email"/><br>
         <!-- tooltip tekst -->
         <span class="tooltiptext-mail">Voer een geldig email adres in, bijvoorbeeld jouwnaam@voorbeeld.com.</span>
     </div>
@@ -52,6 +55,7 @@
     <span id="postresponse"></span>
 </form>
 <input id="createAccButton" onclick="formulierCheck()" type="button" value="formulierCheck en Creer een account">
+</main>
 </body>
 
 </html>

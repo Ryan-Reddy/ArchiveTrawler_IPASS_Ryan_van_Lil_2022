@@ -38,7 +38,6 @@ public class AuthenticationResource {
         } catch (JwtException | IllegalArgumentException e) {
             return Response.status(Response.Status.UNAUTHORIZED).build(); //let op: geen body
         }
-//        return Response.ok("Allllgooood authentication resource").build();
     }
 
     private String createToken(String username, String role) throws JwtException {
