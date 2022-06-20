@@ -13,7 +13,7 @@ import static java.lang.String.format;
 import static javax.ws.rs.core.Response.ok;
 
 
-@Path("/users")
+@Path("users")
 public class AccountResource {
 
     /** function getAllUsers
@@ -21,7 +21,7 @@ public class AccountResource {
      * @return JSON
      */
     @GET
-    @Path("/getall")
+    @Path("getall")
     // TODO functie getAllUsers
     //  werkt niet meer sinds implementatie van de BLOB
     //  labels: RESOURCES
