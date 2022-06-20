@@ -7,8 +7,7 @@
     <artifactId>ArchiveTrawler_IPASS_Ryan_van_Lil_2022</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>ReferenceProject</name>                                <!--    CHANGED -->
-<!--    <name>ArchiveTrawler_IPASS_Ryan_van_Lil_2022</name>-->
+    <name>ArchiveTrawler_IPASS_Ryan_van_Lil_2022</name> <!-- changed this in -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
