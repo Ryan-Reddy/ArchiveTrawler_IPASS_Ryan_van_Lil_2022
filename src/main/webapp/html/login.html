@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="/style-index.css" rel="stylesheet" />
+    <link href="/style-index.css" rel="stylesheet"/>
     <link
             rel="icon"
             type="image/png"
@@ -15,24 +15,25 @@
 </head>
 
 <body>
-    <h1>Log in</h1>
-    <form id="login_account">
-        <label for="email">Email:</label><input id="email" name="email" type="text" /><br>
-        <label for="password">Wachtwoord:</label><input id="password" name="password" type="text" /><br><br>
+<h1>Log in</h1>
+<form id="login_account">
+    <label for="email">Email:</label>
+    <input autocomplete="email" id="email" name="email" type="email" required/><br>
 
-        <input id="login()_button" onclick="login()" type="button" value="login()_button" />
-<!--        <input id="send_json" onclick="sendJsonData()" type="button" value="send json" />-->
-<!--        <input id="send_formdata" onclick="sendFormData()" type="button" value="send formdata" />-->
-        <span id="postresponse"></span>
-        <br><br>
-        <a href="/html/reset-password.html">Wachtwoord vergeten</a>
+    <label for="password">Wachtwoord:</label>
+    <input autocomplete="password" class="inputfield" id="password" name="password" type="password" required/><br><br>
 
-        <hr>
-    </form>
+    <input id="login()_button" onclick="login()" type="button" value="login()_button"/>
+    <span id="postresponse"></span>
+    <br><br>
+    <a href="/html/reset-password.html">Wachtwoord vergeten</a>
 
-    <a href="new-account.html">
-        <button>Nieuw account creëren</button>
-    </a>
+    <hr>
+</form>
+
+<a href="new-account.html">
+    <button>Nieuw account creëren</button>
+</a>
 </body>
 
 </html>

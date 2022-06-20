@@ -22,25 +22,77 @@ const toBase64 = (file) => new Promise((resolve, reject) => {
 //   const response = await fetch('/restservices/accounts', fetchOptions);
 //   element.textContent = `Statuscode: ${response.status}`;
 // }
+//
+
+
+// async function sendNewAccount(event) {
+//   // const element = document.querySelector('#postresponse');
+//   const file = document.querySelector('#fileupload').files[0];
+//   const jsonRequestBody = {avatarBase64: await toBase64(file)}; // TODO re implement for security
+//
+//   const formData = new FormData(document.querySelector('#newaccount-form'));
+//   formData.forEach((value, key) => (jsonRequestBody[key] = value));
+//   console.log(formData.stringify);
+//
+//   const fetchOptions = {
+//     method: 'POST',
+//     body: JSON.stringify(jsonRequestBody),
+//     headers: {'Content-Type': 'application/json'},
+//   };
+//   // http://localhost:8080/restservices/users/addnew/name=Ryry&email=ruru@fufu.mumu&wachtwoord=magicword
+//   const response = await fetch('/restservices/users/addnew', fetchOptions);
+//   element.textContent = `Statuscode: ${response.status}`;
+// }
 
 async function sendNewAccount(event) {
   // const element = document.querySelector('#postresponse');
   // const file = document.querySelector('#fileupload').files[0];
   // const jsonRequestBody = {avatarBase64: await toBase64(file)}; // TODO re implement for security
+  let jsonRequestBody = {};
 
-
-  const formData = new FormData(document.querySelector('#postaccount'));
+  let formData = new FormData(document.querySelector('#newaccount-form'));
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
+  console.log(formData.stringify);
 
   const fetchOptions = {
     method: 'POST',
     body: JSON.stringify(jsonRequestBody),
-    headers: {'Content-Type': 'application/json'},
+    headers: {
+      'Accept': 'application/json', 'Content-Type': 'application/json'
+    },
   };
+
   // http://localhost:8080/restservices/users/addnew/name=Ryry&email=ruru@fufu.mumu&wachtwoord=magicword
-  const response = await fetch('/restservices/users/addnew', fetchOptions);
-  element.textContent = `Statuscode: ${response.status}`;
+  let response = await fetch('/restservices/users/addnew', fetchOptions)
+//
+//     .then(async function (response) {
+//       if (response.ok) { // als er een nieuw account gecreeerd is dan inloggen
+//         let authJsonRequestBody = {};
+//         authJsonRequestBody.put(formData.email);
+//         authJsonRequestBody.put(formData.password);
+//         const autFetchOptions = {
+//             method: "POST",
+//             body: JSON.stringify(authJsonRequestBody),
+//           headers: {
+//             'Accept': 'application/json', 'Content-Type': 'application/json'
+//           },
+//       };
+//       await fetch("/restservices/authentication",)
+//       open("http://localhost:8080/html/zoeken.html")
+//       return response.json();
+//     } //if 200 there will be a body
+// else
+//   {
+//     throw "Wrong username/password";
+//   }    //if !200 there will be no body
+// }
+// )
+
+.then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
+  .then(res => console.log(res))
+  .catch(error => console.log(error)); //to handle the possibly thrown error
 }
+
 
 function showAccount(myjson) {
   const template = document.querySelector('#accounttemplate');
