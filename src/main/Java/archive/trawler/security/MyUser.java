@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+
 /** Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata */
 public class MyUser implements Principal, Serializable {
     private @Getter @Setter String email;  //
@@ -35,13 +36,7 @@ public class MyUser implements Principal, Serializable {
         this.email = email;
         this.password = password;
         this.role = "user";
-        allMyUsers.add(this);
     }
-
-    public String getRole() {
-        return role;
-    }
-
 
     public static String validateLogin(String email, String password) {
         MyUser toLogin = getMyUserByEmail(email);
@@ -76,11 +71,13 @@ public class MyUser implements Principal, Serializable {
                 && password.length() >= 6
         ) {
             new User(email, naam);
-            MyUser newUser;
+            MyUser newMyUser;
             try {
-                newUser = new MyUser(email, password);
-                System.out.println(newUser);
-                return addUser(newUser);
+                    newMyUser = new MyUser(email, password);
+                if (!allMyUsers.contains(newMyUser)) {
+                    System.out.println(newMyUser);
+                    return addUser(newMyUser);
+                }
             } catch (IllegalArgumentException e) {
                 return false;
             }

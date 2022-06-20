@@ -10,6 +10,8 @@ import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.time.Duration;
 
+import archive.trawler.security.MyUser ;
+
 @WebListener
 public class MyContextListener implements ServletContextListener {
 
@@ -19,8 +21,7 @@ public class MyContextListener implements ServletContextListener {
         try {
             System.out.println("contextInitialized");
 
-            PersistanceManager.loadMyUsersFromAzure();
-            PersistanceManager.loadUsersFromAzure();
+            PersistanceManager.loadFromAzure();
         } catch (IOException e) {
             System.out.println("catching IOException");
             e.printStackTrace();
@@ -29,9 +30,9 @@ public class MyContextListener implements ServletContextListener {
             e.printStackTrace();
         }
 
-//        MyUser.registerUser("Coyote", "CasaSuCasa", "Wilde");
-//        MyUser.registerUser("syd@barrett.com", "CrazyDiamond", "Floyd");
-//        MyUser.registerUser("snoop@log.bomb", "pickItUpLikeItsCold", "Ryan");
+        MyUser.registerUser("Coyote", "CasaSuCasa", "Wilde");
+        MyUser.registerUser("syd@barrett.com", "CrazyDiamond", "Floyd");
+        MyUser.registerUser("snoop@log.bomb", "pickItUpLikeItsCold", "Ryan");
         System.out.println("made the users.................");
     }
 
@@ -42,8 +43,7 @@ public class MyContextListener implements ServletContextListener {
         /* Overige code, bijvoorbeeld om naar Azure te schrijven! */
         System.out.println("Context destroyed, saving everything to azure-storage");
         try {
-            PersistanceManager.saveMyUsersToAzure();
-            PersistanceManager.saveUsersToAzure();
+            PersistanceManager.saveToAzure();
         } catch (IOException e) {
             e.printStackTrace();
         }
