@@ -82,7 +82,9 @@ en notificeert de gebruiker als er nieuwe links gevonden worden.
 De gebruiker kan in zijn eigen omgeving ook zijn gegevens wijzigen. En zijn zoekopdrachten inzien.
 
 ## 3 Use cases
+
 ![](/DIAGRAMS/Use Case Diagram1.png)
+
 De use case diagram is redelijk uitvoerig. 
 Per use case zijn er sub use-cases vermeldt, dit ter verdieping.
 
