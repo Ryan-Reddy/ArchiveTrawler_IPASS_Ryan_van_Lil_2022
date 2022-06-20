@@ -7,9 +7,9 @@
 //public class Community {
 //    private static Community community = new Community();
 //
-////    private static Map<String, User> users = new HashMap<>();
-////    private static Map<String, MyUser> MyUsers = new HashMap<>();
-//
+//    private static Map<String, User> users = new HashMap<>();
+//    private static Map<String, MyUser> MyUsers = new HashMap<>();
+////
 //    private static List<User> users;
 //    private static List<MyUser> MyUsers;
 //

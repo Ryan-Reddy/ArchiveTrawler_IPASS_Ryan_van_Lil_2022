@@ -13,17 +13,17 @@ public class User implements NamedObject, Serializable {
     private String email;
     private String role;
     private List<AlleZoekopdracht> alleZoekertjes;
-    private static List<User> allUsers = new ArrayList<>();
+    private static List<User> allUsers;
 
     private @Getter User user;
 
     /**
-     * @param emailAdres email adres, is gelijk ook de username van de inlog
+     * @param email email adres, is gelijk ook de username van de inlog
      * @param naam persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
      */
-    public User(String emailAdres, String naam) {
-        if (getUserByEmail(emailAdres)==null) {
-            this.email = emailAdres;
+    public User(String email, String naam) {
+        if (getUserByEmail(email)==null) {
+            this.email = email;
             this.naam = naam;
             this.role = "user";
             addUserToList(this);
@@ -51,11 +51,6 @@ public class User implements NamedObject, Serializable {
                 .findFirst().orElse(null);
     }
 
-/** geeft de naam van deze gebruiker
- * @return String met de naam */
-    public String getNaam() {
-        return naam;
-    }
     /** kan gebruikt worden om de naam van deze gebruiker te wijzigen */
     public void setNaam(String naam) {
         this.naam = naam;

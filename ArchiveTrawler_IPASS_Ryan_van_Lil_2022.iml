@@ -94,5 +94,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.2" level="project" />
     <orderEntry type="library" name="smtp" level="application" />
+    <orderEntry type="library" name="woorea.resteasy.connector" level="project" />
   </component>
 </module>

@@ -35,7 +35,7 @@ public class AccountResource {
 
         for (User p : allUsers) {
             LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
-            interMessage.put("Naam", p.getNaam());
+            interMessage.put("Naam", p.getName());
             interMessage.put("Email", p.getEmailAdres());
             interMessage.put("role", p.getRole());
             interMessage.put("allUsers",allUsers.toString());
@@ -45,10 +45,19 @@ public class AccountResource {
         return ok(totaalMessages).build();
     }
 
+    /** functie checkAPIstatus
+     *     check dat de rest API werkt */
+    @GET
+    @Path("status")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response checkAPIstatus() {
+        return Response.ok("works").build();
+    }
+
      /** The resource getAccount willreturn the user and its data.
      * @param email = the email connected to the users account.
      * @return User or NOT_FOUND */
-    @Path("find_user/{email}")
+    @Path("finduser?email={email}")
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -67,7 +76,7 @@ public class AccountResource {
      * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
      */
     @DELETE
-    @Path("find_user/{email}")
+    @Path("find_user?email={email}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteUserAccount(@PathParam("email") String email) {
         return MyUser.deleteMyUserAccount(email)
@@ -75,6 +84,66 @@ public class AccountResource {
                 : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
     }
 
+//     /** The resource getAccount willreturn the user and its data.
+//     * @param email = the email connected to the users account.
+//     * @return User or NOT_FOUND */
+//    @Path("finduser?email={email}")
+//    @GET
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response getAccount(@PathParam("email") String email) {
+//        User theUser = User.getUserByEmail(email);
+//
+//        if (theUser != null) {
+//            return Response.ok(theUser).build();
+//        } else {
+//            return Response.status(Response.Status.NOT_FOUND).build();
+//        }
+//    }
+//
+//    /** deleteUserAccount
+//     * will delete the MyUser account associated with this email adres.
+//     * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
+//     */
+//    @DELETE
+//    @Path("find_user?email={email}")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response deleteUserAccount(@PathParam("email") String email) {
+//        return MyUser.deleteMyUserAccount(email)
+//                ? Response.ok(String.format("the user %s has been deleted..", email)).build()        // give ok http response if it works
+//                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+//    }
+
+//     /** The resource getAccount willreturn the user and its data.
+//     * @param email = the email connected to the users account.
+//     * @return User or NOT_FOUND */
+//    @Path("finduser?email={email}")
+//    @GET
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response getAccount(@PathParam("email") String email) {
+//        User theUser = User.getUserByEmail(email);
+//
+//        if (theUser != null) {
+//            return Response.ok(theUser).build();
+//        } else {
+//            return Response.status(Response.Status.NOT_FOUND).build();
+//        }
+//    }
+//
+//    /** deleteUserAccount
+//     * will delete the MyUser account associated with this email adres.
+//     * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
+//     */
+//    @DELETE
+//    @Path("find_user?email={email}")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response deleteUserAccount(@PathParam("email") String email) {
+//        return MyUser.deleteMyUserAccount(email)
+//                ? Response.ok(String.format("the user %s has been deleted..", email)).build()        // give ok http response if it works
+//                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+//    }
+//
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)

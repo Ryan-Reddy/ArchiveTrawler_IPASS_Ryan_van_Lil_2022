@@ -1,10 +1,5 @@
 package setup;
 
-
-
-
-
-import archive.trawler.security.MyUser;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
 import reactor.netty.http.HttpResources;
