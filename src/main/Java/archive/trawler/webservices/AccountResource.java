@@ -31,6 +31,7 @@ public class AccountResource {
         List<Object> totaalMessages = new ArrayList<>();
         List<User> allUsers = User.getAllUsers();
 
+        System.out.println(allUsers); // TODO AllUsers is empty
 
         for (User p : allUsers) {
             LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
@@ -40,6 +41,7 @@ public class AccountResource {
             interMessage.put("allUsers",allUsers.toString());
             totaalMessages.add(interMessage);
         }
+        totaalMessages.add("AccountResource.java 44:9 - WTF WHY U NO WORK ?");
         return ok(totaalMessages).build();
     }
 
