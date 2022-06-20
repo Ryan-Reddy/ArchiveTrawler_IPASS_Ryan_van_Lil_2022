@@ -4,6 +4,7 @@ package archive.trawler.security;
 import archive.trawler.model.User;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.security.Principal;
