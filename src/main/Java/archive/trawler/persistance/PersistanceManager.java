@@ -2,6 +2,7 @@ package archive.trawler.persistance;
 
 
 import archive.trawler.model.User;
+import archive.trawler.model.Zoekopdracht;
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
