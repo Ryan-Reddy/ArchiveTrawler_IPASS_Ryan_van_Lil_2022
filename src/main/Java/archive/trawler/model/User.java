@@ -13,23 +13,26 @@ import java.util.Map;
  * Klasse die gebruikt word om de users te creeeren.
  */
 public class User implements Serializable {
+    /** naam van de gebruiker, persoonlijke naam, voor en/of achternaam. */
     private @Getter
     @Setter String naam;
+    /** email adres, is gelijk ook de username van de inlog */
     private @Getter
     @Setter String email;
-    private @Getter
-    @Setter String role;
-
+    /** rol van de gebruiker. */
+    private @Getter @Setter String role;
+    /** wachtwoord van de gebruiker. */
     private final String password; //plz only store hashed password
+    /** Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.*/
     private @Getter
     @Setter Map<Integer, Object> alleZoekertjes;
-    private @Getter
-    @Setter
-    static List<User> allUsers;
+//    private @Getter
+//    @Setter
+//    static List<User> allUsers;
 
     /**
      * @param email email adres, is gelijk ook de username van de inlog
-     * @param naam  persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
+     * @param naam  persoonlijke naam, voor en/of achternaam
      */
     public User(String naam, String email, String password) {
         this.naam = naam;
@@ -53,7 +56,7 @@ public class User implements Serializable {
 
     /**
      * Zoekt de user die hoort bij dit emailadres
-     *
+     * @param email de email die bij de gebruiker hoort, is meteen ook de key om deze op te zoeken.
      * @return de User
      */
     public static User getUserByEmail(String email) {
@@ -67,7 +70,7 @@ public class User implements Serializable {
      */
     public static boolean deleteMyUserAccount(String email) {
         try {
-            return allUsers.remove(getUserByEmail(email));
+            return Community.deleteMyUserAccount(email);
         } catch (Exception e) {
             return false;
         }

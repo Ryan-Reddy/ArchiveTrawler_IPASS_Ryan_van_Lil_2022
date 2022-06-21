@@ -3,6 +3,7 @@ package archive.trawler.security;
 
 import archive.trawler.model.Zoekopdracht;
 import archive.trawler.model.User;
+import io.jsonwebtoken.JwtException;
 import lombok.Getter;
 
 import java.io.Serializable;
@@ -35,7 +36,8 @@ public abstract class MyUser extends User implements Principal, Serializable {
      * Hiermee authenticeer je een gebruiker, door middel van gebruik van de email en wachtwoord
      * @param email
      * @param password
-     * @return
+     * @return rol van de gebvruiker als string
+     * @return if not valid, returns null
      */
     public static String validateLogin(String email, String password) {
         User toLogin = getUserByEmail(email);
