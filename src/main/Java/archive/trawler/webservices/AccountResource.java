@@ -12,6 +12,12 @@ import java.util.*;
 import static java.lang.String.format;
 import static javax.ws.rs.core.Response.ok;
 
+
+// TODO https://bowser-snek.herokuapp.com/restservices/snake/
+//  REST works on heroku, why not here?
+
+
+
 @Path("users")
 public class AccountResource {
 
