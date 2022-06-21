@@ -1,13 +1,17 @@
 package archive.trawler.persistance;
 
 import archive.trawler.model.User;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+@Data
 public class Community {
     private static @Getter
     @Setter Community community = new Community();
@@ -20,14 +24,19 @@ public class Community {
     }
 
     public static boolean addUserToMap(User newAccount) {
-        System.out.println(newAccount.getEmail());
-        if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) { //TODO something going wrong here adds tripple same and no new accounts
+
+        Logger logger = Logger.getLogger(Community.class.getName());
+        logger.log(Level.FINE, "doublechecking user map for: "+newAccount.getEmail());
+        System.out.println("doublechecking user map for: "+newAccount.getEmail());
+        System.out.println("... "+newAccount.toString()+"");
+
+//        if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) { //TODO something going wrong here adds tripple same and no new accounts
             userMap.put(newAccount.getEmail(), newAccount);
-            return true;
-        } else {
+//            return true;
+//        } else {
             return false;
         }
-    }
+//    }
 
     public static boolean deleteMyUserAccount(String email) {
         try {

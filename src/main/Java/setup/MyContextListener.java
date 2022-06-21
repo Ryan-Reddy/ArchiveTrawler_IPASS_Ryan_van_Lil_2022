@@ -1,6 +1,7 @@
 package setup;
 
 import archive.trawler.model.User;
+import archive.trawler.persistance.Community;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
 import reactor.netty.http.HttpResources;
@@ -38,10 +39,11 @@ public class MyContextListener implements ServletContextListener {
         //  Code now runs nicely, making a new user works, shows up in the getAll requests
         //  Main problem is that when running dummy data they seem to multiply and having seperate ones doesnt anymore ->>
 
-        new User("Coyote", "CasaSuCasa", "Wilde");
-        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
-        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
-        System.out.println("made the users.................");
+        System.out.println("making dummy users.............|");
+        Community.addUserToMap(new User("Coyote", "CasaSuCasa", "Wilde"));
+        Community.addUserToMap(new User( "CrazyDiamond","syd@barrett.com", "Floyd"));
+        Community.addUserToMap(new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan"));
+        System.out.println("made the users.................|");
     }
 
     @Override

@@ -1,21 +1,21 @@
 package archive.trawler.webservices;
 
-import archive.trawler.persistance.Community;
 import archive.trawler.model.User;
+import archive.trawler.persistance.Community;
 import archive.trawler.webservices.dto.NewAccount;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-import static java.lang.String.format;
 import static javax.ws.rs.core.Response.ok;
 
 
 // TODO https://bowser-snek.herokuapp.com/restservices/snake/
 //  REST works on heroku, why not here?
-
 
 
 @Path("users")
@@ -31,18 +31,18 @@ public class AccountResource {
     @Path("getall")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllUsers() {
-        List<Object> totaalMessages = new ArrayList<>();
-        LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
+        LinkedHashMap<String, Object> totaalMessages = new LinkedHashMap<>();
 
-        Community.getUserMap().values()
-                .forEach(user -> {
-                    interMessage.put("Naam", user.getNaam());
-                    interMessage.put("Email", user.getEmail());
-                    interMessage.put("password", user.getPassword());
-                    interMessage.put("zoekertjes", user.getAlleZoekertjes());
-                    interMessage.put("role", user.getRole());
-                    totaalMessages.add(interMessage);
-                });
+        Community.getUserMap().forEach((key, user) -> {
+            LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
+            interMessage.put("key", key);
+            interMessage.put("Naam", user.getNaam());
+            interMessage.put("Email", user.getEmail());
+            interMessage.put("password", user.getPassword());
+            interMessage.put("zoekertjes", user.getAlleZoekertjes());
+            interMessage.put("role", user.getRole());
+            totaalMessages.put(key, interMessage);
+        });
 
         return ok(totaalMessages).build();
     }
@@ -64,7 +64,7 @@ public class AccountResource {
      * @param email = the email connected to the users account.
      * @return User or NOT_FOUND
      */
-    @Path("finduser?email={email}")
+    @Path("{email}")
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -83,7 +83,7 @@ public class AccountResource {
      * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
      */
     @DELETE
-    @Path("find_user?email={email}")
+    @Path("{email}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteUserAccount(@PathParam("email") String email) {
         return Community.deleteMyUserAccount(email)

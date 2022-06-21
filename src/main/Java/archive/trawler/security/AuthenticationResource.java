@@ -36,7 +36,7 @@ public class AuthenticationResource {
 
             return Response.ok(new AbstractMap.SimpleEntry<>("JWT", token)).build();
         } catch (JwtException | IllegalArgumentException e) {
-            return Response.status(Response.Status.UNAUTHORIZED).build(); //let op: geen body
+            return Response.status(Response.Status.UNAUTHORIZED).build(); //puur de 401 melding, geen verdere info
         }
     }
 
