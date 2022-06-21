@@ -34,6 +34,9 @@ public class MyContextListener implements ServletContextListener {
             System.out.println("catching ClassNotFoundException");
             e.printStackTrace();
         }
+        // TODO
+        //  Code now runs nicely, making a new user works, shows up in the getAll requests
+        //  Main problem is that when running dummy data they seem to multiply and having seperate ones doesnt anymore ->>
 
         new User("Coyote", "CasaSuCasa", "Wilde");
         new User( "CrazyDiamond","syd@barrett.com", "Floyd");
