@@ -19,15 +19,17 @@ import archive.trawler.security.MyUser ;
 @WebListener
 public class MyContextListener implements ServletContextListener {
 
+    /** contextInitialized
+     * Deze functie runt automatisch bij het opstarten van het programma/server.
+     * Voert automatisch een data persistentie handeling uit.
+     * */
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        // https://portal.azure.com/?Microsoft_Azure_Education_correlationId=6b40be811cf2439b9e3500daa31e6825&Microsoft_Azure_Education_newA4E=true&Microsoft_Azure_Education_asoSubGuid=b1cc8d8a-8cf1-470c-9767-db2e923ab8ab#@hogeschoolutrecht.onmicrosoft.com/resource/subscriptions/b1cc8d8a-8cf1-470c-9767-db2e923ab8ab/resourceGroups/IPASS_ArchiveTrawler/providers/Microsoft.Storage/storageAccounts/ryanreddyipass/overview
         try {
             System.out.println("contextInitialized");
             User.setAllUsers(new ArrayList<>());
             MyUser.setAllMyUsers(new ArrayList<>());
-
-            PersistanceManager.loadFromAzure();
+            PersistanceManager.loadFromAzure();  // data inladen van azure container
         } catch (IOException e) {
             System.out.println("catching IOException");
             e.printStackTrace();
@@ -35,29 +37,27 @@ public class MyContextListener implements ServletContextListener {
             System.out.println("catching ClassNotFoundException");
             e.printStackTrace();
         }
-        // TODO
-        //  Code now runs nicely, making a new user works, shows up in the getAll requests
-        //  Main problem is that when running dummy data they seem to multiply and having seperate ones doesnt anymore ->>
-
-//        System.out.println("making dummy users.............|");
-//        new User("Coyote", "CasaSuCasa", "Wilde");
-//        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
-//        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
-//        System.out.println("made the users.................|");
+        /*new User("Coyote", "CasaSuCasa", "Wilde");
+        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
+        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");*/
     }
 
+    /** contextDestroyed
+     * Deze functie runt automatisch bij het afsluiten van het programma/server.
+     * Voert automatisch een data persistentie handeling uit.
+     * */
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-//        // https://portal.azure.com/?Microsoft_Azure_Education_correlationId=6b40be811cf2439b9e3500daa31e6825&Microsoft_Azure_Education_newA4E=true&Microsoft_Azure_Education_asoSubGuid=b1cc8d8a-8cf1-470c-9767-db2e923ab8ab#@hogeschoolutrecht.onmicrosoft.com/resource/subscriptions/b1cc8d8a-8cf1-470c-9767-db2e923ab8ab/resourceGroups/IPASS_ArchiveTrawler/providers/Microsoft.Storage/storageAccounts/ryanreddyipass/overview
 
         /* Overige code, bijvoorbeeld om naar Azure te schrijven! */
         System.out.println("Context destroyed, saving everything to azure-storage");
         try {
-            PersistanceManager.uploadToAzure();
+            PersistanceManager.uploadToAzure();  // data ophalen van de azure container
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        /* Dit deel ruimt op na afsluiten van scherm: */
         Schedulers.shutdownNow();
         HttpResources.disposeLoopsAndConnectionsLater(Duration.ZERO, Duration.ZERO).block();
     }
