@@ -9,6 +9,15 @@ import com.azure.storage.blob.BlobContainerClientBuilder;
 import java.io.*;
 import java.util.Map;
 
+/**PersistanceManager
+ * Een zeer gevoelige bezigheid,
+ * Kan erg makkelijk stuk gaan.
+ * Hier een paar tips voor basic troubleshooting: <br>
+ * - zorg er voor dat alle klassen en gerelateerde klassen die opgeslagen worden "implements Serializable" zijn.<br>
+ * - importeer de waarde die je wil opslaan ook in je saveToAzure() functie zelf ie List listOmOpTeSlaan = Users.getList();<br>
+ * - loop zeker nog alle SAStokens/blobtokens/containernamen goed na.<br>
+ * Het probleem zal nu wel opgelost zijn, anders ligt het aan je model zelf **/
+
 public class PersistanceManager {
     private static final String ENDPOINT = "https://ryanreddyipass.blob.core.windows.net/";
     private static final String SASTOKEN = "?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2032-06-22T01:55:53Z&st=2022-06-21T17:55:53Z&spr=https&sig=o6Ovg7nmpYR%2Beyll00G399spw9fcR4XdH1y%2FVTs9W34%3D";
