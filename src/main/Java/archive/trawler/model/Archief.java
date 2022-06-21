@@ -1,8 +1,9 @@
 package archive.trawler.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Archief {
+public class Archief implements Serializable {
     private String naam;
     private String basisURI;
 

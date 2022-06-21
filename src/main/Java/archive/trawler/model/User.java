@@ -1,5 +1,6 @@
 package archive.trawler.model;
 
+import archive.trawler.persistance.Community;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +8,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static archive.trawler.model.Community.addUserToMap;
 
 /**
  * Klasse die gebruikt word om de users te creeeren.
@@ -21,7 +20,7 @@ public class User implements Serializable {
     private @Getter
     @Setter String role;
 
-    private String password; //plz only store hashed password
+    private final String password; //plz only store hashed password
     private @Getter
     @Setter Map<Integer, Object> alleZoekertjes;
     private @Getter

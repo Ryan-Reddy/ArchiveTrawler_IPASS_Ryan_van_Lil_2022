@@ -2,14 +2,12 @@ package archive.trawler.persistance;
 
 
 import archive.trawler.model.User;
-import archive.trawler.security.MyUser;
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 public class PersistanceManager {
     //    private final static String ENDPOINT = "https://ryanreddyipass.blob.core.windows.net//";
@@ -21,20 +19,12 @@ public class PersistanceManager {
 //            .sasToken(SASTOKEN)
 //            .containerName(CONTAINER)
 //            .buildClient();
-    private static BlobContainerClient usersContainer = new BlobContainerClientBuilder()
-            .endpoint("https://ryanreddyipass.blob.core.windows.net/")
-            .sasToken("?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2032-06-20T03:25:48Z&st=2022-06-19T19:25:48Z&spr=https&sig=EbqeDhkZAUbJn5FhVooIwqTNXTBWNJKRxsF7np1wnTY%3D")
-            .containerName("userscontainer")
-            .buildClient();
+    private static final BlobContainerClient usersContainer = new BlobContainerClientBuilder().endpoint("https://ryanreddyipass.blob.core.windows.net/").sasToken("?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2032-06-20T03:25:48Z&st=2022-06-19T19:25:48Z&spr=https&sig=EbqeDhkZAUbJn5FhVooIwqTNXTBWNJKRxsF7np1wnTY%3D").containerName("userscontainer").buildClient();
 
-    private static BlobContainerClient myusersContainer = new BlobContainerClientBuilder()
-            .endpoint("https://ryanreddyipass.blob.core.windows.net/")
-            .sasToken("?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2032-06-20T03:25:48Z&st=2022-06-19T19:25:48Z&spr=https&sig=EbqeDhkZAUbJn5FhVooIwqTNXTBWNJKRxsF7np1wnTY%3D")
-            .containerName("myuserscontainer")
-            .buildClient();
+    private static final BlobContainerClient myusersContainer = new BlobContainerClientBuilder().endpoint("https://ryanreddyipass.blob.core.windows.net/").sasToken("?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2032-06-20T03:25:48Z&st=2022-06-19T19:25:48Z&spr=https&sig=EbqeDhkZAUbJn5FhVooIwqTNXTBWNJKRxsF7np1wnTY%3D").containerName("myuserscontainer").buildClient();
 
-    private static String myUsersBlobName = "myUsersBlobby";
-    private static String usersBlobName = "usersBlobby";
+    private static final String myUsersBlobName = "myUsersBlobby";
+    private static final String usersBlobName = "usersBlobby";
 
     //=========================================================================================================
 //
@@ -79,147 +69,57 @@ public class PersistanceManager {
 //        }
 //    }
     public static void loadFromAzure() throws IOException, ClassNotFoundException {
-//
-        // creeert een blobcontainer als deze nog niet bestond
         if (!usersContainer.exists()) {
             usersContainer.create();
-        }
-//        // creeert een blobcontainer als deze nog niet bestond
-//        if (!usersContainer.exists()) {
-//            usersContainer.create();
-//        }
+        }// creeert een blobcontainer als deze nog niet bestond
 
         if (usersContainer.exists()) {
             System.out.println("~~~ loading all Users-data from azure ~~~");
             BlobClient usersBlob = usersContainer.getBlobClient(usersBlobName); // Maak een blobclient aan voor Users
-            if (usersBlob.exists()) {
+            if (Boolean.TRUE.equals(usersBlob.exists())) {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                usersBlob.download(baos);
+                usersBlob.download(baos); // download van de blob, overschrijven ja.
                 ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
                 ObjectInputStream ois = new ObjectInputStream(bais);
-                List<User> loadedUsers = (List<User>) ois.readObject();
 
-                System.out.println("~~~~~loadedMyUsers");
-                System.out.println(loadedUsers.stream().iterator());
-                System.out.println("~~~~~loadedMyUsers");
-                User.setAllUsers(loadedUsers);
+                Community.setUserMap((Map<String, User>) ois.readObject());
+                System.out.println("~~~ Succesfully loaded all Users-data from azure ~~~");
                 baos.close();
                 bais.close();
                 ois.close();
             }
-//            if (myusersContainer.exists()) {
-//                System.out.println("~~~ loading all MyUsers-data from azure ~~~");
-//                BlobClient myUsersBlob = myusersContainer.getBlobClient(myUsersBlobName); // Maak een blobclient aan voor MyUsers
-//                if (myUsersBlob.exists()) {
-//                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//                    myUsersBlob.download(baos);
-//                    ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-//                    ObjectInputStream ois = new ObjectInputStream(bais);
-//                    List<MyUser> loadedMyUsers = (List<MyUser>) ois.readObject();
-//
-//                    System.out.println("~~~~~loadedMyUsers");
-//                    System.out.println(loadedMyUsers.stream().iterator());
-//                    System.out.println("~~~~~loadedMyUsers");
-//
-//                    MyUser.setAllMyUsers(loadedMyUsers);
-//                    baos.close();
-//                    bais.close();
-//                    ois.close();
-//                }
-//            }
         }
     }
-
-
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-//    public static void saveMyUsersToAzure() throws IOException {
-//        // creeert een blobcontainer als deze nog niet bestond
-////        if (!myusersContainer.exists()) {
-////            myusersContainer.create(); TODO reinsert
-////        }
-//        BlobClient blob = myusersContainer.getBlobClient("myUsers12");
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        ObjectOutputStream oos = new ObjectOutputStream(baos);
-////        List myUserstoSave = MyUser.getAllMyUsers();
-//        oos.writeObject(MyUser.getAllMyUsers());
-//        byte[] bytez = baos.toByteArray();
-//        ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
-//        blob.upload(bais, bytez.length, true);
-//        baos.close();
-//        oos.close();
-//        bais.close();
-//    }
-//
-//    public static void saveUsersToAzure() throws IOException {
-//        // creeert een blobcontainer als deze nog niet bestond
-////        if (!myusersContainer.exists()) {
-////            myusersContainer.create(); TODO reinsert
-////        }
-//
-//        BlobClient blob = usersContainer.getBlobClient("userlist");
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        ObjectOutputStream oos = new ObjectOutputStream(baos);
-//
-////        List myUserstoSave = MyUser.getAllMyUsers();
-//        oos.writeObject(User.getAllUsers());
-//
-//        byte[] bytez = baos.toByteArray();
-//        ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
-//        blob.upload(bais, bytez.length, true);
-//        baos.close();
-//        oos.close();
-//        bais.close();
-//    }
-
     public static void saveToAzure() throws IOException {
-        if (!myusersContainer.exists()) { // creeert een blobcontainer als deze nog niet bestond
+        if (!myusersContainer.exists()) {
             myusersContainer.create();
-        }
+        }// creeert een blobcontainer als deze nog niet bestond
 
         if (myusersContainer.exists()) {
-
             BlobClient myUsersBlob = myusersContainer.getBlobClient(myUsersBlobName);
-            if (myUsersBlob.exists()) {
-
+            if (Boolean.TRUE.equals(myUsersBlob.exists())) {
                 System.out.println("~~~ loading all Users-data from azure ~~~");
 
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                ObjectOutputStream oos = new ObjectOutputStream(baos);
-                List myUserstoSave = MyUser.getAllMyUsers();
-                oos.writeObject(myUserstoSave);
-                byte[] bytez = baos.toByteArray();
-                ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
-                myUsersBlob.upload(bais, bytez.length, true);
-                baos.close();
-                oos.close();
-                bais.close();
-            }
+                if (!usersContainer.exists()) {usersContainer.create();}// creeert een blobcontainer als deze nog niet bestond
 
+                if (usersContainer.exists()) {
+                    BlobClient usersBlob = usersContainer.getBlobClient(usersBlobName); // Maak een blobclient aan voor Users
+                    if (usersBlob.exists()) {
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        ObjectOutputStream oos = new ObjectOutputStream(baos);
 
-            if (!usersContainer.exists()) { // creeert een blobcontainer als deze nog niet bestond
-                usersContainer.create();
-            }
+                        oos.writeObject(User.getAllUsers());
 
-            if (usersContainer.exists()) {
-                BlobClient usersBlob = usersContainer.getBlobClient(usersBlobName); // Maak een blobclient aan voor Users
-                if (usersBlob.exists()) {
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    ObjectOutputStream oos = new ObjectOutputStream(baos);
-
-//        List myUserstoSave = MyUser.getAllMyUsers();
-                    oos.writeObject(User.getAllUsers());
-
-                    byte[] bytez = baos.toByteArray();
-                    ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
-                    usersBlob.upload(bais, bytez.length, true);
-                    baos.close();
-                    oos.close();
-                    bais.close();
+                        byte[] bytez = baos.toByteArray();   // binair maken
+                        ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
+                        usersBlob.upload(bais, bytez.length, true);  // upload naar de blob, overschrijven ja.
+                        baos.close();
+                        oos.close();
+                        bais.close(); // allestreams closen
+                    }
                 }
             }
         }
     }
-
-
 }

@@ -18,7 +18,7 @@ public abstract class MyUser extends User implements Principal, Serializable {
 //    private @Getter String role;
 //    private @Getter User user;
 
-    private static @Getter List<MyUser> allMyUsers = new ArrayList<>();
+    private static final @Getter List<MyUser> allMyUsers = new ArrayList<>();
 
     /**
      * @param naam           persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
