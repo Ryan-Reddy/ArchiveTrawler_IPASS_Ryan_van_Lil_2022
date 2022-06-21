@@ -11,11 +11,9 @@ import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.List;
 
 import archive.trawler.security.MyUser ;
 
-import static archive.trawler.model.User.registerUser;
 
 @WebListener
 public class MyContextListener implements ServletContextListener {
@@ -37,9 +35,9 @@ public class MyContextListener implements ServletContextListener {
             e.printStackTrace();
         }
 
-        registerUser(new User("Coyote", "CasaSuCasa", "Wilde"));
-        registerUser(new User("syd@barrett.com", "CrazyDiamond", "Floyd"));
-        registerUser(new User("snoop@log.bomb", "pickItUpLikeItsCold", "Ryan"));
+        new User("Coyote", "CasaSuCasa", "Wilde");
+        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
+        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
         System.out.println("made the users.................");
     }
 

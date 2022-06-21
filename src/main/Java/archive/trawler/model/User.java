@@ -38,18 +38,18 @@ public class User implements Serializable {
         this.password = password;
         this.alleZoekertjes = new HashMap<Integer, Object>(10000);
         this.role = "user";
-        registerUser(this);
+        Community.addUserToMap(this);
     }
 
 
-    //Domain endpoint to actually add a MyUser class
-    public static boolean registerUser(User user) {
-        try {
-            return addUserToMap(user);
-        } catch (Exception e) {
-            return false;
-        }
-    }
+//    //Domain endpoint to actually add a MyUser class
+//    public static boolean registerUser(User user) {
+//        try {
+//            return addUserToMap(user);
+//        } catch (Exception e) {
+//            return false;
+//        }
+//    }
 
 
     /**

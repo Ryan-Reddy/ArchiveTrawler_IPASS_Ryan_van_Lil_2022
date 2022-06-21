@@ -39,6 +39,7 @@ public class Community {
         }
     }
 
+
     public static User getUserByName(String naam) {
         return userMap.values().stream().filter(user -> user.getNaam() == naam).findFirst().orElse(null);
     }
@@ -49,7 +50,7 @@ public class Community {
 
     public static boolean addUserToMap(User newAccount) {
         System.out.println(newAccount.getEmail());
-        if (!userMap.containsValue(newAccount) && userMap.values().stream().noneMatch(user -> user.getEmail() == newAccount.getEmail())) {
+        if (userMap.values().stream().noneMatch(user -> user.getEmail() == newAccount.getEmail())) { //TODO something going wrong here adds tripple same and no new accounts
             userMap.put(newAccount.getEmail(), newAccount);
             return true;
         } else {
@@ -59,6 +60,16 @@ public class Community {
 
     public static Map<String, User> getUserMap() {
         return userMap;
+    }
+
+    public static boolean deleteMyUserAccount(String email) {
+        try {
+            userMap.remove(email);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     /**
