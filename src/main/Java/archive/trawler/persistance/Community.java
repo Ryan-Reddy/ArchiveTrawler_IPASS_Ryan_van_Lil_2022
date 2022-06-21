@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Data
-public class Community {
+public class Community implements Serializable {
     private static @Getter
     @Setter Community community = new Community();
 
@@ -53,7 +54,7 @@ public class Community {
      * Is een functie die een lijst met users aanneemt en deze opslaat als Map.
      * Zou gebruikt kunnen worden voor persistentie
      */
-    public void addListOfUsersIntoMap(List<User> usersListToMap) {
+    public static void setListOfUsersIntoMap(List<User> usersListToMap) {
         for (User user : usersListToMap) {
             if (!userMap.containsValue(user)) userMap.put("User", user);
         }

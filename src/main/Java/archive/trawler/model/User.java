@@ -77,7 +77,7 @@ public class User implements Serializable {
      * setAllUsers vervangt de huidige lijst allUsers met een aangeleverde List met Users.
      */
     public static void setAllMyUsers(List<User> newAllUsers) {
-        allUsers = newAllUsers;
+        Community.setListOfUsersIntoMap(newAllUsers);
     }
 
     public boolean addZoekertjeAanAlleZoekertjes(Zoekopdracht zoekopdracht) {
