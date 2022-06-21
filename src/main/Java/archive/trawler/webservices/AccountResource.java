@@ -99,7 +99,7 @@ public class AccountResource {
             if (User.getUserByEmail(info.email) != null) {  // als er al een useraccount met dit email bestaat:
                 return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
             }
-            User newUser = new User(info.email, info.password, info.name);
+            User newUser = new User(info.name, info.email, info.password);
         } catch (Exception e) {
             e.printStackTrace();
         }
