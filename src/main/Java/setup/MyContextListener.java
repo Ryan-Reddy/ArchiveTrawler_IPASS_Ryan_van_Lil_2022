@@ -39,11 +39,11 @@ public class MyContextListener implements ServletContextListener {
         //  Code now runs nicely, making a new user works, shows up in the getAll requests
         //  Main problem is that when running dummy data they seem to multiply and having seperate ones doesnt anymore ->>
 
-        System.out.println("making dummy users.............|");
+//        System.out.println("making dummy users.............|");
 //        new User("Coyote", "CasaSuCasa", "Wilde");
 //        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
-        System.out.println("made the users.................|");
+//        System.out.println("made the users.................|");
     }
 
     @Override
