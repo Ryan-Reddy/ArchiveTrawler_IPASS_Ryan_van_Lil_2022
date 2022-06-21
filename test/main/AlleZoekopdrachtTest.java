@@ -1,6 +1,6 @@
 package main;
 
-import archive.trawler.model.AlleZoekopdracht;
+import archive.trawler.model.Zoekopdracht;
 import archive.trawler.model.Archief;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,10 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class AlleZoekopdrachtTest {
     Archief archief1 = new Archief("archief1", "www.archief.com/");
     ArrayList<Archief> archievenlisty= new ArrayList<Archief>(Arrays.asList(archief1));
-    AlleZoekopdracht zoek1 = new AlleZoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "1");
-    AlleZoekopdracht zoek2 = new AlleZoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "2");
-    AlleZoekopdracht zoek3 = new AlleZoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "3");
-    AlleZoekopdracht zoek4 = new AlleZoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "4");
+    Zoekopdracht zoek1 = new Zoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "1");
+    Zoekopdracht zoek2 = new Zoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "2");
+    Zoekopdracht zoek3 = new Zoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "3");
+    Zoekopdracht zoek4 = new Zoekopdracht(archievenlisty, "", "", "", 1800, 1900, "", "4");
 
     @BeforeEach
     void setUp() {

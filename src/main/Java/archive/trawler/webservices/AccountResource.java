@@ -1,5 +1,6 @@
 package archive.trawler.webservices;
 
+import archive.trawler.model.Community;
 import archive.trawler.security.MyUser;
 import archive.trawler.model.User;
 import archive.trawler.webservices.dto.NewAccount;
@@ -27,20 +28,19 @@ public class AccountResource {
     //  labels: RESOURCES
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllUsers() {
-
         List<Object> totaalMessages = new ArrayList<>();
-        List<User> allUsers = User.getAllUsers();
+        LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
 
-        System.out.println(allUsers); // TODO AllUsers is empty
+        Community.getUserMap().values().stream()
+                .forEach(user -> {
+                    interMessage.put("Naam", user.getNaam());
+                    interMessage.put("Email", user.getEmail());
+                    interMessage.put("password", user.getPassword());
+                    interMessage.put("zoekertjes", user.getAlleZoekertjes());
+                    interMessage.put("role", user.getRole());
+                    totaalMessages.add(interMessage);
+                });
 
-        for (User p : allUsers) {
-            LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
-            interMessage.put("Naam", p.getName());
-            interMessage.put("Email", p.getEmailAdres());
-            interMessage.put("role", p.getRole());
-            interMessage.put("allUsers",allUsers.toString());
-            totaalMessages.add(interMessage);
-        }
         return ok(totaalMessages).build();
     }
 
@@ -149,7 +149,7 @@ public class AccountResource {
     @Path("addnew")
     public Response createNewUser(NewAccount info) {
         try {
-            MyUser.registerUser(info.email, info.password, info.name);
+            new User(info.email, info.password, info.name);
         } catch (Exception e) {
             return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
         }

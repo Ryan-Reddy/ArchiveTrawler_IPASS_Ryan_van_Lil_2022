@@ -1,32 +1,23 @@
-//package archive.trawler.model;
-//
-//import archive.trawler.security.MyUser;
-//
-//import java.util.List;
-//
-//public class Community {
-//    private static Community community = new Community();
-//
-//    private static Map<String, User> users = new HashMap<>();
-//    private static Map<String, MyUser> MyUsers = new HashMap<>();
-////
-//    private static List<User> users;
-//    private static List<MyUser> MyUsers;
-//
-//    public static Community getCommunity() {
-//        return community;
-//    }
-//
-//    public static void setCommunity(Community community) {
-//        Community.community = community;
-//    }
-//
-//
-//
-//
-//
-//
-//    public List<User> getUsers() {
+package archive.trawler.model;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Community {
+    private static Community community = new Community();
+
+    private static Map<String, User> userMap = new HashMap<>();
+
+    public static Community getCommunity() {
+        return community;
+    }
+
+    public static void setCommunity(Community community) {
+        Community.community = community;
+    }
+
+    //    public List<User> getUsers() {
 //        return User.getAllUsers();
 //    }
 //    public List<User> getUsersAsList() {
@@ -35,30 +26,49 @@
 //                .collect(Collectors.toList());
 //        return userslist;
 //    }
-//
-//    public static int getCommunitySize() {
-//        List l = (List) users;
-//        return l.size();
-//    }
-//
-//    public static User getUserByName(String username) {
-//        return users.get(username);
-//    }
-//
-//    public boolean addAccount(User newAccount) {
-//        if (newAccount.getEmailAdres().isEmpty() || users.containsKey(newAccount.getEmailAdres())) {
-//            return false;
-//        } else {
-//            users.put(newAccount.getEmailAdres(), newAccount);
-//            return true;
-//        }
-//    }
-//
-//    public static void setMyUsers(List<MyUser> myUsers) {
-//        MyUsers = myUsers;
-//    }
-//
-//    public void setUsers(List<User> users) {
-//        this.users = users;
-//    }
-//}
+    public static int getCommunitySize() {
+        return userMap.size();
+    }
+
+    public static String getUserPasswordByEmail(String email) {
+        User theUser = userMap.values().stream().filter(user -> user.getEmail() == email).findFirst().orElse(null);
+        if (theUser != null) {
+            return theUser.getPassword();
+        } else {
+            return null;
+        }
+    }
+
+    public static User getUserByName(String naam) {
+        return userMap.values().stream().filter(user -> user.getNaam() == naam).findFirst().orElse(null);
+    }
+
+    public static User getUserByEmail(String email) {
+        return userMap.values().stream().filter(user -> user.getEmail() == email).findFirst().orElse(null);
+    }
+
+    public static boolean addUserToMap(User newAccount) {
+        System.out.println(newAccount.getEmail());
+        if (!userMap.containsValue(newAccount) && userMap.values().stream().noneMatch(user -> user.getEmail() == newAccount.getEmail())) {
+            userMap.put(newAccount.getEmail(), newAccount);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static Map<String, User> getUserMap() {
+        return userMap;
+    }
+
+    /**
+     * setListOfUsersIntoMap
+     * Is een functie die een lijst met users aanneemt en deze opslaat als Map.
+     */
+    public void addListOfUsersIntoMap(List<User> usersListToMap) {
+        for (User user : usersListToMap) {
+            if (!userMap.containsValue(user))
+                userMap.put("User", user);
+        }
+    }
+}

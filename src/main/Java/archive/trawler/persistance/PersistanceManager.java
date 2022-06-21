@@ -107,26 +107,26 @@ public class PersistanceManager {
                 bais.close();
                 ois.close();
             }
-            if (myusersContainer.exists()) {
-                System.out.println("~~~ loading all MyUsers-data from azure ~~~");
-                BlobClient myUsersBlob = myusersContainer.getBlobClient(myUsersBlobName); // Maak een blobclient aan voor MyUsers
-                if (myUsersBlob.exists()) {
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    myUsersBlob.download(baos);
-                    ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-                    ObjectInputStream ois = new ObjectInputStream(bais);
-                    List<MyUser> loadedMyUsers = (List<MyUser>) ois.readObject();
-
-                    System.out.println("~~~~~loadedMyUsers");
-                    System.out.println(loadedMyUsers.stream().iterator());
-                    System.out.println("~~~~~loadedMyUsers");
-
-                    MyUser.setAllMyUsers(loadedMyUsers);
-                    baos.close();
-                    bais.close();
-                    ois.close();
-                }
-            }
+//            if (myusersContainer.exists()) {
+//                System.out.println("~~~ loading all MyUsers-data from azure ~~~");
+//                BlobClient myUsersBlob = myusersContainer.getBlobClient(myUsersBlobName); // Maak een blobclient aan voor MyUsers
+//                if (myUsersBlob.exists()) {
+//                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//                    myUsersBlob.download(baos);
+//                    ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+//                    ObjectInputStream ois = new ObjectInputStream(bais);
+//                    List<MyUser> loadedMyUsers = (List<MyUser>) ois.readObject();
+//
+//                    System.out.println("~~~~~loadedMyUsers");
+//                    System.out.println(loadedMyUsers.stream().iterator());
+//                    System.out.println("~~~~~loadedMyUsers");
+//
+//                    MyUser.setAllMyUsers(loadedMyUsers);
+//                    baos.close();
+//                    bais.close();
+//                    ois.close();
+//                }
+//            }
         }
     }
 

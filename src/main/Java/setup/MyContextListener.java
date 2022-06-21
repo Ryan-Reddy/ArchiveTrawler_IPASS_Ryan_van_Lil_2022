@@ -15,6 +15,8 @@ import java.util.List;
 
 import archive.trawler.security.MyUser ;
 
+import static archive.trawler.model.User.registerUser;
+
 @WebListener
 public class MyContextListener implements ServletContextListener {
 
@@ -35,9 +37,9 @@ public class MyContextListener implements ServletContextListener {
             e.printStackTrace();
         }
 
-//        MyUser.registerUser("Coyote", "CasaSuCasa", "Wilde");
-//        MyUser.registerUser("syd@barrett.com", "CrazyDiamond", "Floyd");
-//        MyUser.registerUser("snoop@log.bomb", "pickItUpLikeItsCold", "Ryan");
+        registerUser(new User("Coyote", "CasaSuCasa", "Wilde"));
+        registerUser(new User("syd@barrett.com", "CrazyDiamond", "Floyd"));
+        registerUser(new User("snoop@log.bomb", "pickItUpLikeItsCold", "Ryan"));
         System.out.println("made the users.................");
     }
 

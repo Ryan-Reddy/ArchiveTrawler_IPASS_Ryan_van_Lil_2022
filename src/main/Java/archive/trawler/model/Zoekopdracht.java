@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class AlleZoekopdracht implements Serializable {
+public class Zoekopdracht implements Serializable {
     private List<Archief> archiefKeuzes;
     private String keyWords;
     private String voorNaam;
@@ -14,8 +14,8 @@ public class AlleZoekopdracht implements Serializable {
     private String zoekOpdrachtID;
     private String userID;
 
-    public AlleZoekopdracht(List<Archief> archiefKeuzes, String keyWords, String voorNaam, String achterNaam,
-                            int jaarVan, int jaarTot, String zoekOpdrachtID, String userID) {
+    public Zoekopdracht(List<Archief> archiefKeuzes, String keyWords, String voorNaam, String achterNaam,
+                        int jaarVan, int jaarTot, String zoekOpdrachtID, String userID) {
         this.archiefKeuzes = archiefKeuzes;
         this.keyWords = keyWords;
         this.voorNaam = voorNaam;
@@ -94,7 +94,7 @@ public class AlleZoekopdracht implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AlleZoekopdracht that = (AlleZoekopdracht) o;
+        Zoekopdracht that = (Zoekopdracht) o;
         return Objects.equals(archiefKeuzes,
                               that.archiefKeuzes) && Objects.equals(keyWords,
                                                                     that.keyWords) && Objects.equals(voorNaam,

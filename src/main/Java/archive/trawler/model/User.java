@@ -1,89 +1,101 @@
 package archive.trawler.model;
 
-import archive.trawler.security.MyUser;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-/** Klasse die gebruikt word om de users te creeeren. */
-public class User implements NamedObject, Serializable {
-    private String naam;
-    private String email;
-    private String role;
-    private List<AlleZoekopdracht> alleZoekertjes;
-    private static List<User> allUsers;
+import static archive.trawler.model.Community.addUserToMap;
 
-    private @Getter User user;
+/**
+ * Klasse die gebruikt word om de users te creeeren.
+ */
+public class User implements Serializable {
+    private @Getter
+    @Setter String naam;
+    private @Getter
+    @Setter String email;
+    private @Getter
+    @Setter String role;
+
+    private String password; //plz only store hashed password
+    private @Getter
+    @Setter Map<Integer, Object> alleZoekertjes;
+    private @Getter
+    @Setter
+    static List<User> allUsers;
 
     /**
      * @param email email adres, is gelijk ook de username van de inlog
-     * @param naam persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
+     * @param naam  persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
      */
-    public User(String email, String naam) {
-            this.email = email;
-            this.naam = naam;
-            this.role = "user";
-            addUserToList(this);
-//        }
-    }
-
-    public static void setAllUsers(List<User> allUsers) {
-        User.allUsers = allUsers;
-    }
-
-    public void addUserToList(User userToList){
-        allUsers.add(userToList);
-    }
-
-    public String getRole() { return role; }
-
-    public static List<User> getAllUsers() {
-        return allUsers;
-    }
-
-    /** Zoekt de user die hoort bij dit emailadres
-     * @return de User  */
-    public static User getUserByEmail(String email) {
-        return allUsers.stream()
-                .filter(user -> user.email.equals(email))
-                .findFirst().orElse(null);
-    }
-
-    /** kan gebruikt worden om de naam van deze gebruiker te wijzigen */
-    public void setNaam(String naam) {
+    public User(String naam, String email, String password) {
         this.naam = naam;
+        this.email = email;
+        this.password = password;
+        this.alleZoekertjes = new HashMap<Integer, Object>(10000);
+        this.role = "user";
+        registerUser(this);
     }
 
-    /** Zoekt alle zoekopdrachten van deze User
-     * @return lijst met alleZoekopdrachten */
-    public List<AlleZoekopdracht> getAlleZoekertjes() {
-        return alleZoekertjes;
-    }
 
-    /** returned de naam van deze User, dit bevat meestal voor en achternaam
-     * @return String met de naam*/
-    @Override
-    public String getName() {
-        return naam;
-    }
-
-    /** returned emailadres van deze User
-     * @return String van het email adres*/
-    public String getEmailAdres() {
-        return email;
-    }
-    /** kan gebruikt worden om een email adres bij dit account te wijzigen
-     * @return boolean of het gelukt is */
-    public boolean setEmail(String newEmail) {
+    //Domain endpoint to actually add a MyUser class
+    public static boolean registerUser(User user) {
         try {
-            MyUser.getMyUserByEmail(email).setEmail(newEmail);
-            return true;
+            return addUserToMap(user);
         } catch (Exception e) {
             return false;
         }
     }
+
+
+    /**
+     * Zoekt de user die hoort bij dit emailadres
+     *
+     * @return de User
+     */
+    public static User getUserByEmail(String email) {
+        return Community.getUserByEmail(email);
+    }
+
+    /**
+     * WARNING cannot be undone...
+     * This method will remove this user from the database. They will not be able to login
+     * seperate from the User account, this data will be stored indefinately
+     */
+    public static boolean deleteMyUserAccount(String email) {
+        try {
+            return allUsers.remove(getUserByEmail(email));
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * setAllUsers vervangt de huidige lijst allUsers met een aangeleverde List met Users.
+     */
+    public static void setAllMyUsers(List<User> newAllUsers) {
+        allUsers = newAllUsers;
+    }
+
+    public boolean addZoekertjeAanAlleZoekertjes(Zoekopdracht zoekopdracht) {
+        try {
+            alleZoekertjes.put((alleZoekertjes.size() + 1), zoekopdracht);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Je kan niet meer dan 10000 zoekopdrachten hebben");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     // TODO schrijf functie addZoekertjeAanAlleZoekrtjes
     //  scrhijf een functie die het mogelijk maakt een zoekopdracht op te slaan in de lijst
     //  labels: User, zoekopdracht opslaan
