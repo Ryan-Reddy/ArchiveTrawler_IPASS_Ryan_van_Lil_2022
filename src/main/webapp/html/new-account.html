@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <!--  Stylesheet  -->
-    <link href="/style-index.css" rel="stylesheet" />
-<!--    <link href="src/main/webapp/css/main.css" rel="stylesheet"/>-->
+    <link href="/style-index.css" rel="stylesheet"/>
+    <!--    <link href="src/main/webapp/css/main.css" rel="stylesheet"/>-->
 
     <!-- favicon-16x16 -->
     <link
@@ -23,38 +23,40 @@
 
     <form autocomplete="on" id="newaccount-form">
 
-    <label for="name">Naam:</label>
-    <input autocomplete="name" class="inputfield" id="name" name="name" placeholder="Naam" type="text"/>
+        <label for="name">Naam:</label>
+        <input autocomplete="name" class="inputfield" id="name" name="name" placeholder="Naam" type="text"/>
 
-    <div class="tooltip">
-        <!-- omschrijvende lebel van bijbehorende inputveld -->
-        <label for="email">E-mail adres:</label>
-        <input autocomplete="email" class="inputfield" id="email" name="email"
-               onclick="switchIncompleteNormaleStijl('email')" placeholder="jouwnaam@voorbeeld.com"
-               required type="email"/><br>
-        <!-- tooltip tekst -->
-        <span class="tooltiptext-mail">Voer een geldig email adres in, bijvoorbeeld jouwnaam@voorbeeld.com.</span>
-    </div>
-    <br>
+        <div class="tooltip">
+            <!-- omschrijvende lebel van bijbehorende inputveld -->
+            <label for="email">E-mail adres:</label>
+            <input autocomplete="email" class="inputfield" id="email" name="email"
+                   onclick="switchIncompleteNormaleStijl('email')" placeholder="jouwnaam@voorbeeld.com"
+                   required type="email"/><br>
+            <!-- tooltip tekst -->
+            <span class="tooltiptext-mail">Voer een geldig email adres in, bijvoorbeeld jouwnaam@voorbeeld.com.</span>
+        </div>
+        <br>
 
-    <div class="tooltip">
-        <!-- omschrijvende lebel van bijbehorende inputveld -->
-        <label for="password">Nieuw wachtwoord:</label>
-        <input autocomplete="password" class="inputfield" id="password" name="password"
-               onclick="switchIncompleteNormaleStijl('password')"
-               placeholder="Nieuw wachtwoord" required type="password"/><br>
-        <!-- tooltip tekst -->
-        <span class="tooltiptext-ww">Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals
+        <div class="tooltip">
+            <!-- omschrijvende lebel van bijbehorende inputveld -->
+            <label for="password">Nieuw wachtwoord:</label>
+            <input autocomplete="password" class="inputfield" id="password" name="password"
+                   onclick="switchIncompleteNormaleStijl('password')"
+                   placeholder="Nieuw wachtwoord" required type="password"/><br>
+            <!-- tooltip tekst -->
+            <span class="tooltiptext-ww">Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals
                 ! en &).</span>
-    </div>
-    <input id="toggle" onclick="wwZichtbaarToggle()" type="checkbox">
-    <label for="toggle">Toggle wachtwoordzichtbaarheid</label><br><br>
+        </div>
+        <input id="toggle" onclick="wwZichtbaarToggle()" type="checkbox">
+        <label for="toggle">Toggle wachtwoordzichtbaarheid</label><br><br>
 
-<!--    <input id="send_json" onclick="formulierCheck()" type="button" value="Registreren&#45;&#45; incl wachtwoordchecksend json"/>-->
-    <!--        <input id="send_formdata" onclick="sendFormData()" type="button" value="Registreren&#45;&#45;send formdata" />-->
-    <span id="postresponse"></span>
-</form>
-<input id="createAccButton" onclick="formulierCheck()" type="button" value="formulierCheck en Creer een account">
+        <!--    <input id="send_json" onclick="formulierCheck()" type="button" value="Registreren&#45;&#45; incl wachtwoordchecksend json"/>-->
+        <!--        <input id="send_formdata" onclick="sendFormData()" type="button" value="Registreren&#45;&#45;send formdata" />-->
+        <span id="postresponse"></span>
+    </form>
+    <input id="createAccButton" onclick="formulierCheck()" type="button" value="Creëer een account">
+    <input id="wachtwoordvergeten" onclick="open('/html/reset-password.html')" type="button" value="Wachtwoord vergeten">
+
 </main>
 </body>
 

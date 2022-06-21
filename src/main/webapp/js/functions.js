@@ -60,39 +60,17 @@ async function sendNewAccount(event) {
       'Accept': 'application/json', 'Content-Type': 'application/json'
     },
   };
-
-  // http://localhost:8080/restservices/users/addnew/name=Ryry&email=ruru@fufu.mumu&wachtwoord=magicword
-  let response = await fetch('/restservices/users/addnew/', fetchOptions)
-
-
+  await fetch('/restservices/users/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then(async function (response) {
-      if (response.ok) { // als er een nieuw account gecreeerd is dan inloggen
-        throw "welcome! je nieuwe account is aangemaakt"
+        if (response.ok) { // als er een nieuw account gecreeerd is dan inloggen
+          open("http://localhost:8080/html/login.html") // als deze klaar is open de log in pagina
+          throw "welcome! je nieuwe account is aangemaakt"
+        } else {
+          alert("Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'." )
+          throw "er ging iets mis";
+        }    //if !200 there will be no body
       }
-        // let authJsonRequestBody = {};
-//         authJsonRequestBody.put(formData.email);
-//         authJsonRequestBody.put(formData.password);
-//         const autFetchOptions = {
-//             method: "POST",
-//             body: JSON.stringify(authJsonRequestBody),
-//           headers: {
-//             'Accept': 'application/json', 'Content-Type': 'application/json'
-//           },
-//       };
-//       await fetch("/restservices/authentication",)
-//       open("http://localhost:8080/html/zoeken.html")
-//       return response.json();
-//     } //if 200 there will be a body
-else
-  {
-    throw "Wrong username/password";
-  }    //if !200 there will be no body
-}
-)
-//
-// .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
-//   .then(res => console.log(res))
-//   .catch(error => console.log(error)); //to handle the possibly thrown error
+    )
 }
 
 

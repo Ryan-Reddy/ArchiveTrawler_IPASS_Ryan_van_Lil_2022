@@ -47,16 +47,6 @@ public class UsersResource {
         return ok(totaalMessages).build();
     }
 
-    /** functie checkAPIstatus
-     * check dat de rest API werkt
-     */
-    @GET
-    @Path("status")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response checkAPIstatus() {
-        return Response.ok("works").build();
-    }
-
     /** The resource getAccount willreturn the user and its data.
      *
      * @param email = the email connected to the users account.
@@ -91,8 +81,25 @@ public class UsersResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("addnew")
+    @Path("")
     public Response createNewUser(NewAccount info) {
+        try {
+            if (User.getUserByEmail(info.email) != null) {  // als er al een useraccount met dit email bestaat:
+                return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
+            }
+            User newUser = new User(info.name, info.email, info.password);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Map<String, String> messages = new HashMap<>();
+        messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + info.name);
+        return ok(messages).build();
+    }
+    @PATCH
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{email}")
+    public Response patchUser(NewAccount info) {
+        //TODO create patchUser pipeline in html but also here
         try {
             if (User.getUserByEmail(info.email) != null) {  // als er al een useraccount met dit email bestaat:
                 return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();

@@ -31,18 +31,18 @@ function formulierCheck() {
   // check of de email een email format heeft, geeft boolean terug
   const emailEcht = checkEmailIsEchtEmail(email);
 
-  console.log('start formulierCheck()');
+  console.log('Start formulierCheck().');
   // reset alle css waarschuwingen
   passwordElement.classList.replace('formIncomplete', 'inputfield');
   emailElement.classList.replace('formIncomplete', 'inputfield');
 
   if (emailEcht === false) {
-    console.log('email is nep');
+    console.log('Email is incorrect geformuleerd.');
     emailElement.classList.replace('inputfield', 'formIncomplete');
     // alert("Uw email klopt niet, \r\n voer aub een geldig e-mail adres in.");
   }
   if (ww.length < 6) {
-    console.log('ww incompleet');
+    console.log('WW is incompleet');
     passwordElement.classList.replace('inputfield', 'formIncomplete');
     // alert("Uw wachtwoord is niet veilig genoeg. \r\n
     // Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals ! en &).")
