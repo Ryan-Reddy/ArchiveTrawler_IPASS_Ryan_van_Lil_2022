@@ -17,13 +17,24 @@ import java.security.Key;
 import java.util.AbstractMap;
 import java.util.Calendar;
 
-/** The AuthenticationResource*/
+/**
+ * Deze klasse authenticeert een gebruiker en wordt gebruikt bij inloggen.
+ */
 @Slf4j
 @Path("authentication")
 public class AuthenticationResource {
 
     public static final Key key = MacProvider.generateKey();
 
+    /**
+     * Deze functie authenticeert een gebruiker en wordt gebruikt bij inloggen.
+     *
+     * @param logonRequest
+     * @return JWT:<br>
+     * Een Signature van Header en Payload - Base64Url encoded +<br>
+     * Hash van header, payload, en secret key<br>
+     * Kan de server de authenticiteit mee controleren.<br>
+     */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -40,15 +51,26 @@ public class AuthenticationResource {
         }
     }
 
-    private String createToken(String username, String role) throws JwtException {
+    /**
+     * Bestaat uit drie door punten gescheiden onderdelen:<br>
+     * Een Header met het token-type en signature algoritme - Base64Url encoded<br>
+     * Een Payload met claims (statements over de gebruiker) - Base64Url encoded<br>
+     * “Reserved” claims (bijvoorbeeld: issuer, expiration time, subject)<br>
+     * “Private” claims (bijvoorbeeld: userrole)
+     *
+     * @param email de gebruikersnaam in context van deze app is dat een email
+     * @param role  de rol van de gebruiker
+     * @return JWT:<br>
+     * Een Signature van Header en Payload - Base64Url encoded +<br>
+     * Hash van header, payload, en secret key<br>
+     * Kan de server de authenticiteit mee controleren.<br>
+     * @throws JwtException
+     */
+    private String createToken(String email, String role) throws JwtException {
+        int verloopTijdJWTToken = 30; // Token verloopt na 30 minuten
         Calendar expiration = Calendar.getInstance();
-        expiration.add(Calendar.MINUTE, 30);
+        expiration.add(Calendar.MINUTE, verloopTijdJWTToken);
 
-        return Jwts.builder()
-                .setSubject(username)
-                .setExpiration(expiration.getTime())
-                .claim("role", role)
-                .signWith(SignatureAlgorithm.HS512, key)
-                .compact();
+        return Jwts.builder().setSubject(email).setExpiration(expiration.getTime()).claim("role", role).signWith(SignatureAlgorithm.HS512, key).compact();
     }
 }

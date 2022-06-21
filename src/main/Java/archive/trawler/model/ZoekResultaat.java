@@ -3,6 +3,7 @@ package archive.trawler.model;
 import java.util.List;
 import java.util.Objects;
 
+/**Deze klasse wordt gebruikt om bij te houden of er veranderingen zijn in de zoekresultaten van een opgeslagen zoekopdracht. */
 public class ZoekResultaat {
     private List<String> resultatenURLsLijst;
     private boolean bekeken;

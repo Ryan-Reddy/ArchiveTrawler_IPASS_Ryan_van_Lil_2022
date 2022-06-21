@@ -13,7 +13,7 @@
 //import static org.junit.jupiter.api.Assertions.*;
 //
 //
-//class AccountResource {
+//class UsersResource {
 //    TJWSEmbeddedJaxrsServer server = new TJWSEmbeddedJaxrsServer();
 //    @BeforeAll
 //    void setup() {

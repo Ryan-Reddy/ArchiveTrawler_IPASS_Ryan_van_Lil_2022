@@ -19,7 +19,7 @@ import static javax.ws.rs.core.Response.ok;
 
 
 @Path("users")
-public class AccountResource {
+public class UsersResource {
 
     /**
      * function getAllUsers
@@ -28,7 +28,7 @@ public class AccountResource {
      * @return JSON
      */
     @GET
-    @Path("getall")
+    @Path("")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllUsers() {
         LinkedHashMap<String, Object> totaalMessages = new LinkedHashMap<>();
@@ -47,8 +47,7 @@ public class AccountResource {
         return ok(totaalMessages).build();
     }
 
-    /**
-     * functie checkAPIstatus
+    /** functie checkAPIstatus
      * check dat de rest API werkt
      */
     @GET
@@ -58,8 +57,7 @@ public class AccountResource {
         return Response.ok("works").build();
     }
 
-    /**
-     * The resource getAccount willreturn the user and its data.
+    /** The resource getAccount willreturn the user and its data.
      *
      * @param email = the email connected to the users account.
      * @return User or NOT_FOUND

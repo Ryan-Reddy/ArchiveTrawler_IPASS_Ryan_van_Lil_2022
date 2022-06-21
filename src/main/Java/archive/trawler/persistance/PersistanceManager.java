@@ -29,6 +29,7 @@ public class PersistanceManager {
 
     /**
      * ~~~~~~~~~~~~~~~~~~~ LOADING FROM AZURE:  ~~~~~~~~~~~~~~~~~~~
+     * Tijdens opstarten van de app.
      */
 
     public static void loadFromAzure() throws IOException, ClassNotFoundException {
@@ -57,7 +58,7 @@ public class PersistanceManager {
 
     /**
      * ~~~~~~~~~~~~~~~~~~~ SAVING TO AZURE:  ~~~~~~~~~~~~~~~~~~~
-     * tijdens afsluiten
+     * Tijdens afsluiten van de app.
      */
     public static void uploadToAzure() throws IOException {
         System.out.println("~~~ START saveToAzure ~~~");

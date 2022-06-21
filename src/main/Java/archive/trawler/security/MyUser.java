@@ -20,53 +20,29 @@ public abstract class MyUser extends User implements Principal, Serializable {
 
     private static final @Getter List<MyUser> allMyUsers = new ArrayList<>();
 
-    /**
-     * @param naam           persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
-     * @param email          email adres, is gelijk ook de username van de inlog
-     * @param role
-     * @param password
-     * @param alleZoekertjes
+    /** Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata.
+     * @param naam              persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
+     * @param email             email adres, is gelijk ook de username van de inlog
+     * @param role              Rol van de gebruiker, zal doorgaans user zijn
+     * @param password          ww wordt gebruikt voor inloggen
+     * @param alleZoekertjes    alle zoekopdrachten van de gebruiker
      */
     public MyUser(String naam, String email, String role, String password, List<Zoekopdracht> alleZoekertjes) {
         super(naam, email, password);
     }
 
     /**
-     * @param email email adres, is gelijk ook de username van de inlog
-     * @param naam  persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
+     * Hiermee authenticeer je een gebruiker, door middel van gebruik van de email en wachtwoord
+     * @param email
+     * @param password
+     * @return
      */
-
-
-    /**
-     * Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata.
-     * @param email  email adres, is gelijk ook de link met de User van de opslag van data
-     * @param password ww wordt gebruikt voor inloggen
-     */
-
-//    private MyUser(String email, String password) {
-//        if (email == null
-//                || password == null
-//                || Stream.of(email, password).anyMatch(String::isBlank)) {
-//            throw new IllegalArgumentException();}
-//        this.email = email;
-//        this.password = password;
-//        this.role = "user";
-//    }
-
     public static String validateLogin(String email, String password) {
         User toLogin = getUserByEmail(email);
-        if(toLogin!=null && toLogin.getPassword().equals(password)) {
+        if (toLogin != null && toLogin.getPassword().equals(password)) {
             return toLogin.getRole();
         }
         return null;
     }
 
-
-    /** This will add the user to the static list allMyUsers */
-    private static boolean addUser(MyUser toAdd) {
-        if (!allMyUsers.contains(toAdd)) {
-            return allMyUsers.add(toAdd);
-        }
-        return false;
-    }
 }

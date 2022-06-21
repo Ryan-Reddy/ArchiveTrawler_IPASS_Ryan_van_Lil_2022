@@ -1,56 +1,52 @@
 package archive.trawler.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.*;
 
+/**Zijn de individuele website links uit de zoek resultaten van de gebruiker.
+ * @resultaatURL URL uit de zoekresultaten.
+ * @thisUser User die hoort bij deze zoekopdracht.
+ * @aantalKeerBezocht aantalkeer dat deze link is aangeklikt, default is 0
+ * @datumBezocht Lijst met data waarop de bezoeker deze link heeft aangeklikt
+ * */
 public class Websites {
-    private String resultaatURL;
-    private int aantalKeerBezocht;
-    private String userID;
-    private ArrayList<LocalDateTime> datumBezocht = new ArrayList<LocalDateTime>();
+    private @Getter @Setter String resultaatURL;
+    private @Getter @Setter  int aantalKeerBezocht;
+    private @Getter @Setter  User userID;
+    private @Getter @Setter ArrayList<LocalDateTime> datumBezocht = new ArrayList<LocalDateTime>();
 
-
-    public Websites(String resultaatURL, String userID) {
+    /** Constructor zonder "aantalkeerbezocht Param." default is dan 0.
+     * @param resultaatURL  URL uit de zoekresultaten.
+     * @param thisUser      User die hoort bij deze zoekopdracht.
+     */
+    public Websites(String resultaatURL, User thisUser) {
         this.resultaatURL = resultaatURL;
         this.aantalKeerBezocht = 0;
-        this.userID = userID;
+        this.userID = thisUser;
     }
 
+    /** Constructor met custom aantalkeerbezocht.
+     * @param resultaatURL URL uit de zoekresultaten.
+     * @param thisUser User die hoort bij deze zoekopdracht.
+     * @param aantalKeerBezocht aantalkeer dat deze link is aangeklikt, default is 0
+     */
+    public Websites(String resultaatURL, User thisUser, int aantalKeerBezocht) {
+        this.resultaatURL = resultaatURL;
+        this.aantalKeerBezocht = aantalKeerBezocht;
+        this.userID = thisUser;
+    }
+
+    /** Telt de keren dat ArchiveTrawler de User heeft doorgelinkt, voegt ook een datalog aan de datumBezocht lijst toe.*/
     public void websiteDoorgelinkt(){
         this.aantalKeerBezocht += 1;
         datumBezocht.add(LocalDateTime.now());
     }
-
-    public String getResultaatURL() {
-        return resultaatURL;
-    }
-
-    public void setResultaatURL(String resultaatURL) {
-        this.resultaatURL = resultaatURL;
-    }
-
-    public int getAantalKeerBezocht() {
-        return aantalKeerBezocht;
-    }
-
-    public void setAantalKeerBezocht(int aantalKeerBezocht) {
-        this.aantalKeerBezocht = aantalKeerBezocht;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
+    /** Haalt een lijst met alle keren dat de User deze specifieke link heeft aangeklikt. */
     public ArrayList<LocalDateTime> getDatumBezocht() {
         return datumBezocht;
-    }
-
-    public void setDatumBezocht(ArrayList<LocalDateTime> datumBezocht) {
-        this.datumBezocht = datumBezocht;
     }
 
     @Override

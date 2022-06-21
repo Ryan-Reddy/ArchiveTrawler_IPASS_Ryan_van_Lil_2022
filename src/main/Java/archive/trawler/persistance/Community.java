@@ -12,10 +12,12 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@Data
-public class Community implements Serializable {
-    private static @Getter
-    @Setter Community community = new Community();
+
+/**Community klas is een behouder van alle informatie
+ * @userMap bevat alle Users die een login hebben op de website, en daarbij ook al hun gegevens.
+ * Uiteindelijk zal er geen andere klasse opgeslagen hoeven te worden naast deze lijst. */
+@Data public class Community implements Serializable {
+    private static @Getter @Setter Community community = new Community();
 
     private static @Getter
     @Setter Map<String, User> userMap = new HashMap<>();

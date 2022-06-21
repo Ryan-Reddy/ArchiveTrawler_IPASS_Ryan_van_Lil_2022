@@ -1,32 +1,25 @@
 package archive.trawler.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+/** Deze klasse behoud alle informatie van individuele (externe) archieven.
+ **/
 public class Archief implements Serializable {
-    private String naam;
-    private String basisURI;
-
+    private @Getter @Setter String naam;
+    private @Getter @Setter String basisURI;
+    /**
+     * Deze klasse behoud alle informatie van individuele (externe) archieven.
+     * @param naam Hierin staat de naam van het archief
+     * @param basisURI Hierin staat de basis URI, waarop je vervolgens kan bouwen met queryParameters
+     */
      public Archief(String naam, String basisURI) {
          this.naam = naam;
          this.basisURI = basisURI;
      }
-
-    public String getNaam() {
-        return naam;
-    }
-
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
-    public String getBasisURI() {
-        return basisURI;
-    }
-
-    public void setBasisURI(String basisURI) {
-        this.basisURI = basisURI;
-    }
 
     @Override
     public boolean equals(Object o) {

@@ -73,13 +73,12 @@ public class User implements Serializable {
         }
     }
 
-    /**
-     * setAllUsers vervangt de huidige lijst allUsers met een aangeleverde List met Users.
-     */
+    /** Vervangt de huidige lijst allUsers met een aangeleverde List met Users. */
     public static void setAllMyUsers(List<User> newAllUsers) {
         Community.setListOfUsersIntoMap(newAllUsers);
     }
 
+    /** Voegt een zoekopdracht toe aan de lijst bewaarde zoekopdrachten die bij deze user hoort. */
     public boolean addZoekertjeAanAlleZoekertjes(Zoekopdracht zoekopdracht) {
         try {
             alleZoekertjes.put((alleZoekertjes.size() + 1), zoekopdracht);
@@ -91,11 +90,9 @@ public class User implements Serializable {
         }
     }
 
+    /** Deze functie haalt het ww op van deze gebruiker.
+     * TODO security implementeren getPassword */
     public String getPassword() {
         return password;
     }
-
-    // TODO schrijf functie addZoekertjeAanAlleZoekrtjes
-    //  scrhijf een functie die het mogelijk maakt een zoekopdracht op te slaan in de lijst
-    //  labels: User, zoekopdracht opslaan
 }

@@ -1,4 +1,4 @@
-package archive.trawler.persistance;
+package archive.trawler.security;
 
 public class EncodedBase64 {
     private String base64str;
