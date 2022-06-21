@@ -30,13 +30,13 @@ public class Community {
         System.out.println("doublechecking user map for: "+newAccount.getEmail());
         System.out.println("... "+newAccount.toString()+"");
 
-//        if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) { //TODO something going wrong here adds tripple same and no new accounts
+        if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) { //TODO something going wrong here adds tripple same and no new accounts
             userMap.put(newAccount.getEmail(), newAccount);
-//            return true;
-//        } else {
+            return true;
+        } else {
             return false;
         }
-//    }
+    }
 
     public static boolean deleteMyUserAccount(String email) {
         try {

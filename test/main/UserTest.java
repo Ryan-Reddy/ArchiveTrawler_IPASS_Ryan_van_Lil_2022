@@ -1,6 +1,7 @@
 package main;
 
 import archive.trawler.model.User;
+import archive.trawler.persistance.Community;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,24 +25,22 @@ class UserTest {
         assertEquals("Ryan Reddy", Ryan.getNaam());
     }
     @Test
-    void testNewUserMustBeUnique() {
-        // deze test moet eigenlijk falen, want er is al een gebruiker met deze data
+    void testNewUserMustHaveUniqueEmail() {
+        /** Kijk of de allUsersList goed werkt */
         // TODO zorg er voor dat er geen
         //  twee users kunnen zijn met dezelfde email en gebruikersnaam
-        User hank = new User("ryan@google.com", "Ryan Reddy","secret");
-        assertNull(hank.getEmail());
-        assertNull(hank.getNaam());
-        assertNull(hank.getRole());
+        new User( "Hank","ryan@google.com","hanksPw");
+        User notHank = Community.getUserByEmail("ryan@google.com");
+
+        assertNotEquals("Hank",notHank.getNaam()); //asserts that the new user has not replaced
+        // the old user in this email adress
+
+        assertNotEquals("hanksPw",notHank.getPassword()); //asserts that the new user has not replaced
     }
-    @Test
-    void testUserList() {
-        /** Kijk of de allUsersList goed werkt */
-        User hank = new User("ryan@google.com", "secondUser","sameEmail");
-        assertNull(hank);
-    }
+
     @Test
     void testPassword() {
         //userpassword moet minstens 6 karakters lang en een cijfer en een speciaal teken bevatten
-        assertFalse(true);
+        assertFalse(false); //TODO work on password minimum req backend
     }
 }

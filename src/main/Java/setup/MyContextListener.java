@@ -40,9 +40,9 @@ public class MyContextListener implements ServletContextListener {
         //  Main problem is that when running dummy data they seem to multiply and having seperate ones doesnt anymore ->>
 
         System.out.println("making dummy users.............|");
-        Community.addUserToMap(new User("Coyote", "CasaSuCasa", "Wilde"));
-        Community.addUserToMap(new User( "CrazyDiamond","syd@barrett.com", "Floyd"));
-        Community.addUserToMap(new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan"));
+        new User("Coyote", "CasaSuCasa", "Wilde");
+        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
+        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
         System.out.println("made the users.................|");
     }
 
