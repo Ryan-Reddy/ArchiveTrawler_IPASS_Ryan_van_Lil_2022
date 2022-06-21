@@ -33,3 +33,7 @@ replay_pid*
 # gets generated when running npm install on each system
 node_modules/
 
+# removes target and out folder
+target/
+out/
+
