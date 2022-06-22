@@ -1,4 +1,5 @@
-@import url('css/main.css');
-@import url('css/tooltip.css');
-@import url('css/alert.css');
-@import url('css/darkLightmode.css');
+@import url('css/main.css'); /* Main features, mostly spacing */
+@import url('css/tooltip.css'); /* Tooltip for the forms */
+@import url('css/alertMistakesInputfield.css'); /* Alert form border style */
+@import url('css/darkMode.css'); /* Light mode for the body */
+@import url('css/lightMode.css'); /* Light mode for the body */

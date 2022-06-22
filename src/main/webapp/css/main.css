@@ -40,6 +40,11 @@ main label {
     height: 60px; /* Hoogte footer */
     background: #6cf;
   }
+  .colormode {
+    position: absolute;
+    right: 0;
+    padding-right: 0.2rem;
+  }
 
 
 h1 {
