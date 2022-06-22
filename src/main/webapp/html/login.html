@@ -14,9 +14,10 @@
     <script type="text/javascript" src="../js/login.js"></script>
 </head>
 
-<body>
+<div id="header"><h1>Log in</h1></div>
+<div id="body" class="bodyDark linkDark">
+    <body>
 <main align="center" style="border:2px solid white">
-<h1>Log in</h1>
 <form id="login_account">
     <label for="email">Email:</label>
     <input autocomplete="email" id="email" name="email" type="email" required/><br>
@@ -35,7 +36,17 @@
 <a href="new-account.html">
     <button>Nieuw account creëren</button>
 </a>
-</main>
-</body>
-
+</main>  </div>
+</body>  </div>
+<div id="footer">
+  <footer>
+    Dark/Light mode:
+    <input
+      id="darkmodeButton"
+      type="button"
+      value="☾☼"
+      onclick="darkmodeToggle()"
+    />
+  </footer>
+</div>
 </html>

@@ -9,10 +9,12 @@
       sizes="16x16"
       type="image/png"
     />
-    <title>Title</title>
+    <title>Zoeken</title>
   </head>
 
-  <body>
+  <div id="header"><h1>Zoeken</h1></div>
+  <div id="body" class="bodyDark linkDark">
+    <body>
     <main align="center" style="border: 2px solid white">
       <form id="postaccount">
         <label for="keywords">keywords:</label
@@ -92,6 +94,17 @@
           <span id="postresponse"></span>
         </div>
       </form>
-    </main>
-  </body>
+    </main>  </div>
+  </body>  </div>
+  <div id="footer">
+    <footer>
+      Dark/Light mode:
+      <input
+        id="darkmodeButton"
+        type="button"
+        value="☾☼"
+        onclick="darkmodeToggle()"
+      />
+    </footer>
+  </div>
 </html>

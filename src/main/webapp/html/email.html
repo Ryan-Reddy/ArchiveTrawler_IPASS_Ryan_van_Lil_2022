@@ -6,7 +6,9 @@
     <title>Send Mail</title>
     <link href="\src\main\webapp\style-index.css" rel="stylesheet"/>
   </head>
-  <body>
+  <div id="header"><h1>Email</h1></div>
+  <div id="body" class="bodyDark linkDark">
+    <body>
     <main align="center" style="border: 2px solid white">
       <form method="post">
         <input
@@ -15,6 +17,17 @@
           onclick="letsGo()"
         />
       </form>
-    </main>
-  </body>
+    </main>  </div>
+  </body>  </div>
+  <div id="footer">
+    <footer>
+      Dark/Light mode:
+      <input
+        id="darkmodeButton"
+        type="button"
+        value="☾☼"
+        onclick="darkmodeToggle()"
+      />
+    </footer>
+  </div>
 </html>

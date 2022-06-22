@@ -1,50 +1,109 @@
 main {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 700px;
-    /* background: #394952; */
-    padding: 10px;
-    align: center;
-    border-style: 3px solid #ccc;
-    
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  /* background: #394952; */
+  padding: 10px;
+  align: center;
+  border-style: 3px solid #ccc;
 }
-
 
 main label {
-    float: left;
-    width: 150px;
+  float: left;
+  width: 150px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Spacing of the page */
+#container {
+    min-height: 100%;
+    position: relative;
+  }
+  #header {
+    background: rgb(196, 196, 26);
+    padding: 10px;
+  }
+  #body {
+    padding: 10px;
+    padding-bottom: 60px; /* Hoogte footer */
+  }
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Hoogte footer */
+    background: #6cf;
+  }
+
+/* DARK MODE: */
+.bodyDark {
+  background-color: #282828;
+  /* background-color: #394952; */
+  caret-color: #ccc;
+  accent-color: #ccc;
+  color: #ccc;
+  font-family: 'Bookman Old Style', serif;
+}
+/* unvisited link */
+.bodyDark a:link { 
+    color: #ccc; 
+       } 
+/* visited link */
+.bodyDark a:visited {        
+    color: #095484;    
+}
+/* mouse over link */
+.bodyDark a:hover {        
+    color: #8ebf42;    
+}
+/* selected link */
+.bodyDark a:active {        
+    color: #800000;    
+} 
+
+
+/* LIGHT MODE: */
+.bodyLight {
+    background-color: #ccc;
+    caret-color: #282828;
+    accent-color: #282828;
+    color: #282828;
+    font-family: 'Bookman Old Style', serif;
+  }
+/* unvisited link */
+.bodyLight a:link { 
+    color: black; 
+    text-decoration-color: grey;
+} 
+/* visited link */
+.bodyLight a:visited {        
+    color: Navy;    
+    text-decoration-color: grey;
+
+}
+/* mouse over link */
+.bodyLight a:hover {        
+    color: #800000;    
+    text-decoration-color: grey;
     
 }
+/* selected link */
+.bodyLight a:active {        
+    color: #8ebf42;  
+    text-decoration-color: grey;
 
-.bodyDark {
-    background-color: #282828;
-    /* background-color: #394952; */
-    caret-color: white;
-    accent-color: white;
-    color: white;
-    font-family: "Bookman Old Style", serif;
-}
-
-.bodyLight {
-    /* background-color: #white; */
-    caret-color: 282828;
-    accent-color: 282828;
-    color: 282828;
-    font-family: "Bookman Old Style", serif;
-}
+} 
 
 h1 {
-    color: inherit;
-    margin-left: 20px;
-}
-
-.right-side-of-page {
-    position: absolute;
-    left: 1rem;
-    float: right;
+  color: inherit;
+  align: center;
+  margin-left: 20px;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
-

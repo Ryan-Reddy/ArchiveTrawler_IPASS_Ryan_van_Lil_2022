@@ -12,11 +12,12 @@
     />
     <title>Wachtwoord vergeten</title>
 </head>
-
-<body>
+<div id="header"><h1>    <h1>Account zoeken</h1></h1></div>
+<div id="body" class="bodyDark linkDark">
+    <body>
     <main class="main">
 
-    <h1>Account zoeken</h1>
+
     <p>Voer je e-mailadres in om je account wachtwoord te resetten.</p>
     <form id="postaccount">
         <label for="adres">E-mail adres:</label><input class="inputfield" type="text" id="adres" name="adres" /><br><br>
@@ -32,7 +33,18 @@
     <a href="new-account.html">
         <button>Nieuw account creëren</button>
     </a>
-    </main>
-</body>
+</main>  </div>
+</body>  </div>
+<div id="footer">
+  <footer>
+    Dark/Light mode:
+    <input
+      id="darkmodeButton"
+      type="button"
+      value="☾☼"
+      onclick="darkmodeToggle()"
+    />
+  </footer>
+</div>
 
 </html>

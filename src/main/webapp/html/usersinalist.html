@@ -8,7 +8,9 @@
     <script type="text/javascript" src="/js/UserUtils.js"></script>
   </head>
 
-  <body id="bodyofUsersList">
+  <div id="header"><h1>Usersinalist</h1></div>
+  <div id="body" class="bodyDark linkDark">
+    <body>
     <main align="center" style="border:2px solid white">
 
     <ul id="userlist-html">
@@ -20,6 +22,17 @@
 
     <input onclick="allUsers()" type="button" value="Click Me" />
     <input onclick="functionName()" type="button" value="Click Me" />
-    </main>
-  </body>
+  </main>  </div>
+</body>  </div>
+<div id="footer">
+  <footer>
+    Dark/Light mode:
+    <input
+      id="darkmodeButton"
+      type="button"
+      value="☾☼"
+      onclick="darkmodeToggle()"
+    />
+  </footer>
+</div>
 </html>

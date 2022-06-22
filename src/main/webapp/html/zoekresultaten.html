@@ -10,10 +10,12 @@
       sizes="16x16"
       href="/assets/icons/favicon-16x16.png"
     />
-    <title>Title</title>
+    <title>Zoekresultaten</title>
   </head>
 
-  <body>
+  <div id="header"><h1>Zoekresultaten</h1></div>
+  <div id="body" class="bodyDark linkDark">
+    <body>
     <main align="center" style="border: 2px solid white">
       <ul>
         <li>
@@ -26,6 +28,17 @@
           <a href="">Resultaat</a>
         </li>
       </ul>
-    </main>
-  </body>
+    </main>  </div>
+  </body>  </div>
+  <div id="footer">
+    <footer>
+      Dark/Light mode:
+      <input
+        id="darkmodeButton"
+        type="button"
+        value="☾☼"
+        onclick="darkmodeToggle()"
+      />
+    </footer>
+  </div>
 </html>

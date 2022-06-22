@@ -15,9 +15,10 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
 
-  <body>
+  <div id="header"><h1>Maak een nieuw account.</h1></div>
+  <div id="body" class="bodyDark linkDark">
+    <body>
     <main align="center" style="border: 2px solid white">
-      <h1>Maak een nieuw account.</h1>
 
       <form autocomplete="on" id="newaccount-form">
         <label for="name">Naam:</label>
@@ -89,6 +90,17 @@
         type="button"
         value="Wachtwoord vergeten"
       />
-    </main>
-  </body>
+    </main>  </div>
+  </body>  </div>
+  <div id="footer">
+    <footer>
+      Dark/Light mode:
+      <input
+        id="darkmodeButton"
+        type="button"
+        value="☾☼"
+        onclick="darkmodeToggle()"
+      />
+    </footer>
+  </div>
 </html>
