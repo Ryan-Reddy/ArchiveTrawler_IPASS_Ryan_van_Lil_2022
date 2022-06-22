@@ -13,5 +13,5 @@ console.log(
       res.json();
     })
     .then((data) => console.log(data))
-    .catch((error) => console.log(`error: ${error}`)),
+    .catch((error) => console.log(`error: ${error}`))
 );

@@ -5,7 +5,8 @@
  *   @returns boolean
  */
 function checkEmailIsEchtEmail(email) {
-  const re = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+  const re =
+    /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
   return re.test(email);
 }
 
@@ -18,15 +19,18 @@ function checkEmailIsEchtEmail(email) {
  * @returns boolean
  */
 function formulierCheck() {
-
   // Bind pagina elementen aan const
   const ww = document.getElementById('password').value;
   const email = document.getElementById('email').value;
   const emailElement = document.getElementById('email');
   const passwordElement = document.getElementById('password');
-  emailElement.addEventListener("mouseover", function(){
-    emailElement.style.backgroundColor = "#ccc";
-  }, false);
+  emailElement.addEventListener(
+    'mouseover',
+    function () {
+      emailElement.style.backgroundColor = '#ccc';
+    },
+    false
+  );
 
   // check of de email een email format heeft, geeft boolean terug
   const emailEcht = checkEmailIsEchtEmail(email);
@@ -50,8 +54,8 @@ function formulierCheck() {
 
   if (ww.length > 5 && emailEcht === true) {
     alert(
-      'Uw account is aangemaakt, u ontvangt van ons een email met daarin een bevestigingslink. Om uw account te kunnen gebruiken, moet u bevestigen dat uw opgegeven e-mailadres geldig is, door klikken op de bevestigingslink die in uw e-mail is verzonden.\n'
-      + 'Als u op de bevestigingslink klikt, wordt u doorgestuurd naar de inlogpagina van uw account. Typ uw inloggegevens en klik op Inloggen om je account te activeren.',
+      'Uw account is aangemaakt, u ontvangt van ons een email met daarin een bevestigingslink. Om uw account te kunnen gebruiken, moet u bevestigen dat uw opgegeven e-mailadres geldig is, door klikken op de bevestigingslink die in uw e-mail is verzonden.\n' +
+        'Als u op de bevestigingslink klikt, wordt u doorgestuurd naar de inlogpagina van uw account. Typ uw inloggegevens en klik op Inloggen om je account te activeren.'
     );
     // sendEmail(email);
     sendNewAccount();
@@ -86,6 +90,6 @@ function wwZichtbaarToggle() {
   // Switch het type van 'password' <=> 'text' en vice versa
   passwordElement.setAttribute(
     'type',
-    typeAttribute === 'password' ? 'text' : 'password',
+    typeAttribute === 'password' ? 'text' : 'password'
   );
 }

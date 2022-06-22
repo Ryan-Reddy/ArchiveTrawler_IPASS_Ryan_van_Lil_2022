@@ -1,78 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--Main Landing page-->
-  <head>
-    <meta charset="UTF-8" />
-    <link id="theme" type="text/css" href="/style-index.css" rel="stylesheet" />
-    <link
-      href="/assets/icons/favicon-16x16.png"
-      rel="icon"
-      sizes="16x16"
-      type="image/png"
-    />
-    <title>Index</title>
-    <script src="/js/darkmode.js" type="text/javascript"></script>
-  </head>
-  <h1 id="header">Index</h1>
-  <body id="body" class="bodyDark linkDark">
-    <main>
-      <hr />
-      <br />
-      <h2>HTML pages</h2>
-      <ul>
-        <li>
-          <a href="html/login.html">Log in.</a>
-        </li>
-        <li>
-          <a href="html/new-account.html">Make a new account.</a>
-        </li>
-        <li>
-          <a href="html/reset-account.html">Reset password dmv account.</a>
-        </li>
-        <li>
-          <a href="html/reset-password.html">New password.</a>
-        </li>
-        <li>
-          <a href="html/account-info.html">Account info wijzigen</a>
-        </li>
-        <li>
-          <a href="html/zoeken.html">Zoekopdracht aanmaken/uitvoeren.</a>
-        </li>
-        <li>
-          <a href="html/zoekresultaten.html">Zoekresultaten.</a>
-        </li>
-        <li>
-          <a href="html/usersinalist.html">userlist.</a>
-        </li>
-      </ul>
+<!--Main Landing page-->
 
-      <h2>RestServices</h2>
-      <ul>
-        <li>
-          <a href="restservices/users">GET users/ restservice</a>
-        </li>
-        <li>
-          <a href="restservices/users/{email}"
-            >GET find_user/email={email} restservice</a
-          >
-        </li>
-        <li>
-          <a href="restservices/status">GET status restservice</a>
-        </li>
-      </ul>
+<head>
+  <meta charset="UTF-8" />
+  <link id="theme" type="text/css" href="/style-index.css" rel="stylesheet" />
+  <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <title>Index</title>
+  <script src="/js/darkmode.js" type="text/javascript"></script>
+</head>
+<h1 id="header">Index</h1>
 
-      <br /><br />
-      <hr />
-      <br />
-    </main>
-  </body>
-  <footer id="footer">
-    Dark/Light mode:
-    <input
-      id="darkmodeButton"
-      type="button"
-      value="☾☼"
-      onclick="darkmodeToggle()"
-    />
-  </footer>
+<body id="body" class="bodyDark linkDark">
+  <main>
+    <hr />
+    <br />
+    <h2>HTML pages</h2>
+    <ul>
+      <li>
+        <a href="html/login.html">Log in.</a>
+      </li>
+      <li>
+        <a href="html/new-account.html">Make a new account.</a>
+      </li>
+      <li>
+        <a href="html/reset-account.html">Reset password dmv account.</a>
+      </li>
+      <li>
+        <a href="html/reset-password.html">New password.</a>
+      </li>
+      <li>
+        <a href="html/account-info.html">Account info wijzigen</a>
+      </li>
+      <li>
+        <a href="html/zoeken.html">Zoekopdracht aanmaken/uitvoeren.</a>
+      </li>
+      <li>
+        <a href="html/zoekresultaten.html">Zoekresultaten.</a>
+      </li>
+      <li>
+        <a href="html/usersinalist.html">userlist.</a>
+      </li>
+    </ul>
+
+    <h2>RestServices</h2>
+    <ul>
+      <li>
+        <a href="restservices/users">GET users/ restservice</a>
+      </li>
+      <li>
+        <a href="restservices/users/{email}">GET find_user/email={email} restservice</a>
+      </li>
+      <li>
+        <a href="restservices/status">GET status restservice</a>
+      </li>
+    </ul>
+
+    <br /><br />
+    <hr />
+    <br />
+  </main>
+</body>
+<footer id="footer">
+  Dark/Light mode:
+  <input id="darkmodeButton" type="button" value="☾☼" onclick="darkmodeToggle()" />
+</footer>
+
 </html>
