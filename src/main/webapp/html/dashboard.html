@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="module">
+        import { loggedUser, template, header, sidebar, footer } from "/js/template.js";
+        window.onload = () => {
+            const [first_name, last_name, email] = ["John", "Doe", "john.doe@gmail.com"];
+            document.getElementById("main").innerHTML = template();
+            document.getElementById("header").innerHTML = header('Dashboard');
+            document.getElementById("sidebar").innerHTML = sidebar(loggedUser.role);
+            document.getElementById("article").innerHTML = `<div id="personal-info">
+                        <h2>Personal Info</h2>
+                        <label>First Name:</label>
+                        <span>${first_name}</span>
+                        <label>Last Name:</label>
+                        <span>${last_name}</span>
+                        <label>Email:</label>
+                        <span>${email}</span>
+                    </div>`;
+            document.getElementById("footer").innerHTML = footer();
+        }
+    </script>
+</head>
+<body>
+<main id="main"></main>
+</body>
+</html>

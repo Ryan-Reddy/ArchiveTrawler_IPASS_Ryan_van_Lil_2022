@@ -29,7 +29,7 @@ public class AuthenticationResource {
     /**
      * Deze functie authenticeert een gebruiker en wordt gebruikt bij inloggen.
      *
-     * @param logonRequest
+     * @param logonRequest data incoming json logonRequest type
      * @return JWT:<br>
      * Een Signature van Header en Payload - Base64Url encoded +<br>
      * Hash van header, payload, en secret key<br>
@@ -72,5 +72,6 @@ public class AuthenticationResource {
         expiration.add(Calendar.MINUTE, verloopTijdJWTToken);
 
         return Jwts.builder().setSubject(email).setExpiration(expiration.getTime()).claim("role", role).signWith(SignatureAlgorithm.HS512, key).compact();
+
     }
 }

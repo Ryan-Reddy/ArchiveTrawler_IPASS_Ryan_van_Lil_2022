@@ -50,7 +50,7 @@ main label {
 h1 {
   color: inherit;
   align-items: center;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 ul {
