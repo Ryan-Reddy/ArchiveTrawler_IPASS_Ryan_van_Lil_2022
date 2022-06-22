@@ -7,10 +7,10 @@ import javax.ws.rs.ApplicationPath;
 @ApplicationPath("restservices")
 public class JerseyConfig  extends ResourceConfig {
     public JerseyConfig() {
-        register(JacksonFeature.class);
         packages(
                 "archive.trawler.webservices",
                 "archive.trawler.security"
         );
+        register(JacksonFeature.class);
     }
 }

@@ -1,7 +1,5 @@
 package setup;
 
-import archive.trawler.model.User;
-import archive.trawler.persistance.Community;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
 import reactor.netty.http.HttpResources;
@@ -11,10 +9,6 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
-
-import archive.trawler.security.MyUser ;
-
 
 @WebListener
 public class MyContextListener implements ServletContextListener {
