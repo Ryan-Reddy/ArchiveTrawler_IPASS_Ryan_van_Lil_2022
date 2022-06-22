@@ -12,11 +12,11 @@ main label {
   float: left;
   width: 150px;
 }
-body {
+/* body {
   margin: 0;
   padding: 0;
   height: 100%;
-}
+} */
 
 /* Spacing of the page */
 #container {
