@@ -1,0 +1,56 @@
+
+/* darkMode MODE: */
+
+.bodyDisco main {
+border-style:double;
+border-width: 5px;
+border-color: #A05344;
+}
+
+.bodyDisco {
+    background-color: #321F28;
+    caret-color: #E79E4F;
+    accent-color: #E79E4F;
+    color: #E79E4F;
+    font-family: 'Bookman Old Style', serif;
+}
+.bodyDisco #header {
+    color: #E79E4F;
+    background: #734046;
+    padding: 10px;
+  }
+.bodyDisco #h1 {
+    background: #734046;
+    color: #A05344;
+    padding: 10px;
+  }
+
+.bodyDisco #footer {
+    font-size: 1.2rem;
+    color: #E79E4F;
+    background: #734046;
+  }
+  
+/* unvisited link */
+.bodyDisco a:link {
+    color: #E79E4F;
+    text-decoration-color: grey;
+}
+
+/* visited link */
+.bodyDisco a:visited {
+    color: #734046;
+    text-decoration-color: grey;
+}
+
+/* mouse over link */
+.bodyDisco a:hover {
+    color: #800000;
+    text-decoration-color: grey;
+}
+
+/* selected link */
+.bodyDisco a:active {
+    color: #8ebf42;
+    text-decoration-color: grey;
+}

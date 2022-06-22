@@ -7,6 +7,12 @@
     color: #282828;
     font-family: 'Bookman Old Style', serif;
 }
+.bodyLight #header {
+    background: rgb(196, 196, 26);
+  }
+.bodyLight #footer {
+    background: #6cf;
+  }
 
 /* unvisited link */
 .bodyLight a:link {

@@ -36,25 +36,17 @@ function darkmodeToggle() {
 
 // window.onload = () => swapStyleSheet(localStorage.getItem('body') || 'default.css');
 
-
-
-
-
-
-
-
-
-
-
-
-
-function retroToggle() {
+function retroModeToggle() {
   const bodyElement = document.getElementById('body');
   const idAttribute = bodyElement.getAttribute('class');
   // TODO retroMode
+  if(!bodyElement.classList.contains('bodyDisco')) {
+  bodyElement.classList.toggle('bodyDisco');
+  }
 
-  // function swapStyleSheet(sheet) {
-  bodyElement.setAttribute(
-    'class',
-    idAttribute === 'bodyDark' ? 'bodyLight' : 'bodyDark',
-  )};
+  // // function swapStyleSheet(sheet) {
+  // bodyElement.setAttribute(
+  //   'class',
+  //   idAttribute === 'bodyDisco',
+  // )
+};

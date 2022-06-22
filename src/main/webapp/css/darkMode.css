@@ -7,7 +7,12 @@
     color: #ccc;
     font-family: 'Bookman Old Style', serif;
 }
-
+.bodyDark #header {
+    background: rgb(94, 94, 12);
+  }
+  .bodyDark #footer {
+    background: rgb(6, 47, 67);
+  }
 /* unvisited link */
 .bodyDark a:link {
     color: #ccc;
@@ -15,7 +20,7 @@
 
 /* visited link */
 .bodyDark a:visited {
-    color: #095484;
+    color: #134563;
 }
 
 /* mouse over link */
