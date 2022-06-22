@@ -1,8 +1,13 @@
 
 /* darkMode MODE: */
-div #discoball {
-    display: inline;
-}
+#discoball {
+    border-style:double;
+    border-width: 5px;
+    border-color: #A05344;
+    position: fixed;
+    right: 20px;
+  }
+  
 .bodyDisco main {
 border-style:double;
 border-width: 5px;
