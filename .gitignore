@@ -35,3 +35,20 @@ out/
 
 # gets generated when running npm install on each system
 node_modules/
+/data/beam.png
+/data/shaders/bloom.frag
+/data/bloom.tga
+/data/shaders/bloom.vert
+/data/bloom_alpha.tga
+/data/file.png
+/data/fonts/FreeSans.ttf
+/cmd/gource
+/cmd/gource.cmd
+/data/gource.style
+/data/fonts/README.txt
+/data/shaders/shadow.frag
+/data/shaders/shadow.vert
+/src/main/webapp/html/test.html
+/data/shaders/text.frag
+/data/shaders/text.vert
+/data/user.png
