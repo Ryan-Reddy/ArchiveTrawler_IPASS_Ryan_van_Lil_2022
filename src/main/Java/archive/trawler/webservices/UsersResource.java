@@ -2,6 +2,7 @@ package archive.trawler.webservices;
 
 import archive.trawler.model.User;
 import archive.trawler.persistance.Community;
+import archive.trawler.webservices.dto.DeleteAccountDTO;
 import archive.trawler.webservices.dto.NewAccount;
 
 import javax.ws.rs.*;
@@ -71,10 +72,10 @@ public class UsersResource {
      * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
      */
     @DELETE
-    @Path("{email}")
+    @Path("deleteaccount")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserAccount(@PathParam("email") String email) {
-        return Community.deleteMyUserAccount(email)
+    public Response deleteUserAccount(DeleteAccountDTO email) {
+        return Community.deleteMyUserAccount(email.email)
                 ? Response.ok(String.format("the user %s has been deleted..", email)).build()        // give ok http response if it works
                 : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
     }

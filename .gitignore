@@ -25,15 +25,13 @@ hs_err_pid*
 replay_pid*
 
 # Project exclude paths
-/out/
+
+# removes target and out folder
+target/
+out/
 
 #intellij files
 .idea
 
 # gets generated when running npm install on each system
 node_modules/
-
-# removes target and out folder
-target/
-out/
-
