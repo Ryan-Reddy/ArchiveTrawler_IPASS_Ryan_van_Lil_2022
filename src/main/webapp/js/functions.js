@@ -1,11 +1,12 @@
-const toBase64 = (file) => new Promise((resolve, reject) => {
-  if (file === undefined) resolve('');
+const toBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    if (file === undefined) resolve('');
 
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.addEventListener('load', () => resolve(reader.result));
-  reader.addEventListener('error', (error) => reject(error));
-});
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener('load', () => resolve(reader.result));
+    reader.addEventListener('error', (error) => reject(error));
+  });
 
 // async function sendFormData(event) {
 //   const element = document.querySelector('#postresponse');
@@ -23,7 +24,6 @@ const toBase64 = (file) => new Promise((resolve, reject) => {
 //   element.textContent = `Statuscode: ${response.status}`;
 // }
 //
-
 
 // async function sendNewAccount(event) {
 //   // const element = document.querySelector('#postresponse');
@@ -57,22 +57,24 @@ async function sendNewAccount(event) {
     method: 'POST',
     body: JSON.stringify(jsonRequestBody),
     headers: {
-      'Accept': 'application/json', 'Content-Type': 'application/json'
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
   };
   await fetch('/restservices/users/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then(async function (response) {
-        if (response.ok) { // als er een nieuw account gecreeerd is dan inloggen
-          open("http://localhost:8080/html/login.html") // als deze klaar is open de log in pagina
-          throw "welcome! je nieuwe account is aangemaakt"
-        } else {
-          alert("Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'." )
-          throw "er ging iets mis";
-        }    //if !200 there will be no body
-      }
-    )
+      if (response.ok) {
+        // als er een nieuw account gecreeerd is dan inloggen
+        open('http://localhost:8080/html/login.html'); // als deze klaar is open de log in pagina
+        throw 'welcome! je nieuwe account is aangemaakt';
+      } else {
+        alert(
+          "Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'."
+        );
+        throw 'er ging iets mis';
+      } //if !200 there will be no body
+    });
 }
-
 
 function showAccount(myjson) {
   const template = document.querySelector('#accounttemplate');

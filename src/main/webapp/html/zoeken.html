@@ -1,49 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link href="/style-index.css" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <link href="\src\main\webapp\style-index.css" rel="stylesheet"/>
     <link
-            href="/assets/icons/favicon-16x16.png"
-            rel="icon"
-            sizes="16x16"
-            type="image/png"
+      href="/assets/icons/favicon-16x16.png"
+      rel="icon"
+      sizes="16x16"
+      type="image/png"
     />
     <title>Title</title>
-</head>
+  </head>
 
-<body>
-<form id="postaccount">
-    <label for="keywords">keywords:</label><input class="inputfield" id="keywords" name="keywords" type="text"/><br><br>
-    <label for="voornaam">voornaam:</label><input class="inputfield" id="voornaam" name="voornaam" type="text"/><br><br>
-    <label for="achternaam">achternaam:</label><input class="inputfield" id="achternaam" name="achternaam" type="text"/><br><br>
-    <label for="jaarVan">jaarVan:</label><input class="inputfield" id="jaarVan" name="jaarVan" type="text"/><br><br>
-    <label for="jaarTot">jaarTot:</label><input class="inputfield" id="jaarTot" name="jaarTot" type="text"/><br><br>
+  <body>
+    <main align="center" style="border: 2px solid white">
+      <form id="postaccount">
+        <label for="keywords">keywords:</label
+        ><input
+          class="inputfield"
+          id="keywords"
+          name="keywords"
+          type="text"
+        /><br /><br />
+        <label for="voornaam">voornaam:</label
+        ><input
+          class="inputfield"
+          id="voornaam"
+          name="voornaam"
+          type="text"
+        /><br /><br />
+        <label for="achternaam">achternaam:</label
+        ><input
+          class="inputfield"
+          id="achternaam"
+          name="achternaam"
+          type="text"
+        /><br /><br />
+        <label for="jaarVan">jaarVan:</label
+        ><input
+          class="inputfield"
+          id="jaarVan"
+          name="jaarVan"
+          type="text"
+        /><br /><br />
+        <label for="jaarTot">jaarTot:</label
+        ><input
+          class="inputfield"
+          id="jaarTot"
+          name="jaarTot"
+          type="text"
+        /><br /><br />
 
-    <hr>
-    <h3>Archieven te doorzoeken</h3>
-    <div>
-        <input id="archiveDublin" name="archiveDublin" type="checkbox" value="archiveDublin">
-        <label for="archiveDublin">Archief van Dublin</label> <br>
+        <hr />
+        <h3>Archieven te doorzoeken</h3>
+        <div>
+          <input
+            id="archiveDublin"
+            name="archiveDublin"
+            type="checkbox"
+            value="archiveDublin"
+          />
+          <label for="archiveDublin">Archief van Dublin</label> <br />
 
-        <input id="archiveAmsterdam" name="archiveAmsterdam" type="checkbox" value="archiveAmsterdam">
-        <label for="archiveAmsterdam">Archief van Amsterdam</label>
-    </div>
+          <input
+            id="archiveAmsterdam"
+            name="archiveAmsterdam"
+            type="checkbox"
+            value="archiveAmsterdam"
+          />
+          <label for="archiveAmsterdam">Archief van Amsterdam</label>
+        </div>
 
-    <hr>
-    <br>
-    <div>
-        <a href="zoeken.html">
+        <hr />
+        <br />
+        <div>
+          <a href="zoeken.html">
             <button>Reset velden</button>
-        </a>
-        <input id="send_json" onclick="sendJsonData()" type="button" value="Zoek--send json"/>
-        <input id="send_formdata" onclick="sendFormData()" type="button" value="Zoek--send formdata"/>
-        <span id="postresponse"></span>
-    </div>
-
-</form>
-
-</body>
-
+          </a>
+          <input
+            id="send_json"
+            onclick="sendJsonData()"
+            type="button"
+            value="Zoek--send json"
+          />
+          <input
+            id="send_formdata"
+            onclick="sendFormData()"
+            type="button"
+            value="Zoek--send formdata"
+          />
+          <span id="postresponse"></span>
+        </div>
+      </form>
+    </main>
+  </body>
 </html>

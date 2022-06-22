@@ -1,23 +1,36 @@
-#main {
+main {
     margin-left: auto;
     margin-right: auto;
     max-width: 700px;
-    background: aquamarine;
+    /* background: #394952; */
     padding: 10px;
+    align: center;
+    border-style: 3px solid #ccc;
+    
 }
 
-#main label {
+
+main label {
     float: left;
     width: 150px;
+    
 }
 
-body {
-    background-color: black;
+.bodyDark {
+    background-color: #282828;
+    /* background-color: #394952; */
     caret-color: white;
     accent-color: white;
     color: white;
     font-family: "Bookman Old Style", serif;
+}
 
+.bodyLight {
+    /* background-color: #white; */
+    caret-color: 282828;
+    accent-color: 282828;
+    color: 282828;
+    font-family: "Bookman Old Style", serif;
 }
 
 h1 {
@@ -30,3 +43,8 @@ h1 {
     left: 1rem;
     float: right;
 }
+
+ul {
+    list-style-type: none;
+}
+
