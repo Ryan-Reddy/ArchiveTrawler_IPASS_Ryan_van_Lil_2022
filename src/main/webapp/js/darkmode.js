@@ -3,23 +3,25 @@
  *   @returns void
  */
 function darkmodeToggle() {
-  const discoBallElement = document.getElementById('discoball');
-  discoBallElement.style.display = 'none'; // hide discoball gif
 
   const bodyElement = document.getElementById('body');
-  const idAttribute = bodyElement.getAttribute('class');
+  const classAttribute = bodyElement.getAttribute('class');
 
   // function swapStyleSheet(sheet) {
-  bodyElement.setAttribute(
-    'class',
-    idAttribute === 'bodyDark' ? 'bodyLight' : 'bodyDark',
-    // TODO linkDark ook implementeren
-  );
+  bodyElement.setAttribute('class'
+    , classAttribute === 'bodyDark' ? 'bodyLight' : 'bodyDark'
+    , classAttribute === 'linkDark' ? 'linkLight' : 'linkDark',);
+  console.log(bodyElement.classList);
+
 
   // Toggle het id van 'body' <=> 'body-dark-mode'
   // //   localStorage.setItem('sheet', sheet);
   // TODO implement localstorage for darkmode so it will toggle sitewide
+
+  const discoBallElement = document.getElementById('discoball');
+  discoBallElement.style.display = 'none'; // hide discoball gif
 }
+
 // https://stackoverflow.com/questions/46868253/how-to-enable-dark-mode-in-all-pages
 
 // window.onload = () => swapStyleSheet(localStorage.getItem('body') || 'default.css');
@@ -35,10 +37,7 @@ function retroModeToggle() {
     bodyElement.classList.toggle('bodyDisco');
   }
 
-  window.onload = () =>
-    bodyElement.classList.add(
-      localStorage.getItem('chosenColorScheme') || 'default.css',
-    );
+  window.onload = () => bodyElement.classList.add(localStorage.getItem('chosenColorScheme') || 'default.css',);
 
   // // function swapStyleSheet(sheet) {
   // bodyElement.setAttribute(
