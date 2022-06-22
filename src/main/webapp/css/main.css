@@ -46,7 +46,6 @@ main label {
     bottom: 0;
     width: 100%;
     height: 7rem; /* Hoogte footer */
-    align-items: right;
 }
 
 #header {
