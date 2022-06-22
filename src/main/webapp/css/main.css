@@ -41,64 +41,6 @@ main label {
     background: #6cf;
   }
 
-/* DARK MODE: */
-.bodyDark {
-  background-color: #282828;
-  /* background-color: #394952; */
-  caret-color: #ccc;
-  accent-color: #ccc;
-  color: #ccc;
-  font-family: 'Bookman Old Style', serif;
-}
-/* unvisited link */
-.bodyDark a:link { 
-    color: #ccc; 
-       } 
-/* visited link */
-.bodyDark a:visited {        
-    color: #095484;    
-}
-/* mouse over link */
-.bodyDark a:hover {        
-    color: #8ebf42;    
-}
-/* selected link */
-.bodyDark a:active {        
-    color: #800000;    
-} 
-
-
-/* LIGHT MODE: */
-.bodyLight {
-    background-color: #ccc;
-    caret-color: #282828;
-    accent-color: #282828;
-    color: #282828;
-    font-family: 'Bookman Old Style', serif;
-  }
-/* unvisited link */
-.bodyLight a:link { 
-    color: black; 
-    text-decoration-color: grey;
-} 
-/* visited link */
-.bodyLight a:visited {        
-    color: Navy;    
-    text-decoration-color: grey;
-
-}
-/* mouse over link */
-.bodyLight a:hover {        
-    color: #800000;    
-    text-decoration-color: grey;
-    
-}
-/* selected link */
-.bodyLight a:active {        
-    color: #8ebf42;  
-    text-decoration-color: grey;
-
-} 
 
 h1 {
   color: inherit;
