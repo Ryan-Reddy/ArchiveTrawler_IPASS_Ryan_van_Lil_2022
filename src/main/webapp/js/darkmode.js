@@ -3,14 +3,14 @@
  *   @returns void
  */
 function darkmodeToggle() {
-
   const bodyElement = document.getElementById('body');
-  const classAttribute = bodyElement.getAttribute('class');
+  // const classesAsList = bodyElement.classList;
 
-  // function swapStyleSheet(sheet) {
-  bodyElement.setAttribute('class'
-    , classAttribute === 'bodyDark' ? 'bodyLight' : 'bodyDark'
-    , classAttribute === 'linkDark' ? 'linkLight' : 'linkDark',);
+
+  bodyElement.classList.toggle('bodyDark');
+  bodyElement.classList.toggle('bodyLight');
+
+
   console.log(bodyElement.classList);
 
 

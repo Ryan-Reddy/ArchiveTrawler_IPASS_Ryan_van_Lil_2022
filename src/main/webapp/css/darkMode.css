@@ -7,6 +7,9 @@
     color: #ccc;
     font-family: 'Bookman Old Style', serif;
 }
+.bodyDark main {
+    border-color: #ccc;
+}
 .bodyDark #header {
     background: rgb(94, 94, 12);
   }
