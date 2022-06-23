@@ -2,13 +2,16 @@ package archive.trawler.webservices;
 
 import archive.trawler.model.User;
 import archive.trawler.persistance.Community;
+import archive.trawler.security.MyUser;
 import archive.trawler.webservices.dto.DeleteAccountDTO;
 import archive.trawler.webservices.dto.NewAccount;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -30,24 +33,29 @@ public class UsersResource {
      * @return JSON
      */
     @GET
-    @RolesAllowed("user")
     @Path("")
+    @RolesAllowed("user")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllUsers() {
-        LinkedHashMap<String, Object> totaalMessages = new LinkedHashMap<>();
+    public Response getAllUsers(@Context SecurityContext sc) {
+        if(sc.getUserPrincipal() instanceof MyUser) {
+            MyUser current = (MyUser) sc.getUserPrincipal();
 
-        Community.getUserMap().forEach((key, user) -> {
-            LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
-            interMessage.put("key", key);
-            interMessage.put("Naam", user.getNaam());
-            interMessage.put("Email", user.getEmail());
-            interMessage.put("password", user.getPassword());
-            interMessage.put("zoekertjes", user.getAlleZoekertjes());
-            interMessage.put("role", user.getRole());
-            totaalMessages.put(key, interMessage);
-        });
+            LinkedHashMap<String, Object> totaalMessages = new LinkedHashMap<>();
+            totaalMessages.put(current.getNaam(),current.getRole());
 
-        return ok(totaalMessages).build();
+            Community.getUserMap().forEach((key, user) -> {
+                LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
+                interMessage.put("key", key);
+                interMessage.put("Naam", user.getNaam());
+                interMessage.put("Email", user.getEmail());
+                interMessage.put("password", user.getPassword());
+                interMessage.put("zoekertjes", user.getAlleZoekertjes());
+                interMessage.put("role", user.getRole());
+                totaalMessages.put(key, interMessage);
+            });
+            return ok(totaalMessages).build();
+
+        } return ok("error", "something sadly went wrong, contact the pope!").build();
     }
 
     /** The resource getAccount willreturn the user and its data.
