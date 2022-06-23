@@ -1,0 +1,51 @@
+#footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10rem;
+
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 10rem; /* Hoogte footer */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.footerleft {
+    border-color: #ccc;
+
+    /*position: relative;*/
+    /*width: 150px;*/
+    /*margin-left: 5rem;*/
+    /*margin-right: 4rem;*/
+}
+
+.footerCenter {
+    /*position: relative;*/
+    border-color: #ccc;
+    /*align-self: center;*/
+    /*margin-left: 50%;*/
+    /*width: 25%;*/
+}
+
+.footerRight {
+    border-color: #ccc;
+
+    /*position: relative;*/
+    /*float: right;*/
+    /*margin-right: 5rem;*/
+}

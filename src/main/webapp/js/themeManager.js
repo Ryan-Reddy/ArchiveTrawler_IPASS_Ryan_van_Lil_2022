@@ -3,7 +3,6 @@ window.onload = () => {
   LoadPage();
 };
 
-
 /** laad een eventueel opgeslagen thema voorkeur uit localstorage of maak deze bodyDark */
 function LoadPage() {
   const bodyElement = document.getElementById('body');
@@ -22,7 +21,8 @@ function LoadPage() {
       document.getElementById('discoball').style.display = 'block'; // show discoball gif
     }
   }
-  const footerCelement = document.getElementById('footerCenter');
+  const footerCelement = document.getChildById('footer');
+  footerCelement.classList.add('grid-item');
   footerCelement.innerHTML += 'hello';
 }
 
