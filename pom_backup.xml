@@ -7,7 +7,8 @@
     <artifactId>ArchiveTrawler_IPASS_Ryan_van_Lil_2022</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>ArchiveTrawler_IPASS_Ryan_van_Lil_2022</name> <!-- changed this in -->
+    <name>ReferenceProject</name>                                <!--    CHANGED -->
+    <!--    <name>ArchiveTrawler_IPASS_Ryan_van_Lil_2022</name>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,18 +24,7 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
         </dependency>
-<!--        <dependency>-->  <!-- ultimately needed for authentication -->
-<!--            <groupId>io.jsonwebtoken</groupId>-->
-<!--            <artifactId>jjwt</artifactId>-->
-<!--            <version>0.9.1</version>-->
-<!--        </dependency>-->
-
-
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish.jersey.media</groupId>-->
-<!--            <artifactId>jersey-media-json-jackson</artifactId>-->
-<!--            <version>2.30.1</version>-->
-<!--        </dependency>-->
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
@@ -46,15 +36,16 @@
             <version>${jersey.version}</version>
         </dependency>
         <dependency>
-        <groupId>org.glassfish.jersey.media</groupId> <!-- jab job writer -->
+            <groupId>org.glassfish.jersey.media</groupId> <!-- jab job writer -->
             <artifactId>jersey-media-json-jackson</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish</groupId>-->
-<!--            <artifactId>javax.json</artifactId>-->
-<!--            <version>1.0.4</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.glassfish</groupId> <!-- JSON array / object builder-->
+            <artifactId>javax.json</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId> <!-- jjwt goede security token maker-->
@@ -65,38 +56,34 @@
             <artifactId>lombok</artifactId> <!-- Lombok for easy getters/setters -->
             <version>1.18.22</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-api</artifactId> &lt;!&ndash; ultimate java logging tool &ndash;&gt;-->
-<!--            <version>2.0.0-alpha7</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-api</artifactId> &lt;!&ndash; ultimate java logging tool &ndash;&gt;-->
+        <!--            <version>2.0.0-alpha7</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-nop</artifactId> <!-- secondary logger for azure -->
             <version>2.0.0-alpha1</version>
         </dependency>
-
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <dependency>
-            <groupId>com.azure</groupId>
-            <artifactId>azure-storage-blob</artifactId> <!-- azure blob storage -->
+            <groupId>com.azure</groupId>            <!-- azure blob storage -->
+            <artifactId>azure-storage-blob</artifactId>
             <version>12.16.0</version>
         </dependency>
-
-        <dependency>
+        <dependency>                                  <!-- junitUnit testing -->
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId> <!-- junit tests -->
+            <artifactId>junit-jupiter</artifactId>
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
-
-
-
-<!--        <dependency>-->
-<!--            <groupId>com.fasterxml.jackson</groupId>-->
-<!--            <artifactId>jackson-base</artifactId>-->
-<!--            <version>${jackson.version}</version>-->
-<!--        </dependency>-->
-
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.fasterxml.jackson</groupId>-->
+        <!--            <artifactId>jackson-base</artifactId>-->
+        <!--            <version>${jackson.version}</version>-->
+        <!--        </dependency>-->
         <dependency> <!-- needed for blob -->
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>

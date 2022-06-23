@@ -16,10 +16,14 @@ function halleluja() {
     }
   };
   console.log('starting fetch')
+  console.log('restservices/users/', fetchOptions)
 
   fetch('restservices/users/', fetchOptions)
     .then(function (response) {
-      if (response.ok) console.log('credentials correct, you are a user')
+      if (response.ok) {
+        console.log('credentials correct, you are a user');
+        console.log(response);
+      }
       else if (response.status == 404) console.log("could not find the stuff")
       else if (response.status == 401) console.log("unauthorized")
     }).catch(error => console.log(error));

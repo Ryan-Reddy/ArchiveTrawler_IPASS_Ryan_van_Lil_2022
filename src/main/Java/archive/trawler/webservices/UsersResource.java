@@ -7,6 +7,9 @@ import archive.trawler.webservices.dto.DeleteAccountDTO;
 import archive.trawler.webservices.dto.NewAccount;
 
 import javax.annotation.security.RolesAllowed;
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -39,22 +42,65 @@ public class UsersResource {
     public Response getAllUsers() {
 //    public Response getAllUsers(@Context SecurityContext sc) {
 //        if(sc.getUserPrincipal() instanceof MyUser) {
-//            MyUser current = (MyUser) sc.getUserPrincipal();
-            LinkedHashMap<String, Object> totaalMessages = new LinkedHashMap<>();
-//            totaalMessages.put(current.getNaam(),current.getRole());  //TODO reinstate security here by uncommenting
+
+            JsonArrayBuilder jab = Json.createArrayBuilder();
+                JsonObjectBuilder job = Json.createObjectBuilder(); // TODO figure out location
+
             Community.getUserMap().forEach((key, user) -> {
-                LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
-                interMessage.put("key", key);
-                interMessage.put("Naam", user.getNaam());
-                interMessage.put("Email", user.getEmail());
-                interMessage.put("password", user.getPassword());
-                interMessage.put("zoekertjes", user.getAlleZoekertjes());
-                interMessage.put("role", user.getRole());
-                totaalMessages.put(key, interMessage);
+//                job.add("key", key);
+                job.add("Naam", user.getNaam());
+                job.add("Email", user.getEmail());
+                job.add("password", user.getPassword());
+//                job.add("zoekertjes", user.getAlleZoekertjes()); // TODO create blob storage for search data
+                job.add("role", user.getRole());
+                jab.add(job);
             });
-            return ok(totaalMessages).build();
+            return ok(jab).build();
 //        } return ok("error", "something sadly went wrong, contact the pope!").build();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    /**
+//     * function getAllUsers
+//     * This function returns all users into one neat JSON
+//     *
+//     * @return JSON
+//     */
+//    @GET
+//    @Path("")
+////    @RolesAllowed("user")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response getAllUsers() {
+////    public Response getAllUsers(@Context SecurityContext sc) {
+////        if(sc.getUserPrincipal() instanceof MyUser) {
+////            MyUser current = (MyUser) sc.getUserPrincipal();
+//            LinkedHashMap<String, Object> totaalMessages = new LinkedHashMap<>();
+////            totaalMessages.put(current.getNaam(),current.getRole());  //TODO reinstate security here by uncommenting
+//            Community.getUserMap().forEach((key, user) -> {
+//                LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
+//                interMessage.put("key", key);
+//                interMessage.put("Naam", user.getNaam());
+//                interMessage.put("Email", user.getEmail());
+//                interMessage.put("password", user.getPassword());
+//                interMessage.put("zoekertjes", user.getAlleZoekertjes());
+//                interMessage.put("role", user.getRole());
+//                totaalMessages.put(key, interMessage);
+//            });
+//            return ok(totaalMessages).build();
+////        } return ok("error", "something sadly went wrong, contact the pope!").build();
+//    }
 
     /** The resource getAccount willreturn the user and its data.
      *
@@ -106,7 +152,7 @@ public class UsersResource {
     }
     @PATCH
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("{email}")
+    @Path("")
     public Response patchUser(NewAccount info) {
         //TODO create patchUser pipeline in html but also here
         try {
