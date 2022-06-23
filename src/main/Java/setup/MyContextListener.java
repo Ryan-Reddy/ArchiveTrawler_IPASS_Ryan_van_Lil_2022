@@ -31,9 +31,9 @@ public class MyContextListener implements ServletContextListener {
             e.printStackTrace();
         }
         new User("Coyote", "test@mail.com", "password");
-        /*new User("Coyote", "CasaSuCasa", "Wilde");
+        new User("TickTock", "aldous@harding.com", "Wilde");
         new User( "CrazyDiamond","syd@barrett.com", "Floyd");
-        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");*/
+        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
     }
 
     /** contextDestroyed

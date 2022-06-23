@@ -23,6 +23,7 @@ function halleluja() {
       if (response.ok) {
         console.log('credentials correct, you are a user');
         console.log(response);
+        document.querySelector('#myData').innerText = response;
       }
       else if (response.status == 404) console.log("could not find the stuff")
       else if (response.status == 401) console.log("unauthorized")

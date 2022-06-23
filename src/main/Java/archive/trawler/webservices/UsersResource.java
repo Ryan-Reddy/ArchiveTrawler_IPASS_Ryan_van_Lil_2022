@@ -17,8 +17,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import static javax.ws.rs.core.Response.ok;
@@ -31,15 +29,7 @@ import static javax.ws.rs.core.Response.ok;
 @Path("users")
 public class UsersResource {
 
-    /**
-     * function getAllUsers
-     * This function returns all users into one neat JSON
-     *
-     * @return JSON
-     */
-//    @GET
-//    @Path("")
-////    @RolesAllowed("user")
+
 //    @Produces(MediaType.APPLICATION_JSON)
 //    public Response getAllUsers() {
 ////    public Response getAllUsers(@Context SecurityContext sc) {
@@ -58,33 +48,37 @@ public class UsersResource {
 //                jab.add(job);
 //            });
 //            return ok(jab).build();
-////        } return ok("error", "something sadly went wrong, contact the pope!").build();
+//        } return ok("error", "something sadly went wrong, contact the pope!").build();
 //    }
+
+    /**
+     * function getAllUsers
+     * This function returns all users into one neat JSON
+     *
+     * @return JSON
+     */
     @GET
+    @Path("")
+    @RolesAllowed("user")
     @Produces("application/json")
-    public String getAllUsers() {
-        Map<String, User> commune = Community.getUserMap();
-        JsonArrayBuilder jab = Json.createArrayBuilder();
+    public Response getAllUsers(@Context SecurityContext sc) {
+        if (sc.getUserPrincipal() instanceof User) {
+            Map<String, User> commune = Community.getUserMap();
+            JsonArrayBuilder jab = Json.createArrayBuilder();
 
-        JsonObjectBuilder job = Json.createObjectBuilder();
+            JsonObjectBuilder job = Json.createObjectBuilder();
             commune.forEach((key, user) -> {
-            job.add(key, user.toString());
-            jab.add(job);
-        });
-        JsonArray array = jab.build();
-        return array.toString();
+
+
+                job.add("email", user.getEmail());
+                job.add("naam", user.getNaam());
+                job.add("hoeveelheid zoekopdrachten", user.getAlleZoekertjes().size());
+                jab.add(job);
+            });
+            return ok(jab.build()).build();
+        }
+        return ok("error", "something sadly went wrong, contact the pope!").build();
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 //    /**
@@ -117,7 +111,8 @@ public class UsersResource {
 ////        } return ok("error", "something sadly went wrong, contact the pope!").build();
 //    }
 
-    /** The resource getAccount willreturn the user and its data.
+    /**
+     * The resource getAccount willreturn the user and its data.
      *
      * @param email = the email connected to the users account.
      * @return User or NOT_FOUND
@@ -144,8 +139,7 @@ public class UsersResource {
     @Path("deleteaccount")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteUserAccount(DeleteAccountDTO email) {
-        return Community.deleteMyUserAccount(email.email)
-                ? Response.ok(String.format("the user %s has been deleted..", email)).build()        // give ok http response if it works
+        return Community.deleteMyUserAccount(email.email) ? Response.ok(String.format("the user %s has been deleted..", email)).build()        // give ok http response if it works
                 : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
     }
 
@@ -165,6 +159,7 @@ public class UsersResource {
         messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + info.name);
         return ok(messages).build();
     }
+
     @PATCH
     @Produces(MediaType.APPLICATION_JSON)
     @Path("")
