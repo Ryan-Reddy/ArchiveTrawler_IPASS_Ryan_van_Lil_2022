@@ -15,17 +15,28 @@ import java.util.Map;
  * Klasse die gebruikt word om de users te creeeren.
  */
 public class User implements Serializable, Principal {
-    /** naam van de gebruiker, persoonlijke naam, voor en/of achternaam. */
+    /**
+     * wachtwoord van de gebruiker.
+     */
+    private final String password; //plz only store hashed password
+    /**
+     * naam van de gebruiker, persoonlijke naam, voor en/of achternaam.
+     */
     private @Getter
     @Setter String naam;
-    /** email adres, is gelijk ook de username van de inlog */
+    /**
+     * email adres, is gelijk ook de username van de inlog
+     */
     private @Getter
     @Setter String email;
-    /** rol van de gebruiker. */
-    private @Getter @Setter String role;
-    /** wachtwoord van de gebruiker. */
-    private final String password; //plz only store hashed password
-    /** Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.*/
+    /**
+     * rol van de gebruiker.
+     */
+    private @Getter
+    @Setter String role;
+    /**
+     * Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.
+     */
     private @Getter
     @Setter Map<Integer, Object> alleZoekertjes;
 //    private @Getter
@@ -58,6 +69,7 @@ public class User implements Serializable, Principal {
 
     /**
      * Zoekt de user die hoort bij dit emailadres
+     *
      * @param email de email die bij de gebruiker hoort, is meteen ook de key om deze op te zoeken.
      * @return de User
      */
@@ -78,12 +90,16 @@ public class User implements Serializable, Principal {
         }
     }
 
-    /** Vervangt de huidige lijst allUsers met een aangeleverde List met Users. */
+    /**
+     * Vervangt de huidige lijst allUsers met een aangeleverde List met Users.
+     */
     public static void setAllMyUsers(List<User> newAllUsers) {
         Community.setListOfUsersIntoMap(newAllUsers);
     }
 
-    /** Voegt een zoekopdracht toe aan de lijst bewaarde zoekopdrachten die bij deze user hoort. */
+    /**
+     * Voegt een zoekopdracht toe aan de lijst bewaarde zoekopdrachten die bij deze user hoort.
+     */
     public boolean addZoekertjeAanAlleZoekertjes(Zoekopdracht zoekopdracht) {
         try {
             alleZoekertjes.put((alleZoekertjes.size() + 1), zoekopdracht);
@@ -95,8 +111,10 @@ public class User implements Serializable, Principal {
         }
     }
 
-    /** Deze functie haalt het ww op van deze gebruiker.
-     * TODO security implementeren getPassword */
+    /**
+     * Deze functie haalt het ww op van deze gebruiker.
+     * TODO security implementeren getPassword
+     */
     public String getPassword() {
         return password;
     }
