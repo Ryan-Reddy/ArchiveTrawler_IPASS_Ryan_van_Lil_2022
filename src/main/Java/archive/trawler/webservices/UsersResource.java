@@ -5,6 +5,7 @@ import archive.trawler.persistance.Community;
 import archive.trawler.webservices.dto.DeleteAccountDTO;
 import archive.trawler.webservices.dto.NewAccount;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -29,6 +30,7 @@ public class UsersResource {
      * @return JSON
      */
     @GET
+    @RolesAllowed("user")
     @Path("")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllUsers() {
