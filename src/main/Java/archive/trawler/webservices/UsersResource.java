@@ -8,6 +8,7 @@ import archive.trawler.webservices.dto.NewAccount;
 
 import javax.annotation.security.RolesAllowed;
 import javax.json.Json;
+import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
@@ -17,6 +18,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import static javax.ws.rs.core.Response.ok;
@@ -35,30 +37,43 @@ public class UsersResource {
      *
      * @return JSON
      */
+//    @GET
+//    @Path("")
+////    @RolesAllowed("user")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response getAllUsers() {
+////    public Response getAllUsers(@Context SecurityContext sc) {
+////        if(sc.getUserPrincipal() instanceof MyUser) {
+//
+//        JsonArrayBuilder jab = Json.createArrayBuilder();
+//                JsonObjectBuilder job = Json.createObjectBuilder(); // TODO figure out location
+//
+//            Community.getUserMap().forEach((key, user) -> {
+////                job.add("key", key);
+//                job.add("Naam", user.getNaam());
+//                job.add("Email", user.getEmail());
+//                job.add("password", user.getPassword());
+////                job.add("zoekertjes", user.getAlleZoekertjes()); // TODO create blob storage for search data
+//                job.add("role", user.getRole());
+//                jab.add(job);
+//            });
+//            return ok(jab).build();
+////        } return ok("error", "something sadly went wrong, contact the pope!").build();
+//    }
     @GET
-    @Path("")
-//    @RolesAllowed("user")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllUsers() {
-//    public Response getAllUsers(@Context SecurityContext sc) {
-//        if(sc.getUserPrincipal() instanceof MyUser) {
+    @Produces("application/json")
+    public String getAllUsers() {
+        Map<String, User> commune = Community.getUserMap();
+        JsonArrayBuilder jab = Json.createArrayBuilder();
 
-            JsonArrayBuilder jab = Json.createArrayBuilder();
-                JsonObjectBuilder job = Json.createObjectBuilder(); // TODO figure out location
-
-            Community.getUserMap().forEach((key, user) -> {
-//                job.add("key", key);
-                job.add("Naam", user.getNaam());
-                job.add("Email", user.getEmail());
-                job.add("password", user.getPassword());
-//                job.add("zoekertjes", user.getAlleZoekertjes()); // TODO create blob storage for search data
-                job.add("role", user.getRole());
-                jab.add(job);
-            });
-            return ok(jab).build();
-//        } return ok("error", "something sadly went wrong, contact the pope!").build();
+        JsonObjectBuilder job = Json.createObjectBuilder();
+            commune.forEach((key, user) -> {
+            job.add(key, user.toString());
+            jab.add(job);
+        });
+        JsonArray array = jab.build();
+        return array.toString();
     }
-
 
 
 
