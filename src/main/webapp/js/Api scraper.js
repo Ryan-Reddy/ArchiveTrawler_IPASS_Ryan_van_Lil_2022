@@ -4,19 +4,6 @@
 //     .then(data => console.log(data))
 //     .catch(ERROR => console.log(ERROR))
 
-// fetch('https://jservice/api/random/')
-//     // .then(res => console.log(res))
-//     .then(res => res.JSON)
-//     .then(data => console.log(data))
-//     .catch(ERROR => console.log(ERROR))
-
-fetch('https://itsthisforthat.com/api.php?call=myfunc', {
-  mode: 'same-origin',
-})
-  .then((res) => console.log(res))
-  .then((res) => res.JSON)
-  .then((data) => console.log(data))
-  .catch((ERROR) => console.log(ERROR));
 
 // const doc = document.getElementById.bind(document);
 // console.log(doc.select("ul#searched-products"));
@@ -55,33 +42,43 @@ fetch('https://itsthisforthat.com/api.php?call=myfunc', {
 //                  action=search :default
 //                  q= to search by keyword.                            https://catalog.archives.gov/api/v1/?q=armadillo
 //                  default 10 rows, offset default=0, max 10000        https://catalog.archives.gov/api/v1/?rows=10&offset=9
-//
 
 // https://github.com/usnationalarchives/Catalog-API/blob/master/federalregister.gov
 // http://www.archives.gov/open/available-datasets.html
-
-// ~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~
-
+//`---------------------------------------------------------------------------------------------------------`
 // http://www.archives.gov/open/available-datasets.html    <---- OVERVIEW
-
 // https://www.archives.gov/research                    <---- OVERVIEW
-
-// https://www.archives.gov/research                    <---- OVERVIEW
-
 // ~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~;~~;
 
 // https://genealogy.nationalarchives.ie/                                    <---- OVERVIEW
 //     http://titheapplotmentbooks.nationalarchives.ie/search/tab/index.jsp    <----#protected somewhat
 
 //     https://www.censussearchforms.nationalarchives.ie/
+
+/** wills */
 //     http://census.nationalarchives.ie/search/dw/home.jsp
+
+/** catholic qualification rolls */
 //     http://census.nationalarchives.ie/search/cq/home.jsp
+
+/** marriages */
 //     http://census.nationalarchives.ie/search/dm/home.jsp
-//     http://census.nationalarchives.ie/search/vob/home.jsp //vauluation office books
-//     http://census.nationalarchives.ie/search/cl/home.jsp
+
+/** office books valuations */
+//     http://census.nationalarchives.ie/search/vob/home.jsp
+
+/** */
+//     http://census.nationalarchives.ie/search/cl/home.jsp .... BROKEN
+
+/** Will Registers */
 //     http://census.nationalarchives.ie/search/wr/home.jsp
+
+/// irish Genealogy.ie: GREAT SOURCE
+/** Church records */
 //     https://www.soldierswills.nationalarchives.ie/
-//     https://www.willcalendars.nationalarchives.ie/
+
+/** Civil records */
+// https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=&namel=Reddy&location=&yyfrom=&yyto=&submit=Search
 
 // ~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~;~~;~~
 

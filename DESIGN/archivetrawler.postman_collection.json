@@ -1,0 +1,2264 @@
+{
+	"info": {
+		"_postman_id": "4829865a-3b0e-4346-8fd4-2d89cb01f5ba",
+		"name": "archivetrawler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21034158"
+	},
+	"item": [
+		{
+			"name": "EXTERNAL to TRAWL",
+			"item": [
+				{
+					"name": "WORKING",
+					"item": [
+						{
+							"name": "DUTCH",
+							"item": [
+								{
+									"name": "NH archief",
+									"item": [
+										{
+											"name": "scannenOpVerzoek",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://noord-hollandsarchief.nl/studiezaal/scannen-op-verzoek",
+													"protocol": "https",
+													"host": [
+														"noord-hollandsarchief",
+														"nl"
+													],
+													"path": [
+														"studiezaal",
+														"scannen-op-verzoek"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Zoeken in de toegangen",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://noord-hollandsarchief.nl/bronnen/archieven?mivast=236&miadt=236&mizig=0&miview=lst&milang=nl&micols=1&mizk_alle=Lil",
+													"protocol": "https",
+													"host": [
+														"noord-hollandsarchief",
+														"nl"
+													],
+													"path": [
+														"bronnen",
+														"archieven"
+													],
+													"query": [
+														{
+															"key": "mivast",
+															"value": "236"
+														},
+														{
+															"key": "miadt",
+															"value": "236"
+														},
+														{
+															"key": "mizig",
+															"value": "0"
+														},
+														{
+															"key": "miview",
+															"value": "lst"
+														},
+														{
+															"key": "milang",
+															"value": "nl"
+														},
+														{
+															"key": "micols",
+															"value": "1"
+														},
+														{
+															"key": "mizk_alle",
+															"value": "Lil"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "New Request",
+											"request": {
+												"method": "GET",
+												"header": []
+											},
+											"response": []
+										},
+										{
+											"name": "Bevolkingsregisters",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://noord-hollandsarchief.nl/bronnen/archieven?mivast=236&miadt=236&mizig=0&miview=lst&milang=nl&micols=1&misort=last_mod%7Cdesc&mif1=2&mizk_alle=van%20lil",
+													"protocol": "https",
+													"host": [
+														"noord-hollandsarchief",
+														"nl"
+													],
+													"path": [
+														"bronnen",
+														"archieven"
+													],
+													"query": [
+														{
+															"key": "mivast",
+															"value": "236"
+														},
+														{
+															"key": "miadt",
+															"value": "236"
+														},
+														{
+															"key": "mizig",
+															"value": "0"
+														},
+														{
+															"key": "miview",
+															"value": "lst"
+														},
+														{
+															"key": "milang",
+															"value": "nl"
+														},
+														{
+															"key": "micols",
+															"value": "1"
+														},
+														{
+															"key": "misort",
+															"value": "last_mod%7Cdesc"
+														},
+														{
+															"key": "mif1",
+															"value": "2"
+														},
+														{
+															"key": "mizk_alle",
+															"value": "van%20lil"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "zoeken in transcripties(handgeschreven archief)",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://zoekintranscripties.nl/zoeken?query=van%20Lil",
+													"protocol": "https",
+													"host": [
+														"zoekintranscripties",
+														"nl"
+													],
+													"path": [
+														"zoeken"
+													],
+													"query": [
+														{
+															"key": "query",
+															"value": "van%20Lil"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "zoeken in kranten",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://nha.courant.nu/search?query=%22van+Lil%22&period=&submit=zoeken",
+													"protocol": "https",
+													"host": [
+														"nha",
+														"courant",
+														"nu"
+													],
+													"path": [
+														"search"
+													],
+													"query": [
+														{
+															"key": "query",
+															"value": "%22van+Lil%22"
+														},
+														{
+															"key": "period",
+															"value": ""
+														},
+														{
+															"key": "submit",
+															"value": "zoeken"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "archief van het NHA e-Depot wilt zoeken",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://nha.access.preservica.com/?s=%22van+Lil%22",
+													"protocol": "https",
+													"host": [
+														"nha",
+														"access",
+														"preservica",
+														"com"
+													],
+													"path": [
+														""
+													],
+													"query": [
+														{
+															"key": "s",
+															"value": "%22van+Lil%22"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "https://noord-hollandsarchief.nl/bronnen/archieven?mivast=236&miadt=236&mizig=0&miview=lst&milang=nl&micols=1&mizk_alle=van%20Lil",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://noord-hollandsarchief.nl/bronnen/archieven?mivast=236&miadt=236&mizig=0&miview=lst&milang=nl&micols=1&mizk_alle=van%20Lil",
+													"protocol": "https",
+													"host": [
+														"noord-hollandsarchief",
+														"nl"
+													],
+													"path": [
+														"bronnen",
+														"archieven"
+													],
+													"query": [
+														{
+															"key": "mivast",
+															"value": "236"
+														},
+														{
+															"key": "miadt",
+															"value": "236"
+														},
+														{
+															"key": "mizig",
+															"value": "0"
+														},
+														{
+															"key": "miview",
+															"value": "lst"
+														},
+														{
+															"key": "milang",
+															"value": "nl"
+														},
+														{
+															"key": "micols",
+															"value": "1"
+														},
+														{
+															"key": "mizk_alle",
+															"value": "van%20Lil"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "IF I only do 1 ->wiewaswie",
+									"item": [
+										{
+											"name": "wiewaswie",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://www.wiewaswie.nl/nl/zoeken/?q=van%20Lil&advancedsearch=1",
+													"protocol": "https",
+													"host": [
+														"www",
+														"wiewaswie",
+														"nl"
+													],
+													"path": [
+														"nl",
+														"zoeken",
+														""
+													],
+													"query": [
+														{
+															"key": "q",
+															"value": "van%20Lil"
+														},
+														{
+															"key": "advancedsearch",
+															"value": "1"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "New Request",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://www.wiewaswie.nl/nl/zoeken/?q=van%20Lil",
+													"protocol": "https",
+													"host": [
+														"www",
+														"wiewaswie",
+														"nl"
+													],
+													"path": [
+														"nl",
+														"zoeken",
+														""
+													],
+													"query": [
+														{
+															"key": "q",
+															"value": "van%20Lil"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "beeldenbank ? amsterdam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://webservices.picturae.com/genealogy/person?apiKey=eb37e65a-eb47-11e9-b95c-60f81db16c0e&page=1&q=lil&rows=10000&sort=score+desc",
+											"protocol": "https",
+											"host": [
+												"webservices",
+												"picturae",
+												"com"
+											],
+											"path": [
+												"genealogy",
+												"person"
+											],
+											"query": [
+												{
+													"key": "apiKey",
+													"value": "eb37e65a-eb47-11e9-b95c-60f81db16c0e"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "q",
+													"value": "lil"
+												},
+												{
+													"key": "rows",
+													"value": "10000"
+												},
+												{
+													"key": "sort",
+													"value": "score+desc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "IRISH",
+							"item": [
+								{
+									"name": "alt archive GOOD ONE",
+									"item": [
+										{
+											"name": "Civil records",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://civilrecords.irishgenealogy.ie/churchrecords/civil-perform-search.jsp?namefm=&namel=Reddy&location=&yyfrom=&yyto=&submit=Search",
+													"protocol": "https",
+													"host": [
+														"civilrecords",
+														"irishgenealogy",
+														"ie"
+													],
+													"path": [
+														"churchrecords",
+														"civil-perform-search.jsp"
+													],
+													"query": [
+														{
+															"key": "namefm",
+															"value": ""
+														},
+														{
+															"key": "namel",
+															"value": "Reddy"
+														},
+														{
+															"key": "location",
+															"value": ""
+														},
+														{
+															"key": "yyfrom",
+															"value": ""
+														},
+														{
+															"key": "yyto",
+															"value": ""
+														},
+														{
+															"key": "submit",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Church records",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://churchrecords.irishgenealogy.ie/churchrecords/search.jsp?namefm=&namel=Reddy&location=&yyfrom=&yyto=&submit=Search",
+													"protocol": "https",
+													"host": [
+														"churchrecords",
+														"irishgenealogy",
+														"ie"
+													],
+													"path": [
+														"churchrecords",
+														"search.jsp"
+													],
+													"query": [
+														{
+															"key": "namefm",
+															"value": ""
+														},
+														{
+															"key": "namel",
+															"value": "Reddy"
+														},
+														{
+															"key": "location",
+															"value": ""
+														},
+														{
+															"key": "yyfrom",
+															"value": ""
+														},
+														{
+															"key": "yyto",
+															"value": ""
+														},
+														{
+															"key": "submit",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "nat archives",
+									"item": [
+										{
+											"name": "census nationalarchives many queries",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://census.nationalarchives.ie/search/dw/results.jsp?diocese_name=&district=&surname=Reddy&firstname=&residence=&event_year_from=&event_year_to=&year_of_will_from=&year_of_will_to=&spouse_last_name=&spouse_first_name=&additional_person=&residence_county=&search=Search",
+													"protocol": "http",
+													"host": [
+														"census",
+														"nationalarchives",
+														"ie"
+													],
+													"path": [
+														"search",
+														"dw",
+														"results.jsp"
+													],
+													"query": [
+														{
+															"key": "diocese_name",
+															"value": ""
+														},
+														{
+															"key": "district",
+															"value": ""
+														},
+														{
+															"key": "surname",
+															"value": "Reddy"
+														},
+														{
+															"key": "firstname",
+															"value": ""
+														},
+														{
+															"key": "residence",
+															"value": ""
+														},
+														{
+															"key": "event_year_from",
+															"value": ""
+														},
+														{
+															"key": "event_year_to",
+															"value": ""
+														},
+														{
+															"key": "year_of_will_from",
+															"value": ""
+														},
+														{
+															"key": "year_of_will_to",
+															"value": ""
+														},
+														{
+															"key": "spouse_last_name",
+															"value": ""
+														},
+														{
+															"key": "spouse_first_name",
+															"value": ""
+														},
+														{
+															"key": "additional_person",
+															"value": ""
+														},
+														{
+															"key": "residence_county",
+															"value": ""
+														},
+														{
+															"key": "search",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "wills census",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"if(pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"})) {\r",
+															"    const results = document.getElementById('search_results');\r",
+															"    console.log(results);\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://census.nationalarchives.ie/search/dm/results.jsp?diocese_name=&surname=Reddy&firstname=&event_year_from=&event_year_to=&spouse_last_name=&spouse_first_name=&search=Search",
+													"protocol": "http",
+													"host": [
+														"census",
+														"nationalarchives",
+														"ie"
+													],
+													"path": [
+														"search",
+														"dm",
+														"results.jsp"
+													],
+													"query": [
+														{
+															"key": "diocese_name",
+															"value": ""
+														},
+														{
+															"key": "surname",
+															"value": "Reddy"
+														},
+														{
+															"key": "firstname",
+															"value": ""
+														},
+														{
+															"key": "event_year_from",
+															"value": ""
+														},
+														{
+															"key": "event_year_to",
+															"value": ""
+														},
+														{
+															"key": "spouse_last_name",
+															"value": ""
+														},
+														{
+															"key": "spouse_first_name",
+															"value": ""
+														},
+														{
+															"key": "search",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "catholic qualification rolls",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"});\r",
+															"\r",
+															"if(pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"})) {\r",
+															"    const results = document.getElementById('search_results');\r",
+															"    console.log(results);\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://census.nationalarchives.ie/search/cq/results.jsp?surname=Reddy&firstname=&year_from=&year_to=&place_residence=&place_county=&place_diocese=&search=Search",
+													"protocol": "http",
+													"host": [
+														"census",
+														"nationalarchives",
+														"ie"
+													],
+													"path": [
+														"search",
+														"cq",
+														"results.jsp"
+													],
+													"query": [
+														{
+															"key": "surname",
+															"value": "Reddy"
+														},
+														{
+															"key": "firstname",
+															"value": ""
+														},
+														{
+															"key": "year_from",
+															"value": ""
+														},
+														{
+															"key": "year_to",
+															"value": ""
+														},
+														{
+															"key": "place_residence",
+															"value": ""
+														},
+														{
+															"key": "place_county",
+															"value": ""
+														},
+														{
+															"key": "place_diocese",
+															"value": ""
+														},
+														{
+															"key": "search",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "catholic qualification rolls",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "http://census.nationalarchives.ie/search/cq/results.jsp?surname=Reddy&firstname=&year_from=&year_to=&place_residence=&place_county=&place_diocese=&search=Search",
+															"protocol": "http",
+															"host": [
+																"census",
+																"nationalarchives",
+																"ie"
+															],
+															"path": [
+																"search",
+																"cq",
+																"results.jsp"
+															],
+															"query": [
+																{
+																	"key": "surname",
+																	"value": "Reddy"
+																},
+																{
+																	"key": "firstname",
+																	"value": ""
+																},
+																{
+																	"key": "year_from",
+																	"value": ""
+																},
+																{
+																	"key": "year_to",
+																	"value": ""
+																},
+																{
+																	"key": "place_residence",
+																	"value": ""
+																},
+																{
+																	"key": "place_county",
+																	"value": ""
+																},
+																{
+																	"key": "place_diocese",
+																	"value": ""
+																},
+																{
+																	"key": "search",
+																	"value": "Search"
+																}
+															]
+														}
+													},
+													"status": "200",
+													"code": 200,
+													"_postman_previewlanguage": "html",
+													"header": [
+														{
+															"key": "Date",
+															"value": "Thu, 23 Jun 2022 12:34:14 GMT"
+														},
+														{
+															"key": "Server",
+															"value": "Apache/2.4.51 (Linux/SUSE)"
+														},
+														{
+															"key": "Content-Type",
+															"value": "text/html;charset=UTF-8"
+														},
+														{
+															"key": "Keep-Alive",
+															"value": "timeout=15, max=100"
+														},
+														{
+															"key": "Connection",
+															"value": "Keep-Alive"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														}
+													],
+													"cookie": [],
+													"body": "<!DOCTYPE html SYSTEM \"about:legacy-compat\">\n<html>\n    <head>\n        <meta charset=\"UTF-8\">\n        <title>Catholic qualification &amp; convert rolls</title>\n        <link href=\"css/main.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\">\n        <link href=\"css/content.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\">\n        <link href=\"css/results.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\">\n        <!--[if lte IE 8]>\n        <script src=\"http://html5shiv.googlecode.com/svn/trunk/html5.js\"></script>\n        <![endif]-->\n        <script type=\"text/javascript\" src=\"jquery.js\"></script>\n        <script>\n  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n\n  ga('create', 'UA-27345134-2', 'auto');\n  ga('send', 'pageview');\n\n</script>\n    </head>\n    <body>\n        <script type=\"text/javascript\">\n    $(function() {\n      $('a.imagelink').click(function(e) {\n        e.preventDefault();\n        var url = $(this).attr('href');\n        ga('send', 'pageview', url);\n        document.location = url;\n      });\n        var feedbackActive = false;\n        window.onbeforeunload = function (e) {\n                if (feedbackActive) {\n                  e = e || window.event;\n\n                  // For IE and Firefox prior to version 4\n                  if (e) {\n                    e.returnValue = 'You have not submitted the feedback form!';\n                  }\n\n                  // For Safari\n                  return 'You have not submitted the feedback form!';\n                }\n            };\n\n        $('button#feedbackinvoke').click(function() {\n            feedbackActive = true;\n            $(\"#search_results\").find('.correctable').each(function() {\n                $(this).html($(this).text());\n            });\n            $('#feedbackreset').click(function() {\n                feedbackActive = false;\n                location.reload();\n            });\n            $('#feedbacksubmit').click(function() {\n                $('#feedbacksubmit').attr(\"disabled\", \"disabled\");\n                $('#feedbacksubmit').text(\"Submitting...\");\n                $('#feedbackreset').attr(\"disabled\", \"disabled\");\n                $(\"#search_results\").data('send_info', {type: 'CQ', url: location.href, changes: []});\n                $(\"#search_results\").find('span.correctable').each(function() {\n                   if($(this).data('original') != null && $(this).data('original') != $(this).text()) {\n                       $(this).parent().parent().data('modified', true);\n                   }\n                });\n                $(\"#search_results\").find('tr').each(function() {\n                    if ($(this).data('modified')) {\n                       var rowchanges={id: $(this).attr('id'), data:[]};\n                       $(this).find('span.correctable').each(function() {\n                           if($(this).data('original') != null && $(this).data('original') != $(this).text()) {\n                              rowchanges.data.push({name: $(this).data('name'), orig: $(this).data('original'), changed: $(this).text()});\n                           } else {\n                              rowchanges.data.push({name: $(this).data('name'), orig: $(this).text()});\n                           }\n                       });\n                       $(\"#search_results\").data('send_info').changes.push(rowchanges);\n                   }\n                });\n                $.post('/feedback/feedbackAjax', {data: JSON.stringify($(\"#search_results\").data('send_info'))}, function(data) {\n                    alert('Your feedback has been submitted. Thank you!');\n                    feedbackActive = false;\n                    $('#feedbacksubmit').attr(\"disabled\", false);\n                    $('#feedbacksubmit').text(\"Submit Feedback\");\n                    $('#feedbackreset').attr(\"disabled\", false);\n                    location.reload();\n                });\n            });\n            $(\"#search_results\").find('span.correctable').each(function() {\n                $(this).attr(\"contentEditable\", \"true\");\n             });\n            $(\"#search_results\").delegate(\n                    \".correctable\",\n                    'mouseover mouseout focus focusout',\n                    function(e) {\n                        if (e.type == 'mouseover') {\n                            $(e.target).css(\"outline\", \"#4488ff dotted 2px\");\n                        } else if ((e.type == 'mouseout' && $(e.target).data('editing') == null) || e.type == 'focusout') {\n                            $(e.target).css(\"outline\", \"none\");\n                            $(e.target).data('editing', null);\n                        } else {\n                            if ($(e.target).data('original') == null) {\n                                $(e.target).data('original', $(e.target).text());\n                            }\n                            $(e.target).css(\"outline\", \"#FF9900 solid 2px\");\n                            $(e.target).data('editing', true);\n                            return false;\n                        }\n            });\n            $('#beforefeedback').hide();\n            $('#duringfeedback').show();\n         });\n    });\n    </script>\n        <header>\n            <div id=\"title\">\n                <a href=\"http://www.nationalarchives.ie\" id=\"main_title\">\n                    <img src=\"images/main_text.png\" alt=\"The National Archives of Ireland\">\n                </a>\n                <div id=\"site_title\">\n                    <img src=\"images/site_text.png\" alt=\"Will Registers 1858-1922\">\n                </div>\n            </div>\n            <nav>\n                <div id=\"genealogy_link\">\n                    <a href=\"http://www.genealogy.nationalarchives.ie\">GENEALOGY</a>\n                </div>\n                <ul>\n                    <li>\n                        <a href=\"home.jsp\">Home</a>\n                    </li>\n                    <li>\n                        <a href=\"index.jsp\">Search</a>\n                    </li>\n                </ul>\n            </nav>\n        </header>\n        <div id=\"main\">\n            <section>\n                <ul role=\"navigation\" id=\"breadcrumb\">\n                    <li>\n                        <a href=\"/search/cq/home.jsp\">Home</a>\n                    </li>\n                    <li>\n                        <a href=\"/search/cq/index.jsp\">Search the Catholic qualification & convert rolls</a>\n                    </li>\n                </ul>\n                <h1>Search results: \n                    <span class=\"sub\">Displaying results 1 - 4 of 4</span>\n                </h1>\n                <div class=\"sort inlinelist\">Sort by:\n            \n                    <ul>\n                        <li>\n                            <span class=\"current\">Relevance</span>\n                        </li>\n                        <li>\n                            <a href=\"javascript:setSortOrder(&apos;last_name&apos;)\">Surname</a>\n                        </li>\n                        <li>\n                            <a href=\"javascript:setSortOrder(&apos;first_name&apos;)\">Forename</a>\n                        </li>\n                        <li>\n                            <a href=\"javascript:setSortOrder(&apos;event_year&apos;)\">Event Year</a>\n                        </li>\n                        <li>\n                            <a href=\"javascript:setSortOrder(&apos;place_residence&apos;)\">Residence</a>\n                        </li>\n                        <li>\n                            <a href=\"javascript:setSortOrder(&apos;place_county&apos;)\">County</a>\n                        </li>\n                        <li>\n                            <a href=\"javascript:setSortOrder(&apos;place_diocese&apos;)\">Diocese</a>\n                        </li>\n                    </ul>\n                </div>\n                <table id=\"search_results\" summary=\"Search result table\">\n                    <thead>\n                        <tr>\n                            <th scope=\"col\">Surname</th>\n                            <th scope=\"col\">Forename</th>\n                            <th scope=\"col\">Event Year</th>\n                            <th scope=\"col\">Residence</th>\n                            <th scope=\"col\">County</th>\n                            <th scope=\"col\">Diocese</th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr id=\"IRE/CATH/QUAL/CONV/4637\" class=\"odd\">\n                            <td>\n                                <span data-name=\"Surname\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_004150581_00098.pdf\" class=\"imagelink\">Reddy</a>\n                                </span>\n                            </td>\n                            <td>\n                                <span data-name=\"Forename\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_004150581_00098.pdf\" class=\"imagelink\">Daniel</a>\n                                </span>\n                            </td>\n                            <td>1725</td>\n                            <td>\n                                <span data-name=\"Residence\" class=\"correctable\"></span>\n                            </td>\n                            <td>\n                                <span data-name=\"County\" class=\"correctable\">Dublin</span>\n                            </td>\n                            <td>\n                                <span data-name=\"Diocese\" class=\"correctable\"></span>\n                            </td>\n                        </tr>\n                        <tr id=\"IRE/CATH/QUAL/CONV/7628\" class=\"even\">\n                            <td>\n                                <span data-name=\"Surname\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_004150581_00219.pdf\" class=\"imagelink\">Reddy</a>\n                                </span>\n                            </td>\n                            <td>\n                                <span data-name=\"Forename\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_004150581_00219.pdf\" class=\"imagelink\">Daniel</a>\n                                </span>\n                            </td>\n                            <td>1726</td>\n                            <td>\n                                <span data-name=\"Residence\" class=\"correctable\"></span>\n                            </td>\n                            <td>\n                                <span data-name=\"County\" class=\"correctable\"></span>\n                            </td>\n                            <td>\n                                <span data-name=\"Diocese\" class=\"correctable\"></span>\n                            </td>\n                        </tr>\n                        <tr id=\"IRE/CATH/QUAL/CONV/24626\" class=\"odd\">\n                            <td>\n                                <span data-name=\"Surname\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_007604259_00083.pdf\" class=\"imagelink\">Reddy</a>\n                                </span>\n                            </td>\n                            <td>\n                                <span data-name=\"Forename\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_007604259_00083.pdf\" class=\"imagelink\">Daniel</a>\n                                </span>\n                            </td>\n                            <td>1725</td>\n                            <td>\n                                <span data-name=\"Residence\" class=\"correctable\"></span>\n                            </td>\n                            <td>\n                                <span data-name=\"County\" class=\"correctable\">Dublin</span>\n                            </td>\n                            <td>\n                                <span data-name=\"Diocese\" class=\"correctable\"></span>\n                            </td>\n                        </tr>\n                        <tr id=\"IRE/CATH/QUAL/CONV/27560\" class=\"even\">\n                            <td>\n                                <span data-name=\"Surname\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_007604259_00145.pdf\" class=\"imagelink\">Reddy</a>\n                                </span>\n                            </td>\n                            <td>\n                                <span data-name=\"Forename\" class=\"correctable\">\n                                    <a href=\"/reels/cq/IRE_CATHQUALCONV_007604259_00145.pdf\" class=\"imagelink\">Daniel</a>\n                                </span>\n                            </td>\n                            <td>1726</td>\n                            <td>\n                                <span data-name=\"Residence\" class=\"correctable\"></span>\n                            </td>\n                            <td>\n                                <span data-name=\"County\" class=\"correctable\"></span>\n                            </td>\n                            <td>\n                                <span data-name=\"Diocese\" class=\"correctable\"></span>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n                <div class=\"pages inlinelist\"></div>\n                <script type=\"text/javascript\">\n                    <!--\n            function setSortOrder(order){\n              document.getElementById('sortField').value=order;\n              document.getElementById('pageSize').value='10';\n              document.getElementById('searchForm').submit();\n            }\n            function setPageSize(size){\n              document.getElementById('sortField').value='';\n              document.getElementById('pageSize').value=size;\n              document.getElementById('searchForm').submit();\n            }\n           // -->\n           \n                </script>\n                <div class=\"feedback\">\n                    <div id=\"beforefeedback\">\n                        <p>If you notice any NAMES transcription errors, please select “Report errors in transcription”</p>\n                        <button id=\"feedbackinvoke\">Report Errors in Transcription</button>\n                    </div>\n                    <div style=\"display: none;\" id=\"duringfeedback\">\n                        <p>Please select NAMES entry you would like to amend.  When ORANGE OUTLINE on the entry appears, please insert amended entry. When finished, select “Submit Feedback” or “Cancel”. The live database details will be updated when resources permit.</p>\n                        <button id=\"feedbacksubmit\">Submit Feedback</button>\n                        <button id=\"feedbackreset\">Cancel</button>\n                    </div>\n                </div>\n                <form style=\"display: inline\" action=\"results.jsp\" name=\"searchForm\" id=\"searchForm\">\n                    <input value=\"Reddy\" name=\"surname\" type=\"hidden\"/>\n                    <input value=\"\" name=\"firstname\" type=\"hidden\"/>\n                    <input value=\"\" name=\"year_from\" type=\"hidden\"/>\n                    <input value=\"\" name=\"year_to\" type=\"hidden\"/>\n                    <input value=\"\" name=\"place_residence\" type=\"hidden\"/>\n                    <input value=\"\" name=\"place_county\" type=\"hidden\"/>\n                    <input value=\"\" name=\"place_diocese\" type=\"hidden\"/>\n                    <input value=\"Search\" name=\"search\" type=\"hidden\"/>\n                    <input value=\"\" name=\"sort\" type=\"hidden\" id=\"sortField\"/>\n                    <input value=\"10\" name=\"pageSize\" type=\"hidden\" id=\"pageSize\"/>\n                </form>\n            </section>\n        </div>\n        <footer>\n            <nav>\n                <ul>\n                    <li>\n                        <a href=\"home.jsp\">Home</a>\n                    </li>\n                    <li>\n                        <a href=\"index.jsp\">Search</a>\n                    </li>\n                </ul>\n            </nav>\n        </footer>\n    </body>\n</html>\n<!-- Rev. 20160916.1 -->"
+												}
+											]
+										},
+										{
+											"name": "marriages",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"});\r",
+															"\r",
+															"if(pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"})) {\r",
+															"    const results = document.getElementById('search_results');\r",
+															"    console.log(results);\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://census.nationalarchives.ie/search/dm/results.jsp?diocese_name=&surname=Reddy&firstname=&event_year_from=&event_year_to=&spouse_last_name=&spouse_first_name=&search=Search",
+													"protocol": "http",
+													"host": [
+														"census",
+														"nationalarchives",
+														"ie"
+													],
+													"path": [
+														"search",
+														"dm",
+														"results.jsp"
+													],
+													"query": [
+														{
+															"key": "diocese_name",
+															"value": ""
+														},
+														{
+															"key": "surname",
+															"value": "Reddy"
+														},
+														{
+															"key": "firstname",
+															"value": ""
+														},
+														{
+															"key": "event_year_from",
+															"value": ""
+														},
+														{
+															"key": "event_year_to",
+															"value": ""
+														},
+														{
+															"key": "spouse_last_name",
+															"value": ""
+														},
+														{
+															"key": "spouse_first_name",
+															"value": ""
+														},
+														{
+															"key": "search",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "office books valuations",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"});\r",
+															"\r",
+															"if(pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"})) {\r",
+															"    const results = document.getElementById('search_results');\r",
+															"    console.log(results);\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://census.nationalarchives.ie/search/vob/results.jsp?surname=Reddy&firstname=&year_from=&year_to=&dd_dd=&dd_mm=&dd_yyyy=&book=&county=&barony=&parish=&townland=&last_name_other_or_lessor=&first_name_other_or_lessor=&search=Search",
+													"protocol": "http",
+													"host": [
+														"census",
+														"nationalarchives",
+														"ie"
+													],
+													"path": [
+														"search",
+														"vob",
+														"results.jsp"
+													],
+													"query": [
+														{
+															"key": "surname",
+															"value": "Reddy"
+														},
+														{
+															"key": "firstname",
+															"value": ""
+														},
+														{
+															"key": "year_from",
+															"value": ""
+														},
+														{
+															"key": "year_to",
+															"value": ""
+														},
+														{
+															"key": "dd_dd",
+															"value": ""
+														},
+														{
+															"key": "dd_mm",
+															"value": ""
+														},
+														{
+															"key": "dd_yyyy",
+															"value": ""
+														},
+														{
+															"key": "book",
+															"value": ""
+														},
+														{
+															"key": "county",
+															"value": ""
+														},
+														{
+															"key": "barony",
+															"value": ""
+														},
+														{
+															"key": "parish",
+															"value": ""
+														},
+														{
+															"key": "townland",
+															"value": ""
+														},
+														{
+															"key": "last_name_other_or_lessor",
+															"value": ""
+														},
+														{
+															"key": "first_name_other_or_lessor",
+															"value": ""
+														},
+														{
+															"key": "search",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Will Registers",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"});\r",
+															"\r",
+															"if(pm.test(\"Body matches string\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"search_results\");\r",
+															"})) {\r",
+															"    const results = document.getElementById('search_results');\r",
+															"    console.log(results);\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://census.nationalarchives.ie/search/wr/results.jsp?document_type=&event_year_from=&event_year_to=&year_of_grant_from=&year_of_grant_to=&year_of_death_from=&year_of_death_to=&surname=Reddy&firstname=&location=&occupation=&deceased=&heir_or_executor=&search=Search",
+													"protocol": "http",
+													"host": [
+														"census",
+														"nationalarchives",
+														"ie"
+													],
+													"path": [
+														"search",
+														"wr",
+														"results.jsp"
+													],
+													"query": [
+														{
+															"key": "document_type",
+															"value": ""
+														},
+														{
+															"key": "event_year_from",
+															"value": ""
+														},
+														{
+															"key": "event_year_to",
+															"value": ""
+														},
+														{
+															"key": "year_of_grant_from",
+															"value": ""
+														},
+														{
+															"key": "year_of_grant_to",
+															"value": ""
+														},
+														{
+															"key": "year_of_death_from",
+															"value": ""
+														},
+														{
+															"key": "year_of_death_to",
+															"value": ""
+														},
+														{
+															"key": "surname",
+															"value": "Reddy"
+														},
+														{
+															"key": "firstname",
+															"value": ""
+														},
+														{
+															"key": "location",
+															"value": ""
+														},
+														{
+															"key": "occupation",
+															"value": ""
+														},
+														{
+															"key": "deceased",
+															"value": ""
+														},
+														{
+															"key": "heir_or_executor",
+															"value": ""
+														},
+														{
+															"key": "search",
+															"value": "Search"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "ask about ireland",
+									"item": [
+										{
+											"name": "Griffith primary genealogy",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://www.askaboutireland.ie/griffith-valuation/index.xml?action=doNameSearch&Submit.x=32&Submit.y=14&familyname=Reddy&firstname=First+Name&baronyname=&countyname=&unionname=&parishname=",
+													"protocol": "https",
+													"host": [
+														"www",
+														"askaboutireland",
+														"ie"
+													],
+													"path": [
+														"griffith-valuation",
+														"index.xml"
+													],
+													"query": [
+														{
+															"key": "action",
+															"value": "doNameSearch"
+														},
+														{
+															"key": "Submit.x",
+															"value": "32"
+														},
+														{
+															"key": "Submit.y",
+															"value": "14"
+														},
+														{
+															"key": "familyname",
+															"value": "Reddy"
+														},
+														{
+															"key": "firstname",
+															"value": "First+Name"
+														},
+														{
+															"key": "baronyname",
+															"value": ""
+														},
+														{
+															"key": "countyname",
+															"value": ""
+														},
+														{
+															"key": "unionname",
+															"value": ""
+														},
+														{
+															"key": "parishname",
+															"value": ""
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Science papers (numerous journals, papers)",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://www.jstor.org/action/doBasicSearch?Query=Reddy&filter=disc%3Airishstudies-discipline&so=rel",
+													"protocol": "https",
+													"host": [
+														"www",
+														"jstor",
+														"org"
+													],
+													"path": [
+														"action",
+														"doBasicSearch"
+													],
+													"query": [
+														{
+															"key": "Query",
+															"value": "Reddy"
+														},
+														{
+															"key": "filter",
+															"value": "disc%3Airishstudies-discipline"
+														},
+														{
+															"key": "so",
+															"value": "rel"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ENGLISH",
+							"item": []
+						},
+						{
+							"name": "AMERICAN",
+							"item": [
+								{
+									"name": "successful",
+									"item": [
+										{
+											"name": "us national archives API https://catalog.archives.gov/interactivedocumentation Copy 2",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://catalog.archives.gov/api/v1?&q=\"van lil\"",
+													"protocol": "https",
+													"host": [
+														"catalog",
+														"archives",
+														"gov"
+													],
+													"path": [
+														"api",
+														"v1"
+													],
+													"query": [
+														{
+															"key": null,
+															"value": null
+														},
+														{
+															"key": "q",
+															"value": "\"van lil\""
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "us national archives API https://catalog.archives.gov/interactivedocumentation",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://catalog.archives.gov/api/v1?&q=\"reddy\"&format=json",
+													"protocol": "https",
+													"host": [
+														"catalog",
+														"archives",
+														"gov"
+													],
+													"path": [
+														"api",
+														"v1"
+													],
+													"query": [
+														{
+															"key": null,
+															"value": null
+														},
+														{
+															"key": "q",
+															"value": "\"reddy\""
+														},
+														{
+															"key": "format",
+															"value": "json"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "us national archives API https://catalog.archives.gov/interactivedocumentation Copy",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://catalog.archives.gov/api/v1?&q=\"van lil\"&format=json",
+													"protocol": "https",
+													"host": [
+														"catalog",
+														"archives",
+														"gov"
+													],
+													"path": [
+														"api",
+														"v1"
+													],
+													"query": [
+														{
+															"key": null,
+															"value": null
+														},
+														{
+															"key": "q",
+															"value": "\"van lil\""
+														},
+														{
+															"key": "format",
+															"value": "json"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "nonAPI",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://catalog.archives.gov/search?q=%22van%20Lil%22",
+													"protocol": "https",
+													"host": [
+														"catalog",
+														"archives",
+														"gov"
+													],
+													"path": [
+														"search"
+													],
+													"query": [
+														{
+															"key": "q",
+															"value": "%22van%20Lil%22"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "New Request",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "https://catalog.archives.gov/search?q=%22van%20Lil%22",
+															"protocol": "https",
+															"host": [
+																"catalog",
+																"archives",
+																"gov"
+															],
+															"path": [
+																"search"
+															],
+															"query": [
+																{
+																	"key": "q",
+																	"value": "%22van%20Lil%22"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "html",
+													"header": [
+														{
+															"key": "Accept-Ranges",
+															"value": "bytes"
+														},
+														{
+															"key": "Access-Control-Allow-Origin",
+															"value": "*"
+														},
+														{
+															"key": "BALANCER_NAME",
+															"value": "(null)"
+														},
+														{
+															"key": "BALANCER_ROUTE_CHANGED",
+															"value": "(null)"
+														},
+														{
+															"key": "BALANCER_SESSION_ROUTE",
+															"value": "(null)"
+														},
+														{
+															"key": "BALANCER_SESSION_STICKY",
+															"value": "(null)"
+														},
+														{
+															"key": "BALANCER_WORKER_NAME",
+															"value": "(null)"
+														},
+														{
+															"key": "BALANCER_WORKER_ROUTE",
+															"value": "(null)"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "max-age=0"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "gzip"
+														},
+														{
+															"key": "Content-Type",
+															"value": "text/html; charset=utf-8"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 23 Jun 2022 11:50:01 GMT"
+														},
+														{
+															"key": "Expires",
+															"value": "Thu, 23 Jun 2022 11:50:01 GMT"
+														},
+														{
+															"key": "hnweb",
+															"value": "pw103"
+														},
+														{
+															"key": "Last-Modified",
+															"value": "Fri, 19 Nov 2021 17:47:19 GMT"
+														},
+														{
+															"key": "Server",
+															"value": "Apache/2.4.6 (Red Hat)"
+														},
+														{
+															"key": "Strict-Transport-Security",
+															"value": "max-age=31536000; includeSubDomains; preload"
+														},
+														{
+															"key": "Vary",
+															"value": "Accept-Encoding"
+														},
+														{
+															"key": "X-UA-Compatible",
+															"value": "IE=edge"
+														},
+														{
+															"key": "Content-Length",
+															"value": "1895"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														}
+													],
+													"cookie": [],
+													"body": "<!doctype html>\n<!--[if IE 8 ]>\n<html class=\"ie8\" xmlns=\"http://www.w3.org/1999/html\" lang=\"en\" id=\"ng-app\" ng-app=\"opaApp\">\n    <![endif]-->\n    <!--[if IE 9 ]>\n    <html class=\"ie9\" xmlns=\"http://www.w3.org/1999/html\" lang=\"en\" id=\"ng-app\" ng-app=\"opaApp\">\n        <![endif]-->\n        <!--[if (gt IE 9)|!(IE)]>\n        <!-->\n        <html xmlns=\"http://www.w3.org/1999/html\" lang=\"en\" id=\"ng-app\" ng-app=\"opaApp\">\n            <!--\n            <![endif]-->\n            <head>\n                <!-- Google Tag Manager -->\n                <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n  })(window,document,'script','dataLayer','GTM-WLMC86');</script>\n                <!-- End Google Tag Manager -->\n                <script type=\"text/javascript\">\n    document.write(\"\n                    <base href='\" + document.location.protocol + \"//\" + document.location.host + \"' />\");\n                </script>\n                <!-- TFS-84419 - IE doesn't implement String.includes() method -->\n                <script type=\"text/javascript\">\n    if (!String.prototype.includes) {\n      String.prototype.includes = function(search, start) {\n        'use strict';\n        if (typeof start !== 'number') {\n          start = 0;\n        }\n\n        if (start + search.length > this.length) {\n          return false;\n        } else {\n          return this.indexOf(search, start) !== -1;\n        }\n      };\n    }\n  </script>\n                <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n                <!--<meta charset=\"UTF-8\">-->\n                <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n                <title ng-bind=\"title || 'The National Archives Catalog'\"></title>\n                <meta name=\"description\" content=\"{{ metaDescription }}\">\n                <meta name=\"keywords\" content=\"{{ metaKeywords }}\">\n                <meta name=\"viewport\" content=\"initial-scale=1,width=device-width\">\n                <link rel=\"shortcut icon\" href=\"/favicon.ico\"/>\n                <link rel=\"apple-touch-icon\" href=\"images/nara.png\" />\n                <link rel=\"stylesheet\" href=\"styles/b402ad8e.vendor.css\"/>\n                <link rel=\"stylesheet\" href=\"styles/335bae34.main.css\"/>\n                <!-- Javascript -->\n                <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->\n                <!--[if lt IE 9]>\n                <link rel=\"stylesheet\" href=\"styles/0569bf6d.ie8.css\"/>\n                <![endif]-->\n                <!--[if lt IE 9]>\n                <script src=\"scripts/3b40df82.html5shiv.js\"></script>\n                <![endif]-->\n                <!--[if lt IE 9]>\n                <script type='text/javascript' src=\"scripts/assets/e759f50a.respond.js\"></script>\n                <![endif]-->\n                <!-- Javascript -->\n                <script>\n    var addthis_share =\n    {\n      url: window.location.href,\n      title: 'The National Archives Catalog',\n      description: ' '\n    };\n    var addthis_config = {};\n\n  </script>\n                <script src=\"scripts/assets/6201281d.modernizr.custom.47375.js\"></script>\n                <script type=\"text/javascript\" id=\"_fed_an_js_tag\"\n          src=\"scripts/assets/digitalgov/federated-analytics.all.min.js?agency=NARA\"></script>\n            </head>\n            <body>\n                <!-- Google Tag Manager (noscript) -->\n                <noscript>\n                    <iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-WLMC86\"\n                  height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\n                </noscript>\n                <!-- End Google Tag Manager (noscript) -->\n                <div spinner></div>\n                <div id=\"wrap\" class=\"col-xs-12 noPaddingSides height100\">\n                    <div data-header></div>\n                    <div id=\"menuBar\" menu-header class=\"col-xs-12 noPaddingSides collapse in\" ng-if=\"!$root.isHome\"></div>\n                    <div data-searchbar ng-if=\"$root.showSearchBar\"></div>\n                    <div id=\"AlearMessage1\" class=\"col-xs-12 noPaddingSides alert-info\" ng-if=\"$root.showReparativeAlert\">\n        Potentially Harmful Content Alert: See \n                        <a href=\"https://www.archives.gov/research/harmful-content\" target=\"_blank\">NARA’s Statement</a>\n                    </div>\n                    <div id=\"contentOPA\" ng-view=\"\" class=\"col-xs-12 noPaddingSides\" ng-class=\"{contentOPAHome: $root.isHome}\" tabindex=\"0\"></div>\n                </div>\n                <!--[if lt IE 9]>\n                <script src=\"scripts/3c68790b.ltie9.js\"></script>\n                <![endif]-->\n                <script src=\"scripts/42a2d94e.vendor.js\"></script>\n                <script src=\"apiLocation.js\"></script>\n                <script src=\"scripts/1fe10f7b.config.js\"></script>\n                <script src=\"scripts/da4d0a85.scripts.js\"></script>\n                <script type=\"text/javascript\" src=\"//s7.addthis.com/js/300/addthis_widget.js#domready=1&async=0\"></script>\n                <script>\n  if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {\n    $('\n                    <link rel=\"stylesheet\" type=\"text/css\" href=\"styles/54838370.ios.css\" />').appendTo(\"head\");\n  }\n                </script>\n            </body>\n        </html>"
+												}
+											]
+										},
+										{
+											"name": "New Request",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://catalog.archives.gov/api/v1?&format=json&machineTags=nara:person:\"van Lil\"",
+													"protocol": "https",
+													"host": [
+														"catalog",
+														"archives",
+														"gov"
+													],
+													"path": [
+														"api",
+														"v1"
+													],
+													"query": [
+														{
+															"key": null,
+															"value": null
+														},
+														{
+															"key": "format",
+															"value": "json"
+														},
+														{
+															"key": "machineTags",
+															"value": "nara:person:\"van Lil\""
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "New Request",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "https://catalog.archives.gov/api/v1?&resultTypes=person&format=json&machineTags=nara:person:\"van Lil\"",
+													"protocol": "https",
+													"host": [
+														"catalog",
+														"archives",
+														"gov"
+													],
+													"path": [
+														"api",
+														"v1"
+													],
+													"query": [
+														{
+															"key": null,
+															"value": null
+														},
+														{
+															"key": "resultTypes",
+															"value": "person"
+														},
+														{
+															"key": "format",
+															"value": "json"
+														},
+														{
+															"key": "machineTags",
+															"value": "nara:person:\"van Lil\""
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "OTHER",
+							"item": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "REST",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "users/getAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"  pm.expect(pm.response.code).to.equal(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURLrest}}/users",
+									"host": [
+										"{{baseURLrest}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "users/getAll",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/restservices/users/getall",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"restservices",
+												"users",
+												"getall"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "216"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 19 Jun 2022 20:10:06 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=20"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"Naam\": \"Wilde\",\n        \"Email\": \"Coyote\",\n        \"role\": \"user\"\n    },\n    {\n        \"Naam\": \"Floyd\",\n        \"Email\": \"syd@barrett.com\",\n        \"role\": \"user\"\n    },\n    {\n        \"Naam\": \"Ryan\",\n        \"Email\": \"snoop@log.bomb\",\n        \"role\": \"user\"\n    },\n    {\n        \"Naam\": \"Ryry\",\n        \"Email\": \"ruru@fufu.mumu\",\n        \"role\": \"user\"\n    }\n]"
+								},
+								{
+									"name": "users/getAll",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURLrest}}/users/getall",
+											"host": [
+												"{{baseURLrest}}"
+											],
+											"path": [
+												"users",
+												"getall"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "908"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 20 Jun 2022 18:57:00 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=20"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"Naam\": \"Wilde\",\n        \"Email\": \"Coyote\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@75336a92, archive.trawler.model.User@742c9374, archive.trawler.model.User@49f9d8b, archive.trawler.model.User@5b38b68a]\"\n    },\n    {\n        \"Naam\": \"Floyd\",\n        \"Email\": \"syd@barrett.com\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@75336a92, archive.trawler.model.User@742c9374, archive.trawler.model.User@49f9d8b, archive.trawler.model.User@5b38b68a]\"\n    },\n    {\n        \"Naam\": \"Ryan\",\n        \"Email\": \"snoop@log.bomb\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@75336a92, archive.trawler.model.User@742c9374, archive.trawler.model.User@49f9d8b, archive.trawler.model.User@5b38b68a]\"\n    },\n    {\n        \"Naam\": \"Hubert\",\n        \"Email\": \"CasaSuCasa\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@75336a92, archive.trawler.model.User@742c9374, archive.trawler.model.User@49f9d8b, archive.trawler.model.User@5b38b68a]\"\n    },\n    \"AccountResource.java 44:9 - WTF WHY U NO WORK ?\"\n]"
+								},
+								{
+									"name": "users/getAll",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURLrest}}/users/getall",
+											"host": [
+												"{{baseURLrest}}"
+											],
+											"path": [
+												"users",
+												"getall"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "862"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 20 Jun 2022 22:33:37 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=20"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"Naam\": \"Wilde\",\n        \"Email\": \"Coyote\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@7edae444, archive.trawler.model.User@7ae56f47, archive.trawler.model.User@3fe7ee7f, archive.trawler.model.User@27c36908]\"\n    },\n    {\n        \"Naam\": \"Floyd\",\n        \"Email\": \"syd@barrett.com\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@7edae444, archive.trawler.model.User@7ae56f47, archive.trawler.model.User@3fe7ee7f, archive.trawler.model.User@27c36908]\"\n    },\n    {\n        \"Naam\": \"Ryan\",\n        \"Email\": \"snoop@log.bomb\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@7edae444, archive.trawler.model.User@7ae56f47, archive.trawler.model.User@3fe7ee7f, archive.trawler.model.User@27c36908]\"\n    },\n    {\n        \"Naam\": \"Hubert\",\n        \"Email\": \"CasaSuCasa\",\n        \"role\": \"user\",\n        \"allUsers\": \"[archive.trawler.model.User@7edae444, archive.trawler.model.User@7ae56f47, archive.trawler.model.User@3fe7ee7f, archive.trawler.model.User@27c36908]\"\n    }\n]"
+								},
+								{
+									"name": "users/getAll",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseURLrest}}/users/getall",
+											"host": [
+												"{{baseURLrest}}"
+											],
+											"path": [
+												"users",
+												"getall"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "554"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 21 Jun 2022 18:04:19 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=20"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"CasaSuCasa\": {\n        \"key\": \"CasaSuCasa\",\n        \"Naam\": \"Coyote\",\n        \"Email\": \"CasaSuCasa\",\n        \"password\": \"Wilde\",\n        \"zoekertjes\": {},\n        \"role\": \"user\"\n    },\n    \"syd@barrett.com\": {\n        \"key\": \"syd@barrett.com\",\n        \"Naam\": \"CrazyDiamond\",\n        \"Email\": \"syd@barrett.com\",\n        \"password\": \"Floyd\",\n        \"zoekertjes\": {},\n        \"role\": \"user\"\n    },\n    \"snoop@log.bomb\": {\n        \"key\": \"snoop@log.bomb\",\n        \"Naam\": \"pickItUpLikeItsCold\",\n        \"Email\": \"snoop@log.bomb\",\n        \"password\": \"Ryan\",\n        \"zoekertjes\": {},\n        \"role\": \"user\"\n    },\n    \"lolzThisIsNo$afe\": {\n        \"key\": \"lolzThisIsNo$afe\",\n        \"Naam\": \"testing@gmail.com\",\n        \"Email\": \"lolzThisIsNo$afe\",\n        \"password\": \"Ryan\",\n        \"zoekertjes\": {},\n        \"role\": \"user\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "users/{userId}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"  pm.expect(pm.response.code).to.equal(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Data array is empty\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data.length).to.eql(0);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseURLrest}}/users/CasaSuCasa",
+									"host": [
+										"{{baseURLrest}}"
+									],
+									"path": [
+										"users",
+										"CasaSuCasa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users/{userid}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"tessdasdasdt@hallo.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURLrest}}/users/deleteaccount/",
+									"host": [
+										"{{baseURLrest}}"
+									],
+									"path": [
+										"users",
+										"deleteaccount",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "users/{userid}",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"tessdasdasdt@hallo.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURLrest}}/users/deleteaccount/",
+											"host": [
+												"{{baseURLrest}}"
+											],
+											"path": [
+												"users",
+												"deleteaccount",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "85"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 22 Jun 2022 20:15:49 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=20"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "the user archive.trawler.webservices.dto.DeleteAccountDTO@7b11481d has been deleted.."
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "New Account",
+					"item": [
+						{
+							"name": "create new account json",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"klant bestond nog niet, is nu aangemaakt nog niet! Welkom,\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ryan\",\r\n    \"email\": \"testing@gmail.com\",\r\n    \"password\": \"lolzThisIsNo$afe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURLrest}}/users/addnew",
+									"host": [
+										"{{baseURLrest}}"
+									],
+									"path": [
+										"users",
+										"addnew"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "restservices/authentication NEEDS USERS MADE Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"JWT\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"CasaSuCasa\",\r\n    \"password\": \"Wilde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURLrest}}/authentication",
+									"host": [
+										"{{baseURLrest}}"
+									],
+									"path": [
+										"authentication"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "restservices/authentication newAcc",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"JWT\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"testing@gmail.com\",\r\n    \"password\": \"lolzThisIsNo$afe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURLrest}}/authentication",
+									"host": [
+										"{{baseURLrest}}"
+									],
+									"path": [
+										"authentication"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "restservices/authentication newAcc Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"JWT\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"roger@federer.com\",\r\n    \"password\": \"roger3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURLrest}}/authentication",
+									"host": [
+										"{{baseURLrest}}"
+									],
+									"path": [
+										"authentication"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Ryan\",\r\n    \"password\": \"pwd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURLrest}}",
+							"host": [
+								"{{baseURLrest}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status of api",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+									"    console.log(response.json());\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response should contain 'works'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"works\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURLrest}}/status",
+							"host": [
+								"{{baseURLrest}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Heroku",
+			"item": [
+				{
+					"name": "basic pages",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{heroku}}/html/login.html",
+									"host": [
+										"{{heroku}}"
+									],
+									"path": [
+										"html",
+										"login.html"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "new account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{heroku}}/html/new-account.html",
+									"host": [
+										"{{heroku}}"
+									],
+									"path": [
+										"html",
+										"new-account.html"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "restservices/authentication NEEDS USERS MADE Copy 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Coyote\",\r\n    \"password\": \"CasaSuCasa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{heroku}}/restservices/authentication",
+							"host": [
+								"{{heroku}}"
+							],
+							"path": [
+								"restservices",
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{heroku}}/users/getall",
+							"host": [
+								"{{heroku}}"
+							],
+							"path": [
+								"users",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURLrest",
+			"value": "http://localhost:8080/restservices"
+		},
+		{
+			"key": "heroku",
+			"value": "https://archive-trawler.herokuapp.com/"
+		}
+	]
+}
