@@ -25,7 +25,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         MySecurityContext msc = new MySecurityContext(null, scheme);
         String authHeader = requestCtx.getHeaderString(HttpHeaders.AUTHORIZATION);
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            String token = authHeader.substring("Bearer".length()).trim();
+            String token = authHeader.substring("Bearer ".length()).trim();
             try {
                 // Validate the token
                 JwtParser parser =

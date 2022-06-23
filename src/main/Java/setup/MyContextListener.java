@@ -1,5 +1,6 @@
 package setup;
 
+import archive.trawler.model.User;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
 import reactor.netty.http.HttpResources;
@@ -29,6 +30,7 @@ public class MyContextListener implements ServletContextListener {
             System.out.println("catching ClassNotFoundException");
             e.printStackTrace();
         }
+        new User("Coyote", "test@mail.com", "password");
         /*new User("Coyote", "CasaSuCasa", "Wilde");
         new User( "CrazyDiamond","syd@barrett.com", "Floyd");
         new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");*/

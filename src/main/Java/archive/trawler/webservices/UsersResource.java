@@ -34,15 +34,14 @@ public class UsersResource {
      */
     @GET
     @Path("")
-    @RolesAllowed("user")
+//    @RolesAllowed("user")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllUsers(@Context SecurityContext sc) {
-        if(sc.getUserPrincipal() instanceof MyUser) {
-            MyUser current = (MyUser) sc.getUserPrincipal();
-
+    public Response getAllUsers() {
+//    public Response getAllUsers(@Context SecurityContext sc) {
+//        if(sc.getUserPrincipal() instanceof MyUser) {
+//            MyUser current = (MyUser) sc.getUserPrincipal();
             LinkedHashMap<String, Object> totaalMessages = new LinkedHashMap<>();
-            totaalMessages.put(current.getNaam(),current.getRole());
-
+//            totaalMessages.put(current.getNaam(),current.getRole());  //TODO reinstate security here by uncommenting
             Community.getUserMap().forEach((key, user) -> {
                 LinkedHashMap<String, Object> interMessage = new LinkedHashMap<>();
                 interMessage.put("key", key);
@@ -54,8 +53,7 @@ public class UsersResource {
                 totaalMessages.put(key, interMessage);
             });
             return ok(totaalMessages).build();
-
-        } return ok("error", "something sadly went wrong, contact the pope!").build();
+//        } return ok("error", "something sadly went wrong, contact the pope!").build();
     }
 
     /** The resource getAccount willreturn the user and its data.

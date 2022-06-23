@@ -13,14 +13,14 @@ function login() {
   })
     .then(function (response) {
       if (response.ok) {
-        open('http://localhost:8080/html/zoeken.html');
+        // open('http://localhost:8080/html/zoeken.html');
         return response.json();
       } // als er wel 200 us er ook een body
       else {
         throw 'Wrong username/password'; //dan breakt de chain ook.
       } //als er geen 200 is er ook geen body
     })
-    .then((myJson) => window.sessionStorage.setItem('myJWT', myJson.JWT)) // bij een goede uitkomst hebben we een JWT, slaan we op in de sessionStorage
+    .then((myJson) => window.sessionStorage.setItem('JWT', myJson.JWT)) // bij een goede uitkomst hebben we een JWT, slaan we op in de sessionStorage
     .then((res) => console.log(res))
     .catch((error) => console.log(error)); // hiermee handelen we een potentiele error af
 }
