@@ -26,14 +26,20 @@ import java.util.logging.Logger;
         return userMap.values().stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
     }
 
+    /**
+     * addUserToMap voegt een nieuwe user toe aan de Lijst,
+     * maar controleert eerst of deze er nog niet al instaat. maakt hierover ook een log in de logger van deze klasse.
+     * @param newAccount een instance van User.
+     * @return Een boolean of het het gelukt is om deze gebruiker als unieke User toe te voegen aan de database.
+     */
     public static boolean addUserToMap(User newAccount) {
 
         Logger logger = Logger.getLogger(Community.class.getName());
         logger.log(Level.FINE, "doublechecking user map for: "+newAccount.getEmail());
         System.out.println("doublechecking user map for: "+newAccount.getEmail());
-        System.out.println("... "+newAccount.toString()+"");
+        System.out.println("... "+ newAccount +"");
 
-        if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) { //TODO something going wrong here adds tripple same and no new accounts
+        if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) {
             userMap.put(newAccount.getEmail(), newAccount);
             return true;
         } else {
@@ -41,6 +47,13 @@ import java.util.logging.Logger;
         }
     }
 
+    /** deleteMyUserAccount
+     *  Doet precies wat je verwacht, verwijderd een gebruiker uit de lijst.
+     *  Deze gebruiker zal bljven bestaan terwijl de server draait, maar zal daarna neet meer te achterhalen zijn.
+     *  Ook kan deze vanaf dit moment niet meer zelf inloggen.
+     * @param email email van de gebruiker die gekoppeld is aan de User account.
+     * @return Een boolean of het gelukt is of niet.
+     */
     public static boolean deleteMyUserAccount(String email) {
         try {
             userMap.remove(email);
