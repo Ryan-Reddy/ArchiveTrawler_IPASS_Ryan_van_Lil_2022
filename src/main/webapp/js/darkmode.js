@@ -1,47 +1,41 @@
+const bodyElement = document.getElementById('body');
+
+// laad een eventueel opgeslagen thema voorkeur uit localstorage of maak deze bodyDark
+window.onload = () => bodyElement.classList.replace(localStorage.getItem('myArchiveTrawlerTheme')||'bodyDark');
+
+window.onload = () => {if(bodyElement.className === 'bodyDisco') { // als discomode > activeer discobal
+  document.getElementById('discoball').style.display = 'block'; // show discoball gif
+} };
+
 /** Deze functie toggled van darkmode naar light mode en slaat deze keuze op in de localstorage
  *   @Function darkmodeToggle()
  *   @returns void
  */
 function darkmodeToggle() {
   const bodyElement = document.getElementById('body');
-  // const classesAsList = bodyElement.classList;
+  bodyElement.classList.replace('bodyDisco','bodyDark');
 
-
+  // Toggle het id van 'bodyDark' <=> 'bodyLight'
   bodyElement.classList.toggle('bodyDark');
   bodyElement.classList.toggle('bodyLight');
 
+    localStorage.setItem('myArchiveTrawlerTheme', bodyElement.className);  // sla in localstorage de themakeuze op
 
-  console.log(bodyElement.classList);
 
-
-  // Toggle het id van 'body' <=> 'body-dark-mode'
-  // //   localStorage.setItem('sheet', sheet);
-  // TODO implement localstorage for darkmode so it will toggle sitewide
-
-  const discoBallElement = document.getElementById('discoball');
-  discoBallElement.style.display = 'none'; // hide discoball gif
+  document.getElementById('discoball').style.display = 'none';    // hide discoball gif
 }
-
-// https://stackoverflow.com/questions/46868253/how-to-enable-dark-mode-in-all-pages
-
-// window.onload = () => swapStyleSheet(localStorage.getItem('body') || 'default.css');
 
 function retroModeToggle() {
-  const discoBallElement = document.getElementById('discoball');
-  discoBallElement.style.display = 'block'; // show discoball gif
-
   const bodyElement = document.getElementById('body');
-  const idAttribute = bodyElement.getAttribute('class');
-  // TODO retroMode
-  if (!bodyElement.classList.contains('bodyDisco')) {
-    bodyElement.classList.toggle('bodyDisco');
-  }
+  bodyElement.classList.remove('bodyLight','bodyDark');
 
-  window.onload = () => bodyElement.classList.add(localStorage.getItem('chosenColorScheme') || 'default.css',);
+  bodyElement.classList.add('bodyDisco');
 
-  // // function swapStyleSheet(sheet) {
-  // bodyElement.setAttribute(
-  //   'class',
-  //   idAttribute === 'bodyDisco',
-  // )
+  document.getElementById('discoball').style.display = 'block'; // show discoball gif
+  localStorage.setItem('myArchiveTrawlerTheme', bodyElement.className);  // sla in localstorage de themakeuze op
+
 }
+
+
+
+
