@@ -13,8 +13,8 @@ function login() {
   })
     .then(function (response) {
       if (response.ok) {
-        // open('http://localhost:8080/html/zoeken.html');
-        return response.json();
+       document.getElementById('postresponse').innerText = 'Succesvol ingelogd.';
+        return open('http://localhost:8080/index.html');;
       } // als er wel 200 us er ook een body
       else {
         throw 'Wrong username/password'; //dan breakt de chain ook.
