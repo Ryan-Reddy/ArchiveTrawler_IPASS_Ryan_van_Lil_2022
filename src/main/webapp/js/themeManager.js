@@ -3,9 +3,12 @@ function setFooter() {
   const footer = document.getElementById('footer');
   footer.classList.add('grid-container');
   // footer.innerHTML = ''; // start met een verse lege innerHTML
-  footer.innerHTML += '<div class=\'footerLeft\'><iframe width=\"400\" height=\"100vh\" scrolling=\"no\" frameborder=\"no\" src="https:\/\/w.soundcloud.com\/player\/?url=https%3A\/\/api.soundcloud.com\/tracks\/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style=\"font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;\"> <a href=\"https:\/\/soundcloud.com\/rss\" title=\"RSS Disco\" target=\"_blank\" style=\"color: #cccccc; text-decoration: none;" RSS Disco</a> \u00B7 <a href=\"https:\/\/soundcloud.com\/rss\/rss4\"\r\n title=\"RSS DISCO #004 \/ summer 2012\" target=\"_blank\" style=\"color: #cccccc; text-decoration: none;\">RSS DISCO\r\n #004 \/ summer 2012</a> </div></div>';
-  footer.innerHTML += '<div class=\'footerCenter\' id=\'footerCenter\'><a href="\\/html\\/contact.html\\">Contact</a><br></div>';
-  footer.innerHTML += '<div class=\'footerRight\'><label for=\'darkmodeButton\'>dark or light mode:</label><input id=\'darkmodeButton\' onclick=\'darkmodeToggle()\' src=\"/assets/icons/first-quarter-moon.png\" type="image" width=\'25\'/ height=\'25\'><br/><label for=\'retroModeButton\'>DISCO mode:</label><input alt=\'retroModeButton\' height=\'25px\' width=\'25px\'/ id=\'retroModeButton\' onclick=\'retroModeToggle()\' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"></div>';
+  footer.innerHTML +=
+    "<div class='footerRight'><label for='darkmodeButton'>dark or light mode:</label><input id='darkmodeButton' onclick='darkmodeToggle()' src=\"/assets/icons/first-quarter-moon.png\" type=\"image\" width='25'/ height='25'><br/><label for='retroModeButton'>DISCO mode:</label><input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"></div>";
+  footer.innerHTML +=
+    "<div class='footerCenter' id='footerCenter'><a href=\"\\/html\\/contact.html\\\">Contact</a><br></div>";
+  footer.innerHTML +=
+    '<div class=\'footerLeft\' id="discoballFooter"><iframe width="400" height="100vh" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;" RSS Disco</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
 }
 
 /** laad een eventueel opgeslagen thema voorkeur uit localstorage of maak deze bodyDark */
@@ -19,16 +22,22 @@ function LoadPage() {
   } catch {
     console.log('no theme found in storage, loading default dark mode.');
   }
+  setFooter();
   if (storedTheme != null) {
     console.log(`found theme!${storedTheme}`);
     bodyElement.classList.remove('bodyLight', 'bodyDark', 'bodyDisco');
     bodyElement.classList.add(storedTheme);
+    if (bodyElement.className === 'bodyLight' || 'bodyDark') {
+      document.getElementById('discoballFooter').style.display = 'none'; // hide soundcloud embed
+    }
     if (bodyElement.className === 'bodyDisco') {
       // als discomode > activeer discobal
-      document.getElementById('discoball').style.display = 'block'; // show discoball gif
+      document.getElementById('discoball').style.display = 'inline'; // show discoball gif
+      const dbFoot = document.getElementById('discoballFooter');
+      console.log(dbFoot);
+      dbFoot.style.display = 'inline'; // show soundcloud embed
     }
   }
-  setFooter();
 }
 
 /** Dit draait bij het openen pagina: */
@@ -51,6 +60,7 @@ function darkmodeToggle() {
   localStorage.setItem('myArchiveTrawlerTheme', bodyElement.className); // sla in localstorage de themakeuze op
 
   document.getElementById('discoball').style.display = 'none'; // hide discoball gif
+  document.getElementById('discoballFooter').style.display = 'none'; // hide soundcloud embed
 }
 
 /** <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <br />
@@ -66,5 +76,7 @@ function retroModeToggle() {
   bodyElement.classList.add('bodyDisco');
 
   document.getElementById('discoball').style.display = 'block'; // show discoball gif
+  document.getElementById('discoballFooter').style.display = 'block'; // show soundcloud embed
+
   localStorage.setItem('myArchiveTrawlerTheme', bodyElement.className); // sla in localstorage de themakeuze op
 }
