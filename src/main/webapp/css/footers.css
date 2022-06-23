@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     font-weight: bold;
     position: absolute;
@@ -23,12 +25,12 @@
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    left: 0;
 }
 
 .footerleft {
     border-color: #ccc;
-
-    /*position: relative;*/
+        /*position: relative;*/
     width: 150px;
     /*margin-left: 5rem;*/
     /*margin-right: 4rem;*/
