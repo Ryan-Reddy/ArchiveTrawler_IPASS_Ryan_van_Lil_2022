@@ -1,5 +1,6 @@
 package archive.trawler.security;
 
+import archive.trawler.model.User;
 import archive.trawler.security.dto.MySecurityContext;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
@@ -32,7 +33,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
                         Jwts.parser().setSigningKey(AuthenticationResource.key);
                 Claims claims = parser.parseClaimsJws(token).getBody();
                 String email = claims.getSubject();
-                msc = new MySecurityContext((MyUser) MyUser.getUserByEmail(email), scheme);
+                msc = new MySecurityContext((User) User.getUserByEmail(email), scheme);
             } catch (JwtException | IllegalArgumentException e) {
                 System.out.println("Invalid JWT, processing as guest!");
             }

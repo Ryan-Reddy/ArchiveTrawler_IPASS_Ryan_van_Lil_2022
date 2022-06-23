@@ -10,9 +10,9 @@ import java.security.Principal;
  *
  */
 public class MySecurityContext implements SecurityContext {
-    private final MyUser user;
+    private final User user;
     private final String scheme;
-    public MySecurityContext(MyUser user, String scheme) {
+    public MySecurityContext(User user, String scheme) {
         this.user = user;
         this.scheme = scheme;
     }

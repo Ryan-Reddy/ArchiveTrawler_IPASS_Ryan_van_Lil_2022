@@ -4,7 +4,9 @@ import archive.trawler.persistance.Community;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.security.auth.Subject;
 import java.io.Serializable;
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +14,7 @@ import java.util.Map;
 /**
  * Klasse die gebruikt word om de users te creeeren.
  */
-public class User implements Serializable {
+public class User implements Serializable, Principal {
     /** naam van de gebruiker, persoonlijke naam, voor en/of achternaam. */
     private @Getter
     @Setter String naam;
@@ -97,5 +99,15 @@ public class User implements Serializable {
      * TODO security implementeren getPassword */
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public boolean implies(Subject subject) {
+        return Principal.super.implies(subject);
     }
 }
