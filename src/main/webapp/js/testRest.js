@@ -15,17 +15,42 @@ function halleluja() {
       'Authorization': 'Bearer ' + window.sessionStorage.getItem('JWT')
     }
   };
-  console.log('starting fetch')
-  console.log('restservices/users/', fetchOptions)
+
+  const myList = document.querySelector('#myData');
 
   fetch('restservices/users/', fetchOptions)
     .then(function (response) {
       if (response.ok) {
-        console.log('credentials correct, you are a user');
-        console.log(response);
-        document.querySelector('#myData').innerText = response;
+        let jsonResponse = response.json();
+        console.log(jsonResponse); // so far so good
+
+
+
+
+        for (const user of jsonResponse) {
+          let listItem = document.createElement('li');
+          listItem.appendChild(
+            document.createElement('strong')
+          ).textContent = user.naam;
+          listItem.append(
+            ` can be found in ${
+              user.email              
+            }. Cost: `
+          );
+          listItem.appendChild(
+            document.createElement('strong')
+          ).textContent = `£${user.naam}`;
+          myList.appendChild(listItem);
+        }
+
       }
-      else if (response.status == 404) console.log("could not find the stuff")
-      else if (response.status == 401) console.log("unauthorized")
+
+
+      // else if (response.status == 404) console.log("could not find the stuff")
+      // else if (response.status == 401) console.log("unauthorized")
     }).catch(error => console.log(error));
 }
+document.querySelector('#myData').innerHTML = responseString;
+console.log('credentials correct, you are a user');
+console.log(response);
+const responseString = JSON.stringify(response.body);
