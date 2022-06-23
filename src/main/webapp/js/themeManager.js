@@ -22,6 +22,8 @@ function LoadPage() {
       document.getElementById('discoball').style.display = 'block'; // show discoball gif
     }
   }
+  const footerCelement = document.getElementById('footerCenter');
+  footerCelement.innerHTML += 'hello';
 }
 
 /** Deze functie toggled van darkmode naar light mode en slaat deze keuze op in de localstorage

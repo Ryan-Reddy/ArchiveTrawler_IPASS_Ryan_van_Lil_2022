@@ -31,13 +31,24 @@ main label {
     /* padding: 1rem; */
     /* padding-bottom: 60px; Hoogte footer */
 }
+.footerleft {
+    position: relative;
+    width: 150px;
+    margin-left: 5rem;
+    /*margin-right: 4rem;*/
+}
 
-.colormode {
-    /* position: absolute; */
-    float: right;
+.footerCenter {
+    position: absolute;
     align-content: center;
-    margin: 1rem;
-    margin-right: 4rem;
+    width: 25%;
+    border-color: #ccc;
+    margin-left: 50%;}
+
+.footerRight {
+     position: absolute;
+    float: right;
+    margin-right: 5rem;
 }
 
 #footer {
@@ -45,7 +56,7 @@ main label {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 7rem; /* Hoogte footer */
+    height: 10rem; /* Hoogte footer */
 }
 
 #header {
