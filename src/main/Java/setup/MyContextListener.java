@@ -30,10 +30,11 @@ public class MyContextListener implements ServletContextListener {
             System.out.println("catching ClassNotFoundException");
             e.printStackTrace();
         }
-        new User("Coyote", "test@mail.com", "password");
-        new User("TickTock", "aldous@harding.com", "Wilde");
-        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
-        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
+        // DUMMYDATA:
+//        new User("Coyote", "test@mail.com", "password");
+//        new User("TickTock", "aldous@harding.com", "Wilde");
+//        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
+//        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
     }
 
     /** contextDestroyed

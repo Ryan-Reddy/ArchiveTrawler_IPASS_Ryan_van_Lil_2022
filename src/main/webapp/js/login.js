@@ -1,13 +1,17 @@
 /** De event listeners*/
 //overal op deze pagina, kan ook specifieke input zijn
-document.addEventListener("keydown", function(event) {
-    if (event.ctrlKey && event.shiftKey) { // Wacht op enterKeystroke + shift  TODO comment out for reference and use elsewhere
+document.addEventListener("keydown", async function (event) {
+
+//            ////////////////////////////////////////////////////////////////
+  if (event.ctrlKey && event.shiftKey) { // Wacht op enterKeystroke + shift  TODO comment out for reference and use elsewhere
     event.preventDefault(); // Stopt default actie, voor het geval dat...
-      console.log('shift key recognized');
+    console.log('shift key recognized');
+    login();
     getAllUsersButtonFunc();
     document.getElementById("getAllUsers").click(); //clickt op button
-    }
-
+  }
+//            ////////////////////////////////////////////////////////////////
+  //    TODO keep this follwowing code:
 //            ////////////////////////////////////////////////////////////////
   if (event.key === "Enter") { // Wacht op enterKeystroke
     event.preventDefault(); // Stopt default actie, voor het geval dat...
@@ -28,7 +32,9 @@ function login() {
   let jsonRequestBody = {};
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
-  fetch('/restservices/authentication', {
+  const localhost = 'http://localhost:8080/';
+
+  fetch(localhost+ 'restservices/authentication', { // TODO remove outside of testing
     method: 'POST',
     headers: {
       Accept: 'application/json',
