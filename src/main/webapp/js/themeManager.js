@@ -3,10 +3,24 @@ function setFooter() {
   const footer = document.getElementById('footer');
   footer.classList.add('grid-container');
   // footer.innerHTML = ''; // start met een verse lege innerHTML
+  footer.innerHTML += "<div class='footerThemeChoice'>"
+  + "<label class='switch' for='darkmodeButton'>"
+  + "<img id='themeIcon' src='/assets/icons/first-quarter-moon.png'></img>"
+  + "<input id='darkmodeButton' type='checkbox' onclick='darkmodeToggle()'>"
+  + "<span class='slider round'>"
+  + "</span></label>"
+  + "<div class='footerThemeChoice'>"
+  + "<label class='switch' for='retroModeButton'>"
+  + "<img id='themeIcon' src='/assets/icons/mirror-ball_1faa9.png'></img>"
+  + "<input id='retroModeButton' type='checkbox' onclick='retroModeToggle()'>"
+  + "<span class='slider round'>"
+  + "</span></label></div>"
+  + ""
+  + "";
+    // "<input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"><label for='retroModeButton'>DISCO mode:</label></div>";
+    // "<div class='footerRight'><input id='darkmodeButton' onclick='darkmodeToggle()' src=\"/assets/icons/first-quarter-moon.png\" type=\"image\" width='25'/ height='25'><label for='darkmodeButton'>dark or light mode:</label><br/><input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"><label for='retroModeButton'>DISCO mode:</label></div>";
   footer.innerHTML +=
-    "<div class='footerRight'><label for='darkmodeButton'>dark or light mode:</label><input id='darkmodeButton' onclick='darkmodeToggle()' src=\"/assets/icons/first-quarter-moon.png\" type=\"image\" width='25'/ height='25'><br/><label for='retroModeButton'>DISCO mode:</label><input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"></div>";
-  footer.innerHTML +=
-    "<div class='footerCenter' id='footerCenter'><a href=\"\/html\/contact.html\">Contact</a><a href=\"\/index.html\">Home</a><br></div>";
+    "<div class='footerCenter' id='footerCenter'><ul> <li><a href=\"\/html\/contact.html\">Contact</a> <br></li> <li><a href=\"\/index.html\">Home</a><br></li><ul></div>";
   footer.innerHTML +=
     '<div class=\'footerLeft\' id="discoballFooter"><iframe width="400" height="100vh" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;" RSS Disco</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
 }
@@ -72,6 +86,8 @@ function darkmodeToggle() {
 function retroModeToggle() {
   const bodyElement = document.getElementById('body');
   bodyElement.classList.remove('bodyLight', 'bodyDark');
+
+  // document.getElementById('switchLabel').innerHTML = 'hello';
 
   bodyElement.classList.add('bodyDisco');
 

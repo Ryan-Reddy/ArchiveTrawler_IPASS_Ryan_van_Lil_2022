@@ -42,6 +42,22 @@ h1 {
     /* margin-left: 20px; */
 }
 
-ul {
-    list-style-type: none;
-}
+@counter-style books {
+    system: cyclic;
+    symbols:"\📕""\📙" "\📘""\📒";
+    suffix: " ";
+  }
+
+@counter-style hoverbooks {
+    system: cyclic;
+    symbols: "\📖";
+    suffix: " ";
+  }
+
+  ul {
+    list-style: books;
+  }
+
+  ul :hover {
+    list-style: hoverbooks;
+  }

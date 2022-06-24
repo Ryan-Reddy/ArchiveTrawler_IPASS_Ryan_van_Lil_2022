@@ -46,7 +46,13 @@ border-color: #A05344;
 
 /* visited link */
 .bodyDisco a:visited {
-    color: #734046;
+  color: #E79E4F;
+  text-decoration-color: grey;
+}
+
+/* visited link ONLY FOOTER */
+.bodyDisco #footer a:visited {
+    color: #E79E4F;
     text-decoration-color: grey;
 }
 
@@ -60,4 +66,38 @@ border-color: #A05344;
 .bodyDisco a:active {
     color: #8ebf42;
     text-decoration-color: grey;
+}
+
+
+@counter-style disco {
+  system: cyclic;
+  symbols:"\💃" "\🕺" "\👯";
+  suffix: " ";
+}
+
+@counter-style hoverdisco {
+  system: cyclic;
+  symbols: "\💞";
+  suffix: " ";
+}
+
+.bodyDisco ul {
+  list-style: disco;
+}
+
+.bodyDisco ul :hover {
+  list-style: hoverdisco;
+}
+
+.bodyDisco .slider {
+  background-color: #A05344; /* achtergrond kleur slider */
+}
+.bodyDisco .slider:before {
+background-color: white;
+}
+.bodyDisco input:checked + .slider {
+  background-color: #E79E4F; /* achtergrond kleur aangezet */
+}
+.bodyDisco input:focus + .slider {
+  box-shadow: 0 0 1px #E79E4F; /* achtergrond kleur focus */
 }
