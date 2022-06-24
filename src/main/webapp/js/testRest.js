@@ -12,16 +12,21 @@ function getAllUsersButtonFunc() {
     }
   };
 
-  fetch('restservices/users/', fetchOptions)
+  fetch('/restservices/users/', fetchOptions)
     .then((response) => {
-      if (!response.ok) {
-        throw new Error(response.status);
+      if (!response.ok) {                  // if response =  NOT ok:
+        switch (response.status) {
+          case 404: return console.log("could not find the stuff") ;
+          case 401: return console.log("unauthorized")
+          case 403: return console.log("not high enough clearance")
+          default:         throw new Error(response.status);
+        }
       }
-      return response.json();
+      return response.json()              // if response = ok:
+        // .then(json => console.log('the response.json: ',json))
+        .then(json => console.log(JSON.stringify(json.map(person => person.naam.string)))) //finally a list of usersnaam
     })
-    .then(json => console.log(json))
-    .then(json => json.map(person => person.name))
-    .then(namelist => console.log(JSON.stringify(namelist)))
+
 
 
 
