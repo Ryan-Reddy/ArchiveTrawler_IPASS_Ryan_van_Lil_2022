@@ -1,10 +1,6 @@
 // function testGetAllUsers()  {
 const button = document.querySelector('#getAllUsers');
 
-
-// el_up.innerHTML = "Click on the button to create " + "the table from the JSON data.<br><br>" + JSON.stringify(list[0]) + "<br>" + JSON.stringify(list[1]) + "<br>" + JSON.stringify(list[2]);
-
-
 function getAllUsersButtonFunc() {
   const fetchOptions = {
     method: 'GET', headers: {
@@ -16,15 +12,26 @@ function getAllUsersButtonFunc() {
     .then((response) => {
       if (!response.ok) {                  // if response =  NOT ok:
         switch (response.status) {
-          case 404: return console.log("could not find the stuff") ;
-          case 401: return console.log("unauthorized")
-          case 403: return console.log("not high enough clearance")
-          default:         throw new Error(response.status);
+          case 404:
+            console.log("could not find the stuff"); break;
+          case 401:
+            console.log("unauthorized"); break;
+          case 403:
+            console.log("not high enough clearance"); break;
+          default:         throw new Error(response.status.toString());
         }
       }
       return response.json()              // if response = ok:
-        // .then(json => console.log('the response.json: ',json))
-        .then(json => console.log(JSON.stringify(json.map(person => person.naam.string)))) //finally a list of usersnaam
+        // .then(json => console.log('the response.json: ',json))  // Keep this for troubleshooting
+        // .then(json => console.log(JSON.stringify(json.map(person => person.naam.string)))) //finally a list of usersnaam // Keep this for troubleshooting
+        .then(json => {
+            // let array = JSON.stringify(json.map(person => person.naam.string));
+            let array = json.map(person => person.naam.string);
+            for(user in array) {
+              document.getElementById('testingspace').innerHTML += user + '<br \>';
+            }
+          }
+        ) //finally a list of usersnaam // Keep this for troubleshooting
     })
 
 

@@ -1,12 +1,22 @@
 /** De event listeners*/
 //overal op deze pagina, kan ook specifieke input zijn
-document.addEventListener("keypress", function(event) {
+document.addEventListener("keydown", function(event) {
+    if (event.ctrlKey && event.shiftKey) { // Wacht op enterKeystroke + shift  TODO comment out for reference and use elsewhere
+    event.preventDefault(); // Stopt default actie, voor het geval dat...
+      console.log('shift key recognized');
+    getAllUsersButtonFunc();
+    document.getElementById("getAllUsers").click(); //clickt op button
+    }
+
+//            ////////////////////////////////////////////////////////////////
   if (event.key === "Enter") { // Wacht op enterKeystroke
     event.preventDefault(); // Stopt default actie, voor het geval dat...
     document.getElementById("login()_button").click(); //clickt op button
   }
+//            ////////////////////////////////////////////////////////////////
 });
-document.querySelector('#login').addEventListener('click', login);
+
+
 
 /** Login
  * gebruikt informatie van het formulier
