@@ -4,6 +4,7 @@
  */
 
 function login() {
+  const preloginJWT = window.sessionStorage.getItem('JWT'); // sla de lokale JWT op voor controle achteraf
   let formData = new FormData(document.querySelector('#login_account'));
   let jsonRequestBody = {};
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
@@ -18,13 +19,17 @@ function login() {
   })
     .then(function (response) {
       if (response.ok) return response.json(); // als de gegevens herkend zijn krijgen we n body json incl token !!
-      else throw 'Wrong username/password'; // zo niet dan breakt de chain ook.
+      else throw 'User login failed'; // zo niet dan breakt de chain ook.
       }) //als er geen 200 is er ook geen body
-    .then(myJson => window.sessionStorage.setItem('JWT', myJson.JWT)) // bij een goede uitkomst hebben we een JWT, slaan we op in de sessionStorage
-    // .then((res) => console.log(res)) // console log //TODO verwijder
+    .then(myJson => {
+      console.log('User login successful!');
+      window.sessionStorage.setItem('JWT', myJson.JWT)
+    }) // bij een goede uitkomst hebben we een JWT, slaan we op in de sessionStorage
     // .then(document.getElementById('postresponse').innerText = 'Succesvol ingelogd.')// mocht de pagina niet laden dan alsnog een melding.
     // .then(open('http://localhost:8080/index.html','_self')) //open homepage in de huidige tab
     .catch((error) => console.log(error)); // hiermee handelen we een potentiele error af
+  // controleer of de JWT geupdate is
+  if(window.sessionStorage.getItem('JWT') !== preloginJWT) console.log('JWT updated');
 }
 
 document.querySelector('#login').addEventListener('click', login);
