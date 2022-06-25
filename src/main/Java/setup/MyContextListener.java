@@ -11,6 +11,9 @@ import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.time.Duration;
 
+import static archive.trawler.persistance.PersistanceManager.communityContainerbackup;
+import static archive.trawler.persistance.PersistanceManager.usersBlobNamebackup;
+
 @WebListener
 public class MyContextListener implements ServletContextListener {
 
@@ -23,6 +26,8 @@ public class MyContextListener implements ServletContextListener {
         try {
             System.out.println("contextInitialized");
             PersistanceManager.loadFromAzure();  // data inladen van azure container
+            PersistanceManager.uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
+
         } catch (IOException e) {
             System.out.println("catching IOException");
             e.printStackTrace();
@@ -47,7 +52,8 @@ public class MyContextListener implements ServletContextListener {
         /* Overige code, bijvoorbeeld om naar Azure te schrijven! */
         System.out.println("Context destroyed, saving everything to azure-storage");
         try {
-            PersistanceManager.uploadToAzure();  // data ophalen van de azure container
+            PersistanceManager.uploadToAzure("communityblob",PersistanceManager.communityContainer);  // data ophalen van de azure container
+
         } catch (IOException e) {
             e.printStackTrace();
         }

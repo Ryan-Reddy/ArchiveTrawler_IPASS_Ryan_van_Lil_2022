@@ -1,6 +1,5 @@
 package archive.trawler.persistance;
 
-
 import archive.trawler.model.User;
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
@@ -22,8 +21,13 @@ public class PersistanceManager {
     private static final String ENDPOINT = "https://ryanreddyipass.blob.core.windows.net/";
     private static final String SASTOKEN = "?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2032-06-22T01:55:53Z&st=2022-06-21T17:55:53Z&spr=https&sig=o6Ovg7nmpYR%2Beyll00G399spw9fcR4XdH1y%2FVTs9W34%3D";
     private static final String CONTAINER = "communitycontainer";
-    //    private static final String usersBlobName = "communityblob";
-    private static final BlobContainerClient communityContainer = new BlobContainerClientBuilder().endpoint(ENDPOINT).sasToken(SASTOKEN).containerName(CONTAINER).buildClient();
+//        private static final String usersBlobName = "communityblob";
+    public static final BlobContainerClient communityContainer = new BlobContainerClientBuilder().endpoint(ENDPOINT).sasToken(SASTOKEN).containerName(CONTAINER).buildClient();
+//   /* BACKUP: */
+    private static final String SASTOKENbackup = "?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2030-06-25T09:17:05Z&st=2022-06-25T01:17:05Z&spr=https&sig=BvFj9QJmLSkWtWKFqAUVo%2BEv%2FCzgCZ%2BXkjDGyrw9d7c%3D";
+    private static final String CONTAINERbackup = "communitycontainerbackup";
+        public static final String usersBlobNamebackup = "communityblobbackup";
+    public static final BlobContainerClient communityContainerbackup = new BlobContainerClientBuilder().endpoint(ENDPOINT).sasToken(SASTOKENbackup).containerName(CONTAINERbackup).buildClient();
 
     //=========================================================================================================
 
@@ -51,6 +55,7 @@ public class PersistanceManager {
                 bais.close();
                 ois.close();
             }
+            uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
         }
     }
 
@@ -59,15 +64,17 @@ public class PersistanceManager {
     /**
      * ~~~~~~~~~~~~~~~~~~~ SAVING TO AZURE:  ~~~~~~~~~~~~~~~~~~~
      * Tijdens afsluiten van de app.
+     * En tijdens het opstarten ook een backup van de ingeladen data, deze loopt dus wel wat achter.
+     * Dagelijkse herstart van de server wel aan te raden.
      */
-    public static void uploadToAzure() throws IOException {
+    public static void uploadToAzure(String usersBlobName, BlobContainerClient blobContainerClient) throws IOException {
         System.out.println("~~~ START saveToAzure ~~~");
-        if (!communityContainer.exists()) {
-            communityContainer.create();
+        if (!blobContainerClient.exists()) {
+            blobContainerClient.create();
         }// creeert een blobcontainer als deze nog niet bestond
 
-        BlobClient usersBlobClient = communityContainer.getBlobClient("communityblob"); // Maak een blobclient aan voor Users
-        System.out.println("~~~ getting usermap from Cumminity ~~~");
+        BlobClient usersBlobClient = blobContainerClient.getBlobClient(usersBlobName); // Maak een blobclient aan voor Users
+        System.out.println("~~~ getting usermap from Community ~~~");
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
 
@@ -82,9 +89,7 @@ public class PersistanceManager {
         usersBlobClient.upload(bais, bytez.length, true);  // upload naar de blob, overschrijven ja.
         baos.close();
         oos.close();
-        bais.close(); // allestreams closen
-
-
+        bais.close(); // allestreams afsluiten
     }
 }
 
