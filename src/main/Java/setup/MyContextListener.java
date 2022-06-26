@@ -2,6 +2,7 @@ package setup;
 
 import archive.trawler.model.Archief;
 import archive.trawler.model.User;
+import archive.trawler.model.Zoekopdracht;
 import archive.trawler.persistance.Community;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
@@ -12,6 +13,8 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 
 import static archive.trawler.persistance.PersistanceManager.communityContainerbackup;
 import static archive.trawler.persistance.PersistanceManager.usersBlobNamebackup;
@@ -42,10 +45,14 @@ public class MyContextListener implements ServletContextListener {
 //        new User("TickTock", "aldous@harding.com", "Wilde");
 //        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
-        new Archief("test","");
+//        new Archief("test","");
+        new Zoekopdracht(Arrays.asList(Community.getArchiefByName("test")),"naam blabla werkman", Community.getUserByEmail("test@mail.com"));
+
         System.out.println("~~~~~~~~~~ Community.getCommunity().toString()" + Community.getCommunity().toString());
         System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
         System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
+        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getArchiefMap().toString());
+        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getZoekOpdrachtMap().toString());
 
     }
 

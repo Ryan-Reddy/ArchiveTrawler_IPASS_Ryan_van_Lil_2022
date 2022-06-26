@@ -27,6 +27,7 @@ public class Community implements Serializable {
 
     private static @Getter @Setter Map<String, User> userMap = new HashMap<>();
     private static @Getter @Setter Map<String, Archief> archiefMap = new HashMap<>();
+    private static @Getter @Setter Map<String, Archief> zoekOpdrachtMap = new HashMap<>();
     // TODO implement all lists into this file
     //  - [ ] archief
     //  - [ ] websites
