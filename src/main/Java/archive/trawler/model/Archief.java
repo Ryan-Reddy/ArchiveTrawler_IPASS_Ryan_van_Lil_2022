@@ -1,5 +1,6 @@
 package archive.trawler.model;
 
+import archive.trawler.persistance.Community;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ public class Archief implements Serializable {
      public Archief(String naam, String basisURI) {
          this.naam = naam;
          this.basisURI = basisURI;
+         Community.addArchiefToMap(this);
      }
 
     @Override

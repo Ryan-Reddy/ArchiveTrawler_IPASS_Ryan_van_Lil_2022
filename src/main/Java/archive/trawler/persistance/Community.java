@@ -1,5 +1,6 @@
 package archive.trawler.persistance;
 
+import archive.trawler.model.Archief;
 import archive.trawler.model.User;
 import lombok.Data;
 import lombok.Getter;
@@ -24,8 +25,8 @@ public class Community implements Serializable {
     private static @Getter
     @Setter Community community = new Community();  // creeert 1 globale community met alle data.
 
-    private static @Getter
-    @Setter Map<String, User> userMap = new HashMap<>();
+    private static @Getter @Setter Map<String, User> userMap = new HashMap<>();
+    private static @Getter @Setter Map<String, Archief> archiefMap = new HashMap<>();
     // TODO implement all lists into this file
     //  - [ ] archief
     //  - [ ] websites
@@ -49,13 +50,31 @@ public class Community implements Serializable {
      */
     public static boolean addUserToMap(User newAccount) {
 
-        Logger logger = Logger.getLogger(Community.class.getName());
-        logger.log(Level.FINE, "doublechecking user map for: " + newAccount.getEmail());
         System.out.println("doublechecking user map for: " + newAccount.getEmail());
         System.out.println("... " + newAccount + "");
 
         if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) {
             userMap.put(newAccount.getEmail(), newAccount);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /** TODO Combineer addUserToMap en anderen (archiefToMap) etc om dubbele code te vermijden
+     * addUserToMap voegt een nieuwe user toe aan de Lijst,
+     * maar controleert eerst of deze er nog niet al instaat. maakt hierover ook een log in de logger van deze klasse.
+     *
+     * @param newAccount een instance van User.
+     * @return Een boolean of het het gelukt is om deze gebruiker als unieke User toe te voegen aan de database.
+     */
+    public static boolean addArchiefToMap(Archief newAccount) {
+
+        System.out.println("doublechecking archief map for: " + newAccount.getNaam());
+        System.out.println("... to add: " + newAccount + "");
+
+        if (archiefMap.values().stream().noneMatch(user -> user.getNaam().equals(newAccount.getNaam()))) {
+            archiefMap.put(newAccount.getNaam().toLowerCase(), newAccount);
             return true;
         } else {
             return false;
@@ -90,5 +109,13 @@ public class Community implements Serializable {
         for (User user : usersListToMap) {
             if (!userMap.containsValue(user)) userMap.put("User", user);
         }
+    }
+
+    public static Archief getArchiefByName(String naam) {
+        return archiefMap.get(naam.toLowerCase());
+    }
+
+    public static Archief getArchiefByURI(String uriTeZoeken) {
+        return archiefMap.values().stream().filter(archief -> archief.getNaam().equals(uriTeZoeken)).findFirst().orElse(null);
     }
 }

@@ -1,6 +1,8 @@
 package setup;
 
+import archive.trawler.model.Archief;
 import archive.trawler.model.User;
+import archive.trawler.persistance.Community;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
 import reactor.netty.http.HttpResources;
@@ -40,6 +42,11 @@ public class MyContextListener implements ServletContextListener {
 //        new User("TickTock", "aldous@harding.com", "Wilde");
 //        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
+        new Archief("test","");
+        System.out.println("~~~~~~~~~~ Community.getCommunity().toString()" + Community.getCommunity().toString());
+        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
+        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
+
     }
 
     /** contextDestroyed

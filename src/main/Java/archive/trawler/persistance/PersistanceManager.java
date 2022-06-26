@@ -55,6 +55,7 @@ public class PersistanceManager {
                 bais.close();
                 ois.close();
             }
+        System.out.println("~~~ START up pre-app BACKUP-saveToAzure ~~~");
             uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
         }
     }

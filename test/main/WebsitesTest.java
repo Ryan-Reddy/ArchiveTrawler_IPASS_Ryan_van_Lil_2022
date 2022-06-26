@@ -1,5 +1,6 @@
 package main;
 
+import archive.trawler.model.Archief;
 import archive.trawler.model.User;
 import archive.trawler.model.Websites;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +16,8 @@ class WebsitesTest {
 
     @BeforeEach
     void setUp() {
+        System.out.println("testing" + Websites.class.getName());
+
     }
 
     @Test
