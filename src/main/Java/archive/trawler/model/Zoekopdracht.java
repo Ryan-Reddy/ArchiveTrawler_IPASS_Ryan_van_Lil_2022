@@ -55,7 +55,7 @@ import java.util.List;
             int max = 999;
             int min = 100;
             Long epochSecond = Instant.now().getEpochSecond(); //Long = 1450879900
-            return (String) (user.getNaam() + "_" + epochSecond + (min + (Math.random() * max)));
+            return (String) (user.getNaam() + "_" + epochSecond + (int) (min + (Math.random() * max)));
         }
 
         private String genereerZoekURI() {    // TODO schrijf functie maak zoekopdracht
