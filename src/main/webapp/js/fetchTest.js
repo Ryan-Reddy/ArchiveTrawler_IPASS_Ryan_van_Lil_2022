@@ -1,17 +1,55 @@
-// fetch('https://catalog.archives.gov/api/v1/')
-//     // .then(res => console.log(res))
-//     .then(res => res.JSON)
-//     .then(data => console.log(data))
-//     .catch(ERROR => console.log(ERROR))
-
-
+function fetchToPage() {
+  fetch(
+    'https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22van%20lil%22%7D&rows=250',
+    {
+      // TODO remove outside of testing
+      mode: 'same-origin',
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    //   body: JSON.stringify(jsonRequestBody),
+    },
+  )
+    // .then(res => console.log(res))
+    .then((res) => res.JSON)
+    .then((data) => console.log(data))
+    .catch((ERROR) => console.log(ERROR));
+}
 // const doc = document.getElementById.bind(document);
+
+//   console.log(doc.select("ul#searched-products"));
+//   itemElements = itemElements.select("li");
+//   for(Element ele : itemElements){
+//   String text = ele.text();
+//   console.log(text); //this will return Prodict 1 and Prodict 2
+//   }
+//   // dataSpan
+
+//   if(tbody) {
+//       for (i = 0; i < c.length(); i++) {
+//           c[i].setAttribute('id','tr'+i);
+//           console.log(i)
+//       }
+//   }
+
+// function fetchToPage() {
+//   fetch('https://catalog.archives.gov/api/v1/')
+//     // .then(res => console.log(res))
+//     .then((res) => res.JSON)
+//     .then((data) => console.log(data))
+//     .catch((ERROR) => console.log(ERROR));
+
+// // const doc = document.getElementById.bind(document);
+
 // console.log(doc.select("ul#searched-products"));
 // itemElements = itemElements.select("li");
 // for(Element ele : itemElements){
 // String text = ele.text();
 // console.log(text); //this will return Prodict 1 and Prodict 2
 // }
+// // dataSpan
 
 // if(tbody) {
 //     for (i = 0; i < c.length(); i++) {
@@ -19,6 +57,37 @@
 //         console.log(i)
 //     }
 // }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // =================================================================================================
 // -------------------------------------------------------------------------------------------------
 
@@ -45,7 +114,6 @@
 
 // https://github.com/usnationalarchives/Catalog-API/blob/master/federalregister.gov
 // http://www.archives.gov/open/available-datasets.html
-//`---------------------------------------------------------------------------------------------------------`
 // http://www.archives.gov/open/available-datasets.html    <---- OVERVIEW
 // https://www.archives.gov/research                    <---- OVERVIEW
 // ~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~;~~;~~;~~;~~~;;;~~~;~~;~~;~~;~~;~~~~;~~;~~;
