@@ -35,11 +35,20 @@
             <hr />
             <h3>Archieven te doorzoeken</h3>
             <div>
+                <ul>
+                    <li>
                 <input id="archiveDublin" name="archiveDublin" type="checkbox" value="archiveDublin" />
                 <label for="archiveDublin">Archief van Dublin</label> <br />
-
+            </li>
+            <li>
                 <input id="archiveAmsterdam" name="archiveAmsterdam" type="checkbox" value="archiveAmsterdam" />
                 <label for="archiveAmsterdam">Archief van Amsterdam</label>
+            </li>
+            <li>
+                <input id="archiveNoordHolland" name="archiveNoordHolland" type="checkbox" value="archiveNoordHolland" />
+                <label for="archiveNoordHolland">Archief van NH</label>
+            </li>    
+            </ul>
             </div>
 
             <hr />
@@ -50,10 +59,12 @@
                 </a>
                 <input id="send_json" onclick="sendJsonData()" type="button" value="Zoek--send json" />
                 <input id="send_formdata" onclick="sendFormData()" type="button" value="Zoek--send formdata" />
-                <span id="postresponse"></span>
+                <span id="postresponse"><br>'Popups toestaan in uw browser, om te genieten van de volledige functionaliteit.'<br>,
+                </span>
             </div>
         </form>
         <input type="button" id="searchButton" value="Run zoekfunctie" onclick="zoekButtonClicked()">
+        <input type="button" id="fetchButton" value="fetch wiewaswie.nl" onclick="fetchFunctionForTesting()">
     </main>
     <footer id="footer">
     </footer>
