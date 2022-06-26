@@ -7,6 +7,8 @@ import lombok.Setter;
 import javax.security.auth.Subject;
 import java.io.Serializable;
 import java.security.Principal;
+import java.time.Instant;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,28 +17,24 @@ import java.util.Map;
  * Klasse die gebruikt word om de users te creeeren.
  */
 public class User implements Serializable, Principal {
-    /**
-     * wachtwoord van de gebruiker.
-     */
+    /** Uniek ID nummer van gebruiker*/
+    private @Getter
+    @Setter int ID;
+    /**wachtwoord van de gebruiker.*/
     private final String password; //plz only store hashed password
-    /**
-     * naam van de gebruiker, persoonlijke naam, voor en/of achternaam.
-     */
+    /**naam van de gebruiker, persoonlijke naam, voor en/of achternaam. */
     private @Getter
     @Setter String naam;
-    /**
-     * email adres, is gelijk ook de username van de inlog
-     */
+    /** email adres, is gelijk ook de username van de inlog */
     private @Getter
     @Setter String email;
-    /**
-     * rol van de gebruiker.
-     */
+    /**rol van de gebruiker.     */
     private @Getter
     @Setter String role;
-    /**
-     * Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.
-     */
+    /** id nummer van gebruiker, is uniek. */
+    private @Getter @Setter int identificationNum;
+
+    /** Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.  */
     private @Getter
     @Setter Map<Integer, Object> alleZoekertjes;
 //    private @Getter
@@ -54,6 +52,14 @@ public class User implements Serializable, Principal {
         this.alleZoekertjes = new HashMap<Integer, Object>(10000);
         this.role = "user";
         Community.addUserToMap(this);
+    }
+
+    private int randomIDgenerator() {
+        int max = 10000;
+        int min = 999;
+        Long epochSecond = Instant.now().getEpochSecond(); //Long = 1450879900
+
+        return (int) (epochSecond + (min + (Math.random() * max))); // TODO doe iets met de uniqueID danwel in user, danwel in de zoekkant van website
     }
 
 
@@ -128,4 +134,12 @@ public class User implements Serializable, Principal {
     public boolean implies(Subject subject) {
         return Principal.super.implies(subject);
     }
+
+//    public int getID() {
+//        return identificationNum;
+//    }
+//
+//    public void setID(int id) {
+//        this.ID = id;
+//    }
 }
