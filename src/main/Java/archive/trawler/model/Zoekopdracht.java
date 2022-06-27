@@ -46,15 +46,15 @@ import java.util.List;
 //        this.achterNaam = achterNaam;
 //        this.jaarVan = jaarVan;
 //        this.jaarTot = jaarTot;
-        this.zoekOpdrachtID = genereerZoekOpdrachtID(this.userID);
         this.userID = user;
+//        this.zoekOpdrachtID = genereerZoekOpdrachtID(this.userID);
 //        this.zoekresultatenIndividueel = zoekresultatenIndividueel;  // TODO wordt geimplementeerd met zoekopdracht uitvoeren niet in de contructor
     }
 
     private String genereerZoekOpdrachtID(User user) {
             int max = 999;
             int min = 100;
-            Long epochSecond = Instant.now().getEpochSecond(); //Long = 1450879900
+            long epochSecond = Instant.now().getEpochSecond(); //Long = 1450879900
             return (String) (user.getNaam() + "_" + epochSecond + (int) (min + (Math.random() * max)));
         }
 
