@@ -42,7 +42,10 @@ public abstract class MyUser extends User implements Principal, Serializable {
     public static String validateLogin(String email, String password) {
         User toLogin = getUserByEmail(email);
         if (toLogin != null && toLogin.getPassword().equals(password)) {
-            return toLogin.getRole();
+            System.out.println("validateLogin(): user password matches");
+            String role =  toLogin.getRole();
+            System.out.println("role that matches this validated login: " + role);
+            return role;
         }
         return null;
     }

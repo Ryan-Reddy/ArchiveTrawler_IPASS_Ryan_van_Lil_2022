@@ -25,7 +25,7 @@ document.addEventListener('keydown', async function (event) {
  * gebruikt informatie van het formulier
  * slaat bij succes de JWToken op in de sessionstorage client side.
  */
-function login() {
+async function login() {
   const preloginJWT = window.sessionStorage.getItem('JWT'); // sla de lokale JWT op voor controle achteraf
   let formData = new FormData(document.querySelector('#login_account'));
   let jsonRequestBody = {};
@@ -33,7 +33,7 @@ function login() {
 
   const localhost = 'http://localhost:8080/';
 
-  fetch(localhost + 'restservices/authentication', {
+  await fetch('/restservices/authentication/', {
     // TODO remove outside of testing
     method: 'POST',
     headers: {

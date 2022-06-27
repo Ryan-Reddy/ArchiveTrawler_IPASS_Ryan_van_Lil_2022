@@ -11,11 +11,10 @@ public class JerseyConfig  extends ResourceConfig {
     public JerseyConfig() {
         packages(
                 "archive.trawler.webservices",
-                "archive.trawler.security",
-                "archive.trawler.webservices"
+                "archive.trawler.security"
         );
         register(RolesAllowedDynamicFeature.class);
         register(JacksonFeature.class);
-        register(CorsFilter.class);
+//        register(CorsFilter.class);
     }
 }

@@ -42,9 +42,10 @@ public class AuthenticationResource {
         try {
             String role = MyUser.validateLogin(logonRequest.email, logonRequest.password);
             if (role == null) throw new IllegalArgumentException("No user found");
+            System.out.println("login validated for role: "+role);
 
             String token = createToken(logonRequest.email, role);
-
+            System.out.println("token created");
             return Response.ok(new AbstractMap.SimpleEntry<>("JWT", token)).build();
         } catch (JwtException | IllegalArgumentException e) {
             return Response.status(Response.Status.UNAUTHORIZED).build(); //puur de 401 melding, geen verdere info
@@ -67,6 +68,7 @@ public class AuthenticationResource {
      * @throws JwtException
      */
     private String createToken(String email, String role) throws JwtException {
+        System.out.println("creating token");
         int verloopTijdJWTToken = 30; // Token verloopt na 30 minuten
         Calendar expiration = Calendar.getInstance();
         expiration.add(Calendar.MINUTE, verloopTijdJWTToken);

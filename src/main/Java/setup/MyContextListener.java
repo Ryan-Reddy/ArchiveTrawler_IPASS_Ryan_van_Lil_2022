@@ -41,7 +41,8 @@ public class MyContextListener implements ServletContextListener {
             e.printStackTrace();
         }
         // DUMMYDATA:
-//        new User("Coyote", "test@mail.com", "password");
+        new User("Coyote", "test@mail.com", "password");
+        Community.getUserByEmail("test@mail.com").setRole("user");
 //        new User("TickTock", "aldous@harding.com", "Wilde");
 //        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");

@@ -25,7 +25,7 @@ public class User implements Serializable, Principal {
     /** email adres, is gelijk ook de username van de inlog */
     private @Getter @Setter String email;
     /**rol van de gebruiker.     */
-    private @Getter @Setter String role;
+    private @Getter @Setter String role = "user";
     /** id nummer van gebruiker, is uniek. */
     private @Getter @Setter int identificationNum;
 
@@ -39,6 +39,7 @@ public class User implements Serializable, Principal {
     /** Lege constructor voor User.
      */
     public User() {
+        this.role = "user";
     }
 
     /**

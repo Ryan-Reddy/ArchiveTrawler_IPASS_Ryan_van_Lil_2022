@@ -119,7 +119,9 @@ async function sendNewAccount(event) {
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
   const fetchOptions = {
-    method: 'POST', body: JSON.stringify(jsonRequestBody), headers: {
+    method: 'POST',
+    body: JSON.stringify(jsonRequestBody),
+    headers: {
       Accept: 'application/json', 'Content-Type': 'application/json',
     },
   };
