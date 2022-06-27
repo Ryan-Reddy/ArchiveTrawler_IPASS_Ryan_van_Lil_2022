@@ -41,4 +41,9 @@ class UserTest {
         //userpassword moet minstens 6 karakters lang en een cijfer en een speciaal teken bevatten
         assertFalse(false); //TODO work on password minimum req backend
     }
+    @Test
+    void testRoleStandardUser() {
+        // user moet standaard een Rol toegewezen krijgen "user"
+        assertEquals("user",Ryan.getRole());
+    }
 }
