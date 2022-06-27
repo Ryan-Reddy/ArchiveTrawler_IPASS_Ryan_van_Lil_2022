@@ -33,7 +33,7 @@ async function login() {
 
   const localhost = 'http://localhost:8080/';
 
-  await fetch('/restservices/authentication/', {
+  await fetch(localhost+'restservices/authentication/', {
     // TODO remove outside of testing
     method: 'POST',
     headers: {
@@ -46,7 +46,7 @@ async function login() {
       if (response.ok)
         return response.json(); // als de gegevens herkend zijn krijgen we n body json incl token !!
       else {
-        document.getElementById('postresponse').innerText = 'Foutieve login.'; // een melding.
+        document.getElementById('postresponse').innerHTML = '        <a href="/html/reset-password.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
         throw 'User login failed';
       } // zo niet dan breakt de chain ook.
     }) //als er geen 200 is er ook geen body

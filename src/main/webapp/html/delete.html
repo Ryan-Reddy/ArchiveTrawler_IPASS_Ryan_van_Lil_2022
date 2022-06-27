@@ -19,12 +19,14 @@
 <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
 </div>
 <main>
-    <form id="deleteAccount-form">
-        <label for="email">Email om te verwijderen.</label>
-        <input id="email" name="email" type="email"/>
-        <label for="deleteButton" hidden>deleteButton</label>
-        <button id="deleteButton" onclick="deleteAccount()" value="DELETE"></button>
-    </form>
+<!--    <form id="deleteAccount-form">-->
+<!--        <label for="email">Email om te verwijderen.</label>-->
+<!--        <input id="email" name="email" type="email"/>-->
+<!--    </form>-->
+    Klik hier om uw huidige account te verwijderen:
+        <label for="deleteButton" hidden>delete account button</label>
+        <input type="button" id="deleteButton" onclick="deleteAccount()" value="DELETE">
+    <span id="feedbackspan"></span>
 </main>
     <footer id="footer">
     </footer>

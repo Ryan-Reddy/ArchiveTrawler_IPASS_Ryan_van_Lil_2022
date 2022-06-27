@@ -1,22 +1,47 @@
-function fetchToPage() {
-  fetch(
-    'https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22van%20lil%22%7D&rows=250',
-    {
-      // TODO remove outside of testing
-      mode: 'same-origin',
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    //   body: JSON.stringify(jsonRequestBody),
-    },
-  )
-    // .then(res => console.log(res))
-    .then((res) => res.JSON)
-    .then((data) => console.log(data))
-    .catch((ERROR) => console.log(ERROR));
+function makeHttpObject() {
+  try {return new XMLHttpRequest();}
+  catch (error) {}
+  try {return new ActiveXObject("Msxml2.XMLHTTP");}
+  catch (error) {}
+  try {return new ActiveXObject("Microsoft.XMLHTTP");}
+  catch (error) {}
+
+  throw new Error("Could not create HTTP request object.");
 }
+
+function fetchToPage() {
+  var request = makeHttpObject();
+  request.open("GET", "https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22van%20lil%22%7D&rows=250", true);
+  request.send(null);
+  request.onreadystatechange = function() {
+    if (request.readyState == 4)
+      alert(request.responseText);
+  };
+  // $.ajax({ url: 'https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22van%20lil%22%7D&rows=250', success: function(data) { alert(data); } });
+}
+
+
+// fetch(
+//     'https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22van%20lil%22%7D&rows=250',
+//     {
+//       // TODO remove outside of testing
+//       mode: 'same-origin',
+//       method: 'GET',
+//       headers: {
+//         Accept: 'application/json',
+//         'Content-Type': 'application/json',
+//       },
+//     //   body: JSON.stringify(jsonRequestBody),
+//     },
+//   )
+//     // .then(res => console.log(res))
+//     .then((res) => res.JSON)
+//     .then((data) => console.log(data))
+//     .catch((ERROR) => console.log(ERROR));
+// }
+
+
+
 // const doc = document.getElementById.bind(document);
 
 //   console.log(doc.select("ul#searched-products"));

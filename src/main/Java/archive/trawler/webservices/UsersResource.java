@@ -3,6 +3,7 @@ package archive.trawler.webservices;
 import archive.trawler.model.User;
 import archive.trawler.persistance.Community;
 import archive.trawler.persistance.UploadsManager;
+import archive.trawler.security.AuthenticationResource;
 import archive.trawler.security.EncodedBase64;
 import archive.trawler.security.MyUser;
 import archive.trawler.webservices.dto.DeleteAccountDTO;
@@ -65,11 +66,12 @@ public class UsersResource {
      * @param email = the email connected to the users account.
      * @return User or NOT_FOUND
      */
-    @Path("{email}")
     @GET
+    @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAccount(@PathParam("email") String email) {
+    @Path("")
+    public Response getAccount(String email, @Context SecurityContext sc) {
         User theUser = Community.getUserByEmail(email);
         if (theUser != null) {
             return Response.ok(theUser).build();
@@ -84,11 +86,18 @@ public class UsersResource {
      * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
      */
     @DELETE
+    @RolesAllowed("user")
     @Path("deleteaccount")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserAccount(DeleteAccountDTO email) {
-        return Community.deleteMyUserAccount(email.email) ? Response.ok(String.format("the user %s has been deleted..", email)).build()        // give ok http response if it works
-                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+    public Response deleteUserAccount(@Context SecurityContext sc) {
+        String email = "";
+        if (sc.getUserPrincipal() instanceof User) {
+            email = ((User) sc.getUserPrincipal()).getEmail();  // haalt email op uit de JWT
+        }
+            return Community.deleteMyUserAccount(email) ? Response.ok(String.format("Your account has been deleted.. %s", email)).build()        // give ok http response if it works
+                    : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+
+
     }
 
 //    @POST

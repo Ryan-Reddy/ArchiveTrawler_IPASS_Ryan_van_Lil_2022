@@ -7,6 +7,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.annotation.security.PermitAll;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -35,10 +36,11 @@ public class AuthenticationResource {
      * Hash van header, payload, en secret key<br>
      * Kan de server de authenticiteit mee controleren.<br>
      */
+    @PermitAll
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response authenticateUser(LoginRequest logonRequest) {
+    public Response authenticateUser(LoginRequest logonRequest) { /** Log-in */
         try {
             String role = MyUser.validateLogin(logonRequest.email, logonRequest.password);
             if (role == null) throw new IllegalArgumentException("No user found");
@@ -65,9 +67,9 @@ public class AuthenticationResource {
      * Een Signature van Header en Payload - Base64Url encoded +<br>
      * Hash van header, payload, en secret key<br>
      * Kan de server de authenticiteit mee controleren.<br>
-     * @throws JwtException
+     * @throws JwtException JsonWebTokenException
      */
-    private String createToken(String email, String role) throws JwtException {
+    public static String createToken(String email, String role) throws JwtException {
         System.out.println("creating token");
         int verloopTijdJWTToken = 30; // Token verloopt na 30 minuten
         Calendar expiration = Calendar.getInstance();
