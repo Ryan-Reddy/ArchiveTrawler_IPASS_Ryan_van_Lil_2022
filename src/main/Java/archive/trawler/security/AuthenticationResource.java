@@ -21,6 +21,7 @@ import java.util.Calendar;
 /**
  * Deze klasse authenticeert een gebruiker en wordt gebruikt bij inloggen.
  */
+@PermitAll
 @Slf4j
 @Path("authentication")
 public class AuthenticationResource {
@@ -74,7 +75,6 @@ public class AuthenticationResource {
         int verloopTijdJWTToken = 30; // Token verloopt na 30 minuten
         Calendar expiration = Calendar.getInstance();
         expiration.add(Calendar.MINUTE, verloopTijdJWTToken);
-
         return Jwts.builder().setSubject(email).setExpiration(expiration.getTime()).claim("role", role).signWith(SignatureAlgorithm.HS512, key).compact();
 
     }
