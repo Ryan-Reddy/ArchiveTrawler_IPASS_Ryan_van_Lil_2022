@@ -1,6 +1,5 @@
 package main;
 
-import archive.trawler.model.Archief;
 import archive.trawler.model.User;
 import archive.trawler.model.Websites;
 import org.junit.jupiter.api.BeforeEach;

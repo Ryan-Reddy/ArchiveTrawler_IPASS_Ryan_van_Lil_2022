@@ -8,6 +8,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -15,12 +18,13 @@ import java.util.Properties;
  */
 public class SendEmail {
 
-    /**
+    /** SendMail haalt een html file op, leest deze in als string en verstuurt deze via gmail naar opgegeven Email adres.
      * @param sendTo Email adres om naartoe te sturen
      * @param subjectLine Onderwerp van email
-     * @param htmlMessage Inhoud van mail in HTML
+     * @param htmlFileFromRoot Html filename, as string incl. path from source root example:
+     * <br> "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
      */
-    public static void sendMail(String sendTo, String subjectLine, String htmlMessage) {
+    public static void sendMail(String sendTo, String subjectLine, String htmlFileFromRoot) {
         String from = "no_reply@archive-trawler.com";        // Sender's email ID needs to be mentioned
         String host = "smtp.gmail.com";
 
@@ -48,6 +52,9 @@ public class SendEmail {
         session.setDebug(true);
 
         try {
+            // Creeer een message van HTML file keuze.
+            String htmlMessage = htmlToString("./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html");
+
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
 
@@ -72,4 +79,30 @@ public class SendEmail {
             mex.printStackTrace();
         }
     }
+
+    /** Leest html file, retourneert String, denk erom om met exape characters te programmeren.
+     * @param htmlFileFromRoot Html filename, as string incl. path from source root example:
+     *
+     *                         "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
+     * @return String met contents
+     */
+    private static String htmlToString(String htmlFileFromRoot){
+        StringBuilder contentBuilder = new StringBuilder();
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(htmlFileFromRoot));
+            String str;
+            while ((str = in.readLine()) != null) {
+                contentBuilder.append(str);
+            }
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String content = contentBuilder.toString();
+        return content;
+    }
+//    public static void main(String[] args) {
+//        System.out.println("what about that huh");
+//        System.out.println(htmlToString("./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"));
+//    }
 }

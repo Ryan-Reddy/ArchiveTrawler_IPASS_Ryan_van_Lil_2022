@@ -1,33 +1,17 @@
 package archive.trawler.webservices;
 
-import javax.annotation.security.RolesAllowed;
-import javax.json.Json;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObjectBuilder;
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.ws.rs.Path;
-
 import archive.trawler.model.User;
 import archive.trawler.persistance.Community;
-import archive.trawler.persistance.UploadsManager;
-import archive.trawler.security.EncodedBase64;
 //import nl.hu.bep.referenceproject.model.Account;
 //import nl.hu.bep.referenceproject.model.Company;
 //import nl.hu.bep.referenceproject.persistence.EncodedBase64;
 //import nl.hu.bep.referenceproject.persistence.UploadsManager;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.SecurityContext;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
-
-import static javax.ws.rs.core.Response.ok;
 
 @Path("/accounts")
 public class AccountsResourceFullJackson {

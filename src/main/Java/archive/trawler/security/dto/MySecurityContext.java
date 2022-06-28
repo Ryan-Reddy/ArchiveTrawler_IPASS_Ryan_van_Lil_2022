@@ -1,7 +1,6 @@
 package archive.trawler.security.dto;
 
 import archive.trawler.model.User;
-import archive.trawler.security.MyUser;
 
 import javax.ws.rs.core.SecurityContext;
 import java.security.Principal;

@@ -3,7 +3,6 @@ package archive.trawler.security;
 
 import archive.trawler.model.Zoekopdracht;
 import archive.trawler.model.User;
-import io.jsonwebtoken.JwtException;
 import lombok.Getter;
 
 import java.io.Serializable;

@@ -4,7 +4,6 @@ import archive.trawler.model.User;
 import archive.trawler.model.Websites;
 import archive.trawler.model.Zoekopdracht;
 import archive.trawler.model.Archief;
-import archive.trawler.persistance.Community;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,9 +1,6 @@
 package setup;
 
-import archive.trawler.model.Archief;
 import archive.trawler.model.User;
-import archive.trawler.model.Zoekopdracht;
-import archive.trawler.persistance.Community;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
 import reactor.netty.http.HttpResources;
@@ -13,8 +10,6 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.List;
 
 import static archive.trawler.persistance.PersistanceManager.communityContainerbackup;
 import static archive.trawler.persistance.PersistanceManager.usersBlobNamebackup;
@@ -30,19 +25,18 @@ public class MyContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         try {
             System.out.println("contextInitialized");
-            PersistanceManager.loadFromAzure();  // data inladen van azure container
+//            PersistanceManager.loadFromAzure();  // data inladen van azure container
             PersistanceManager.uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
 
         } catch (IOException e) {
             System.out.println("catching IOException");
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            System.out.println("catching ClassNotFoundException");
-            e.printStackTrace();
-        }
-        // DUMMYDATA:
-//        new User("Coyote", "test@mail.com", "password");
-//        Community.getUserByEmail("test@mail.com").setRole("user");
+//        } catch (ClassNotFoundException e) {
+//            System.out.println("catching ClassNotFoundException");
+//            e.printStackTrace();
+//        }
+            // DUMMYDATA:
+            new User("Coyote", "test@mail.com", "password");
 //        new User("TickTock", "aldous@harding.com", "Wilde");
 //        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
@@ -54,7 +48,7 @@ public class MyContextListener implements ServletContextListener {
 //        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
 //        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getArchiefMap().toString());
 //        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getZoekOpdrachtMap().toString());
-
+        }
     }
 
     /** contextDestroyed
