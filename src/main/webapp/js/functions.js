@@ -113,69 +113,76 @@ async function sendNewAccount(event) {
   // const jsonRequestBody = {avatarBase64: await toBase64(file)}; // TODO re implement for profile pic
 
   const element = document.querySelector('#postresponse'); // response span in de newAccountPagina
-  let jsonRequestBody = {};
+  const jsonRequestBody = {};
 
-  let formData = new FormData(document.querySelector('#newaccount-form'));
+  const formData = new FormData(document.querySelector('#newaccount-form'));
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
   const fetchOptions = {
     method: 'POST',
     body: JSON.stringify(jsonRequestBody),
     headers: {
-      Accept: 'application/json', 'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
   };
   await fetch('/restservices/accounts/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
-    .then(function (response) {
+    .then((response) => {
       if (response.status === 200) {
         // als er een nieuw account gecreeerd is dan inloggen
         open('http://localhost:8080/html/login.html'); // als deze klaar is open de log in pagina
         alert('Welkom! je nieuwe account is aangemaakt');
         throw 'Welkom! je nieuwe account is aangemaakt';
       }
-      if (response.status === 409) { // als 409 bestond er al een account met dit email adres
-        alert("Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'.")
+      if (response.status === 409) {
+        // als 409 bestond er al een account met dit email adres
+        alert(
+          "Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'.",
+        );
         throw 'er ging iets mis';
-      }}
-    ).
-      catch((err) => {
-        console.log('Error: ', err);
-      })
-    }
+      }
+    })
+    .catch((err) => {
+      console.log('Error: ', err);
+    });
+}
 
+function showAccount(myjson) {
+  const template = document.querySelector('#accounttemplate');
+  const templateDiv = template.content.querySelector('div');
+  const newDiv = document.importNode(templateDiv, true);
 
-  function showAccount(myjson) {
-    const template = document.querySelector('#accounttemplate');
-    const templateDiv = template.content.querySelector('div');
-    const newDiv = document.importNode(templateDiv, true);
+  newDiv.querySelector('.a_un').innerText = myjson.username;
+  newDiv.querySelector('.a_fn').innerText = myjson.fullname;
+  newDiv.querySelector('.a_ad').innerText = myjson.address;
+  newDiv.querySelector('.a_av').setAttribute('src', myjson.avatarBase64);
 
-    newDiv.querySelector('.a_un').innerText = myjson.username;
-    newDiv.querySelector('.a_fn').innerText = myjson.fullname;
-    newDiv.querySelector('.a_ad').innerText = myjson.address;
-    newDiv.querySelector('.a_av').setAttribute('src', myjson.avatarBase64);
-
-    if (myjson.avatarUploadId != null) {
-      newDiv
-        .querySelector('.a_al')
-        .setAttribute('href', `restservices/files/${myjson.avatarUploadId}`);
-    } else {
-      newDiv.querySelector('.a_al').removeAttribute('href');
-    }
-
-    document.querySelector('#accountview').appendChild(newDiv);
+  if (myjson.avatarUploadId != null) {
+    newDiv
+      .querySelector('.a_al')
+      .setAttribute('href', `restservices/files/${myjson.avatarUploadId}`);
+  } else {
+    newDiv.querySelector('.a_al').removeAttribute('href');
   }
 
-  async function loadAccount(event) {
-    const element = document.querySelector('#getresponse');
+  document.querySelector('#accountview').appendChild(newDiv);
+}
 
-    const username = document.querySelector('#usertoload').value;
-    element.textContent = '';
-    document.querySelector('#accountview').innerHTML = '';
+async function loadAccount(event) {
+  const element = document.querySelector('#getresponse');
 
-    const response = await fetch(`/restservices/account/${username}`);
+  const username = document.querySelector('#usertoload').value;
+  element.textContent = '';
+  document.querySelector('#accountview').innerHTML = '';
 
-    if (response.status === 200) {
-      const jsonData = await response.json();
-      showAccount(jsonData);
-    } else element.textContent = `Statuscode: ${response.status}`;
-  }
+  const response = await fetch(`/restservices/account/${username}`);
+
+  if (response.status === 200) {
+    const jsonData = await response.json();
+    showAccount(jsonData);
+  } else element.textContent = `Statuscode: ${response.status}`;
+}
+
+function getCurrentUserData() {
+  fetch()
+}

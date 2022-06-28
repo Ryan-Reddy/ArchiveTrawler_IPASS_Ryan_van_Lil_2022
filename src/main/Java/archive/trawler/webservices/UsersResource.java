@@ -33,13 +33,38 @@ import static javax.ws.rs.core.Response.ok;
 public class UsersResource {
 
     /**
+     * The resource getAccount willreturn the user and its data.
+     *
+     * @param email = the email connected to the users account.
+     * @return User or NOT_FOUND
+     */
+    @GET
+    @RolesAllowed("user")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("")
+    public Response getAccount(String email, @Context SecurityContext sc) {
+        if (sc.getUserPrincipal() instanceof User) {
+            User user = (User) sc.getUserPrincipal();
+            System.out.println(user.getEmail());
+            System.out.println(user.getNaam());
+            System.out.println(user.getPassword());
+        }
+        User theUser = Community.getUserByEmail(email);
+        if (theUser != null) {
+            return Response.ok(theUser).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
+    /**
      * function getAllUsers
      * This function returns all users into one neat JSON
      *
      * @return JSON
      */
     @GET
-    @Path("")
+    @Path("getall")
     @RolesAllowed("user")
     @Produces("application/json")
     public Response getAllUsers(@Context SecurityContext sc) {
@@ -59,26 +84,6 @@ public class UsersResource {
             return ok(jab.build()).build();
         }
         return ok("error", "something sadly went wrong, contact the pope!").build();
-    }
-
-    /**
-     * The resource getAccount willreturn the user and its data.
-     *
-     * @param email = the email connected to the users account.
-     * @return User or NOT_FOUND
-     */
-    @GET
-    @RolesAllowed("user")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("")
-    public Response getAccount(String email, @Context SecurityContext sc) {
-        User theUser = Community.getUserByEmail(email);
-        if (theUser != null) {
-            return Response.ok(theUser).build();
-        } else {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
     }
 
     /**

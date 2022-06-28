@@ -1,5 +1,46 @@
 console.log(JWT);
 
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// |   example for later use as fetch for getting current account:             |
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// const jsonRequestBody = {};
+// formData.forEach((value, key) => (jsonRequestBody[key] = value));
+
+// const localhost = 'http://localhost:8080/';
+
+// await fetch(`${localhost}restservices/authentication/`, {
+//   // TODO remove outside of testing
+//   method: 'POST',
+//   headers: {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(jsonRequestBody),
+// })
+//   .then((response) => {
+//     if (response.ok) { return response.json(); } // als de gegevens herkend zijn krijgen we n body json incl token !!
+
+//     document.getElementById('postresponse').innerHTML = '        <a href="/html/reset-password.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
+//     throw 'User login failed';
+//     // zo niet dan breakt de chain ook.
+//   }) // als er geen 200 is er ook geen body
+//   .then((myJson) => {
+//     console.log('User login successful!');
+//     window.sessionStorage.setItem('JWT', myJson.JWT);
+//   }) // bij een goede uitkomst hebben we een JWT, slaan we op in de sessionStorage
+//   .then(
+//     (document.getElementById('postresponse').innerText = 'Succesvol ingelogd.'),
+//   ) // een melding.
+//   // .then(open('http://localhost:8080/index.html','_self')) //open homepage in de huidige tab
+//   .catch((error) => console.log(error)); // hiermee handelen we een potentiele error af
+// // controleer of de JWT geupdate is
+// if (window.sessionStorage.getItem('JWT') !== preloginJWT) { console.log('JWT updated'); } // geef bericht als jwt is geupdate
+// }
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// |   Post fetch om account info te wijzigen, heeft nog werk nodig.           |
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 async function wijzigAccount() {
   const naamInputBox = document.getElementById('naam');
   const emailInputBox = document.getElementById('email');
@@ -42,3 +83,4 @@ async function wijzigAccount() {
       } // if !200 there will be no body
     });
 }
+// ***************************************
