@@ -34,7 +34,7 @@ async function login() {
   // const localhost = 'http://localhost:8080/';
   const localhost = '';
 
-  await fetch(`${localhost}restservices/authentication/`, {
+  await fetch(`${localhost}/restservices/authentication/`, { // needs to start with / for heroku
     // TODO remove outside of testing
     method: 'POST',
     headers: {
