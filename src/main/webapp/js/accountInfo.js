@@ -12,9 +12,9 @@ async function wijzigAccount() {
   naamInputBox.innerText = jWT.naam;
   emailInputBox.innerText = jWT.email;
 
-  // let formData = new FormData(document.querySelector('#deleteAccount-form'));
-  // formData.forEach((value, key) => (jsonRequestBody[key] = value));
-  // console.log(jsonRequestBody);
+  let formData = new FormData(document.querySelector('#deleteAccount-form'));
+  formData.forEach((value, key) => (jsonRequestBody[key] = value));
+  console.log(jsonRequestBody);
 
   const fetchOptions = {
     method: 'DELETE',

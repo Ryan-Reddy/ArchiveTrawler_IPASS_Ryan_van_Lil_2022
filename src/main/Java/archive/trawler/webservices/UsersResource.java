@@ -6,6 +6,7 @@ import archive.trawler.persistance.UploadsManager;
 import archive.trawler.security.AuthenticationResource;
 import archive.trawler.security.EncodedBase64;
 import archive.trawler.security.MyUser;
+import archive.trawler.security.dto.LoginRequest;
 import archive.trawler.webservices.dto.DeleteAccountDTO;
 import archive.trawler.webservices.dto.NewAccount;
 
@@ -89,7 +90,8 @@ public class UsersResource {
     @RolesAllowed("user")
     @Path("deleteaccount")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserAccount(@Context SecurityContext sc) {
+    public Response deleteUserAccount(LoginRequest logonRequest,@Context SecurityContext sc) {
+        System.out.println("deleteUserAccount started");
         String email = "";
         if (sc.getUserPrincipal() instanceof User) {
             email = ((User) sc.getUserPrincipal()).getEmail();  // haalt email op uit de JWT
