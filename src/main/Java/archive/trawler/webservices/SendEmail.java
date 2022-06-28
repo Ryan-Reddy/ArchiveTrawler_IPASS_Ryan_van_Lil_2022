@@ -20,7 +20,7 @@ public class SendEmail {
      * @param subjectLine Onderwerp van email
      * @param htmlMessage Inhoud van mail in HTML
      */
-    public void sendMail(String sendTo, String subjectLine, String htmlMessage) {
+    public static void sendMail(String sendTo, String subjectLine, String htmlMessage) {
         String from = "no_reply@archive-trawler.com";        // Sender's email ID needs to be mentioned
         String host = "smtp.gmail.com";
 
@@ -61,8 +61,7 @@ public class SendEmail {
             message.setSubject(subjectLine);
 
             // Send the actual HTML message.
-            message.setContent(htmlMessage+
-                    "<h1>This is actual message embedded in HTML tags</h1>",
+            message.setContent(htmlMessage,
                     "text/html");
 
             System.out.println("sending...");
