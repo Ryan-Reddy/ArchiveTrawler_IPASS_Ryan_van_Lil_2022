@@ -65,7 +65,7 @@ public class AccountsResourceFullJackson {
                             "    Klik hier om uw email voor dit account te bevestigen:\n" +
                             "    <span id=\"accountInfoSpan\"></span>\n" +
                             "        <label for=\"bevestigButton\" hidden>account te bevestigen button</label>\n" +
-                            "        <input type=\"button\" id=\"bevestigButton\" onclick=\"window.open('')\" value=\"Activeer mijn account\" style=\"background-color: darkmagenta\">\n" +
+                            "        <input type=\"button\" id=\"bevestigButton\" onclick=\"window.open('')\" value=\"Activeer mijn account\" style=\"background-color: darkmagenta\">\n" + // TODO insert proper link that actually sets UserActivation attribute on Activated
                             "</main>\n" +
                             "    <footer id=\"footer\">\n" +
                             "    </footer>\n" +
