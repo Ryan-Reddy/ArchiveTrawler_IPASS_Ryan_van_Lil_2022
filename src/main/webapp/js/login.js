@@ -31,7 +31,8 @@ async function login() {
   const jsonRequestBody = {};
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
-  const localhost = 'http://localhost:8080/';
+  // const localhost = 'http://localhost:8080/';
+  const localhost = '';
 
   await fetch(`${localhost}restservices/authentication/`, {
     // TODO remove outside of testing

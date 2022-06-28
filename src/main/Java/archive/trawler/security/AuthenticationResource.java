@@ -37,7 +37,6 @@ public class AuthenticationResource {
      * Hash van header, payload, en secret key<br>
      * Kan de server de authenticiteit mee controleren.<br>
      */
-    @PermitAll
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)

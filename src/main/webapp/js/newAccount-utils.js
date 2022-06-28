@@ -9,7 +9,6 @@ function checkEmailIsEchtEmail(email) {
   return res.test(String(email).toLowerCase());
 }
 
-
 /** This function should check wether the password is correct.
  * rules:
  * -password is ten minste 6 tekens lang
