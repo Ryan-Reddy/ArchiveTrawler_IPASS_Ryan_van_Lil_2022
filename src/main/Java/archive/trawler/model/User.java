@@ -31,7 +31,7 @@ public class User implements Serializable, Principal {
 
     /** Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.  */
     private @Getter
-    @Setter Map<Integer, Object> alleZoekertjes;
+    @Setter Map<Integer, Object> alleZoekertjes = new HashMap<Integer, Object>(10000);;
 
     private @Getter @Setter String avatarBase64;
     private @Getter @Setter String avatarUploadId;
@@ -40,6 +40,7 @@ public class User implements Serializable, Principal {
      */
     public User() {
         this.role = "user";
+        this.naam = "";
     }
 
     /**
@@ -52,7 +53,6 @@ public class User implements Serializable, Principal {
         this.naam = naam;
         this.email = email;
         this.password = password;
-        this.alleZoekertjes = new HashMap<Integer, Object>(10000);
         this.role = "user";
         Community.addUserToMap(this);
     }
@@ -65,7 +65,6 @@ public class User implements Serializable, Principal {
         this.naam = naam;
         this.email = email;
         this.password = password;
-        this.alleZoekertjes = new HashMap<Integer, Object>(10000);
         this.role = "user";
         Community.addUserToMap(this);
     }

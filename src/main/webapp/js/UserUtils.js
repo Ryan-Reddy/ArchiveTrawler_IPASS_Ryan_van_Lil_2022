@@ -6,23 +6,22 @@ function getThisUser() {
 // |  This method adds all users to the page       needs work                  |
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-// function testGetAllUsers()  {
-const button = document.querySelector('#getAllUsers');
+// const button = document.querySelector('#getAllUsers');
 
 function getAllUsersButtonFunc() {
   console.log('getAllUsersButtonFunc() in UserUtils.js');
-
   const fetchOptions = {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${window.sessionStorage.getItem('JWT')}`,
+      Authorization: `Bearer ${sessionStorage.getItem('JWT')}`,
+      // Authorization: `Bearer ${token}`,
     },
   };
 
   const localhost = 'http://localhost:8080/';
 
   // fetch('/restservices/users/', fetchOptions)
-  fetch(`${localhost}restservices/users/`, fetchOptions) // TODO remove outside of normal testing
+  fetch(`${localhost}restservices/users/getall`, fetchOptions) // TODO remove outside of normal testing
     .then((response) => {
       if (!response.ok) { // if response =  NOT ok:
         switch (response.status) {

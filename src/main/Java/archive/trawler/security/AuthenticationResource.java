@@ -21,7 +21,6 @@ import java.util.Calendar;
 /**
  * Deze klasse authenticeert een gebruiker en wordt gebruikt bij inloggen.
  */
-@PermitAll
 @Slf4j
 @Path("authentication")
 public class AuthenticationResource {
@@ -38,6 +37,7 @@ public class AuthenticationResource {
      * Kan de server de authenticiteit mee controleren.<br>
      */
     @POST
+    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response authenticateUser(LoginRequest logonRequest) { /** Log-in */

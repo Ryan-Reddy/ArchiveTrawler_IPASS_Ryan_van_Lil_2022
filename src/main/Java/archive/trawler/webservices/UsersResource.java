@@ -6,10 +6,12 @@ import archive.trawler.persistance.UploadsManager;
 import archive.trawler.security.AuthenticationResource;
 import archive.trawler.security.EncodedBase64;
 import archive.trawler.security.MyUser;
+import archive.trawler.security.dto.EmailToSearchSingleAccount;
 import archive.trawler.security.dto.LoginRequest;
 import archive.trawler.webservices.dto.DeleteAccountDTO;
 import archive.trawler.webservices.dto.NewAccount;
 
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.json.Json;
 import javax.json.JsonArray;
@@ -38,36 +40,36 @@ public class UsersResource {
      * @param email = the email connected to the users account.
      * @return User or NOT_FOUND
      */
-    @GET
+    @POST
+    @PermitAll
     @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("")
-    public Response getAccount(String email, @Context SecurityContext sc) {
-        if (sc.getUserPrincipal() instanceof User) {
-            User user = (User) sc.getUserPrincipal();
-            System.out.println(user.getEmail());
-            System.out.println(user.getNaam());
-            System.out.println(user.getPassword());
-        }
-        User theUser = Community.getUserByEmail(email);
+    public Response getAccount(EmailToSearchSingleAccount info) {
+        System.out.println("accessing getAccount");
+//        String email = info.email;
+        User theUser = Community.getCommunity().getUserByEmail(info.email);
         if (theUser != null) {
-            return Response.ok(theUser).build();
+            return Response.ok(theUser).build(); // ok = 200;
         } else {
-            return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Response.Status.NO_CONTENT).build(); // NO_Content =
         }
     }
+
     /**
      * function getAllUsers
      * This function returns all users into one neat JSON
      *
      * @return JSON
      */
+//    @PermitAll
     @GET
     @Path("getall")
-    @RolesAllowed("user")
+//    @RolesAllowed("user")
     @Produces("application/json")
     public Response getAllUsers(@Context SecurityContext sc) {
+//        try {
         if (sc.getUserPrincipal() instanceof User) {
             Map<String, User> commune = Community.getUserMap();
             JsonArrayBuilder jab = Json.createArrayBuilder();
@@ -80,10 +82,16 @@ public class UsersResource {
                 job.add("role", user.getRole());
                 job.add("hoeveelheid zoekopdrachten", user.getAlleZoekertjes().size());
                 jab.add(job);
+                System.out.println("Jab added to Job");
             });
-            return ok(jab.build()).build();
+            return Response.ok(jab.build()).build();
         }
-        return ok("error", "something sadly went wrong, contact the pope!").build();
+//        }
+//        catch (Exception e) {
+//            return Response.ok(e).build();
+//    }
+        return Response.ok().build();
+
     }
 
     /**
@@ -92,22 +100,22 @@ public class UsersResource {
      * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
      */
     @DELETE
-    @RolesAllowed("user")
+//    @RolesAllowed("user")
     @Path("deleteaccount")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserAccount(LoginRequest logonRequest,@Context SecurityContext sc) {
+    public Response deleteUserAccount(@Context SecurityContext sc) {
         System.out.println("deleteUserAccount started");
         String email = "";
         if (sc.getUserPrincipal() instanceof User) {
             email = ((User) sc.getUserPrincipal()).getEmail();  // haalt email op uit de JWT
         }
-            return Community.deleteMyUserAccount(email) ? Response.ok(String.format("Your account has been deleted.. %s", email)).build()        // give ok http response if it works
-                    : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+        return Community.deleteMyUserAccount(email) ? Response.ok(String.format("Your account has been deleted.. %s", email)).build()        // give ok http response if it works
+                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
 
 
     }
 
-//    @POST
+    //    @POST
 //    @Produces(MediaType.APPLICATION_JSON)
 //    @Path("")
 //    public Response createNewUser(NewAccount info) {
@@ -123,23 +131,22 @@ public class UsersResource {
 //        messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + info.name);
 //        return ok(messages).build();
 //    }
-@POST
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
-public Response createAccountFullJackson(User account) {
-    if (Community.getCommunity().addUserToMap(account)) {
-        if (!account.getAvatarBase64().isEmpty()) {
-            EncodedBase64 base64 = new EncodedBase64(account.getAvatarBase64());
-            String uploadId = UploadsManager.uploadToAzure(base64); // upload Id is de unieke blob voor deze upload
-            account.setAvatarUploadId(uploadId);
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createAccountFullJackson(User account) {
+        if (Community.addUserToMap(account)) {
+            if (!account.getAvatarBase64().isEmpty()) {
+                EncodedBase64 base64 = new EncodedBase64(account.getAvatarBase64());
+                String uploadId = UploadsManager.uploadToAzure(base64); // upload Id is de unieke blob voor deze upload
+                account.setAvatarUploadId(uploadId);
+            }
+
+            return Response.ok(account).build();
+        } else {
+            return Response.status(Response.Status.CONFLICT).build();
         }
-
-        return Response.ok(account).build();
-    } else {
-        return Response.status(Response.Status.CONFLICT).build();
     }
-}
-
 
 
     @PATCH

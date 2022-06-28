@@ -41,19 +41,19 @@ public class MyContextListener implements ServletContextListener {
             e.printStackTrace();
         }
         // DUMMYDATA:
-        new User("Coyote", "test@mail.com", "password");
-        Community.getUserByEmail("test@mail.com").setRole("user");
+//        new User("Coyote", "test@mail.com", "password");
+//        Community.getUserByEmail("test@mail.com").setRole("user");
 //        new User("TickTock", "aldous@harding.com", "Wilde");
 //        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
 //        new Archief("test","");
-        new Zoekopdracht(Arrays.asList(Community.getArchiefByName("test")),"naam blabla werkman", Community.getUserByEmail("test@mail.com"));
-
-        System.out.println("~~~~~~~~~~ Community.getCommunity().toString()" + Community.getCommunity().toString());
-        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
-        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
-        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getArchiefMap().toString());
-        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getZoekOpdrachtMap().toString());
+//        new Zoekopdracht(Arrays.asList(Community.getArchiefByName("test")),"naam blabla werkman", Community.getUserByEmail("test@mail.com"));
+//
+//        System.out.println("~~~~~~~~~~ Community.getCommunity().toString()" + Community.getCommunity().toString());
+//        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
+//        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
+//        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getArchiefMap().toString());
+//        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getZoekOpdrachtMap().toString());
 
     }
 

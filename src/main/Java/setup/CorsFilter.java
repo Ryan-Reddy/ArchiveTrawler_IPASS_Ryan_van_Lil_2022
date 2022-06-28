@@ -6,10 +6,11 @@ import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 
+/** Class allows cross origin */
 @Provider
 public class CorsFilter implements ContainerResponseFilter {
 
-    // TODO comment corsfilter before handin
+    // TODO comment corsfilter before hand-off
     @Override
     public void filter(ContainerRequestContext requestContext,
                        ContainerResponseContext responseContext) throws IOException {

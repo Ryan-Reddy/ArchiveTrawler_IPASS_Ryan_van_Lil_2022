@@ -13,8 +13,8 @@ public class JerseyConfig  extends ResourceConfig {
                 "archive.trawler.webservices",
                 "archive.trawler.security"
         );
-        register(CorsFilter.class);
-        register(RolesAllowedDynamicFeature.class);
+//        register(CorsFilter.class);
+//        register(RolesAllowedDynamicFeature.class);
         register(JacksonFeature.class);
     }
 }

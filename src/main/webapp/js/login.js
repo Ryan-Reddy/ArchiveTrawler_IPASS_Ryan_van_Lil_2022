@@ -31,11 +31,10 @@ async function login() {
   const jsonRequestBody = {};
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
-  // const localhost = 'http://localhost:8080/';
-  const localhost = '';
+  // const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+  const localhost = '/';
 
-  await fetch(`${localhost}/restservices/authentication/`, { // needs to start with / for heroku
-    // TODO remove outside of testing
+  await fetch(`${localhost}restservices/authentication/`, { // needs to start with / for heroku
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -46,7 +45,7 @@ async function login() {
     .then((response) => {
       if (response.ok) { return response.json(); } //als de gegevens herkend zijn > body json incl token!!
 
-      document.getElementById('postresponse').innerHTML = '<a href="/html/reset-password.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
+      document.getElementById('postresponse').innerHTML = '<a href="/html/reset-account.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
       throw 'User login failed';
       // zo niet dan breakt de chain ook.
     }) // als er geen 200 is er ook geen body
