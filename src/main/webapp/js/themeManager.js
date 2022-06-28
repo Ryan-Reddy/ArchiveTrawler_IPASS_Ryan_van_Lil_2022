@@ -20,8 +20,7 @@ function setFooter() {
     '';
   // "<input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"><label for='retroModeButton'>DISCO mode:</label></div>";
   // "<div class='footerRight'><input id='darkmodeButton' onclick='darkmodeToggle()' src=\"/assets/icons/first-quarter-moon.png\" type=\"image\" width='25'/ height='25'><label for='darkmodeButton'>dark or light mode:</label><br/><input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"><label for='retroModeButton'>DISCO mode:</label></div>";
-  footer.innerHTML +=
-    "<div class='footerCenter' id='footerCenter'><ul> <li><a href=\"/html/contact.html\">Contact</a> <br></li> <li><a href=\"/index.html\">Home</a><br></li><li><label for='logoutButton' hidden>Button to logout of account.</label><input id='logoutButton' type='button' value='LogOut' onclick='logOut()'></li><ul></div>";
+  footer.innerHTML += "<div class='footerCenter' id='footerCenter'><ul> <li><a href=\"/html/contact.html\">Contact</a> <br></li> <li><a href=\"/index.html\">Home</a><br></li><li><label for='logoutButton' hidden>Button to logout of account.</label><input id='logoutButton' type='button' value='LogOut' onclick='logOut()'></li><ul></div>";
   footer.innerHTML +=
     // '<div class=\'footerLeft\' id="discoballFooter"><iframe width="400" height="100vh" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;" RSS Disco</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
     // '<div class=\'footerLeft\' id="discoballFooter"><iframe width="400" height="100vh" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;" RSS Disco</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
@@ -44,12 +43,16 @@ function LoadPage() {
     console.log(`found stored theme: ${storedTheme}`);
     bodyElement.classList.remove('bodyLight', 'bodyDark', 'bodyDisco');
     bodyElement.classList.add(storedTheme);
+    if (bodyElement.className === 'bodyLight') {
+      document.getElementById('darkmodeButton').checked = true; // set darkmode button op false
+    }
+
     if (bodyElement.className === 'bodyLight' || 'bodyDark') {
       document.getElementById('discoballFooter').style.display = 'none'; // hide soundcloud embed
     }
     if (bodyElement.className === 'bodyDisco') {
-      // als discomode > activeer discobal
-      document.getElementById('discoball').style.display = 'inline'; // show discoball gif
+      document.getElementById("retroModeButton").checked = true; // zet retroModeButton aan
+      document.getElementById('discoball').style.display = 'inline'; //  discomode > activeer discobal
       const dbFoot = document.getElementById('discoballFooter');
       dbFoot.style.display = 'inline'; // show soundcloud embed
     }
@@ -66,6 +69,8 @@ window.onload = () => {
  *   @returns void
  */
 function darkmodeToggle() {
+  document.getElementById("retroModeButton").checked = false; // zet retroModeButton aan
+
   // TODO schrijf functie darkmode toggle naar default als er op de slider geklikt wordt
   const bodyElement = document.getElementById('body');
   bodyElement.classList.replace('bodyDisco', 'bodyDark');
@@ -87,6 +92,10 @@ function darkmodeToggle() {
  * <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3
  */
 function retroModeToggle() {
+  darkmodeToggle();
+  document.getElementById('darkmodeButton').checked = false; // set darkmode button op false
+  document.getElementById("retroModeButton").checked = true; // zet retroModeButton aan
+
   const bodyElement = document.getElementById('body');
   bodyElement.classList.remove('bodyLight', 'bodyDark');
 

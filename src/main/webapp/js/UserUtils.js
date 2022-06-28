@@ -10,6 +10,8 @@ function getThisUser() {
 const button = document.querySelector('#getAllUsers');
 
 function getAllUsersButtonFunc() {
+  console.log('getAllUsersButtonFunc() in UserUtils.js');
+
   const fetchOptions = {
     method: 'GET',
     headers: {
@@ -47,7 +49,9 @@ function getAllUsersButtonFunc() {
           console.log('array.split( [2]', array.split(',')[2]);
           const arraySplit = array.split(',');
 
-          arraySplit.forEach((user) => document.getElementById('testingspace').innerHTML += `<br>${user}<br>`);
+          arraySplit.forEach((user) => {
+            document.getElementById('testingspace').innerHTML += `<br>${user}<br>`;
+          });
           // arraySplit.forEach(user => document.getElementById('testingspace').innerHTML += JSON.stringify(user) + '<br \>')
         }, // finally a list of usersnaam // Keep this for troubleshooting:
           // .then(json => {
@@ -66,11 +70,13 @@ function getAllUsersButtonFunc() {
 }
 
 function allUsers() {
+  console.log('allUsers() in UserUtils.js');
   // fetch(xxxxxxxxxxxxxxxx)
-  const userlistelement = document.getElementById('userlist-html');
-  const bodUsersList = document.getElementById('bodyofUsersList');
-  userlistelement.append('hello');
-  userlistelement.append('hello');
+  // const userlistelement = document.getElementById('userlist-html');
+  // const bodUsersList = document.getElementById('bodyofUsersList');
+
+  // const testingspaceElement = document.getElementById('testingspace');
+  document.getElementById('testingspace').innerHTML += 'hello';
 }
 
 allUsers();
