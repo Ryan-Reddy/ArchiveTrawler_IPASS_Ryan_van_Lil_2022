@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 import static archive.trawler.webservices.SendEmail.htmlToString;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestSendEmailClass {
+public class TestSendEmail {
     String tenminuteMail = "tji32930@jeoce.com";
     String locatieWelkomstMail = "src/main/resources/emailHTMLTemplates/verificationMail.html";
 

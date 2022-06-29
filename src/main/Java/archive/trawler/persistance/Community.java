@@ -57,7 +57,7 @@ public class Community implements Serializable {
         System.out.println("[ADDuserTOMAP] [DOUBLECHECK] for: " + newAccount.getEmail() + ", contains email as key?=" + userMap.containsKey(newAccount.getEmail()));
         System.out.println(userMap);
 
-        System.out.println("[ADDuserTOMAP] checking get userbyemail in adduser to map should be : " + getUserByEmail(newAccount.getEmail()));
+//        System.out.println("[ADDuserTOMAP] checking get userbyemail in adduser to map should be : " + getUserByEmail(newAccount.getEmail()));
 //        if (newAccount.getEmail() != null) {
 //        System.out.println("[ADDuserTOMAP] [newAccount.getEmail() != null] ");
             if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) {
