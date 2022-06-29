@@ -9,26 +9,27 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import java.io.BufferedReader;
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Properties;
-
-import static org.apache.commons.httpclient.util.URIUtil.getPath;
 
 /**
  * Deze klasse zorgt ervoor dat ik een email kan sturen met javax vanuit de backend
  */
 public class SendEmail {
 
-    /** SendMail haalt een html file op, leest deze in als string en verstuurt deze via gmail naar opgegeven Email adres.
-     * @param sendTo Email adres om naartoe te sturen
-     * @param subjectLine Onderwerp van email
+    /**
+     * SendMail haalt een html file op, leest deze in als string en verstuurt deze via gmail naar opgegeven Email adres.
+     *
+     * @param sendTo           Email adres om naartoe te sturen
+     * @param subjectLine      Onderwerp van email
      * @param htmlFileFromRoot Html filename, as string incl. path from source root example:
-     * <br> "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
+     *                         <br> "src/main/resources/emailHTMLTemplates/verificationMail.html"
+     * @return boolean of het versturen gelukt is of niet.
      */
-    public static void sendMail(String sendTo, String subjectLine, String htmlFileFromRoot) {
+    public static boolean sendMail(String sendTo, String subjectLine, String htmlFileFromRoot) throws FileNotFoundException {
         String from = "no_reply@archive-trawler.com";        // Sender's email ID needs to be mentioned
         String host = "smtp.gmail.com";
 
@@ -57,7 +58,7 @@ public class SendEmail {
 
         try {
             // Creeer een message van HTML file keuze.
-            String htmlMessage = htmlToString("/src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html");
+            String htmlMessage = htmlToString(htmlFileFromRoot);
 
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
@@ -79,9 +80,11 @@ public class SendEmail {
             // Send message
             Transport.send(message);
             System.out.println("Sent message successfully....");
-        } catch (MessagingException mex) {
+            return true;
+        } catch (MessagingException | IOException mex) {
             mex.printStackTrace();
         }
+        return false;
     }
 
     /** Leest html file, retourneert String, denk erom om met exape characters te programmeren.
@@ -90,7 +93,7 @@ public class SendEmail {
      *                         "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
      * @return String met contents
      */
-    private static String htmlToString(String htmlFileFromRoot){
+    public static String htmlToString(String htmlFileFromRoot) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
         try {
             BufferedReader in = new BufferedReader(new FileReader(htmlFileFromRoot));
@@ -102,14 +105,11 @@ public class SendEmail {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String content = contentBuilder.toString();
-        return content;
+        return contentBuilder.toString();
     }
+
     public static void main(String[] args) throws IOException, URISyntaxException {
-        System.out.println(htmlToString("src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"));
         System.out.println(htmlToString("src/main/resources/emailHTMLTemplates/verificationMail.html"));
-
-
         }
 
 
