@@ -25,16 +25,16 @@ public class MyContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         try {
             System.out.println("contextInitialized");
-//            PersistanceManager.loadFromAzure();  // data inladen van azure container
+            PersistanceManager.loadFromAzure();  // data inladen van azure container
             PersistanceManager.uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
 
         } catch (IOException e) {
             System.out.println("catching IOException");
             e.printStackTrace();
-//        } catch (ClassNotFoundException e) {
-//            System.out.println("catching ClassNotFoundException");
-//            e.printStackTrace();
-//        }
+        } catch (ClassNotFoundException e) {
+            System.out.println("catching ClassNotFoundException");
+            e.printStackTrace();
+        }
             // DUMMYDATA:
             new User("Coyote", "test@mail.com", "password");
 //        new User("TickTock", "aldous@harding.com", "Wilde");
@@ -48,7 +48,7 @@ public class MyContextListener implements ServletContextListener {
 //        System.out.println("~~~~~~~~~~ Community.getUserMap().toString()" + Community.getUserMap().toString());
 //        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getArchiefMap().toString());
 //        System.out.println("~~~~~~~~~~ Community.getArchiefMap().toString()" + Community.getZoekOpdrachtMap().toString());
-        }
+
     }
 
     /** contextDestroyed

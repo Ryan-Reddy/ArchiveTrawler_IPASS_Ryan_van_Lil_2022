@@ -42,17 +42,17 @@ function formulierCheck() {
   if (emailEcht === false) {
     console.log('Email is incorrect geformuleerd.');
     emailElement.classList.replace('inputfield', 'formIncomplete');
-    // alert("Uw email klopt niet, \r\n voer aub een geldig e-mail adres in.");
+    alert("Uw email klopt niet, \r\n voer aub een geldig e-mail adres in.");
   }
   if (ww.length < 6) {
     console.log('WW is incompleet');
     passwordElement.classList.replace('inputfield', 'formIncomplete');
-    // alert("Uw wachtwoord is niet veilig genoeg. \r\n
-    // Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals ! en &).")
+    alert('Uw wachtwoord is niet veilig genoeg. \r\n' +
+    'Voer een combinatie in van ten minste zes cijfers, letters en leestekens (zoals ! en &).')
   }
 
   if (ww.length > 5 && emailEcht === true) {
-    // sendEmail(email); //TODO implement emailservice
+    // sendEmail(email); // EmailService > Backend verplaatst
     // alert(      'Uw account is aangemaakt, u ontvangt van ons een email met daarin een bevestigingslink. Om uw account te kunnen gebruiken, moet u bevestigen dat uw opgegeven e-mailadres geldig is, door klikken op de bevestigingslink die in uw e-mail is verzonden.\nAls u op de bevestigingslink klikt, wordt u doorgestuurd naar de inlogpagina van uw account. Typ uw inloggegevens en klik op Inloggen om je account te activeren.'    );
 
     sendNewAccount();

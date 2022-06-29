@@ -9,9 +9,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+
+import static org.apache.commons.httpclient.util.URIUtil.getPath;
 
 /**
  * Deze klasse zorgt ervoor dat ik een email kan sturen met javax vanuit de backend
@@ -53,7 +56,7 @@ public class SendEmail {
 
         try {
             // Creeer een message van HTML file keuze.
-            String htmlMessage = htmlToString("./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html");
+            String htmlMessage = htmlToString("/src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html");
 
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
@@ -101,8 +104,16 @@ public class SendEmail {
         String content = contentBuilder.toString();
         return content;
     }
-//    public static void main(String[] args) {
-//        System.out.println("what about that huh");
-//        System.out.println(htmlToString("./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"));
-//    }
-}
+    public static void main(String[] args) throws IOException {
+        System.out.println(htmlToString("./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"));
+        File file = new File("C:\\Users\\RyRy\\IdeaProjects\\ArchiveTrawler_IPASS_Ryan_van_Lil_2022version200\\src\\main\\Java\\archive\\trawler\\webservices\\test.text");
+//        System.out.println(htmlToString(getPath);
+        System.out.println("nextline");
+            System.out.println("Absolute Path: " + file.getAbsolutePath());
+            System.out.println("Canonical Path: " + file.getCanonicalPath());
+            System.out.println("Path: " + file.getPath());
+        }
+
+
+    }
+

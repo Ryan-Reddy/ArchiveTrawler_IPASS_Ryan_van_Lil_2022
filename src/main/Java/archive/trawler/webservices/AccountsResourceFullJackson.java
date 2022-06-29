@@ -29,32 +29,7 @@ public class AccountsResourceFullJackson {
 //            }
             messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + account.getNaam());
             String naam = account.getNaam();
-            SendEmail.sendMail(account.getEmail(),  naam + ", welcome to ArchiveTrawler! We zijn blij je erbij te hebben!",
-                    "<!DOCTYPE html>\n" +
-                            "<html lang=\"en\">\n" +
-                            "\n" +
-                            "<head>\n" +
-                            "    <meta charset=\"UTF-8\"/>\n" +
-                            "    <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"/>\n" +
-                            "    <meta content=\"ie=edge\" http-equiv=\"X-UA-Compatible\"/>\n" +
-                            "    <link href=\"/style-index.css\" rel=\"stylesheet\"/>\n" +
-                            "\n" +
-                            "    <title>Bevestig account</title>\n" +
-                            "    <script src=\"/js/themeManager.js\" type=\"text/javascript\"></script>\n" +
-                            "</head>\n" +
-                            "<h1 id=\"header\">Hoi " + naam + " </h1>\n" +
-                            "<body class=\"bodyDark\" id=\"body\">\n" +
-                            "</div>\n" +
-                            "<main>\n" +
-                            "    Klik hier om uw email voor dit account te bevestigen:\n" +
-                            "    <span id=\"accountInfoSpan\"></span>\n" +
-                            "        <label for=\"bevestigButton\" hidden>account te bevestigen button</label>\n" +
-                            "        <input type=\"button\" id=\"bevestigButton\" onclick=\"window.open('')\" value=\"Activeer mijn account\" style=\"background-color: darkmagenta\">\n" + // TODO insert proper link that actually sets UserActivation attribute on Activated
-                            "</main>\n" +
-                            "    <footer id=\"footer\">\n" +
-                            "    </footer>\n" +
-                            "</body>\n" +
-                            "</html>");
+            SendEmail.sendMail(account.getEmail(),  "subby", "/src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html");
             return Response.ok(messages).build();
         } else {
             messages.put("Error", "Er klopt iets niet aan uw email!");
