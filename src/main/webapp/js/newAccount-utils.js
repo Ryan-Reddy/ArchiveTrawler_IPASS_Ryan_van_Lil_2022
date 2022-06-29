@@ -59,6 +59,50 @@ function formulierCheck() {
   }
 }
 
+/**
+ * Deze functie vervangt normale sendForm, met een eigen SendNewAccount Fetch
+ * @param event dit is het klikken op de button
+ * @returns {Promise<void>} retourneert de status of het gelukt is.
+ */
+async function sendNewAccount(event) {
+  // const file = document.querySelector('#fileupload').files[0]; // TODO re implement for profile pic
+  // const jsonRequestBody = {avatarBase64: await toBase64(file)}; // TODO re implement for profile pic
+
+  const element = document.querySelector('#postresponse'); // response span in de newAccountPagina
+  const jsonRequestBody = {};
+
+  const formData = new FormData(document.querySelector('#newaccount-form'));
+  formData.forEach((value, key) => (jsonRequestBody[key] = value));
+
+  const fetchOptions = {
+    method: 'POST',
+    body: JSON.stringify(jsonRequestBody),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  };
+  await fetch('/restservices/accounts/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
+    .then((response) => {
+      if (response.status === 200) {
+        // als er een nieuw account gecreeerd is dan inloggen
+        open('http://localhost:8080/html/login.html', '_self'); // als deze klaar is open de log in pagina
+        alert('Welkom! je nieuwe account is aangemaakt');
+        throw 'Welkom! je nieuwe account is aangemaakt';
+      }
+      if (response.status === 409) {
+        // als 409 bestond er al een account met dit email adres
+        alert(
+          "Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'.",
+        );
+        throw 'er ging iets mis';
+      }
+    })
+    .catch((err) => {
+      console.log('Error: ', err);
+    });
+}
+
 /** Deze functie zorgt ervoor dat het klikken op een invoerveld hem weer een normale stijl geeft
  * @Function terugNaarNormaleStijl()
  * @param id:String
