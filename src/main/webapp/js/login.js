@@ -27,12 +27,13 @@ document.addEventListener('keydown', async (event) => {
  */
 async function login() {
   const preloginJWT = window.sessionStorage.getItem('JWT'); // sla de lokale JWT op voor controle achteraf
+
   const formData = new FormData(document.querySelector('#login_account'));
   const jsonRequestBody = {};
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
-  // const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-  const localhost = '/';
+  const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+  // const localhost = '/';
 
   await fetch(`${localhost}restservices/authentication/`, { // needs to start with / for heroku
     method: 'POST',

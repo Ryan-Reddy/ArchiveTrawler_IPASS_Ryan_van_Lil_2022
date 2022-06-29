@@ -49,8 +49,10 @@ public class AuthenticationResource {
             String token = createToken(logonRequest.email, role);
             System.out.println("token created");
             return Response.ok(new AbstractMap.SimpleEntry<>("JWT", token)).build();
-        } catch (JwtException | IllegalArgumentException e) {
+        } catch (JwtException e) {
             return Response.status(Response.Status.UNAUTHORIZED).build(); //puur de 401 melding, geen verdere info
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
 
