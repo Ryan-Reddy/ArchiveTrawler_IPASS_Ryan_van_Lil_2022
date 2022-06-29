@@ -23,9 +23,12 @@ public class Community implements Serializable {
     private static @Getter
     @Setter Community community = new Community();  // creeert 1 globale community met alle data.
 
-    private static @Getter @Setter Map<String, User> userMap = new HashMap<>();
-    private static @Getter @Setter Map<String, Archief> archiefMap = new HashMap<>();
-    private static @Getter @Setter Map<String, Archief> zoekOpdrachtMap = new HashMap<>();
+    private static @Getter
+    @Setter Map<String, User> userMap = new HashMap<>();
+    private static @Getter
+    @Setter Map<String, Archief> archiefMap = new HashMap<>();
+    private static @Getter
+    @Setter Map<String, Archief> zoekOpdrachtMap = new HashMap<>();
     // TODO implement all lists into this file
     //  - [ ] archief
     //  - [ ] websites
@@ -35,8 +38,9 @@ public class Community implements Serializable {
     //  - [ ] check for more
 
 
-
     public static User getUserByEmail(String email) {
+        System.out.println("[getUserByEmail] starting");
+
         return userMap.values().stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
     }
 
@@ -48,19 +52,26 @@ public class Community implements Serializable {
      * @return Een boolean of het het gelukt is om deze gebruiker als unieke User toe te voegen aan de database.
      */
     public static boolean addUserToMap(User newAccount) {
+        System.out.println("[ADDuserTOMAP] starting");
 
-        System.out.println("doublechecking user map for: " + newAccount.getEmail());
-        System.out.println("... " + newAccount + "");
+        System.out.println("[ADDuserTOMAP] [DOUBLECHECK] for: " + newAccount.getEmail() + ", contains email as key?=" + userMap.containsKey(newAccount.getEmail()));
+        System.out.println(userMap);
 
-        if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) {
-            userMap.put(newAccount.getEmail(), newAccount);
-            return true;
-        } else {
-            return false;
-        }
+        System.out.println("[ADDuserTOMAP] checking get userbyemail in adduser to map should be : " + getUserByEmail(newAccount.getEmail()));
+//        if (newAccount.getEmail() != null) {
+//        System.out.println("[ADDuserTOMAP] [newAccount.getEmail() != null] ");
+            if (userMap.values().stream().noneMatch(user -> user.getEmail().equals(newAccount.getEmail()))) {
+                System.out.println("[ADDuserTOMAP] [newAccount.getEmail() != null] [usermap.nonematch] userMap.put(newAccount.getEmail(), newAccount");
+                userMap.put(newAccount.getEmail(), newAccount);
+                System.out.println("[ADDuserTOMAP] [newAccount.getEmail() != null] [usermap.nonematch] [updated] usermap: " + userMap);
+                return true;
+            }
+//        }
+        return false;
     }
 
-    /** TODO Combineer addUserToMap en anderen (archiefToMap) etc om dubbele code te vermijden
+    /**
+     * TODO Combineer addUserToMap en anderen (archiefToMap) etc om dubbele code te vermijden
      * addUserToMap voegt een nieuwe user toe aan de Lijst,
      * maar controleert eerst of deze er nog niet al instaat. maakt hierover ook een log in de logger van deze klasse.
      *

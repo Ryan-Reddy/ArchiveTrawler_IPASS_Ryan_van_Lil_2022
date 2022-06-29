@@ -39,7 +39,7 @@ public class PersistanceManager {
     public static void loadFromAzure() throws IOException, ClassNotFoundException {
 
         if (communityContainer.exists()) {
-            System.out.println("~~~ loading all Users-data from azure ~~~");
+            System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ loading all Users-data from azure ~~~");
             BlobClient usersBlob = communityContainer.getBlobClient("communityblob"); // Maak een blobclient aan voor Users
             if (usersBlob.exists()) {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -50,12 +50,14 @@ public class PersistanceManager {
                 Map<String, User> loadedUsers = (Map<String, User>) ois.readObject();
                 Community.setUserMap(loadedUsers);
 
-                System.out.println("~~~ Succesfully loaded all Users-data from azure ~~~");
+
+                System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Succesfully loaded all Users-data from azure ~~~");
+                System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Updated usermap: " + Community.getUserMap());
                 baos.close();
                 bais.close();
                 ois.close();
             }
-        System.out.println("~~~ START up pre-app BACKUP-saveToAzure ~~~");
+        System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ START-up BACKUP-saveToAzure ~~~");
             uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
         }
     }
@@ -69,13 +71,13 @@ public class PersistanceManager {
      * Dagelijkse herstart van de server wel aan te raden.
      */
     public static void uploadToAzure(String usersBlobName, BlobContainerClient blobContainerClient) throws IOException {
-        System.out.println("~~~ START saveToAzure ~~~");
+        System.out.println("[ AZURE ] [ UPLOAD ] ~~~ START saveToAzure ~~~");
         if (!blobContainerClient.exists()) {
             blobContainerClient.create();
         }// creeert een blobcontainer als deze nog niet bestond
 
         BlobClient usersBlobClient = blobContainerClient.getBlobClient(usersBlobName); // Maak een blobclient aan voor Users
-        System.out.println("~~~ getting usermap from Community ~~~");
+        System.out.println("[ AZURE ] [ UPLOAD ] ~~~ getting usermap from Community ~~~");
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
 
@@ -86,7 +88,7 @@ public class PersistanceManager {
         byte[] bytez = baos.toByteArray();   // binair maken
         ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
 
-        System.out.println("~~~ saving all Users-data to azure ~~~");
+        System.out.println("[ AZURE ] [ UPLOAD ] ~~~ saving all Users-data to azure ~~~");
         usersBlobClient.upload(bais, bytez.length, true);  // upload naar de blob, overschrijven ja.
         baos.close();
         oos.close();

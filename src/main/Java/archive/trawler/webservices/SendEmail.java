@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 import static org.apache.commons.httpclient.util.URIUtil.getPath;
@@ -104,14 +105,11 @@ public class SendEmail {
         String content = contentBuilder.toString();
         return content;
     }
-    public static void main(String[] args) throws IOException {
-        System.out.println(htmlToString("./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"));
-        File file = new File("C:\\Users\\RyRy\\IdeaProjects\\ArchiveTrawler_IPASS_Ryan_van_Lil_2022version200\\src\\main\\Java\\archive\\trawler\\webservices\\test.text");
-//        System.out.println(htmlToString(getPath);
-        System.out.println("nextline");
-            System.out.println("Absolute Path: " + file.getAbsolutePath());
-            System.out.println("Canonical Path: " + file.getCanonicalPath());
-            System.out.println("Path: " + file.getPath());
+    public static void main(String[] args) throws IOException, URISyntaxException {
+        System.out.println(htmlToString("src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"));
+        System.out.println(htmlToString("src/main/resources/emailHTMLTemplates/verificationMail.html"));
+
+
         }
 
 

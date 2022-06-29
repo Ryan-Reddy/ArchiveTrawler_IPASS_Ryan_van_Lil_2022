@@ -29,7 +29,7 @@ public class AccountsResourceFullJackson {
 //            }
             messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + account.getNaam());
             String naam = account.getNaam();
-            SendEmail.sendMail(account.getEmail(),  "subby", "/src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html");
+            SendEmail.sendMail(account.getEmail(),  "subby", "src/main/resources/emailHTMLTemplates/verificationMail.html");
             return Response.ok(messages).build();
         } else {
             messages.put("Error", "Er klopt iets niet aan uw email!");

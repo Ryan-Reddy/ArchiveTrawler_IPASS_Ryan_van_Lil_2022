@@ -37,8 +37,8 @@ public class MyContextListener implements ServletContextListener {
         }
             // DUMMYDATA:
             new User("Coyote", "test@mail.com", "password");
-//        new User("TickTock", "aldous@harding.com", "Wilde");
-//        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
+        new User("TickTock", "aldous@harding.com", "Wilde");
+        new User( "CrazyDiamond","syd@barrett.com", "Floyd");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
 //        new Archief("test","");
 //        new Zoekopdracht(Arrays.asList(Community.getArchiefByName("test")),"naam blabla werkman", Community.getUserByEmail("test@mail.com"));
