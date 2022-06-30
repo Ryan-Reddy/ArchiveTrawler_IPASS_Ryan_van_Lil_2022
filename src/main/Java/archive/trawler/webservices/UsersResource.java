@@ -35,7 +35,6 @@ public class UsersResource {
      * @return User or NOT_FOUND
      */
     @POST
-    @PermitAll
     @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -111,7 +110,6 @@ public class UsersResource {
 
 
     }
-
     //    @POST
 //    @Produces(MediaType.APPLICATION_JSON)
 //    @Path("")
@@ -147,20 +145,21 @@ public class UsersResource {
 
 
     @PATCH
+    @RolesAllowed("user")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("")
-    public Response patchUser(NewAccount info) {
-        //TODO create patchUser pipeline in html but also here
-        try {
-            if (User.getUserByEmail(info.email) != null) {  // als er al een useraccount met dit email bestaat:
-                return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
+    @Path("wijzigUser")
+    public Response patchUser(NewAccount info, @Context SecurityContext sc) {
+        if (sc.getUserPrincipal() instanceof User) {
+            User currentUser = (User) sc.getUserPrincipal();
+            try {
+                currentUser.setEmail(info.email);
+                currentUser.setNaam(info.naam);
+                return Response.ok().build();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            User newUser = new User(info.naam, info.email, info.password);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-        Map<String, String> messages = new HashMap<>();
-        messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + info.naam);
-        return ok(messages).build();
+        return Response.status(Response.Status.CONFLICT).entity("2 Er ging iets mis, bent u ingelogd?").build();
     }
 }

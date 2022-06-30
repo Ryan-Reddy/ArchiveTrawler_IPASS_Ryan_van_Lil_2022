@@ -28,7 +28,7 @@ async function deleteAccount() {
     method: 'DELETE',
     body: JSON.stringify(jsonRequestBody),
     headers: {
-      Authorization: `Bearer${sessionStorage.JWT}`,
+      Authorization: `Bearer ${sessionStorage.JWT}`,
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
