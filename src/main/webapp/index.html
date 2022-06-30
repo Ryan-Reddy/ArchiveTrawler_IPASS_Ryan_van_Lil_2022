@@ -44,8 +44,6 @@
                 <a href="html/find-single-user.html">Account info opvragen</a>
             </li>
 
-            <br><br>
-
             <li>
                 <a href="html/zoeken.html">Zoekopdracht aanmaken/uitvoeren.</a>
             </li>
@@ -53,13 +51,7 @@
                 <a href="html/zoekresultaten.html">Zoekresultaten.</a>
             </li>
             <li>
-                <a href="html/delete.html">Delete account.</a>
-            </li>
-            <li>
                 <a href="html/fetch_test.html">FetchTest page.</a>
-            </li>
-            <li>
-                <a href="html/logout.html">Log out.</a>
             </li>
 
         </ul>
@@ -67,11 +59,16 @@
         <br>
 
         <h2>RestServices</h2>
-        <input onclick="getAllUsersButtonFunc()" id="getAllUsers" value="getAllUsers" type="button">
         <ul>
             these should only work logged in as user:
             <li>
-                <a href="http://localhost:8080/restservices/users">GET users/ restservice</a>
+                <a href="html/find-all-user.html">GET allusers/ restservice</a>
+            </li>
+            <li>
+                <a href="html/delete.html">Delete account.</a>
+            </li>
+            <li>
+                <a href="html/logout.html">Log out.</a>
             </li>
             <li>
                 <a href="http://localhost:8080/restservices/users/{email}">GET find_user/email={email} restservice</a>

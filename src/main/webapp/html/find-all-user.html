@@ -8,18 +8,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png"/>
     <script src="/js/themeManager.js" type="text/javascript"></script>
     <script src="/js/findUser.js" type="text/javascript"></script>
+    <script src="/js/UserUtils.js" type="text/javascript"></script>
 
-    <title>Find Single User</title>
+    <title>Find All Users</title>
 </head>
 <body id="body" class="bodyDark">
 <main>
-<div id="discoball" style="display: none;"><img src="/assets/discoBallGif.gif" alt="discoBallGif">
-</div>
+    <div id="discoball" style="display: none;"><img src="/assets/discoBallGif.gif" alt="discoBallGif">
+    </div>
 
-    <h1 id="header">Find Current User</h1>
-<label for="searchUserButton" hidden>search for user by email button.</label>
-<input type="button" id="searchUserButton" value="searchUser" onclick="fetchSingleUser()">
-
+    <h1 id="header">Find All Users</h1>
+    <label for="getAllUsers" hidden>List for all users button.</label>
+    <input onclick="getAllUsersButtonFunc()" id="getAllUsers" value="getAllUsers" type="button">
+    <span id="testingspace">a</span>
 </main>
 <footer id="footer">
 </footer>

@@ -41,23 +41,20 @@ public class UsersResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("getAccount")
     public Response getAccount(EmailToSearchSingleAccount info, @Context SecurityContext sc) {
-        User theUser = null;
+        User theUser;
+
+//        if (info != null) {
+//            theUser = Community.getCommunity().getUserByEmail(info.email);
+//            return Response.ok(theUser).build(); // ok = 200;
+//        }
         if (sc.getUserPrincipal() instanceof User) {
             theUser = (User) sc.getUserPrincipal();
             System.out.println(theUser.getEmail());
             System.out.println(theUser.getNaam());
             System.out.println(theUser.getPassword());
-        }
-
-        if (info != null) {
-            theUser = Community.getCommunity().getUserByEmail(info.email);
-        }
-        if (theUser != null) {
             return Response.ok(theUser).build(); // ok = 200;
-
-        } else {
-            return Response.status(Response.Status.NO_CONTENT).build(); // NO_Content =
         }
+        return Response.status(Response.Status.NO_CONTENT).build(); // NO_Content =
     }
 
     /**
@@ -103,14 +100,14 @@ public class UsersResource {
     @RolesAllowed("user")
     @Path("deleteaccount")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserAccount(LoginRequest logonRequest,@Context SecurityContext sc) {
+    public Response deleteUserAccount(LoginRequest logonRequest, @Context SecurityContext sc) {
         System.out.println("deleteUserAccount started");
         String email = "";
         if (sc.getUserPrincipal() instanceof User) {
             email = ((User) sc.getUserPrincipal()).getEmail();  // haalt email op uit de JWT
         }
-            return Community.deleteMyUserAccount(email) ? Response.ok(String.format("Your account has been deleted.. %s", email)).build()        // give ok http response if it works
-                    : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+        return Community.deleteMyUserAccount(email) ? Response.ok(String.format("Your account has been deleted.. %s", email)).build()        // give ok http response if it works
+                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
 
 
     }

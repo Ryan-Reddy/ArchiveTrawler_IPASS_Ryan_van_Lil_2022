@@ -48,11 +48,16 @@ public class PersistanceManager {
                 ObjectInputStream ois = new ObjectInputStream(bais);
 
                 Map<String, User> loadedUsers = (Map<String, User>) ois.readObject();
-                Community.setUserMap(loadedUsers);
-
-
-                System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Succesfully loaded all Users-data from azure ~~~");
                 System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Loaded usermap: " + loadedUsers);
+                if (loadedUsers.entrySet().stream().noneMatch(user -> null == user.getKey())) { // check voor null-key, helaas langdurig probleem wat opduikt.
+                    System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ yay no null users loaded :)");
+                }
+                if (loadedUsers.entrySet().stream().anyMatch(user -> null == user.getKey())) { // check voor null-key, helaas langdurig probleem wat opduikt.
+                    throw new NullPointerException("[ AZURE ] [ DOWNLOAD ] [ ERROR ]~~~ null-key gevonden als key in de blob :(");
+                }
+
+                Community.setUserMap(loadedUsers);
+                System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Succesfully loaded all Users-data from azure ~~~");
                 System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Updated usermap: " + Community.getUserMap());
                 baos.close();
                 bais.close();
