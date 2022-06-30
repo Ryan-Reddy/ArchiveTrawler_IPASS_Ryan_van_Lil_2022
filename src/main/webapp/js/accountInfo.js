@@ -1,4 +1,4 @@
-import { localhost } from './AAAglobalVAR.js';
+// const localhost = '/';
 
 // ***************************************
 /** Dit draait bij het openen pagina: */
@@ -33,10 +33,13 @@ async function fetchCurrentUser() {
     },
   };
   const testingspaceSpan = document.getElementById('testingspace');
-  await fetch(`${localhost}/restservices/users/getAccount/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
+  // LETOP als fetch niet werkt door missende localhost,
+  // check dat de HTTP file themeManager.js importeert als eerste.
+  // eslint-disable-next-line no-undef
+  await fetch(`${localhost}restservices/users/getAccount/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then(async (response) => {
       if (response.status === 200) { // er is een account gevonden !
-        let myJson = await response.json();
+        const myJson = await response.json();
         console.log(myJson);
         document.getElementById('naam').value = myJson.naam;
         document.getElementById('email').value = myJson.email;
@@ -44,7 +47,7 @@ async function fetchCurrentUser() {
         // testingspaceSpan.innerHTML += '<br>email: ' + myJson.email;
         // testingspaceSpan.innerHTML += '<br>rol:   ' + myJson.role;
       }
-      if (response.status === 204) { //no content
+      if (response.status === 204) { // no content
         console.log('geen content gevonden voor die input');
       }
     })

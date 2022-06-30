@@ -1,7 +1,8 @@
-import { localhost } from './AAAglobalVAR.js';
+// import Config from './AAAglobalVAR';
 
+// const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+// // const localhost = '/';
 console.log('loading resetAccountWW.js');
-console.log(global.localhost);
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |    reset input<email> account:                                               |
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -24,11 +25,13 @@ function stuurWachtwoordReset() {
     },
   };
   const feedbackspan = document.getElementById('feedbackspan');
-  fetch(`${localhost}/restservices/users/getAccount/`, fetchOptions) // POST, maakt een nieuw acc.
+  // LETOP als fetch niet werkt door missende localhost,
+  // check dat de HTTP file themeManager.js importeert als eerste.
+  // eslint-disable-next-line no-undef
+  fetch(`${localhost}restservices/users/getAccount/`, fetchOptions) // POST, maakt een nieuw acc.
     .then((response) => {
       if (response.status === 200) { // er is een account gevonden !
-        const myJson = response.json();
-        const feedback = myJson;
+        const feedback = response.json();
         console.log(feedback);
         feedbackspan.innerText = feedback;
       }

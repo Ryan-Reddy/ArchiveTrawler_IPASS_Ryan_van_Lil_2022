@@ -1,4 +1,6 @@
-import { localhost } from './globalVAR';
+const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+// const localhost = '/';
+
 // function pupupMagOfNiet() {
 //   const firstNewWin = window.open('html/zoeken.htm');
 //   const newWin = window.open('html/zoeken.htm');
@@ -50,7 +52,7 @@ function zoekButtonClicked() {
 }
 
 function fetchFunctionForTesting() {
-  const elem = document.getElementById('postresponse');
+  const feedbackElement = document.getElementById('postresponse');
 
   fetch('https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22henk%22%7D')
     .then((response) =>

@@ -1,8 +1,3 @@
-import { localhost } from './AAAglobalVAR';
-
-// const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-  // // const localhost = '/';
-
 /** De event listeners */
 // overal op deze pagina, kan ook specifieke input zijn
 document.addEventListener('keydown', async (event) => {
@@ -37,6 +32,9 @@ async function login() {
   const jsonRequestBody = {};
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
+  // LETOP als fetch niet werkt door missende localhost,
+  // check dat de HTTP file themeManager.js importeert als eerste.
+  // eslint-disable-next-line no-undef
   await fetch(`${localhost}restservices/authentication/`, {
     // needs to start with / for heroku
     method: 'POST',

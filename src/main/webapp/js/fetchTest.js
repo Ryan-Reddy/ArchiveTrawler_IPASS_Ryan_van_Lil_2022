@@ -1,4 +1,5 @@
-import { localhost } from './AAAglobalVAR.js';
+const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+// const localhost = '/';
 
 function makeHttpObject() {
   try {return new XMLHttpRequest();}

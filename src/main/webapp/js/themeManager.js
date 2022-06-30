@@ -1,4 +1,7 @@
-import { localhost } from './AAAglobalVAR.js';
+// LET OP: dit adres wordt in alle fetches gebruikt in *.js
+const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+// // const localhost = '/';
+
 function setFooter() {
   console.log('setting up the footergrid');
   const footer = document.getElementById('footer');

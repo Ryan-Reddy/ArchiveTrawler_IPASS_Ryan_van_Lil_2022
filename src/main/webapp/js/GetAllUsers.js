@@ -1,4 +1,6 @@
-import { localhost } from './AAAglobalVAR.js';
+const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+// const localhost = '/';
+
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |  This method adds all users to the page       needs work                  |
@@ -17,6 +19,8 @@ function getAllUsersButtonFunc() {
   };
 
   // fetch('/restservices/users/', fetchOptions)
+  // LETOP als fetch niet werkt door missende localhost,
+  // check dat de HTTP file themeManager.js importeert als eerste.
   fetch(`${localhost}restservices/users/getall`, fetchOptions) // TODO remove outside of normal testing
     .then((response) => {
       if (!response.ok) { // if response =  NOT ok:

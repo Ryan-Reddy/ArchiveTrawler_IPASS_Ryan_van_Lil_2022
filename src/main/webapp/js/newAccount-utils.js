@@ -1,4 +1,3 @@
-import { localhost } from './globalVAR';
 // Bind pagina elementen aan const
 
 /** Deze functie controleert of een email echt een email is
@@ -83,23 +82,28 @@ async function sendNewAccount(event) {
       'Content-Type': 'application/json',
     },
   };
-  await fetch(`${localhost}/restservices/accounts/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
+  // LETOP als fetch niet werkt door missende localhost,
+  // check dat de HTTP file themeManager.js importeert als eerste.
+  // eslint-disable-next-line no-undef
+  await fetch(`${localhost}restservices/accounts/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then((response) => {
       if (response.status === 200) {
         // als er een nieuw account gecreeerd is dan inloggen
-        open('http://localhost:8080/html/login.html', '_self'); // als deze klaar is open de log in pagina
-        alert('Welkom! je nieuwe account is aangemaakt');
-        throw 'Welkom! je nieuwe account is aangemaakt';
+        open(`${localhost}html/login.html`, '_self'); // als deze klaar is open de log in pagina
+        const message = 'Welkom! je nieuwe account is aangemaakt';
+        alert(message);
+        element.innerHTML = message;
+        throw message;
       }
       if (response.status === 409) {
         // als 409 bestond er al een account met dit email adres
-        alert(
-          "Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'.",
-        );
+        const message = "Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'.";
+        element.innerHTML = message;
         throw 'er ging iets mis';
       }
     })
     .catch((err) => {
+      element.innerHTML = message;
       console.log('Error: ', err);
     });
 }

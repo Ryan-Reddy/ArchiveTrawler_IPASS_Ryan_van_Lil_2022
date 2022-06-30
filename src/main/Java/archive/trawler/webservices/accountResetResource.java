@@ -3,6 +3,7 @@ package archive.trawler.webservices;
 import archive.trawler.model.User;
 import archive.trawler.webservices.dto.ResetAccount;
 
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,7 +18,7 @@ import java.io.FileNotFoundException;
 @Path("accountReset")
 public class accountResetResource {
     @POST
-    @
+    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     public Response resetWachtWoord(ResetAccount resetAccount) {
         try {

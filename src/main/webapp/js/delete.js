@@ -1,4 +1,3 @@
-import { localhost } from './AAAglobalVAR.js';
 // function getParsedJwt(token) {
 //   try {
 //     return JSON.parse(atob(token.split('.')[1]));
@@ -32,7 +31,10 @@ async function deleteAccount() {
       'Content-Type': 'application/json',
     },
   };
-  await fetch(`${localhost}/restservices/users/`, fetchOptions) // een DELETE naar dit adres verwijdert huidig ingelogd acc.
+  // LETOP als fetch niet werkt door missende localhost,
+  // check dat de HTTP file themeManager.js importeert als eerste.
+  // eslint-disable-next-line no-undef
+  await fetch(`${localhost}restservices/users/`, fetchOptions) // een DELETE naar dit adres verwijdert huidig ingelogd acc.
     .then(async (response) => {
       if (response.ok) {
         const feedback =
