@@ -6,7 +6,8 @@
     <link href="/style-index.css" rel="stylesheet"/>
     <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
     <title>Wachtwoord vergeten</title>
-    <script src="/js/themeManager.js" type="text/javascript"></script>
+    <script src="../js/resetAccountWW.js" type="text/javascript"></script>
+    <script src="../js/themeManager.js" type="text/javascript"></script>
 
 </head>
 
@@ -19,21 +20,22 @@
 
 
     <p>Voer je e-mailadres in om je account wachtwoord te resetten.</p>
-    <form id="postaccount">
+    <form id="resetAccount">
         <label for="adres">E-mail adres:</label><input class="inputfield" id="adres" name="adres" type="text"/><br><br>
 
         <a href="login.html">
             <button>Annuleren</button>
         </a>
-        <input id="stuurEmailMetWachtwoordReset" onclick="stuurEmailMetWachtwoordReset()" type="button" value="Zoeken"/>
-        <input id="send_formdata" onclick="sendFormData()" type="button" value="Zoeken--send formdata"/>
-        <span id="postresponse"></span>
+        <input id="stuurEmailMetWachtwoordReset" onclick="stuurEmailMetWachtwoordReset()" type="button"
+               value="Stuur mij een resetmail."/>
     </form>
+    <span id="feedbackspan"></span>
     <hr>
     <br>
     <a href="new-account.html">
         <button>Nieuw account creëren</button>
     </a>
+
 </main>
 <footer id="footer">
 </footer>

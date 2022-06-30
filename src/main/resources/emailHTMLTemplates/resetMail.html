@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <link href="/emailStyle.css" rel="stylesheet"/>
+    <TODO>write emailstyle.css</TODO>
+
+    <title>Reset account</title>
+    <script>
+      function loadWindow() {
+        var setsession = window.sessionStorage.setItem("animals", "cat");
+        window.open('http://localhost:8080/html/reset-password.html')
+      }
+    </script>
+</head>
+<h1 id="header">Reset account </h1>
+<body class="bodyDark" id="body">
+
+<main>
+    Klik hier om uw wachtwoord voor dit account opnieuw in te stellen:
+    <span id="accountInfoSpan"></span>
+    <label for="reset-button" hidden>Wachtwoord reset button</label>
+    <input type="button" id="reset-button" onclick="loadWindow()" value="Reset mijn account"
+           style="background-color: darkmagenta">
+</main>
+<footer id="footer">
+</footer>
+</body>
+</html>
