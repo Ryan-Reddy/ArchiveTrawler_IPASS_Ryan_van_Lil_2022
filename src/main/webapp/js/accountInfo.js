@@ -1,3 +1,15 @@
+// ***************************************
+/** Dit draait bij het openen pagina: */
+// window.onload = () => {
+//   console.log('window on load')
+//   fetchCurrentUser();
+// }; //===> windowOnload werkt niet door themeManager windowOnload
+
+console.log('window on load')
+fetchCurrentUser();
+
+// ***************************************
+
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |    getting current account:                                               |
@@ -80,10 +92,5 @@ async function wijzigAccount() {
       console.log(error)
     });
 }
-
 // ***************************************
-/** Dit draait bij het openen pagina: */
-window.onload = () => {
-  fetchCurrentUser();
-};
-// window.addEventListener('load',fetchCurrentUser())
+

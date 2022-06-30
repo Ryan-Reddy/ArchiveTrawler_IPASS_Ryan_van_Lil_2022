@@ -33,7 +33,7 @@ async function deleteAccount() {
       'Content-Type': 'application/json',
     },
   };
-  await fetch(`${localhost}/restservices/users/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
+  await fetch(`${localhost}/restservices/users/`, fetchOptions) // een DELETE naar dit adres verwijdert huidig ingelogd acc.
     .then(async (response) => {
       if (response.ok) {
         const feedback =
