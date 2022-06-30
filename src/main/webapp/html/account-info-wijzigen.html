@@ -22,10 +22,15 @@
     <form id="postaccount">
     <table style="width:100%">
         <tr>
-          <td><label for="naam">Naam:</label></td>
-          <td><input class="inputfield" id="naam" name="naam"
-            type="text" style="width:100%"/></td>
-          <td></td>
+            <td></td>
+            <td>Huidige accountinfo:</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="naam">Naam:</label></td>
+            <td><input class="inputfield" id="naam" name="naam"
+                       type="text" style="width:100%"/></td>
+            <td></td>
         </tr>
         <!-- <tr>
           <td><label for="achternaam">Achternaam:</label></td>
@@ -34,15 +39,15 @@
           <td><br/></td>
         </tr> -->
         <tr>
-          <td><label for="email">E-mail adres:</label></td>
-          <td><input class="inputfield" id="email" name="email"
+            <td><label for="email">E-mail adres:</label></td>
+            <td><input class="inputfield" id="email" name="email"
             type="text" style="width:100%"/></td>
           <td></td>
         </tr>
       </table> 
         <!-- <input id="send_json" onclick="sendJsonData()" type="button" value="send json"/>
         <input id="send_formdata" onclick="sendFormData()" type="button" value="send formdata"/> -->
-        <input id="update_account_info" onclick="sendFormData()" type="button" value="Update Info"/>
+        <input id="update_account_info" onclick="wijzigAccount()" type="button" value="Update Info"/>
         <span id="postresponse"></span>
     </form>
     <hr/>

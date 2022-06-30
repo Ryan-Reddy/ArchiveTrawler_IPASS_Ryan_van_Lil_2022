@@ -20,9 +20,11 @@ async function fetchSingleUser() {
       if (response.status === 200) { // er is een account gevonden !
         let myJson = await response.json();
         console.log(myJson);
-        testingspaceSpan.innerHTML += 'naam:  ' + myJson.naam;
-        testingspaceSpan.innerHTML += '<br>email: ' + myJson.email;
-        testingspaceSpan.innerHTML += '<br>rol:   ' + myJson.role;
+        getElementById("naam").defaultValue = myJson.naam;
+        getElementById("email").defaultValue = myJson.email;
+        // testingspaceSpan.innerHTML += 'naam:  ' + myJson.naam;
+        // testingspaceSpan.innerHTML += '<br>email: ' + myJson.email;
+        // testingspaceSpan.innerHTML += '<br>rol:   ' + myJson.role;
       }
       if (response.status === 204) { //no content
         console.log('geen content gevonden voor die input');
