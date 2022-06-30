@@ -14,7 +14,7 @@ async function fetchSingleUser() {
       'Content-Type': 'application/json',
     },
   };
-  await fetch('/restservices/accounts/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
+  await fetch('/restservices/accounts/getAccount/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then(async (response) => {
       if (response.status === 200) { // er is een account gevonden !
         let myJson = await response.json();

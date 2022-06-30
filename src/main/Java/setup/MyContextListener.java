@@ -26,7 +26,7 @@ public class MyContextListener implements ServletContextListener {
         try {
             System.out.println("contextInitialized");
             PersistanceManager.loadFromAzure();  // data inladen van azure container
-            PersistanceManager.uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
+//            PersistanceManager.uploadToAzure(usersBlobNamebackup,communityContainerbackup);     ////////  /////  /// /* BACKUP */ ///  /////  ////////
 
         } catch (IOException e) {
             System.out.println("catching IOException");

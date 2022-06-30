@@ -39,15 +39,19 @@ public class UsersResource {
     @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("")
+    @Path("getAccount")
     public Response getAccount(EmailToSearchSingleAccount info, @Context SecurityContext sc) {
+        User theUser = null;
         if (sc.getUserPrincipal() instanceof User) {
-            User user = (User) sc.getUserPrincipal();
-            System.out.println(user.getEmail());
-            System.out.println(user.getNaam());
-            System.out.println(user.getPassword());
+            theUser = (User) sc.getUserPrincipal();
+            System.out.println(theUser.getEmail());
+            System.out.println(theUser.getNaam());
+            System.out.println(theUser.getPassword());
         }
-        User theUser = Community.getCommunity().getUserByEmail(info.email);
+
+        if (info != null) {
+            theUser = Community.getCommunity().getUserByEmail(info.email);
+        }
         if (theUser != null) {
             return Response.ok(theUser).build(); // ok = 200;
 

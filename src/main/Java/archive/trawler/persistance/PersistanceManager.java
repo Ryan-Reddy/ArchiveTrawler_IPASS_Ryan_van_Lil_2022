@@ -52,6 +52,7 @@ public class PersistanceManager {
 
 
                 System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Succesfully loaded all Users-data from azure ~~~");
+                System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Loaded usermap: " + loadedUsers);
                 System.out.println("[ AZURE ] [ DOWNLOAD ] ~~~ Updated usermap: " + Community.getUserMap());
                 baos.close();
                 bais.close();
@@ -82,6 +83,7 @@ public class PersistanceManager {
         ObjectOutputStream oos = new ObjectOutputStream(baos);
 
         Map<String, User> userMapToSave = Community.getUserMap(); //locally save the map to be uploaded
+        System.out.println("[ AZURE ] [ UPLOAD ] usermap: " + userMapToSave);
         oos.writeObject(userMapToSave); //put the item to be saved into ObjectOutputStream
 
 

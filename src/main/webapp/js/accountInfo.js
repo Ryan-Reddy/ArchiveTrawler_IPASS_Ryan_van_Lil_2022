@@ -58,7 +58,7 @@ async function wijzigAccount() {
   console.log(jsonRequestBody);
 
   const fetchOptions = {
-    method: 'DELETE',
+    method: 'PATCH',
     body: JSON.stringify(jsonRequestBody),
     headers: {
       Authorization: `Bearer${sessionStorage.JWT}`,
