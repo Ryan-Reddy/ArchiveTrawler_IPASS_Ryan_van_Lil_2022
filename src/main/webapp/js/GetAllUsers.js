@@ -1,6 +1,4 @@
-function getThisUser() {
-
-}
+import { localhost } from './AAAglobalVAR.js';
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |  This method adds all users to the page       needs work                  |
@@ -17,8 +15,6 @@ function getAllUsersButtonFunc() {
       // Authorization: `Bearer ${token}`,
     },
   };
-
-  const localhost = 'http://localhost:8080/';
 
   // fetch('/restservices/users/', fetchOptions)
   fetch(`${localhost}restservices/users/getall`, fetchOptions) // TODO remove outside of normal testing

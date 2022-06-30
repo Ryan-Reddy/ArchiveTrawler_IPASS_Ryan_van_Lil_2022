@@ -1,3 +1,4 @@
+import { localhost } from './AAAglobalVAR.js';
 function setFooter() {
   console.log('setting up the footergrid');
   const footer = document.getElementById('footer');

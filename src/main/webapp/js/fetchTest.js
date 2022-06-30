@@ -1,3 +1,5 @@
+import { localhost } from './AAAglobalVAR.js';
+
 function makeHttpObject() {
   try {return new XMLHttpRequest();}
   catch (error) {}

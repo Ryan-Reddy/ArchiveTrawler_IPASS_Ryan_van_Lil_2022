@@ -1,3 +1,5 @@
+import { localhost } from './AAAglobalVAR.js';
+
 // ***************************************
 /** Dit draait bij het openen pagina: */
 // window.onload = () => {
@@ -31,7 +33,7 @@ async function fetchCurrentUser() {
     },
   };
   const testingspaceSpan = document.getElementById('testingspace');
-  await fetch('/restservices/users/getAccount/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
+  await fetch(`${localhost}/restservices/users/getAccount/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then(async (response) => {
       if (response.status === 200) { // er is een account gevonden !
         let myJson = await response.json();

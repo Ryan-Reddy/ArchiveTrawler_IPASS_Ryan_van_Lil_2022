@@ -1,3 +1,8 @@
+import { localhost } from './AAAglobalVAR';
+
+// const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
+  // // const localhost = '/';
+
 /** De event listeners */
 // overal op deze pagina, kan ook specifieke input zijn
 document.addEventListener('keydown', async (event) => {
@@ -32,10 +37,8 @@ async function login() {
   const jsonRequestBody = {};
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
-  const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-  // const localhost = '/';
-
-  await fetch(`${localhost}restservices/authentication/`, { // needs to start with / for heroku
+  await fetch(`${localhost}restservices/authentication/`, {
+    // needs to start with / for heroku
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -44,9 +47,12 @@ async function login() {
     body: JSON.stringify(jsonRequestBody),
   })
     .then((response) => {
-      if (response.ok) { return response.json(); } //als de gegevens herkend zijn > body json incl token!!
+      if (response.ok) {
+        return response.json();
+      } //als de gegevens herkend zijn > body json incl token!!
 
-      document.getElementById('postresponse').innerHTML = '<a href="/html/reset-account.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
+      document.getElementById('postresponse').innerHTML =
+        '<a href="/html/reset-account.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
       throw 'User login failed';
       // zo niet dan breakt de chain ook.
     }) // als er geen 200 is er ook geen body
@@ -55,10 +61,13 @@ async function login() {
       window.sessionStorage.setItem('JWT', myJson.JWT);
     }) // bij een goede uitkomst hebben we een JWT, slaan we op in de sessionStorage
     .then(
-      (document.getElementById('postresponse').innerText = 'Succesvol ingelogd.'),
+      (document.getElementById('postresponse').innerText =
+        'Succesvol ingelogd.')
     ) // een melding.
     // .then(open('http://localhost:8080/index.html','_self')) //open homepage in de huidige tab
     .catch((error) => console.log(error)); // hiermee handelen we een potentiele error af
   // controleer of de JWT geupdate is
-  if (window.sessionStorage.getItem('JWT') !== preloginJWT) { console.log('JWT updated'); } // geef bericht als jwt is geupdate
+  if (window.sessionStorage.getItem('JWT') !== preloginJWT) {
+    console.log('JWT updated');
+  } // geef bericht als jwt is geupdate
 }

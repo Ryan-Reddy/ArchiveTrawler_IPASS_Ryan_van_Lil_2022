@@ -1,3 +1,4 @@
+import { localhost } from './AAAglobalVAR.js';
 // function getParsedJwt(token) {
 //   try {
 //     return JSON.parse(atob(token.split('.')[1]));
@@ -21,8 +22,6 @@ async function deleteAccount() {
   // console.log(getParsedJwt(JWT).sub);
   console.log(jwt_decode(JWT));
   console.log(jwt_decode(JWT).sub);
-
-  const localhost = 'http://localhost:8080';
 
   const fetchOptions = {
     method: 'DELETE',

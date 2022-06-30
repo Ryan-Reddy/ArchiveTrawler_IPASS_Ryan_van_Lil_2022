@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
 @Path("accountReset")
 public class accountResetResource {
     @POST
-    @RolesAllowed("user")
+    @
     @Produces(MediaType.APPLICATION_JSON)
     public Response resetWachtWoord(ResetAccount resetAccount) {
         try {

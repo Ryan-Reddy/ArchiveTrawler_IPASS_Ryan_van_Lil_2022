@@ -1,3 +1,4 @@
+import { localhost } from './globalVAR';
 // Bind pagina elementen aan const
 
 /** Deze functie controleert of een email echt een email is
@@ -82,7 +83,7 @@ async function sendNewAccount(event) {
       'Content-Type': 'application/json',
     },
   };
-  await fetch('/restservices/accounts/', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
+  await fetch(`${localhost}/restservices/accounts/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then((response) => {
       if (response.status === 200) {
         // als er een nieuw account gecreeerd is dan inloggen
