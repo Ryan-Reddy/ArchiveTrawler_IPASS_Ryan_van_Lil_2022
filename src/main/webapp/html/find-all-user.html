@@ -2,28 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <link href="/style-index.css" rel="stylesheet"/>
+    <meta charset="UTF-8" />
+    <link href="/style-index.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png"/>
-    <script src="/js/themeManager.js" type="text/javascript"></script> <!-- must be uppermost imported script due to const localhost global usage -->
-    
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
+    <script src="/js/themeManager.js" type="text/javascript"></script>
+    <!-- must be uppermost imported script due to const localhost global usage -->
+
     <title>Find All Users</title>
 </head>
-<body id="body" class="bodyDark">
-    <main>
-        <div id="discoball" style="display: none;"><img src="/assets/discoBallGif.gif" alt="discoBallGif">
-        </div>
-        
-        <h1 id="header">Find All Users</h1>
-        <label for="getAllUsers" hidden>List for all users button.</label>
-        <input onclick="getAllUsersButtonFunc()" id="getAllUsers" value="getAllUsers" type="button">
-        <span id="responseSpan">a</span>
-        <span id="feedbackspan"></span>
-        
-    </main>
+
+<h1 id="header">Find All Users</h1>
+
+<body class="bodyDark" id="body">
+    <div id="page-container">
+        <main>
+            <div id="content-wrap">
+                <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
+                </div>
+
+                <label for="getAllUsers" hidden>List for all users button.</label>
+                <input onclick="getAllUsersButtonFunc()" id="getAllUsers" value="getAllUsers" type="button">
+                <span id="responseSpan">a</span>
+                <span id="feedbackspan"></span>
+
+        </main>
+    </div>
     <footer id="footer">
     </footer>
+    </div>
     <script src="/js/GetAllUsers.js" type="text/javascript"></script>
 </body>
 

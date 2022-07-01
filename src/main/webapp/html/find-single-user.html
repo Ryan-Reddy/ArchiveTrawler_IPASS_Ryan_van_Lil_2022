@@ -2,28 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <link href="/style-index.css" rel="stylesheet"/>
+    <meta charset="UTF-8" />
+    <link href="/style-index.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png"/>
-    <script src="/js/themeManager.js" type="text/javascript"></script> <!-- must be uppermost imported script due to const localhost global usage -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
+    <script src="/js/themeManager.js" type="text/javascript"></script>
+    <!-- must be uppermost imported script due to const localhost global usage -->
     <script src="/js/findUser.js" type="text/javascript"></script>
 
     <title>Find Single User</title>
 </head>
-<body id="body" class="bodyDark">
-<main>
-<div id="discoball" style="display: none;"><img src="/assets/discoBallGif.gif" alt="discoBallGif">
-</div>
 
-    <h1 id="header">Find Current User</h1>
-<label for="searchUserButton" hidden>search for user by email button.</label>
-<input type="button" id="searchUserButton" value="searchUser" onclick="fetchSingleUser()">
-    <span id="testingspace"></span>
+<h1 id="header">Find Current User</h1>
 
-</main>
-<footer id="footer">
-</footer>
+<body class="bodyDark" id="body">
+    <div id="page-container">
+        <main>
+            <div id="content-wrap">
+                <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
+                </div>
+                <div id="discoball" style="display: none;">
+                    <img src="/assets/discoBallGif.gif" alt="discoBallGif">
+                </div>
+
+                <label for="searchUserButton" hidden>search for user by email button.</label>
+                <input type="button" id="searchUserButton" value="searchUser" onclick="fetchSingleUser()">
+                <span id="testingspace"></span>
+
+        </main>
+    </div>
+    <footer id="footer">
+    </footer>
+    </div>
 </body>
 
 </html>

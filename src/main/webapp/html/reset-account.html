@@ -3,42 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="/style-index.css" rel="stylesheet"/>
-    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+    <link href="/style-index.css" rel="stylesheet" />
+    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
     <title>Wachtwoord vergeten</title>
-    <script src="/js/themeManager.js" type="text/javascript"></script> <!-- must be uppermost imported script due to const localhost global usage -->
+    <script src="/js/themeManager.js" type="text/javascript"></script>
+    <!-- must be uppermost imported script due to const localhost global usage -->
     <script src="/js/resetAccountWW.js" type="text/javascript"></script>
 </head>
 
 <h1 id="header">Account zoeken.</h1>
 
 <body class="bodyDark" id="body">
-<div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
-</div>
-<main>
+    <div id="page-container">
+        <div id="content-wrap">
+            <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
+            </div>
+            <main>
 
 
-    <p>Voer je e-mailadres in om je account wachtwoord te resetten.</p>
-    <form id="resetAccount">
-        <label for="email">E-mail adres:</label><input class="inputfield" id="email" name="email" type="email"/><br><br>
+                <p>Voer je e-mailadres in om je account wachtwoord te resetten.</p>
+                <form id="resetAccount">
+                    <label for="email">E-mail adres:</label><input class="inputfield" id="email" name="email"
+                        type="email" /><br><br>
 
-        <a href="login.html">
-            <button>Annuleren</button>
-        </a>
-        <!--  onclick="stuurWachtwoordReset()"  -->
-        <input id="stuurEmailMetWachtwoordReset" onclick="stuurWachtwoordReset()" type="button"
-               value="Stuur mij een resetmail."/>
-    </form>
-    <span id="feedbackspan"></span>
-    <hr>
-    <br>
-    <a href="new-account.html">
-        <button>Nieuw account creëren</button>
-    </a>
+                    <a href="login.html">
+                        <button>Annuleren</button>
+                    </a>
+                    <!--  onclick="stuurWachtwoordReset()"  -->
+                    <input id="stuurEmailMetWachtwoordReset" onclick="stuurWachtwoordReset()" type="button"
+                        value="Stuur mij een resetmail." />
+                </form>
+                <span id="feedbackspan"></span>
+                <hr>
+                <br>
+                <a href="new-account.html">
+                    <button>Nieuw account creëren</button>
+                </a>
 
-</main>
-<footer id="footer">
-</footer>
+            </main>
+        </div>
+        <footer id="footer">
+        </footer>
+    </div>
 
 </body>
 

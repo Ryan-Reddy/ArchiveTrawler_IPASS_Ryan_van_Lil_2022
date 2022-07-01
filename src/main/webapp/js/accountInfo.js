@@ -1,18 +1,3 @@
-// const localhost = '/';
-
-// ***************************************
-/** Dit draait bij het openen pagina: */
-// window.onload = () => {
-//   console.log('window on load')
-//   fetchCurrentUser();
-// }; //===> windowOnload werkt niet door themeManager windowOnload
-
-console.log('window on load')
-fetchCurrentUser();
-
-// ***************************************
-
-
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |    getting current account:                                               |
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -55,9 +40,7 @@ async function fetchCurrentUser() {
       console.log('Error: ', err);
     });
 }
-
-// document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPage()})
-
+// ***************************************
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |   Post fetch om account info te wijzigen, heeft nog werk nodig.           |
@@ -68,11 +51,11 @@ async function wijzigAccount() {
   feedbackspan.innerText = 'Attempting to edit account info.';
   console.log('Editing account');
   const jsonRequestBody = {};
-
+  
   let formData = new FormData(document.querySelector('#postaccount'));
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
   console.log('with data: ' + jsonRequestBody);
-
+  
   const fetchOptions = {
     method: 'PATCH',
     body: JSON.stringify(jsonRequestBody),
@@ -83,19 +66,24 @@ async function wijzigAccount() {
     },
   };
   await fetch('/restservices/users/wijzigUser', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
-    .then(async (response) => {
-      if (response.ok) {
-        const feedback = "Accountinfo wijzigen is gelukt!";
-        feedbackspan.innerText = feedback;
-        return feedback;
-      } else {
-        feedbackspan.innerText = 'bent u ingelogd?';
-        throw 'er ging iets mis';
-      } // if !200 there will be no body
-    })
-    .catch((error) => {
-      console.log(error)
-    });
+  .then(async (response) => {
+    if (response.ok) {
+      const feedback = "Accountinfo wijzigen is gelukt!";
+      feedbackspan.innerText = feedback;
+      return feedback;
+    } else {
+      feedbackspan.innerText = 'bent u ingelogd?';
+      throw 'er ging iets mis';
+    } // if !200 there will be no body
+  })
+  .catch((error) => {
+    console.log(error)
+  });
 }
-// ***************************************
 
+// ***************************************
+/** Dit draait bij het openen pagina: */
+console.log('window on load')
+window.addEventListener('load', () => fetchCurrentUser());
+// ***************************************
+// document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPage()})

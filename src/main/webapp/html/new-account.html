@@ -2,62 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <link href="/style-index.css" rel="stylesheet"/>
-    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-    <title>New Account</title>
-    <script src="/js/themeManager.js" type="text/javascript"></script> <!-- must be uppermost imported script due to const localhost global usage -->
-    <script src="/js/newAccount-utils.js" type="text/javascript"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <meta charset="UTF-8" />
+  <link href="/style-index.css" rel="stylesheet" />
+  <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <title>New Account</title>
+  <script src="/js/themeManager.js" type="text/javascript"></script>
+  <!-- must be uppermost imported script due to const localhost global usage -->
+  <script src="/js/newAccount-utils.js" type="text/javascript"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <h1 id="header">Maak een nieuw account.</h1>
 
 <body class="bodyDark" id="body">
-<div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
-</div>
-<main>
+  <div id="page-container">
+    <div id="content-wrap">
+      <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
+      </div>
+      <main>
 
-    <form autocomplete="on" id="newaccount-form">
-        <label for="naam">Naam:</label>
-        <input autocomplete="naam" class="inputfield" id="naam" name="naam" placeholder="Naam" type="text"/>
+        <form autocomplete="on" id="newaccount-form">
+          <label for="naam">Naam:</label>
+          <input autocomplete="naam" class="inputfield" id="naam" name="naam" placeholder="Naam" type="text" />
 
-        <div class="tooltip">
+          <div class="tooltip">
             <!-- omschrijvende lebel van bijbehorende inputveld -->
             <label for="email">E-mail adres:</label>
             <input autocomplete="email" class="inputfield" id="email" name="email"
-                   onclick="switchIncompleteNormaleStijl('email')" placeholder="jouwnaam@voorbeeld.com" required
-                   type="email"/><br/>
+              onclick="switchIncompleteNormaleStijl('email')" placeholder="jouwnaam@voorbeeld.com" required
+              type="email" /><br />
             <!-- tooltip tekst -->
             <span class="tooltiptext-mail">Voer een geldig email adres in, bijvoorbeeld
-          jouwnaam@voorbeeld.com.</span>
-        </div>
-        <br/>
+              jouwnaam@voorbeeld.com.</span>
+          </div>
+          <br />
 
-        <div class="tooltip">
+          <div class="tooltip">
             <!-- omschrijvende lebel van bijbehorende inputveld -->
             <label for="password">Nieuw wachtwoord:</label>
             <input autocomplete="password" class="inputfield" id="password" name="password"
-                   onclick="switchIncompleteNormaleStijl('password')" placeholder="Nieuw wachtwoord" required
-                   type="password"/><br/>
+              onclick="switchIncompleteNormaleStijl('password')" placeholder="Nieuw wachtwoord" required
+              type="password" /><br />
             <!-- tooltip tekst -->
             <span class="tooltiptext-ww">Voer een combinatie in van ten minste zes cijfers, letters en
-          leestekens (zoals ! en &).</span>
-        </div>
-        <input id="toggle" onclick="wwZichtbaarToggle()" type="checkbox"/>
-        <label for="toggle">Toggle wachtwoordzichtbaarheid</label><br/><br/>
+              leestekens (zoals ! en &).</span>
+          </div>
+          <input id="toggle" onclick="wwZichtbaarToggle()" type="checkbox" />
+          <label for="toggle">Toggle wachtwoordzichtbaarheid</label><br /><br />
 
-        <!--    <input id="send_json" onclick="formulierCheck()" type="button" value="Registreren&#45;&#45; incl wachtwoordchecksend json"/>-->
-        <!--        <input id="send_formdata" onclick="sendFormData()" type="button" value="Registreren&#45;&#45;send formdata" />-->
-        <span id="postresponse"></span>
-    </form>
-    <input id="createAccButton" onclick="formulierCheck()" type="button" value="Creëer een account"/>
-    <input id="wachtwoordvergeten" onclick="window.location.assign('/src/main/webapp/html/reset-account.html')"
-           type="button" value="Wachtwoord vergeten"/>
-</main>
-<footer id="footer">
-</footer>
-
+          <!--    <input id="send_json" onclick="formulierCheck()" type="button" value="Registreren&#45;&#45; incl wachtwoordchecksend json"/>-->
+          <!--        <input id="send_formdata" onclick="sendFormData()" type="button" value="Registreren&#45;&#45;send formdata" />-->
+          <span id="postresponse"></span>
+        </form>
+        <input id="createAccButton" onclick="formulierCheck()" type="button" value="Creëer een account" />
+        <input id="wachtwoordvergeten" onclick="window.location.assign('/src/main/webapp/html/reset-account.html')"
+          type="button" value="Wachtwoord vergeten" />
+      </main>
+    </div>
+    <footer id="footer">
+    </footer>
+  </div>
 </body>
 
 </html>
