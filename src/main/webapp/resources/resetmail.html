@@ -9,14 +9,6 @@
     <!-- TODO write emailstyle.css -->
 
     <title>Reset account</title>
-    <script>
-      function loadWindow() {
-
-        // var setsession = window.sessionStorage.setItem("JWT", token);
-        const myWindow = window.open('http://localhost:8080/html/reset-password.html');
-        myWindow.localStorage.setItem('JWT', token);
-      }
-    </script>
 </head>
 <h1 id="header">Reset account </h1>
 <body class="bodyDark" id="body">
@@ -25,10 +17,13 @@
     Klik hier om uw wachtwoord voor dit account opnieuw in te stellen:
     <span id="accountInfoSpan"></span>
     <label for="reset-button" hidden>Wachtwoord reset button</label>
-    <input type="button" id="reset-button" onclick="loadWindow()" value="Reset mijn account"
-           style="background-color: darkmagenta">
+<!--    <input type="button" id="reset-button" onclick="loadWindow()" value="Reset mijn account"-->
+<!--           style="background-color: darkmagenta">-->
+    <a href="http://localhost:8080/html/reset-password.html?token=<<TOKEN>>" id="reset-button" type="button" style="background-color: darkmagenta">Reset mijn account</a>
+
 </main>
 <footer id="footer">
 </footer>
 </body>
+
 </html>

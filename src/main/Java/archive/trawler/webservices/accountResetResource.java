@@ -2,6 +2,7 @@ package archive.trawler.webservices;
 
 import archive.trawler.model.User;
 import archive.trawler.persistance.Community;
+import archive.trawler.webservices.dto.PasswordReset;
 import archive.trawler.webservices.dto.ResetAccount;
 
 import javax.annotation.security.PermitAll;
@@ -21,32 +22,37 @@ public class accountResetResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response resetWachtWoord(ResetAccount resetAccount) {
+        System.out.println("account-resetWachtWoord() gestart");
         try {
             User thisUser = Community.getUserByEmail(resetAccount.email);
             String email = resetAccount.email;
             String token = createToken(email, thisUser.getRole());
-            SendEmail.sendMailWithToken(email, "Uw wachtwoord reset link.",token);
+            SendEmail.sendMailWithToken(email, "Uw wachtwoord reset link.", token);
             return Response.ok(resetAccount).build(); // ok = 200;
         } catch (Exception e) {
             return Response.status(Response.Status.valueOf(e.toString())).build(); // NO_Content =
         }
     }
 
-
-    // TODO schrijf functiedie een token genereert en toevoegt aan de email =>  <script>  in de html mail zelf !
-    @GET
+    @PATCH
     @RolesAllowed("user")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("password-reset")
-    public Response passwordLessLogin(@Context SecurityContext sc) {
-        if (sc.getUserPrincipal() instanceof User) {
-            User currentUser = (User) sc.getUserPrincipal();
-        } // TODO schrijf wellicht is deze functie niet nodig, als de fetch wijzigWW controleert of de gebruiker JWT auth is.
-        // sla in gebruik token om te verifieren dat dit de gebruiker is
-
-        // send gebruiker naar ww wijzig pagina
-        return Response.ok("er ging iets mis met uw login, vraag nogmaals een link op").build();
+    @Path("wijzig-wachtwoord")
+    public Response patchUser(PasswordReset info, @Context SecurityContext sc) {
+        try {
+            if (sc.getUserPrincipal() instanceof User) {
+                User currentUser = (User) sc.getUserPrincipal();
+                if (info.password.equals(info.password2)) {
+                    System.out.println("ww is reset !");
+                    currentUser.setPassword(info.password);
+                    return Response.ok().build();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Response.status(Response.Status.CONFLICT).entity("2 Er ging iets mis, bent u ingelogd?").build();
     }
 }
-
 

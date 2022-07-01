@@ -5,6 +5,8 @@ import archive.trawler.persistance.Community;
 import archive.trawler.security.dto.EmailToSearchSingleAccount;
 import archive.trawler.security.dto.LoginRequest;
 import archive.trawler.webservices.dto.NewAccount;
+import archive.trawler.webservices.dto.PasswordReset;
+import archive.trawler.webservices.dto.ResetAccount;
 
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;

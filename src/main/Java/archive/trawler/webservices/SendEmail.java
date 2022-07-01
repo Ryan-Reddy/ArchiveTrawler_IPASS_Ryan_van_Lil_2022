@@ -5,12 +5,15 @@ import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.ws.rs.Path;
 
 import java.io.*;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 /**
@@ -53,6 +56,7 @@ public class SendEmail {
 
         try {
             // Creeer een message van HTML file keuze.
+
             String htmlMessage = htmlToString(htmlFileFromRoot);
 
             // Create a default MimeMessage object.
@@ -90,7 +94,7 @@ public class SendEmail {
      * @param token
      * @return boolean of het versturen gelukt is of niet.
      */
-    public static boolean sendMailWithToken(String sendTo, String subjectLine, String token) throws FileNotFoundException {
+    public static boolean sendMailWithToken(String sendTo, String subjectLine, String token) throws IOException, MessagingException {
         System.out.println("received request to sendMailWithToken");
         String from = "no_reply@archive-trawler.com";        // Sender's email ID needs to be mentioned
         String host = "smtp.gmail.com";
@@ -114,23 +118,12 @@ public class SendEmail {
         // Used to debug SMTP issues
         session.setDebug(true);
         try {
-            // Creeer een message van HTML file keuze.
-            StringBuilder contentBuilder = new StringBuilder();
-            try {
-//            BufferedReader in = new BufferedReader(new FileReader(htmlFileFromRoot));
-                BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\RyRy\\IdeaProjects\\ArchiveTrawler_IPASS_Ryan_van_Lil_2022version200\\src\\main\\resources\\resetmail.html"));
-                String str;
-                while ((str = in.readLine()) != null) {
-                    contentBuilder.append(str);
-                }
-                in.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } //TODO move this back to its own package
+        //String fileName = (resources/) implied "resetmail.html";
+        String fileName = "resetmail.html";
 
-//            String htmlMessage = htmlToString("archive\\trawler\\webservices\\emailHTMLTemplates\\resetmail.html");
-//            System.out.println(htmlMessage);
-            String htmlMessage = contentBuilder.toString().replace("token", token); //TODO write recipient for sessionstorage token
+
+            String htmlMessage = htmlToString(fileName);
+            htmlMessage = htmlMessage.replace("<<TOKEN>>", token); //TODO write recipient for sessionstorage token
 
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
@@ -160,59 +153,54 @@ public class SendEmail {
     }
 
     /** Leest html file, retourneert String, denk erom om met exape characters te programmeren.
-     * @param htmlFileFromRoot Html filename, as string incl. path from source root example:
+     * @param fileName Html filename, als string vanuit resources:
      *
      *                         "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
      * @return String met contents
      */
-    public static String htmlToString(String htmlFileFromRoot) throws IOException {
+    public static String htmlToString(String fileName) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
-        try {
-//            BufferedReader in = new BufferedReader(new FileReader(htmlFileFromRoot));
-            BufferedReader in = new BufferedReader(new FileReader("/resetmail.html"));
-            String str;
-            while ((str = in.readLine()) != null) {
-                contentBuilder.append(str);
+
+        // The class loader that loaded the class
+        ClassLoader classLoader = SendEmail.class.getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(fileName);
+
+        // the stream holding the file content
+        if (inputStream == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        } else {
+            try (InputStreamReader streamReader =
+                         new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+                 BufferedReader reader = new BufferedReader(streamReader)) {
+
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                    contentBuilder.append(line);
+                }
+                inputStream.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            in.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return contentBuilder.toString();
-    }
-
-    public static void main(String[] args) throws IOException, URISyntaxException {
-//        StringBuilder contentBuilder = new StringBuilder();
-//        try {
-////            BufferedReader in = new BufferedReader(new FileReader(htmlFileFromRoot));
-//            BufferedReader in = new BufferedReader(new FileReader("src/main/resources/resetmail.html"));
-//            String str;
-//            while ((str = in.readLine()) != null) {
-//                contentBuilder.append(str);
-//            }
-//            in.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        System.out.println(contentBuilder.toString());
-        SendEmail.sendMailWithToken("email@email.email", "Uw wachtwoord reset link.","token");
-
-//        System.out.println(htmlToString("\\resetmail.html"));
-//        System.out.println(htmlToString("src\\main\\Java\\archive\\trawler\\webservices\\emailHTMLTemplates\\resetmail.html"));
-
-        // Create a file object
-        File f = new File("src/main/Java/archive/trawler/webservices/emailHTMLTemplates/program.txt");
-
-        // Get the absolute path of file f
-        String absolute = f.getAbsolutePath();
-
-        // Display the file path of the file object
-        // and also the file path of absolute file
-        System.out.println("Original  path: "
-                + f.getPath());
-        System.out.println("Absolute  path: "
-                + absolute);
+            return contentBuilder.toString();
         }
     }
+
+
+    // print input stream
+
+        public static void main (String[]args) throws IOException, URISyntaxException {
+            //String fileName = "database.properties";
+            String fileName = "resetmail.html";
+            htmlToString(fileName);
+        }
+
+
+}
+
+
+
+
+
 

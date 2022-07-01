@@ -19,7 +19,7 @@ public class User implements Serializable, Principal {
     /** Uniek ID nummer van gebruiker*/
     private @Getter @Setter int ID;
     /**wachtwoord van de gebruiker.*/
-    private String password; //plz only store hashed password
+    private @Getter @Setter String password; //plz only store hashed password
     /**naam van de gebruiker, persoonlijke naam, voor en/of achternaam. */
     private @Getter @Setter String naam;
     /** email adres, is gelijk ook de username van de inlog */
@@ -132,23 +132,16 @@ public class User implements Serializable, Principal {
         }
     }
 
-    /**
-     * Deze functie haalt het ww op van deze gebruiker.
-     * TODO security implementeren getPassword
-     */
-    public String getPassword() {
-        return password;
-    }
-
     @Override
     public String getName() {
-        return null;
+        return naam;
     }
 
     @Override
     public boolean implies(Subject subject) {
         return Principal.super.implies(subject);
     }
+
 
 //    public int getID() {
 //        return identificationNum;
