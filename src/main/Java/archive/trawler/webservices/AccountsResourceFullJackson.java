@@ -32,8 +32,8 @@ public class AccountsResourceFullJackson {
 //            }
             messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + account.getNaam());
             String naam = account.getNaam();
-            SendEmail.sendMail(account.getEmail(),  "welkom to ArchiveTrawler! We're happy to have you!", "src/main/resources/emailHTMLTemplates/verificationMail.html");
-            return Response.ok(messages).build();
+            SendEmail.sendMail(account.getEmail(),  "welkom to ArchiveTrawler! We're happy to have you!", "C:\\Users\\RyRy\\IdeaProjects\\ArchiveTrawler_IPASS_Ryan_van_Lil_2022version200\\src\\main\\resources\\verificationMail.html");
+            return Response.ok(messages).build();// TODO remove absolute path to maybe relative? its in a resource folder..
         } else {
             messages.put("Error", "Er klopt iets niet aan uw email!");
             return Response.status(Response.Status.CONFLICT).entity(messages).build();

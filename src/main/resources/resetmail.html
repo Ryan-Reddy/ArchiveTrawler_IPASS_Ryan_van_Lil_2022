@@ -11,8 +11,10 @@
     <title>Reset account</title>
     <script>
       function loadWindow() {
-        var setsession = window.sessionStorage.setItem("animals", "cat");
-        window.open('http://localhost:8080/html/reset-password.html')
+
+        // var setsession = window.sessionStorage.setItem("JWT", token);
+        const myWindow = window.open('http://localhost:8080/html/reset-password.html');
+        myWindow.localStorage.setItem('JWT', token);
       }
     </script>
 </head>

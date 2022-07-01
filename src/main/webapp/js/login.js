@@ -6,9 +6,11 @@ document.addEventListener('keydown', async (event) => {
     // Wacht op enterKeystroke + shift  TODO comment out for reference and use elsewhere
     event.preventDefault(); // Stopt default actie, voor het geval dat...
     console.log('shift key recognized');
-    login();
-    getAllUsersButtonFunc();
-    document.getElementById('getAllUsers').click(); // clickt op button
+    loadWindow();
+    openWin();
+    // login();
+    // getAllUsersButtonFunc();
+    // document.getElementById('getAllUsers').click(); // clickt op button
   }
   //            ////////////////////////////////////////////////////////////////
   //    TODO keep this follwowing code:
@@ -20,6 +22,7 @@ document.addEventListener('keydown', async (event) => {
   }
   //            ////////////////////////////////////////////////////////////////
 });
+
 
 /** Login
  * gebruikt informatie van het formulier
