@@ -2,7 +2,7 @@
 // |    getting current account:                                               |
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 async function fetchCurrentUser() {
-  console.log('fetchSingleUser() (jwt.thisUser)')
+  console.log('fetchSingleUser() (jwt.thisUser)');
   const jsonRequestBody = {};
 
   // const formData = new FormData(document.querySelector('#emailToSearchForm'));
@@ -12,7 +12,7 @@ async function fetchCurrentUser() {
     method: 'POST',
     body: JSON.stringify(jsonRequestBody),
     headers: {
-      "Authorization": "Bearer " + window.sessionStorage.getItem("JWT"),
+      Authorization: `Bearer ${window.sessionStorage.getItem('JWT')}`,
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
@@ -51,11 +51,11 @@ async function wijzigAccount() {
   feedbackspan.innerText = 'Attempting to edit account info.';
   console.log('Editing account');
   const jsonRequestBody = {};
-  
-  let formData = new FormData(document.querySelector('#postaccount'));
+
+  const formData = new FormData(document.querySelector('#postaccount'));
   formData.forEach((value, key) => (jsonRequestBody[key] = value));
-  console.log('with data: ' + jsonRequestBody);
-  
+  console.log(`with data: ${jsonRequestBody}`);
+
   const fetchOptions = {
     method: 'PATCH',
     body: JSON.stringify(jsonRequestBody),
@@ -66,24 +66,24 @@ async function wijzigAccount() {
     },
   };
   await fetch('/restservices/users/wijzigUser', fetchOptions) // een POST naar dit adres maakt een nieuw acc.
-  .then(async (response) => {
-    if (response.ok) {
-      const feedback = "Accountinfo wijzigen is gelukt!";
-      feedbackspan.innerText = feedback;
-      return feedback;
-    } else {
+    .then(async (response) => {
+      if (response.ok) {
+        const feedback = 'Accountinfo wijzigen is gelukt!';
+        feedbackspan.innerText = feedback;
+        return feedback;
+      }
       feedbackspan.innerText = 'bent u ingelogd?';
       throw 'er ging iets mis';
-    } // if !200 there will be no body
-  })
-  .catch((error) => {
-    console.log(error)
-  });
+      // if !200 there will be no body
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 // ***************************************
 /** Dit draait bij het openen pagina: */
-console.log('window on load')
+console.log('window on load');
 window.addEventListener('load', () => fetchCurrentUser());
 // ***************************************
 // document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPage()})

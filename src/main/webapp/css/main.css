@@ -58,13 +58,3 @@ h1 {
   ul :hover {
     list-style: hoverbooks;
   }
-  
-  input[type=text]{
-    width: 100%
-  }
-  input[type=email]{
-    width: 100%
-  }
-    input[type=button] {
-      width:auto;
-    }

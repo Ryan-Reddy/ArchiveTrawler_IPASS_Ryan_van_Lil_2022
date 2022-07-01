@@ -74,7 +74,7 @@ function getAllUsersButtonFunc() {
 
     .catch((error) => {
       console.log(error);
-    });
+    }); 
 }
 
 function allUsers() {
