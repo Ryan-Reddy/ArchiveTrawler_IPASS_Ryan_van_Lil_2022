@@ -27,8 +27,8 @@ replay_pid*
 # Project exclude paths
 
 # removes target and out folder
-target/
-out/
+target
+out
 
 #intellij files
 .idea
