@@ -41,19 +41,20 @@ public class accountResetResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("wijzig-wachtwoord")
     public Response patchUser(PasswordReset info, @Context SecurityContext sc) {
-        try {
             if (sc.getUserPrincipal() instanceof User) {
-                User currentUser = (User) sc.getUserPrincipal();
-                if (info.password.equals(info.password2)) {
-                    System.out.println("ww is reset !");
-                    currentUser.setPassword(info.password);
-                    return Response.ok().build();
+                try {
+                    User currentUser = (User) sc.getUserPrincipal();
+                    if (info.password.equals(info.password2)) {
+                        System.out.println("ww is reset !");
+                        currentUser.setPassword(info.password);
+                        return Response.ok().build();
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return Response.status(Response.Status.CONFLICT).entity("2 Er ging iets mis, bent u ingelogd?").build();
+        return Response.status(Response.Status.UNAUTHORIZED).entity("2 Er ging iets mis, bent u ingelogd?").build();
     }
 }
 

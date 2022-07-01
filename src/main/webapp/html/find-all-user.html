@@ -7,23 +7,24 @@
 
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png"/>
     <script src="/js/themeManager.js" type="text/javascript"></script> <!-- must be uppermost imported script due to const localhost global usage -->
-    <script src="/js/findUser.js" type="text/javascript"></script>
-    <script src="/js/UserUtils.js" type="text/javascript"></script>
-
+    
     <title>Find All Users</title>
 </head>
 <body id="body" class="bodyDark">
-<main>
-    <div id="discoball" style="display: none;"><img src="/assets/discoBallGif.gif" alt="discoBallGif">
-    </div>
-
-    <h1 id="header">Find All Users</h1>
-    <label for="getAllUsers" hidden>List for all users button.</label>
-    <input onclick="getAllUsersButtonFunc()" id="getAllUsers" value="getAllUsers" type="button">
-    <span id="testingspace">a</span>
-</main>
-<footer id="footer">
-</footer>
+    <main>
+        <div id="discoball" style="display: none;"><img src="/assets/discoBallGif.gif" alt="discoBallGif">
+        </div>
+        
+        <h1 id="header">Find All Users</h1>
+        <label for="getAllUsers" hidden>List for all users button.</label>
+        <input onclick="getAllUsersButtonFunc()" id="getAllUsers" value="getAllUsers" type="button">
+        <span id="responseSpan">a</span>
+        <span id="feedbackspan"></span>
+        
+    </main>
+    <footer id="footer">
+    </footer>
+    <script src="/js/GetAllUsers.js" type="text/javascript"></script>
 </body>
 
 </html>

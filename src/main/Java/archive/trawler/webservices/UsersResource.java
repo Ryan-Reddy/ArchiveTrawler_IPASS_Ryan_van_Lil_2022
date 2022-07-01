@@ -54,7 +54,7 @@ public class UsersResource {
             System.out.println(theUser.getPassword());
             return Response.ok(theUser).build(); // ok = 200;
         }
-        return Response.status(Response.Status.NO_CONTENT).build(); // NO_Content =
+        return Response.status(Response.Status.UNAUTHORIZED).entity("something went wrong, make sure you are logged in!").build();
     }
 
     /**
@@ -88,7 +88,7 @@ public class UsersResource {
         }
 //        }
 //        catch (Exception e) {
-        return ok("error", "something sadly went wrong, contact the pope!").build();
+        return Response.status(Response.Status.UNAUTHORIZED).entity("something went wrong, make sure you are logged in!").build();
     }
 
     /**
@@ -107,7 +107,7 @@ public class UsersResource {
             email = ((User) sc.getUserPrincipal()).getEmail();  // haalt email op uit de JWT
         }
         return Community.deleteMyUserAccount(email) ? Response.ok(String.format("Your account has been deleted.. %s", email)).build()        // give ok http response if it works
-                : Response.status(Response.Status.NOT_FOUND).build();   // give not found response if not
+                : Response.status(Response.Status.UNAUTHORIZED).entity("something went wrong, make sure you are logged in!").build();
 
 
     }
@@ -161,6 +161,6 @@ public class UsersResource {
                 e.printStackTrace();
             }
         }
-        return Response.status(Response.Status.CONFLICT).entity("2 Er ging iets mis, bent u ingelogd?").build();
+        return Response.status(Response.Status.UNAUTHORIZED).entity("something went wrong, make sure you are logged in!").build();
     }
 }

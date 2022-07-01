@@ -1,21 +1,4 @@
-// import Config from './AAAglobalVAR';
-
-// const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-// // const localhost = '/';
 console.log('loading resetAccountWW.js');
-window.onload = () => {
-  console.log('checking for JWT')
-  laadFunctie();
-};
-
-function laadFunctie() {
-  if (sessionStorage.getItem('JWT') === null) {
-    let params = (new URL(document.location)).searchParams;
-    let token = params.get("token");
-    sessionStorage.setItem('JWT', token) // slaat de token van de link op in localstorage
-  }
-
-}
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |    reset input<email> account:                                               |
