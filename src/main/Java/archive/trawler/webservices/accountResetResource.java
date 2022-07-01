@@ -27,7 +27,8 @@ public class accountResetResource {
             User thisUser = Community.getUserByEmail(resetAccount.email);
             String email = resetAccount.email;
             String token = createToken(email, thisUser.getRole());
-            SendEmail.sendMailWithToken(email, "Hier "+ thisUser.getNaam() +"Uw wachtwoord reset link.", token);
+            String subject = "Hier "+ thisUser.getNaam() +", uw wachtwoord reset link.";
+            SendEmail.sendMailWithToken(email, subject , token);
             return Response.ok(resetAccount).build(); // ok = 200;
         } catch (Exception e) {
             return Response.status(Response.Status.valueOf(e.toString())).build(); // NO_Content =
