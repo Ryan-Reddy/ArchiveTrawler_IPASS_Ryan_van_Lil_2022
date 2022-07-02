@@ -59,12 +59,3 @@ h1 {
     list-style: hoverbooks;
   }
   
-  input[type=text]{
-    width: 50%
-  }
-  input[type=email]{
-    width: 100%
-  }
-    input[type=button] {
-      width:auto;
-    }

@@ -1,9 +1,9 @@
   
   input[type=text]{
-    width: 100%
+    width: 75%
   }
   input[type=email]{
-    width: 100%
+    width: 75%
   }
     input[type=button] {
       width:auto;

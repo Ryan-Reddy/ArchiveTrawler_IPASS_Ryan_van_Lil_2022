@@ -9,6 +9,7 @@
     <!-- themeManager be uppermost imported script due to const localhost global usage -->
         <title>Reset account</title>
     <script src="/reset-password/reset-password.js" type="text/javascript"></script>
+
 <!-- TODO fix missing theme and footers -->
 
 </head>
@@ -33,6 +34,13 @@
         <input id="send_json" onclick="wijzigWachtwoord()" type="button" value="Wachtwoord updaten"/>
         <span id="postresponse"></span>
     </form>
+    <input
+    id="toggle"
+    onclick="wwZichtbaarToggle()"
+    type="checkbox"
+/>
+<label for="toggle"
+    >Toon wachtwoord</label
     <br>
 </main>
 </div>
