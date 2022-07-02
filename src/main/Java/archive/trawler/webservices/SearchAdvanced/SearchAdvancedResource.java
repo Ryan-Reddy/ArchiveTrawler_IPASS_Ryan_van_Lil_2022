@@ -27,6 +27,12 @@ public class SearchAdvancedResource {
     @Path("")
     public Response advancedSearchProcess(SearchAdvancedInput searchQuery, @Context SecurityContext sc) {
         // TODO schrijf handle de input van searchQuery
+        //  1. define search engines
+        //  2. create links
+        //  3. run fetch in backend
+        //  4. compare to local files/create local files
+        //  5. create difference log
+        //  6. return the search results incl changelog
         //  create fetchURI per archief in searchQuery > archiveAmsterdam & archiveNoordHolland
         //  labels: advancedSearchProcess
         return Response.ok().build();

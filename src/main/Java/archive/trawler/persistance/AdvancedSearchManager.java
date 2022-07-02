@@ -6,7 +6,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
 
-public class FetchAllQueriesWeekly {
+public class AdvancedSearchManager {
     public static void main(String[] args) {
         String content = null;
         URLConnection connection = null;
