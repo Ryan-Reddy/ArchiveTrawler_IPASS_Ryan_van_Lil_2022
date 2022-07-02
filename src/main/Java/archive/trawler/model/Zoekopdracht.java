@@ -10,8 +10,6 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import static archive.trawler.security.AuthenticationResource.key;
-
 /**
  * De zoekopdracht die de User heeft aangemaakt, deze hoeft niet per definitie opgeslagen te worden.
  * De gebruiker mag hier uiteraard wel voor kiezen.
@@ -72,7 +70,7 @@ public class Zoekopdracht implements Serializable {
         this.userOwner = user;
         this.zoekOpdrachtID = genereerZoekOpdrachtID(this.userOwner);
         Community.getZoekOpdrachtMap().put(this.zoekOpdrachtID,this);
-        this.genereerZoekURI();
+        this.genereerZoekURIs();
     }
 
     /**
@@ -87,7 +85,11 @@ public class Zoekopdracht implements Serializable {
         return user.getNaam() + "_" + epochSecond + (int) (min + (Math.random() * max));
     }
 
-    private void genereerZoekURI() {    // TODO schrijf functie maak zoekopdracht
+    /**
+     * Deze methode genereert een lijst aan zoek URIs gebaseerd op de query
+     * Per archief is dit verschillend dus dit wordt dan ook ik de klasse Archief geregeld.
+     */
+    private void genereerZoekURIs() {    // TODO schrijf functie maak zoekopdracht
         ArrayList<String> nieuweUris = new ArrayList<String>();
         String query = keyWords;
 //        String query = achterNaam;
@@ -97,7 +99,7 @@ public class Zoekopdracht implements Serializable {
 
         // loop over de archiefkeuzes
         for (Archief archief : archiefKeuzes) {
-            nieuweUris.add(archief.createLink(this.keyWords, query, this.userOwner));
+            nieuweUris.add(archief.createLink(query, this.userOwner));
         }
         this.setZoekUris(nieuweUris);
     }

@@ -25,12 +25,14 @@ function advancedSearchButtonClicked() {
         const myJson = await response.json(); // return the search results incl changelog
         console.log(myJson);
       }
-      if (response.status === 204) { // no content
+      if (response.status === 204) {
+        // no content
         const message = 'geen content gevonden voor dit account';
         feedbackSpan.innerHTML = message;
         console.log(message);
       }
-    }).catch((err) => {
+    })
+    .catch((err) => {
       console.log('Error: ', err);
     });
 }
