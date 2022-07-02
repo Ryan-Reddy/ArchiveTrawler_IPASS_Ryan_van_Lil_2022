@@ -3,11 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="/style-index.css" rel="stylesheet" />
+    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
     <title>Contact</title>
     <script src="/js/themeManager.js" type="text/javascript"></script>
     <!-- must be uppermost imported script due to const localhost global usage -->
-
+    <script src="/reset-account/reset-account-send-mail.js" type="text/javascript"></script>
 </head>
+
+<h1 id="header">Contact</h1>
 
 <body class="bodyDark" id="body">
 <div id="page-container">
@@ -15,8 +19,8 @@
         <div id="content-wrap">
             <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
             </div>
-            <label for="mailToWebmaster" hidden>Stuur de webmaster een mail</label>
-            <input id="mailToWebmaster" onclick="window.location.href='mailto:archive.trawler.notification@gmail.com?SUBJECT=ContactFormulier'" type="button"
+            <label for="mailToWebmaster">Stuur de webmaster een mail</label>
+            <input id="mailToWebmaster" onclick="window.location.href='mailto:archive.trawler.notification@gmail.com?SUBJECT=WebMasterContactFormulier'" type="button"
                    value="Mail naar webmaster.">
         </div>
     </main>

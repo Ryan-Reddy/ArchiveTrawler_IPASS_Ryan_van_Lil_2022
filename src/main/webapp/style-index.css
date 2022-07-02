@@ -1,8 +1,8 @@
-@import url('css/main.css'); /* Main features, mostly spacing */
-@import url('css/tooltip.css'); /* Tooltip for the forms */
-@import url('css/alertMistakesInputfield.css'); /* Alert form border style */
-@import url('css/darkMode.css'); /* Light mode for the body */
-@import url('css/lightMode.css'); /* Light mode for the body */
-@import url('css/discoMode.css'); /* Disco mode for the body */
-@import url('css/footers.css'); /* Algemene Footers css */
+@import url('css/global-pagedesign.css'); /* Main features, mostly spacing */
+@import url('css/form-tooltip.css'); /* Tooltip for the forms */
+@import url('css/form-alertMistakesInputfield.css'); /* Alert form border style */
+@import url('css/theme-darkMode.css'); /* Light mode for the body */
+@import url('css/theme-lightMode.css'); /* Light mode for the body */
+@import url('css/theme-discoMode.css'); /* Disco mode for the body */
+@import url('css/global-footers.css'); /* Algemene Footers css */
 @import url('css/slider-switch.css'); /* Algemene Sliders css */
