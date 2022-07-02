@@ -23,14 +23,18 @@ function advancedSearchButtonClicked() {
       if (response.status === 200) {
         // er is een account gevonden !
         const myJson = await response.json(); // return the search results incl changelog
+        feedbackSpan.innerHTML = JSON.stringify(myJson, null, 2);
         console.log(myJson);
       }
-      if (response.status === 204) {
-        // no content
-        const message = 'geen content gevonden voor dit account';
-        feedbackSpan.innerHTML = message;
-        console.log(message);
+      if (response.status === 403) {
+        feedbackSpan.innerHTML = '<p color="red">Check of je bent ingelogd!</p>';
       }
+      // if (response.status === 204) {
+      //   // no content
+      //   const message = 'geen content gevonden voor dit account';
+      //   feedbackSpan.innerHTML = message;
+      //   console.log(message);
+      // }
     })
     .catch((err) => {
       console.log('Error: ', err);
@@ -53,3 +57,4 @@ function fetchOpenArch(link) {
     // fetch("https://api.openarch.nl/1.0/records/search.json?name=van%20Lil&lang=nl&number_show=100&sort=1&start=0&archive", fetchOptions) //
   fetch(link, fetchOptions).then().catch();
 }
+

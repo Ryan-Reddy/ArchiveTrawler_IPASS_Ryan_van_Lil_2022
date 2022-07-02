@@ -19,14 +19,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Path("search-advanced-service")
@@ -72,15 +67,16 @@ public class SearchAdvancedResource {
                 Zoekopdracht zoekopdracht = new Zoekopdracht(archiefKeuzesArrayList, keyWords,
 //                        tussenVoegsel, voorNaam, achterNaam, 1000, 2022, // is lastig met meerdere archieven
                         theUser);
-                Map<String, JSONObject> messages = new HashMap<>();
+                Map<String, String> messages = new HashMap<>();
 
                 for (String zoekUri : zoekopdracht.getZoekUris()) {
                     String resultaat = fetchSearchResult(zoekUri);
                     JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
-                    System.out.println(json.toString(4)); // Print it with specified indentation
+                    String prettyJson = json.toString(4);
+                    System.out.println(prettyJson); // Print it with specified indentation
 
                     messages.put("zoekopdracht",
-                            json
+                            prettyJson
                     );
                 }
 
