@@ -37,16 +37,14 @@ async function deleteAccount() {
   await fetch(`${localhost}restservices/users/`, fetchOptions) // een DELETE naar dit adres verwijdert huidig ingelogd acc.
     .then(async (response) => {
       if (response.ok) {
-        const feedback =
-          'Uw account is verwijderd, en u bent uitgelogd. Hopelijk was dat de bedoeling, ' +
-          'als dat niet zo is neem dan contact op met de beheerder.';
+        const feedback = 'Uw account is verwijderd, en u bent uitgelogd. Hopelijk was dat de bedoeling, '
+          + 'als dat niet zo is neem dan contact op met de beheerder.';
         // als het gelukt is dan user uitloggen en melding geven.
         feedbackspan.innerText = feedback;
         sessionStorage.removeItem('JWT');
         throw feedback;
       } else {
-        feedbackspan.innerText =
-          'Er ging iets mis, controleer of de email klopt met het account dat u wil verwijderen.';
+        feedbackspan.innerText = 'Er ging iets mis, controleer of de email klopt met het account dat u wil verwijderen.';
         throw 'er ging iets mis';
       } // if !200 there will be no body
     });

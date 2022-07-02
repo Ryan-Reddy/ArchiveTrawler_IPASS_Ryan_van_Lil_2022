@@ -62,11 +62,9 @@ function LoadPage() {
     }
   }
 }
-
+  
 /** Dit draait bij het openen pagina: */
-window.onload = () => {
-  LoadPage();
-};
+window.addEventListener('load', () => LoadPage());
 
 /** Deze functie toggled van darkmode naar light mode en slaat deze keuze op in de localstorage
  *   @Function darkmodeToggle()

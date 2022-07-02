@@ -1,5 +1,5 @@
 async function fetchSingleUser() {
-  console.log('fetchSingleUser() (jwt.thisUser)')
+  console.log('fetchSingleUser() (jwt.thisUser)');
   const jsonRequestBody = {};
 
   // const formData = new FormData(document.querySelector('#emailToSearchForm'));
@@ -9,7 +9,7 @@ async function fetchSingleUser() {
     method: 'POST',
     body: JSON.stringify(jsonRequestBody),
     headers: {
-      "Authorization": "Bearer " + window.sessionStorage.getItem("JWT"),
+      Authorization: `Bearer ${window.sessionStorage.getItem('JWT')}`,
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
@@ -20,11 +20,12 @@ async function fetchSingleUser() {
   // eslint-disable-next-line no-undef
   await fetch(`${localhost}restservices/users/getAccount/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then(async (response) => {
-      if (response.status === 200) { // er is een account gevonden !
-        let myJson = await response.json();
+      if (response.status === 200) {
+        // er is een account gevonden !
+        const myJson = await response.json();
         console.log(myJson);
-        getElementById("naam").defaultValue = myJson.naam;
-        getElementById("email").defaultValue = myJson.email;
+        getElementById('naam').defaultValue = myJson.naam;
+        getElementById('email').defaultValue = myJson.email;
         // testingspaceSpan.innerHTML += 'naam:  ' + myJson.naam;
         // testingspaceSpan.innerHTML += '<br>email: ' + myJson.email;
         // testingspaceSpan.innerHTML += '<br>rol:   ' + myJson.role;
@@ -42,3 +43,9 @@ async function fetchSingleUser() {
 }
 
 document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPageAmsterdamArchief()})
+document
+  .getElementById('searchUserButton')
+  .addEventListener('click', (event) => {
+    fetchToPage();
+  });
+// TODO rewrite searchUserButton fetch
