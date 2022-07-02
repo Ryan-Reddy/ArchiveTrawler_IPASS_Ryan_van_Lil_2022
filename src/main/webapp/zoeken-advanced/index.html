@@ -25,27 +25,27 @@
                 <ul>
                     <li>
                         <label for="keywords">keywords:</label>
-                        <input width="100%" class="inputfield" id="keywords" name="keywords" type="text"/><br/><br/>
+                        <input required width="100%" class="inputfield" id="keywords" name="keywords" type="text"/><br/><br/>
                     </li>
                     <li>
                         <label for="achternaam">achternaam:</label>
-                        <input class="inputfield" id="achternaam" name="achternaam" type="text"/><br/><br/>
+                        <input class="inputfield" id="achternaam" name="achternaam" type="text" disabled="disabled"/><br/><br/>
                     </li>
                     <li>
                         <label for="tussenvoegsel">tussenvoegsel:</label>
-                        <input class="inputfield" id="tussenvoegsel" name="tussenvoegsel" type="text"/><br/><br/>
+                        <input class="inputfield" id="tussenvoegsel" name="tussenvoegsel" type="text" disabled="disabled"/><br/><br/>
                     </li>
                     <li>
                         <label for="voornaam">voornaam:</label>
-                        <input class="inputfield" id="voornaam" name="voornaam" type="text"/><br/><br/>
+                        <input class="inputfield" id="voornaam" name="voornaam" type="text" disabled="disabled"/><br/><br/>
                     </li>
                     <li>
                         <label for="jaarVan">jaarVan:</label>
-                        <input class="inputfield" id="jaarVan" name="jaarVan" type="number" max=""/><br/><br/>
+                        <input class="inputfield" id="jaarVan" name="jaarVan" type="number" max="" value="1000" disabled="disabled"/><br/><br/>
                     </li>
                     <li>
                         <label for="jaarTot">jaarTot:</label>
-                        <input class="inputfield" id="jaarTot" name="jaarTot" type="number" value="2022"/><br/><br/>
+                        <input class="inputfield" id="jaarTot" name="jaarTot" type="number" value="2022" disabled="disabled"/><br/><br/>
                     </li>
                 </ul>
                 <hr/>
@@ -56,23 +56,23 @@
                         <li>
                             <label for="archiveAmsterdam">Archief van Amsterdam</label>
                             <input style="float:right" id="archiveAmsterdam" name="archiveAmsterdam" type="checkbox"
-                                   value="archiveAmsterdam"/><br/><br/>
+                                   value="true"/><br/><br/>
                         </li>
                         <li>
                             <label for="openArchive">Open Archive Nederland & Belgie</label>
                             <input style="float:right" id="openArchive" name="openArchive" type="checkbox"
-                                   value="openArchive"/><br/><br/>
+                                   value="true"/><br/><br/>
                         </li>
                         <li>
                             <label for="archiveDublin">Archief van Dublin (geen advancedSearch)</label>
                             <input style="float:right" id="archiveDublin" name="archiveDublin" type="checkbox"
-                                   value="archiveDublin" disabled="disabled"/><br/><br/><br/>
+                                   value="true" disabled="disabled"/><br/><br/><br/>
                         </li>
                         <li>
                             <label for="archiveNoordHolland">Archief van NH (geen advancedSearch)</label>
                             <input style="float:right" id="archiveNoordHolland" name="archiveNoordHolland"
                                    type="checkbox"
-                                   value="archiveNoordHolland" disabled="disabled"/><br/><br/><br/>
+                                   value="true" disabled="disabled"/><br/><br/><br/>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +82,7 @@
             </form>
             <!-- // TODO schrijf "search-advanced-service" search fetch -->
             <label for="fetchAdvancedSearchButton" hidden>Zoek advancedSearch.</label>
-            <input id="fetchAdvancedSearchButton" onclick="fetchFunctionForTesting()" type="button"
+            <input id="fetchAdvancedSearchButton" onclick="advancedSearchButtonClicked()" type="button"
                    value="AdvancedSearch">
 
 

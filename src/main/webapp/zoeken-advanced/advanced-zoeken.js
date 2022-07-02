@@ -1,6 +1,4 @@
-funtion;
-advancedSearchButtonClicked();
-{
+function advancedSearchButtonClicked() {
   console.log('advancedSearchButtonClicked()');
   const jsonRequestBody = {};
 

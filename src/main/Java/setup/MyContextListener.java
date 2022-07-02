@@ -1,5 +1,6 @@
 package setup;
 
+import archive.trawler.model.Archief;
 import archive.trawler.model.User;
 import archive.trawler.persistance.PersistanceManager;
 import reactor.core.scheduler.Schedulers;
@@ -38,6 +39,8 @@ public class MyContextListener implements ServletContextListener {
             new User("Coyote", "test@mail.com", "password");
         new User("TickTock", "aldous@harding.com", "Wilde");
         new User( "CrazyDiamond","syd@barrett.com", "Floyd");
+        new Archief("amsarchief","https://webservices.picturae.com/genealogy/person?apiKey=eb37e65a-eb47-11e9-b95c-60f81db16c0e&page=1&q={naam}&rows=1000&sort=score desc");
+        new Archief("openarchief","https://api.openarch.nl/1.0/records/search.json?name={naam}&lang=nl&number_show=100&sort=1&start=0&archive");
 //        new User( "pickItUpLikeItsCold", "snoop@log.bomb","Ryan");
 //        new Archief("test","");
 //        new Zoekopdracht(Arrays.asList(Community.getArchiefByName("test")),"naam blabla werkman", Community.getUserByEmail("test@mail.com"));

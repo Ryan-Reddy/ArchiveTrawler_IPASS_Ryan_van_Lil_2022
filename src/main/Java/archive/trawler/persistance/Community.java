@@ -2,6 +2,7 @@ package archive.trawler.persistance;
 
 import archive.trawler.model.Archief;
 import archive.trawler.model.User;
+import archive.trawler.model.Zoekopdracht;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,7 +29,7 @@ public class Community implements Serializable {
     private static @Getter
     @Setter Map<String, Archief> archiefMap = new HashMap<>();
     private static @Getter
-    @Setter Map<String, Archief> zoekOpdrachtMap = new HashMap<>();
+    @Setter Map<String, Zoekopdracht> zoekOpdrachtMap = new HashMap<>();
     // TODO implement all lists into this file
     //  - [ ] archief
     //  - [ ] websites

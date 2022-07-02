@@ -1,6 +1,10 @@
 package archive.trawler.webservices.SearchAdvanced;
 
 
+import archive.trawler.model.Archief;
+import archive.trawler.model.User;
+import archive.trawler.model.Zoekopdracht;
+import archive.trawler.persistance.Community;
 import archive.trawler.webservices.dto.SearchAdvancedInput;
 
 import javax.annotation.security.RolesAllowed;
@@ -12,6 +16,10 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Path("search-advanced-service")
 public class SearchAdvancedResource {
@@ -26,15 +34,61 @@ public class SearchAdvancedResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("")
     public Response advancedSearchProcess(SearchAdvancedInput searchQuery, @Context SecurityContext sc) {
-        // TODO schrijf handle de input van searchQuery
-        //  1. define search engines
-        //  2. create links
-        //  3. run fetch in backend
-        //  4. compare to local files/create local files
-        //  5. create difference log
-        //  6. return the search results incl changelog
-        //  create fetchURI per archief in searchQuery > archiveAmsterdam & archiveNoordHolland
-        //  labels: advancedSearchProcess
-        return Response.ok().build();
+        System.out.println("advancedSearchProcess");
+        try {
+            // 1 check of het een user is die ingelogd is:
+            if (sc.getUserPrincipal() instanceof User) {
+                User theUser = (User) sc.getUserPrincipal();
+
+                //  2.1 define query
+                String keyWords = new String(searchQuery.keywords);
+                /** VOOR EEN LATERE SPRINT:
+//                String achterNaam = new String(searchQuery.achternaam);
+//                String voorNaam = new String(searchQuery.voorNaam);
+//                String tussenVoegsel = new String(searchQuery.tussenvoegsel);
+//                int jaarVan = searchQuery.jaarVan;
+//                int jaarTot = searchQuery.jaarTot;
+                */
+                //  2.2 check for null
+
+                //  2.3 Definieer lijst met archiefkeuzes
+//                boolean amsArchief = searchQuery.archiveAmsterdam;
+//                boolean openArchief = searchQuery.openArchive;
+                ArrayList<Archief> archiefKeuzesArrayList = new ArrayList<>();
+
+                if (searchQuery.archiveAmsterdam) archiefKeuzesArrayList.add(Community.getArchiefByName("amsArchief"));
+                if (searchQuery.openArchive) archiefKeuzesArrayList.add(Community.getArchiefByName("openArchief"));
+
+                //  2.3 create links
+
+                Zoekopdracht zoekopdracht = new Zoekopdracht(archiefKeuzesArrayList, keyWords,
+//                        tussenVoegsel, voorNaam, achterNaam, 1000, 2022, // is lastig met meerdere archieven
+                        theUser);
+                Map<String, String> messages = new HashMap<>();
+
+                for (String zoekUri: zoekopdracht.getZoekUris()) {
+                    messages.put("zoekopdracht",zoekUri);
+                }
+
+                //  3. run fetch in backend
+
+//                return Response.ok(messages).build();
+                return Response.ok().entity(messages).build();
+
+
+
+
+                // TODO schrijf handle de input van searchQuery
+                //  4. compare to local files/create local files
+                //  5. create difference log
+                //  6. return the search results incl changelog
+                //  create fetchURI per archief in searchQuery > archiveAmsterdam & archiveNoordHolland
+                //  labels: advancedSearchProcess
+            }
+                return Response.status(Response.Status.UNAUTHORIZED).entity("You do need to be logged in, create a free account, and search away!").build();
+        } catch (Exception exception) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(exception).build();
+        }
     }
+
 }

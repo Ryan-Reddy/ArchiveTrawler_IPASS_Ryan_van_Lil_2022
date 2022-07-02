@@ -37,7 +37,6 @@ async function fetchSingleUser() {
       }
     })
     .catch((err) => {
-
       console.log('Error: ', err);
     });
 }

@@ -7,8 +7,8 @@ public class SearchAdvancedInput {
     public String tussenvoegsel;
     public int jaarVan;
     public int jaarTot;
-    public boolean archiveDublin; // no CORS misschien een latere implementatie
     public boolean archiveAmsterdam;
-    public boolean archiveNoordHolland; // no CORS misschien een latere implementatie
     public boolean openArchive;
+    public boolean archiveDublin; // no CORS misschien een latere implementatie
+    public boolean archiveNoordHolland; // no CORS misschien een latere implementatie
 }
