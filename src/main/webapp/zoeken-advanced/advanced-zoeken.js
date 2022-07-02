@@ -1,16 +1,26 @@
-const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-// const localhost = '/';
+funtion
+advancedSearchButtonClicked()
+{
+  console.log('advancedSearchButtonClicked()');
+  const jsonRequestBody = {};
 
-// function pupupMagOfNiet() {
-//   const firstNewWin = window.open('html/zoeken.htm');
-//   const newWin = window.open('html/zoeken.htm');
+  const formData = new FormData(document.querySelector('#advancedSearchForm'));
+  formData.forEach((value, key) => (jsonRequestBody[key] = value));
 
-//   if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
-//     alert(
-//       'Popups toestaan in uw browser, om te genieten van de volledige functionaliteit.',
-//     );
-//   }
-// }
+  const fetchOptions = {
+    method: 'POST',
+    body: JSON.stringify(jsonRequestBody),
+    headers: {
+      Authorization: `Bearer ${window.sessionStorage.getItem('JWT')}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const feedbackSpan = document.getElementById('feedbackSpan');
+
+
+}
 
 function zoekButtonClicked() {
   const voornaam = document.getElementById('voornaam').value;
