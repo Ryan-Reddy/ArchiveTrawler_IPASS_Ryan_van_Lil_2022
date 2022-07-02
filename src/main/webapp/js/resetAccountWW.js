@@ -26,7 +26,7 @@ function stuurWachtwoordReset() {
     .then((response) => {
       if (response.status === 200) { // er is een account gevonden !
         const feedback = response.json();
-        console.log(feedback);
+        console.log('Er is een email gestuurd naar uw account.');
         feedbackspan.innerText = feedback;
       }
       if (response.status === 204) { // no content
@@ -53,7 +53,7 @@ async function wijzigWachtwoord() {
     }
     if (ww1 != ww2) {
       console.log("wachtwoorden verschillen")
-      feedbackspan.innerHTML = '<p color=red>Uw wachtwoorden komen niet overeen, controleer nogmaals</p>';
+      feedbackspan.innerHTML = '<p>Uw wachtwoorden komen niet overeen, controleer nogmaals</p>';
     }
     if (ww1 === ww2 && ww1.length >= 6 && ww2.length >= 6)  {
       const jsonRequestBody = {};

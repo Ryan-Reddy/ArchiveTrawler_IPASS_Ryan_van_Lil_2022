@@ -53,7 +53,7 @@ async function login() {
       } //als de gegevens herkend zijn > body json incl token!!
 
       document.getElementById('postresponse').innerHTML =
-        '<a href="/html/reset-account.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
+        '<a href="/reset-account/index.html">Fout bij login. Wachtwoord vergeten?</a>\n'; // een melding.
       throw 'User login failed';
       // zo niet dan breakt de chain ook.
     }) // als er geen 200 is er ook geen body

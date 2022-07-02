@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png"/>
     <title>Template</title>
     <script src="/js/themeManager.js" type="text/javascript"></script> <!-- must be uppermost imported script due to const localhost global usage -->
-    <script src="/js/fetchTest.js" type="text/javascript"></script>
+    <script src="/fetchTrawler/fetchFromArchives.js" type="text/javascript"></script>
 
 </head>
 
@@ -23,10 +23,13 @@
 
 <span id="dataSpan">dataspan<br></span>
 <span id="dataSpan1">dataspan1<br></span>
-<input type="button" onclick="fetchToPage()" id="fetchToPageButton" value="fetchToPage()">
 
-</main>
+<input type="button" onclick="fetchToPageAmsterdamArchief()" id="fetchToPageButton" value="fetchToPageAmsterdamArchief()">
+
+<input type="button" onclick="fetchOpenArch()" id="fetchToPageWieIsWie" value="fetchToPageWieIsWie()">
+
 </div>
+</main>
 <footer id="footer">
 </footer>
   </div>

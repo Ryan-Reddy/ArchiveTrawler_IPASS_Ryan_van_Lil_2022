@@ -6,9 +6,9 @@
 
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 1rem;
-    /* padding-top: 2rem;
-    padding-bottom: 2rem; */
+    /* padding: 1rem; */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     font-weight: bold;
     align-items: center;
     align-content: center;

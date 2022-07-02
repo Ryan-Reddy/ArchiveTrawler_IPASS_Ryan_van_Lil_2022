@@ -32,7 +32,7 @@ async function fetchSingleUser() {
       if (response.status === 204) { //no content
         const message = 'geen content gevonden voor dit account';
         feedbackspan.innerHTML = message;
-        console.log();
+        console.log(message);
       }
     })
     .catch((err) => {
@@ -41,4 +41,4 @@ async function fetchSingleUser() {
     });
 }
 
-document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPage()})
+document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPageAmsterdamArchief()})

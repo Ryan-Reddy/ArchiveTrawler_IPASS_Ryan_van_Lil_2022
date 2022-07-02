@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <link href="/style-index.css" rel="stylesheet"/>
+    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+    <script src="/js/themeManager.js" type="text/javascript"></script>
+    <!-- themeManager be uppermost imported script due to const localhost global usage -->
+    <script src="/js/zoeken.js" type="text/javascript"></script>
+
+    <title>Zoeken</title>
+</head>
+
+
+<h1 id="header">Zoeken</h1>
+
+<body class="bodyDark" id="body">
+<div id="page-container">
+    <div id="content-wrap">
+        <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
+        </div>
+        <main>
+            <form id="postaccount">
+                <ul>
+                    <li>
+                        <label for="keywords">keywords:</label>
+                        <input  width="100%" class="inputfield" id="keywords" name="keywords" type="text"/><br/><br/>
+                    </li>
+                    <li>
+                        <label for="achternaam">achternaam:</label>
+                        <input class="inputfield" id="achternaam" name="achternaam" type="text"/><br/><br/>
+                    </li>
+                    <li>
+                        <label for="tussenvoegsel">tussenvoegsel:</label>
+                        <input class="inputfield" id="tussenvoegsel" name="tussenvoegsel" type="text"/><br/><br/>
+                    </li>
+                    <li>
+                        <label for="voornaam">voornaam:</label>
+                        <input class="inputfield" id="voornaam" name="voornaam" type="text"/><br/><br/>
+                    </li>
+                    <li>
+                        <label for="jaarVan">jaarVan:</label>
+                        <input class="inputfield" id="jaarVan" name="jaarVan" type="number" max=""/><br/><br/>
+                    </li>
+                    <li>
+                        <label for="jaarTot">jaarTot:</label>
+                        <input class="inputfield" id="jaarTot" name="jaarTot" type="number" value="2022"/><br/><br/>
+                    </li>
+                </ul>
+                <hr/>
+                <h3>Archieven te doorzoeken</h3>
+<!--                <div style="width: 60%">-->
+                <div style="width: 62%">
+                    <ul>
+                        <li>
+                            <label for="archiveDublin">Archief van Dublin</label>
+                            <input style="float:right" id="archiveDublin" name="archiveDublin" type="checkbox" value="archiveDublin"/><br/><br/>
+                        </li>
+                        <li>
+                            <label for="archiveAmsterdam">Archief van Amsterdam</label>
+                            <input style="float:right" id="archiveAmsterdam" name="archiveAmsterdam" type="checkbox"
+                                   value="archiveAmsterdam"/><br/><br/>
+                        </li>
+                        <li>
+                            <label for="archiveNoordHolland">Archief van NH</label>
+                            <input style="float:right" id="archiveNoordHolland" name="archiveNoordHolland" type="checkbox"
+                                   value="archiveNoordHolland"/><br/><br/>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr/>
+                <br/>
+            </form>
+
+            <label for="resetButton" hidden>Herlaad en leeg het formulier.</label>
+            <input id="resetButton" onclick="window.open('zoeken.html','_self')" type="button" value="Reset velden">
+            <label for="searchButton" hidden>Zoek button met gekozen informatie uit het formulier.</label>
+            <input id="searchButton" onclick="zoekButtonClicked()" type="button" value="Run zoekfunctie">
+            <label for="fetchButton" hidden>fetch Button met gekozen informatie uit het formulier.</label>
+            <input id="fetchButton" onclick="fetchFunctionForTesting()" type="button" value="fetch wiewaswie.nl">
+            <span id="postresponse"><br>Popups toestaan in uw browser, om te genieten van de volledige
+                functionaliteit.<br>
+            </span>
+    </main>
+
+    </div>
+    <footer id="footer">
+    </footer>
+</div>
+
+</body>
+
+</html>

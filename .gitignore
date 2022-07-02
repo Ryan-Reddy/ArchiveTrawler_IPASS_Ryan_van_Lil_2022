@@ -48,7 +48,7 @@ node_modules/
 /data/fonts/README.txt
 /data/shaders/shadow.frag
 /data/shaders/shadow.vert
-/src/main/webapp/html/template.html
+/src/main/webapp/templateHTML/template.html
 /data/shaders/text.frag
 /data/shaders/text.vert
 /data/user.png
