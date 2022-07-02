@@ -41,14 +41,14 @@ public class UsersResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("getAccount")
     public Response getAccount(EmailToSearchSingleAccount info, @Context SecurityContext sc) {
-        User theUser;
+//        User theUser;
 
 //        if (info != null) {
 //            theUser = Community.getCommunity().getUserByEmail(info.email);
 //            return Response.ok(theUser).build(); // ok = 200;
 //        }
         if (sc.getUserPrincipal() instanceof User) {
-            theUser = (User) sc.getUserPrincipal();
+            User theUser = (User) sc.getUserPrincipal();
             System.out.println(theUser.getEmail());
             System.out.println(theUser.getNaam());
             System.out.println(theUser.getPassword());
