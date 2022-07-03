@@ -21,7 +21,7 @@ border-color: #A05344;
     color: #E79E4F;
     font-family: 'Bookman Old Style', serif;
 }
-.bodyDisco #header {
+.bodyDisco .header {
     color: #E79E4F;
     background: #734046;
     padding: 10px;

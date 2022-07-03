@@ -10,7 +10,7 @@
 .bodyDark main {
     border-color: #ccc;
 }
-.bodyDark #header {
+.bodyDark .header {
     background: rgb(94, 94, 12);
   }
   .bodyDark #footer {

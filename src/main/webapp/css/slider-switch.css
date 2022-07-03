@@ -27,7 +27,7 @@
     margin-left: 44px; /* space left for the themeIcon */
   }
 
-  #themeIcon {
+  .themeIcon {
     max-width: 34px; /* Sizing of the descriptor Icon*/
   }
 

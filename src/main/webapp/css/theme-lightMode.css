@@ -10,7 +10,7 @@
 .bodyLight main {
     border-color: #282828;
 }
-.bodyLight #header {
+.bodyLight .header {
     background: rgb(196, 196, 26);
   }
 .bodyLight #footer {

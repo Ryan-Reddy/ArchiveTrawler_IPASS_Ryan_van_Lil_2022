@@ -33,25 +33,25 @@ function advancedSearchButtonClicked() {
         const JsonPersonsAsArrayArchAms = JSON.parse(myPrettyJsonString).person;
         // const JsonPersonsAsArrayOpenArch = JSON.parse(myPrettyJsonString);
         searchDataTable.innerHTML += ''
-        + ` <tr><th id="header">Voornaam</th> `
-        + ` <th id="header">Achternaam</th> `
-        + ` <th id="header">Rol</th> `
-        + ` <th id="header">Datum</th> `
-        + ` <th id="header">Plaats</th> `
-        + ` <th id="header">Geboorte</th> `
-        + ` <th id="header">Gewijzigd</th> `
-        + ` <th id="header">Link</th></tr>`;
+        + ` <tr><th class="header">Voornaam</th> `
+        + ` <th class="header">Achternaam</th> `
+        + ` <th class="header">Rol</th> `
+        + ` <th class="header">Datum</th> `
+        + ` <th class="header">Plaats</th> `
+        + ` <th class="header">Geboorte</th> `
+        + ` <th class="header">Gewijzigd</th> `
+        + ` <th class="header">Link</th></tr>`;
 
         JsonPersonsAsArrayArchAms.forEach((element) => { // for amsterdam archive
           searchDataTable.innerHTML += ''
-          + ` <tr><th id="resultaten">${element.metadata.voornaam}</th> `
-          + ` <th id="resultaten">${element.metadata.achternaam}</th> `
-          + ` <th id="resultaten">${element.metadata.deed_type_title}</th> `
-          + ` <th id="resultaten">${element.metadata.datum}</th> `
-          + `<th id="resultaten">${element.metadata.register_gemeente}</th> `
-          + ` <th id="resultaten">${element.metadata.datum_geboorte}</th> `
-          + ` <th id="resultaten">${element.metadata.modified_time}</th> `
-          + ` <th id="resultaten"><a href="https://archief.amsterdam/indexen/deeds/${element.deed_id}?person=${element.id}">Link</a></th></tr>`;
+          + ` <tr><th class="resultaten">${element.metadata.voornaam}</th> `
+          + ` <th class="resultaten">${element.metadata.achternaam}</th> `
+          + ` <th class="resultaten">${element.metadata.deed_type_title}</th> `
+          + ` <th class="resultaten">${element.metadata.datum}</th> `
+          + `<th  class="resultaten">${element.metadata.register_gemeente}</th> `
+          + ` <th class="resultaten">${element.metadata.datum_geboorte}</th> `
+          + ` <th class="resultaten">${element.metadata.modified_time}</th> `
+          + ` <th class="resultaten"><a href="https://archief.amsterdam/indexen/deeds/${element.deed_id}?person=${element.id}">Link</a></th></tr>`;
         });
       }
       if (response.status === 403) {

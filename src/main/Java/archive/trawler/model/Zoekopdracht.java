@@ -47,14 +47,14 @@ public class Zoekopdracht implements Serializable {
      *
      * @param archiefKeuzes             keuze van de archieven
      * @param keyWords
-     * @param voorNaam
-     * @param achterNaam
-     * @param tussenvoegsel
-     * @param jaarVan
-     * @param jaarTot
-     * @param zoekOpdrachtID
      * @param user                      de gebruiker die eigenaar is van deze zoekopdracht
-     * @param zoekresultatenIndividueel
+     * @param @redunant voorNaam
+     * @param @redunant achterNaam
+     * @param @redunant tussenvoegsel
+     * @param @redunant jaarVan
+     * @param @redunant jaarTot
+     * @param @redunant zoekOpdrachtID
+     * @param @redunant zoekresultatenIndividueel
      */
     public Zoekopdracht(ArrayList<Archief> archiefKeuzes, String keyWords,
 //                        String voorNaam, String tussenvoegsel, String achterNaam, int jaarVan, int jaarTot,

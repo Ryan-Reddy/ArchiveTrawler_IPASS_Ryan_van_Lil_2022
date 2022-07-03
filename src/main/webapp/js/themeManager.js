@@ -1,34 +1,36 @@
 // LET OP: dit adres wordt in alle fetches gebruikt in *.js
 const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-// // const localhost = '/';
+// LET OP: dit adres wordt in alle fetches gebruikt in *.js
+
 
 function setFooter() {
   console.log('setting up the footergrid');
   const footer = document.getElementById('footer');
   footer.classList.add('grid-container');
   // footer.innerHTML = ''; // start met een verse lege innerHTML
-  footer.innerHTML +=
-    "<div class='footerThemeChoice'>" +
-    "<label class='switch' for='darkmodeButton'>" +
-    "<img id='themeIcon' src='/assets/icons/first-quarter-moon.png' alt='halfmoon emoji as identifyer for the dark/light mode switch'>" +
-    "<input id='darkmodeButton' type='checkbox' onclick='darkmodeToggle()'>" +
-    "<span class='slider round'>" +
-    '</span></label>' +
-    "<div class='footerThemeChoice'>" +
-    "<label class='switch' for='retroModeButton'>" +
-    "<img id='themeIcon' src='/assets/icons/mirror-ball_1faa9.png' alt='mirrorball emoji as identifyer for the disco mode switch'>" +
-    "<input id='retroModeButton' type='checkbox' onclick='retroModeToggle()'>" +
-    "<span class='slider round'>" +
-    '</span></label></div>' +
-    '' +
-    '';
+  footer.innerHTML
+    += "<div class='footerThemeChoice'>"
+    + "<label class='switch' for='darkmodeButton'>"
+    + "<img class='themeIcon' src='/assets/icons/first-quarter-moon.png' alt='halfmoon emoji as identifyer for the dark/light mode switch'>"
+    + "<input id='darkmodeButton' type='checkbox' onclick='darkmodeToggle()'>"
+    + "<span class='slider round'>"
+    + '</span></label>'
+    + "<div class='footerThemeChoice'>"
+    + "<label class='switch' for='retroModeButton'>"
+    + "<img class='themeIcon' src='/assets/icons/mirror-ball_1faa9.png' alt='mirrorball emoji as identifyer for the disco mode switch'>"
+    + "<input id='retroModeButton' type='checkbox' onclick='retroModeToggle()'>"
+    + "<span class='slider round'>"
+    + '</span></label></div>'
+    + ''
+    + '';
   // "<input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"><label for='retroModeButton'>DISCO mode:</label></div>";
   // "<div class='footerRight'><input id='darkmodeButton' onclick='darkmodeToggle()' src=\"/assets/icons/first-quarter-moon.png\" type=\"image\" width='25'/ height='25'><label for='darkmodeButton'>dark or light mode:</label><br/><input alt='retroModeButton' height='25px' width='25px'/ id='retroModeButton' onclick='retroModeToggle()' src=\"/assets/icons/mirror-ball_1faa9.png\" type=\"image\"><label for='retroModeButton'>DISCO mode:</label></div>";
-  footer.innerHTML += "<div class='footerCenter' id='footerCenter'><ul> <li><a href=\"/contact/index.html\">Contact</a> <br></li> <li><a href=\"/\">Home</a><br></li><li><label for='loginButton' hidden>Button to log into an account.</label><input id='loginButton' type='button' value='login' onclick='logOut()')'></li><li><label for='logoutButton' hidden>Button to logout of account.</label><input id='logoutButton' type='button' value='LogOut' onclick='logOut()'></li></ul></div>";
-  footer.innerHTML +=
+  footer.innerHTML
+    += "<div class='footerCenter' id='footerCenter'><ul> <li><a href=\"/contact/index.html\">Contact</a> <br></li> <li><a href=\"/\">Home</a><br></li><li><label for='loginButton' hidden>Button to log into an account.</label><input id='loginButton' type='button' value='login' onclick='logOut()')'></li><li><label for='logoutButton' hidden>Button to logout of account.</label><input id='logoutButton' type='button' value='LogOut' onclick='logOut()'></li></ul></div>";
+  footer.innerHTML
     // '<div class=\'footerLeft\' id="discoballFooter"><iframe width="400" height="100vh" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;" RSS Disco</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
     // '<div class=\'footerLeft\' id="discoballFooter"><iframe width="400" height="100vh" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;" RSS Disco</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
-    '<div class=\'footerLeft\' id="discoballFooter"><iframe referrerpolicy="no-referrer" width="400" height="100vh" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;"</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
+    += '<div class=\'footerLeft\' id="discoballFooter"><iframe referrerpolicy="no-referrer" width="400" height="100vh" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/51195936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe> <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/rss" title="RSS Disco" target="_blank" style="color: #cccccc; text-decoration: none;"</a> \u00B7 <a href="https://soundcloud.com/rss/rss4"\r\n title="RSS DISCO #004 / summer 2012" target="_blank" style="color: #cccccc; text-decoration: none;">RSS DISCO\r\n #004 / summer 2012</a> </div></div>';
 }
 
 /** laad een eventueel opgeslagen thema voorkeur uit localstorage of maak deze bodyDark */
@@ -55,14 +57,14 @@ function LoadPage() {
       document.getElementById('discoballFooter').style.display = 'none'; // hide soundcloud embed
     }
     if (bodyElement.className === 'bodyDisco') {
-      document.getElementById("retroModeButton").checked = true; // zet retroModeButton aan
+      document.getElementById('retroModeButton').checked = true; // zet retroModeButton aan
       document.getElementById('discoball').style.display = 'inline'; //  discomode > activeer discobal
       const dbFoot = document.getElementById('discoballFooter');
       dbFoot.style.display = 'inline'; // show soundcloud embed
     }
   }
 }
-  
+
 /** Dit draait bij het openen pagina: */
 window.addEventListener('load', () => LoadPage());
 
@@ -71,7 +73,7 @@ window.addEventListener('load', () => LoadPage());
  *   @returns void
  */
 function darkmodeToggle() {
-  document.getElementById("retroModeButton").checked = false; // zet retroModeButton aan
+  document.getElementById('retroModeButton').checked = false; // zet retroModeButton aan
 
   // TODO schrijf functie darkmode toggle naar default als er op de slider geklikt wordt
   const bodyElement = document.getElementById('body');
@@ -96,7 +98,7 @@ function darkmodeToggle() {
 function retroModeToggle() {
   darkmodeToggle();
   document.getElementById('darkmodeButton').checked = false; // set darkmode button op false
-  document.getElementById("retroModeButton").checked = true; // zet retroModeButton aan
+  document.getElementById('retroModeButton').checked = true; // zet retroModeButton aan
 
   const bodyElement = document.getElementById('body');
   bodyElement.classList.remove('bodyLight', 'bodyDark');
@@ -120,4 +122,12 @@ function retroModeToggle() {
 function logOut() {
   sessionStorage.removeItem('JWT');
   window.open('/login', '_self');
+}
+
+function printData() {
+  const divToPrint = document.getElementById('resultatenOmTePrinten');
+  const newWin = window.open('');
+  newWin.document.write(divToPrint.outerHTML);
+  newWin.print();
+  newWin.close();
 }

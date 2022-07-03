@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <link href="/style-index.css" rel="stylesheet"/>
-    <link href="table.css" rel="stylesheet"/>
-    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+    <meta charset="UTF-8" />
+    <link href="/style-index.css" rel="stylesheet" />
+    <link href="table.css" rel="stylesheet" />
+    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
     <script src="/js/themeManager.js" type="text/javascript"></script>
     <!-- themeManager be uppermost imported script due to const localhost global usage -->
     <script src="/zoeken-advanced/advanced-zoeken.js" type="text/javascript"></script>
@@ -17,112 +17,122 @@
 <h1 class="header">Advanced Zoeken</h1>
 
 <body class="bodyDark" id="body">
-<div id="page-container">
-    <div id="content-wrap">
-        <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
-        </div>
-        <main>
-            <form id="advancedSearchForm">
-                <ul>
-                    <li>
-                        <label for="keywords">keywords:</label>
-                        <input required width="100%" class="inputfield" id="keywords" name="keywords" type="text" value="Harry Potter"/><br/><br/>
-                    </li>
-                    <li>
-                        <label for="achternaam">achternaam:</label>
-                        <input class="inputfield" id="achternaam" name="achternaam" type="text" disabled="disabled"/><br/><br/>
-                    </li>
-                    <li>
-                        <label for="tussenvoegsel">tussenvoegsel:</label>
-                        <input class="inputfield" id="tussenvoegsel" name="tussenvoegsel" type="text" disabled="disabled"/><br/><br/>
-                    </li>
-                    <li>
-                        <label for="voornaam">voornaam:</label>
-                        <input class="inputfield" id="voornaam" name="voornaam" type="text" disabled="disabled"/><br/><br/>
-                    </li>
-                    <li>
-                        <label for="jaarVan">jaarVan:</label>
-                        <input class="inputfield" id="jaarVan" name="jaarVan" type="number" max="" value="1000" disabled="disabled"/><br/><br/>
-                    </li>
-                    <li>
-                        <label for="jaarTot">jaarTot:</label>
-                        <input class="inputfield" id="jaarTot" name="jaarTot" type="number" value="2022" disabled="disabled"/><br/><br/>
-                    </li>
-                </ul>
-                <hr/>
-                <h3>Archieven te doorzoeken</h3>
-                <!--                <div style="width: 60%">-->
-                <div style="width: 62%">
-                    <table>
-                        <tr>                        
-                            <th>
-                            <label for="archiveAmsterdam">Archief van Amsterdam</label>
-                            </th>
-                            <th>
-                            <input style="float:right" id="archiveAmsterdam" name="archiveAmsterdam" type="checkbox"
-                                   value="true" checked="checked"/><br/><br/>
-                            </th>
-                        </tr>
+    <div id="page-container">
+        <div id="content-wrap">
+            <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
+            </div>
+            <main>
+                <form id="advancedSearchForm">
+                    <ul>
+                        <li>
+                            <label for="keywords">keywords:</label>
+                            <input required width="100%" class="inputfield" id="keywords" name="keywords" type="text"
+                                value="Harry Potter" /><br /><br />
+                        </li>
+                        <li>
+                            <label for="achternaam">achternaam:</label>
+                            <input class="inputfield" id="achternaam" name="achternaam" type="text"
+                                disabled="disabled" /><br /><br />
+                        </li>
+                        <li>
+                            <label for="tussenvoegsel">tussenvoegsel:</label>
+                            <input class="inputfield" id="tussenvoegsel" name="tussenvoegsel" type="text"
+                                disabled="disabled" /><br /><br />
+                        </li>
+                        <li>
+                            <label for="voornaam">voornaam:</label>
+                            <input class="inputfield" id="voornaam" name="voornaam" type="text"
+                                disabled="disabled" /><br /><br />
+                        </li>
+                        <li>
+                            <label for="jaarVan">jaarVan:</label>
+                            <input class="inputfield" id="jaarVan" name="jaarVan" type="number" max="" value="1000"
+                                disabled="disabled" /><br /><br />
+                        </li>
+                        <li>
+                            <label for="jaarTot">jaarTot:</label>
+                            <input class="inputfield" id="jaarTot" name="jaarTot" type="number" value="2022"
+                                disabled="disabled" /><br /><br />
+                        </li>
+                    </ul>
+                    <hr />
+                    <h3>Archieven te doorzoeken</h3>
+                    <!--                <div style="width: 60%">-->
+                    <div style="width: 62%">
+                        <table>
+                            <tr>
+                                <th>
+                                    <label for="archiveAmsterdam">Archief van Amsterdam</label>
+                                </th>
+                                <th>
+                                    <input style="float:right" id="archiveAmsterdam" name="archiveAmsterdam"
+                                        type="checkbox" value="true" checked="checked" /><br /><br />
+                                </th>
+                            </tr>
 
-                        <tr>                        
-                            <th>
-                            <label for="openArchive">Open Archive Nederland & Belgie</label>
-                        </th>
-                        <th>
-                            <input style="float:right" id="openArchive" name="openArchive" type="checkbox"
-                                   value="true" disabled="disabled"/><br/><br/>
+                            <tr>
+                                <th>
+                                    <label for="openArchive">Open Archive Nederland & Belgie</label>
+                                </th>
+                                <th>
+                                    <input style="float:right" id="openArchive" name="openArchive" type="checkbox"
+                                        value="true" disabled="disabled" /><br /><br />
                                 </th>
                             </tr>
-    
-                        <tr>                        
-                            <th>
-                            <label for="archiveDublin">Archief van Dublin (geen advancedSearch)</label>
-                        </th>
-                        <th>
-                            <input style="float:right" id="archiveDublin" name="archiveDublin" type="checkbox"
-                                   value="true" disabled="disabled"/><br/><br/><br/>
+
+                            <tr>
+                                <th>
+                                    <label for="archiveDublin">Archief van Dublin (geen advancedSearch)</label>
+                                </th>
+                                <th>
+                                    <input style="float:right" id="archiveDublin" name="archiveDublin" type="checkbox"
+                                        value="true" disabled="disabled" /><br /><br /><br />
                                 </th>
                             </tr>
-    
-                        <tr>                        
-                            <th>
-                            <label for="archiveNoordHolland">Archief van NH (geen advancedSearch)</label>
-                        </th>
-                        <th>
-                            <input style="float:right" id="archiveNoordHolland" name="archiveNoordHolland"
-                                   type="checkbox"
-                                   value="true" disabled="disabled"/><br/><br/><br/>
+
+                            <tr>
+                                <th>
+                                    <label for="archiveNoordHolland">Archief van NH (geen advancedSearch)</label>
+                                </th>
+                                <th>
+                                    <input style="float:right" id="archiveNoordHolland" name="archiveNoordHolland"
+                                        type="checkbox" value="true" disabled="disabled" /><br /><br /><br />
                                 </th>
                             </tr>
-    
+
                         </table>
+                    </div>
+
+                    <hr />
+                </form>
+                <!-- // TODO schrijf "search-advanced-service" search fetch -->
+                <label for="fetchAdvancedSearchButton" hidden>Zoek advancedSearch.</label>
+                <input id="fetchAdvancedSearchButton" onclick="advancedSearchButtonClicked()" type="button"
+                    value="AdvancedSearch">
+
+
+                <label for="resetButton" hidden>Herlaad en leeg het formulier.</label>
+                <input id="resetButton" onclick="window.open('/zoeken-advanced','_self')" type="button"
+                    value="Reset velden">
+
+                <label for="printButton" hidden>Herlaad en leeg het formulier.</label>
+                <input id="printButton" onclick="printData()" type="button"
+                    value="Exporteer resultaten">
+
+                <br>
+                <span id="feedbackSpan">
+                </span>
+
+                <div id="resultatenOmTePrinten">
+                    <table id="tableSearchData">
+                    </table>
                 </div>
+            </main>
 
-                <hr/>
-            </form>
-            <!-- // TODO schrijf "search-advanced-service" search fetch -->
-            <label for="fetchAdvancedSearchButton" hidden>Zoek advancedSearch.</label>
-            <input id="fetchAdvancedSearchButton" onclick="advancedSearchButtonClicked()" type="button"
-            value="AdvancedSearch">
-            
-            
-            <label for="resetButton" hidden>Herlaad en leeg het formulier.</label>
-            <input id="resetButton" onclick="window.open('/zoeken-advanced','_self')" type="button"
-            value="Reset velden">
-            
-            <br>
-            <span id="feedbackSpan">
-            </span>
-            
-            <table id="tableSearchData">
-            </table>
-            
-        </main>
-
+        </div>
+        <footer id="footer">
+        </footer>
     </div>
-    <footer id="footer">
-    </footer>
-</div>
 
 </body>
 
