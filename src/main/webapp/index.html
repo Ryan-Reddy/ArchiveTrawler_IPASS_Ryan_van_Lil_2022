@@ -24,8 +24,8 @@
         <br />
         <h2>HTML pages
         </h2>
-
-
+        
+        
         <ul>
             <li>
                 <a href="login">Log in.</a>
@@ -33,14 +33,20 @@
             <li>
                 <a href="new-account">Make a new account.</a>
             </li>
-
+            <li>
+                <a href="logout/">Log out.</a>
+            </li>
+            <li>
+                <a href="http://localhost:8080/restservices/status">Server Status </a>
+            </li>
+            
         </ul>
 
         <br>
 
-        <h2>RestServices</h2>
+        Deze werken alleen als je bent ingelogd als gebruiker:
         <ul>
-            these should only work logged in as user:
+            <h3>AccountServices</h3>
             <li>
                 <a href="reset-account/">Reset password dmv account.</a>
             </li>
@@ -75,13 +81,7 @@
                 <a href="delete-account/">Delete account.</a>
             </li>
             <li>
-                <a href="logout/">Log out.</a>
-            </li>
-            <li>
                 <a href="http://localhost:8080/restservices/users/{email}">GET find_user/email={email} restservice</a>
-            </li>
-            <li>
-                <a href="http://localhost:8080/restservices/status">GET status restservice</a>
             </li>
         </ul>
 

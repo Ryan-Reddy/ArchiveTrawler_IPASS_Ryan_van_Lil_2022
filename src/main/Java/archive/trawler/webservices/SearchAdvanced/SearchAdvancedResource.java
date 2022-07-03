@@ -67,13 +67,18 @@ public class SearchAdvancedResource {
                 Zoekopdracht zoekopdracht = new Zoekopdracht(archiefKeuzesArrayList, keyWords,
 //                        tussenVoegsel, voorNaam, achterNaam, 1000, 2022, // is lastig met meerdere archieven
                         theUser);
-                Map<String, String> messages = new HashMap<>();
+                Map<String, Object> messages = new HashMap<>();
 
                 for (String zoekUri : zoekopdracht.getZoekUris()) {
+//                    String resultaat = fetchSearchResult(zoekUri);
+//                    JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
+//                    String prettyJson = json.toString(4);
+//                    System.out.println(prettyJson); // Print it with specified indentation
                     String resultaat = fetchSearchResult(zoekUri);
+                    System.out.println(resultaat);
                     JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
                     String prettyJson = json.toString(4);
-                    System.out.println(prettyJson); // Print it with specified indentation
+//                    System.out.println(prettyJson); // Print it with specified indentation
 
                     messages.put("zoekopdracht",
                             prettyJson

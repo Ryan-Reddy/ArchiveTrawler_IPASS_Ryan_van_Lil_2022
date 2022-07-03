@@ -23,11 +23,12 @@ function advancedSearchButtonClicked() {
       if (response.status === 200) {
         // er is een account gevonden !
         const myJson = await response.json(); // return the search results incl changelog
-        feedbackSpan.innerHTML = JSON.stringify(myJson, null, 2);
-        console.log(myJson);
+        const myJsonString = JSON.stringify(myJson, null, 2)
+        feedbackSpan.innerHTML = myJsonString.replace(/[\n\r]/g, ' ');
+        console.log(JSON.stringify(myJson, null, 2));
       }
       if (response.status === 403) {
-        feedbackSpan.innerHTML = '<p color="red">Check of je bent ingelogd!</p>';
+        feedbackSpan.innerHTML = '<p>Check of je bent ingelogd!</p>';
       }
       // if (response.status === 204) {
       //   // no content
