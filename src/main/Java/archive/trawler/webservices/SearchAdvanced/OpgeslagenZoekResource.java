@@ -6,10 +6,7 @@ import archive.trawler.model.Zoekopdracht;
 import archive.trawler.webservices.dto.ZoekQueryOpslaan;
 
 import javax.annotation.security.RolesAllowed;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -22,7 +19,7 @@ public class OpgeslagenZoekResource {
     @GET
     @RolesAllowed("user")
     @Produces(MediaType.APPLICATION_JSON)
-//    @Path("")
+    @Path("")
     public Response haalZoekertjesOp(@Context SecurityContext sc) {
         if (sc.getUserPrincipal() instanceof User) {
             User currentUser = (User) sc.getUserPrincipal();
@@ -34,6 +31,7 @@ public class OpgeslagenZoekResource {
 
     @POST
     @RolesAllowed("user")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("")
     public Response slaZoekertjeOp(@Context SecurityContext sc, ZoekQueryOpslaan input) {
