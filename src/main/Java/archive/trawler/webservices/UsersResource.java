@@ -5,10 +5,7 @@ import archive.trawler.persistance.Community;
 import archive.trawler.security.dto.EmailToSearchSingleAccount;
 import archive.trawler.security.dto.LoginRequest;
 import archive.trawler.webservices.dto.NewAccount;
-import archive.trawler.webservices.dto.PasswordReset;
-import archive.trawler.webservices.dto.ResetAccount;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
@@ -18,10 +15,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-import java.util.HashMap;
 import java.util.Map;
-
-import static javax.ws.rs.core.Response.ok;
 
 
 //  TODO REST works on heroku, why not here?

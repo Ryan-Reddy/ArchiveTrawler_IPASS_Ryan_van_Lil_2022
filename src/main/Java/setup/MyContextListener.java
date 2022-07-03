@@ -12,9 +12,6 @@ import javax.servlet.annotation.WebListener;
 import java.io.IOException;
 import java.time.Duration;
 
-import static archive.trawler.persistance.PersistanceManager.communityContainerbackup;
-import static archive.trawler.persistance.PersistanceManager.usersBlobNamebackup;
-
 @WebListener
 public class MyContextListener implements ServletContextListener {
 

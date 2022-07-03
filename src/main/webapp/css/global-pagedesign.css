@@ -28,7 +28,7 @@ main label {
   padding-bottom: 7rem; /* Hoogte footer */
 }
 
-#header {
+.header {
 height: 40px;
     padding: 10px;
 }

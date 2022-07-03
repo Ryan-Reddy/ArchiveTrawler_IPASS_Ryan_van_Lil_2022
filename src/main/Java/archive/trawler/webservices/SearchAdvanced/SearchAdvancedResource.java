@@ -21,8 +21,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 @Path("search-advanced-service")
 public class SearchAdvancedResource {
@@ -92,11 +90,12 @@ public class SearchAdvancedResource {
     public JSONObject fetchSearchResult(String theURL) throws IOException {
         URL url = new URL(theURL);
         InputStream is = url.openStream();
-        int ptr = 0;
-        StringBuffer buffer = new StringBuffer();
+        int ptr;
+        StringBuilder buffer = new StringBuilder();
         while ((ptr = is.read()) != -1) {
             buffer.append((char) ptr); //append elke character 1 voor 1
         }
+        is.close();
         return new JSONObject(buffer.toString());
     }
 }

@@ -99,7 +99,7 @@ async function sendNewAccount(event) {
         // als 409 bestond er al een account met dit email adres
         const message = "Er bestaat waarschijnlijk al een account met dit email, of er ging iets anders mis. Als u uw wachtwoord vergeten bent kunt u hieronder klikken op 'Wachtwoord vergeten'.";
         element.innerHTML = message;
-        throw 'er ging iets mis';
+        throw message;
       }
     })
     .catch((err) => {

@@ -25,13 +25,13 @@ public class User implements Serializable, Principal {
     /** email adres, is gelijk ook de username van de inlog */
     private @Getter @Setter String email;
     /**rol van de gebruiker.     */
-    private @Getter @Setter String role = "user";
+    private @Getter @Setter String role;
     /** id nummer van gebruiker, is uniek. */
     private @Getter @Setter int identificationNum;
 
     /** Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.  */
     private @Getter
-    @Setter Map<Integer, Object> alleZoekertjes = new HashMap<Integer, Object>(10000);;
+    @Setter Map<Integer, Object> alleZoekertjes = new HashMap<Integer, Object>(10000);
 
     private @Getter @Setter String avatarBase64;
     private @Getter @Setter String avatarUploadId;

@@ -5,14 +5,11 @@ import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.ws.rs.Path;
 
 import java.io.*;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
@@ -28,9 +25,8 @@ public class SendEmail {
      * @param subjectLine      Onderwerp van email
      * @param htmlFileFromRoot Html filename, as string incl. path from source root example:
      *                         <br> "src/main/resources/emailHTMLTemplates/verificationMail.html"
-     * @return boolean of het versturen gelukt is of niet.
      */
-    public static boolean sendMail(String sendTo, String subjectLine, String htmlFileFromRoot) throws FileNotFoundException {
+    public static void sendMail(String sendTo, String subjectLine, String htmlFileFromRoot) {
         String from = "no_reply@archive-trawler.com";        // Sender's email ID needs to be mentioned
         String host = "smtp.gmail.com";
 
@@ -79,22 +75,19 @@ public class SendEmail {
             // Send message
             Transport.send(message);
             System.out.println("Sent message successfully....");
-            return true;
-        } catch (MessagingException | IOException mex) {
+        } catch (MessagingException mex) {
             mex.printStackTrace();
         }
-        return false;
     }
     /**
      * SendMail haalt een html file op, leest deze in als string en verstuurt deze via gmail naar opgegeven Email adres.
      *
-     * @param sendTo           Email adres om naartoe te sturen
-     * @param subjectLine      Onderwerp van email
-     *                         <br> "src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
+     * @param sendTo      Email adres om naartoe te sturen
+     * @param subjectLine Onderwerp van email
+     *                    <br> "src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
      * @param token
-     * @return boolean of het versturen gelukt is of niet.
      */
-    public static boolean sendMailWithToken(String sendTo, String subjectLine, String token) throws IOException, MessagingException {
+    public static void sendMailWithToken(String sendTo, String subjectLine, String token) throws IOException {
         System.out.println("received request to sendMailWithToken");
         String from = "no_reply@archive-trawler.com";        // Sender's email ID needs to be mentioned
         String host = "smtp.gmail.com";
@@ -145,11 +138,9 @@ public class SendEmail {
             // Send message
             Transport.send(message);
             System.out.println("Sent message successfully....");
-            return true;
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
-        return false;
     }
 
     /** Leest html file, retourneert String, denk erom om met exape characters te programmeren.
@@ -158,7 +149,7 @@ public class SendEmail {
      *                         "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
      * @return String met contents
      */
-    public static String htmlToString(String fileName) throws IOException {
+    public static String htmlToString(String fileName) {
         StringBuilder contentBuilder = new StringBuilder();
 
         // The class loader that loaded the class
@@ -190,7 +181,7 @@ public class SendEmail {
 
     // print input stream
 
-        public static void main (String[]args) throws IOException, URISyntaxException {
+        public static void main (String[]args) throws IOException {
             //String fileName = "database.properties";
             String fileName = "resetmail.html";
             htmlToString(fileName);

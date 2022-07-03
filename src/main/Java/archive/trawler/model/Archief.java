@@ -38,8 +38,7 @@ public class Archief implements Serializable {
              keyWords = encodeStringNaarURLveilig(keyWords);
              // get the baseURI
              String baseURI = this.getBasisURI();
-             String newLink = baseURI.replace("{naam}",keyWords);
-             return newLink;
+             return baseURI.replace("{naam}",keyWords);
 
          } catch (Exception e) {
              e.printStackTrace();

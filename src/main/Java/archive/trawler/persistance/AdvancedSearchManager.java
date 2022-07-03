@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class AdvancedSearchManager {
     public static void main(String[] args) {
         String content = null;
-        URLConnection connection = null;
+        URLConnection connection;
         try {
             connection =  new URL("https://api.openarch.nl/1.0/records/search.json?name=van%20Lil&lang=nl&number_show=1&sort=1&start=0&archive").openConnection();
             Scanner scanner = new Scanner(connection.getInputStream());
@@ -19,6 +19,7 @@ public class AdvancedSearchManager {
         }catch ( Exception ex ) {
             ex.printStackTrace();
         }
+        assert content != null;
         JSONObject json = new JSONObject(content); // Converteer text naar JSONObject
         System.out.println(json.toString(4)); // Print het PRETTY
 

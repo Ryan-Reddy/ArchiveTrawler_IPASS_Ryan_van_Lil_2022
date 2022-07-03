@@ -77,18 +77,15 @@ public class Community implements Serializable {
      * maar controleert eerst of deze er nog niet al instaat. maakt hierover ook een log in de logger van deze klasse.
      *
      * @param newAccount een instance van User.
-     * @return Een boolean of het het gelukt is om deze gebruiker als unieke User toe te voegen aan de database.
      */
-    public static boolean addArchiefToMap(Archief newAccount) {
+    public static void addArchiefToMap(Archief newAccount) {
 
         System.out.println("doublechecking archief map for: " + newAccount.getNaam());
         System.out.println("... to add: " + newAccount + "");
 
         if (archiefMap.values().stream().noneMatch(user -> user.getNaam().equals(newAccount.getNaam()))) {
             archiefMap.put(newAccount.getNaam().toLowerCase(), newAccount);
-            return true;
         } else {
-            return false;
         }
     }
 

@@ -32,6 +32,7 @@ out
 
 #intellij files
 .idea
+.iml
 
 # gets generated when running npm install on each system
 node_modules/

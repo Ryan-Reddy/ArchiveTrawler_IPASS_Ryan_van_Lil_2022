@@ -11,7 +11,6 @@ import javax.mail.MessagingException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +21,7 @@ public class AccountsResourceFullJackson {
     @Path("")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createAccountFullJackson(User account) throws IOException, MessagingException {
+    public Response createAccountFullJackson(User account) throws IOException {
         Map<String, String> messages = new HashMap<>();
         if (Community.getCommunity().addUserToMap(account)) {
 //            if (!account.getAvatarBase64().isEmpty()) { // alleen nodig als ik een file wil koppelen aan User

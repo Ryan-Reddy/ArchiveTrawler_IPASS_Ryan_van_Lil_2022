@@ -123,11 +123,7 @@
             <artifactId>json</artifactId>
             <version>20220320</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-        </dependency>
+
 
 
     </dependencies>

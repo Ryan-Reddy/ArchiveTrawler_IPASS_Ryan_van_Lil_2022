@@ -16,5 +16,8 @@ main{
 }
 
 input :disabled, input[disabled] {
+    border-color: lightgray;
+    color: #ccc;
     background-color: gray;
+    background: linear-gradient(to top, #e6e6e6 0px, #fff 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }

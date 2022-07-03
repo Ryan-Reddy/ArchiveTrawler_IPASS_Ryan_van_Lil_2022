@@ -44,13 +44,13 @@ function advancedSearchButtonClicked() {
 
         JsonPersonsAsArrayArchAms.forEach((element) => { // for amsterdam archive
           searchDataTable.innerHTML += ''
-          + ` <tr><th>${element.metadata.voornaam}</th> `
-          + ` <th>${element.metadata.achternaam}</th> `
-          + ` <th>${element.metadata.deed_type_title}</th> `
-          + ` <th>${element.metadata.datum}</th> `
-          + `<th>${element.metadata.register_gemeente}</th> `
-          + ` <th>${element.metadata.datum_geboorte}</th> `
-          + ` <th>${element.metadata.modified_time}</th> `
+          + ` <tr><th id="resultaten">${element.metadata.voornaam}</th> `
+          + ` <th id="resultaten">${element.metadata.achternaam}</th> `
+          + ` <th id="resultaten">${element.metadata.deed_type_title}</th> `
+          + ` <th id="resultaten">${element.metadata.datum}</th> `
+          + `<th id="resultaten">${element.metadata.register_gemeente}</th> `
+          + ` <th id="resultaten">${element.metadata.datum_geboorte}</th> `
+          + ` <th id="resultaten">${element.metadata.modified_time}</th> `
           + ` <th id="resultaten"><a href="https://archief.amsterdam/indexen/deeds/${element.deed_id}?person=${element.id}">Link</a></th></tr>`;
         });
       }
