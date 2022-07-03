@@ -27,6 +27,36 @@ function laadZoekertjesVanGebruiker() {
     async (response) => {
       if (response.status === 200) {
         const myJson = await response.json(); // return the search results incl changelog
+
+        console.log(myJson);
+        console.log(myJson.forEach((element) => console.log(JSON.stringify(element))));
+        // console.log(JSON.parse(myJson));
+      }
+      if (response.status === 401 || response.status === 403) {
+        feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
+      }
+    },
+  );
+}
+/** Delete ALLE opgeslagen zoekqueries vanaf de server.
+ *
+ */
+function deleteZoekertjesVanGebruiker() {
+  console.log('deleting laadZoekertjesVanGebruiker()');
+  document.getElementById('feedbackSpan');
+
+  const fetchOptions = {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${window.sessionStorage.getItem('JWT')}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  };
+  fetch(`${localhost}restservices/zoekertjes/delete-all`, fetchOptions).then(
+    async (response) => {
+      if (response.status === 200) {
+        const myJson = await response.json(); // return the search results incl changelog
         console.log(myJson);
       }
       if (response.status === 401 || response.status === 403) {

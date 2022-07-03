@@ -64,7 +64,7 @@ public class SearchAdvancedResource {
 
                 Zoekopdracht zoekopdracht = new Zoekopdracht(archiefKeuzesArrayList, keyWords,
 //                        tussenVoegsel, voorNaam, achterNaam, 1000, 2022, // is lastig met meerdere archieven
-                        theUser);
+                        theUser.getID());
 
                 for (String zoekUri : zoekopdracht.getZoekUris()) {
                     return Response.ok().entity(fetchSearchResult(zoekUri).toString()).build();

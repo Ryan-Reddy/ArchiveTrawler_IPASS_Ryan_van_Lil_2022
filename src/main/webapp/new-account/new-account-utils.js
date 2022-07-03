@@ -89,7 +89,7 @@ async function sendNewAccount(event) {
     .then((response) => {
       if (response.status === 200) {
         // als er een nieuw account gecreeerd is dan inloggen
-        open(`${localhost}html/login.html`, '_self'); // als deze klaar is open de log in pagina
+        open(`${localhost}/login`, '_self'); // als deze klaar is open de log in pagina
         const message = 'Welkom! je nieuwe account is aangemaakt';
         alert(message);
         element.innerHTML = message;

@@ -129,20 +129,24 @@
                                 <br>
                 <table>
                     <td>
-                <label for="currentUserZoekertjes">Bekijk eerder opgeslagen zoekopdrachten:</label>
-            </td>
-            <td>
-                <select name="currentUserZoekertjes" id="currentUserZoekertjes">
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-                </select> 
-            </td>
+                    <label for="currentUserZoekertjes">Bekijk eerder opgeslagen zoekopdrachten:</label>
+                </td>
+                <td>
+                    <select name="currentUserZoekertjes" id="currentUserZoekertjes">
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select> 
+                </td>
+                <td>
+                    <label for="deleteZoekertjesButton">Delete ALLE zoekopdrachten.</label>
+                    <input id="deleteZoekertjesButton" onclick="deleteZoekertjesVanGebruiker()" type="button" value="!delete!">
+                </td>
             </table>
-                <div id="resultatenOmTePrinten">
-                    <table id="tableSearchData">
-                    </table>
-                </div>
+            <div id="resultatenOmTePrinten">
+                <table id="tableSearchData">
+                </table>
+            </div>
 
                 
             </main>

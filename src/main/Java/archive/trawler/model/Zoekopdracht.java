@@ -36,7 +36,7 @@ public class Zoekopdracht implements Serializable {
     private @Getter
     @Setter String zoekOpdrachtID;        //TODO automatiseer zoekOpdrachtID
     private @Getter
-    @Setter User userOwner;
+    @Setter int userOwner;
     private @Getter
     @Setter ArrayList<String> zoekUris; // TODO functie elders
     private @Getter
@@ -58,7 +58,7 @@ public class Zoekopdracht implements Serializable {
      */
     public Zoekopdracht(ArrayList<Archief> archiefKeuzes, String keyWords,
 //                        String voorNaam, String tussenvoegsel, String achterNaam, int jaarVan, int jaarTot,
-                        User user
+                        int user
     ) {
         this.archiefKeuzes = archiefKeuzes;
         this.keyWords = keyWords;
@@ -75,14 +75,14 @@ public class Zoekopdracht implements Serializable {
 
     /**
      * genereerZoekOpdrachtID
-     * @param user de eigenaar, wordt gebruikt in generatie van het token
+     * @param userID de eigenaar, wordt gebruikt in generatie van het token
      * @return een unieke string, gebruikt om de zoekopdracht op te slaan.
      */
-    private String genereerZoekOpdrachtID(User user) {
+    private String genereerZoekOpdrachtID(int userID) {
         int max = 999;
         int min = 100;
         long epochSecond = Instant.now().getEpochSecond(); //Long = 1450879900
-        return user.getNaam() + "_" + epochSecond + (int) (min + (Math.random() * max));
+        return userID + "_" + epochSecond + (int) (min + (Math.random() * max));
     }
 
     /**

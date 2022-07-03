@@ -33,7 +33,7 @@ public class Archief implements Serializable {
      * @param userID
      * @return
      */
-     public String createLink( String keyWords, User userID ) {
+     public String createLink(String keyWords, int userID ) {
          try {
              keyWords = encodeStringNaarURLveilig(keyWords);
              // get the baseURI

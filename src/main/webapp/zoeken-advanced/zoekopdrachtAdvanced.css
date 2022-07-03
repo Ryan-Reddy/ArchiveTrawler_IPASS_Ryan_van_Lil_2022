@@ -28,3 +28,10 @@ input[type="button"] #opslaanZoekOpdracht {
     button-shadow:none !important; */
     background-color:#18b6d6;
 }
+
+input[type="button"] #deleteZoekertjesButton {
+    outline-style: groove;
+    /* button-outline: none;
+    button-shadow:none !important; */
+    background-color:red;
+}

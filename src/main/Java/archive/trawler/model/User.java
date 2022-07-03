@@ -8,6 +8,7 @@ import javax.security.auth.Subject;
 import java.io.Serializable;
 import java.security.Principal;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class User implements Serializable, Principal {
 
     /** Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.  */
     private @Getter
-    @Setter Map<Integer, Object> alleZoekertjes = new HashMap<Integer, Object>(10000);
+    @Setter ArrayList<Zoekopdracht> alleZoekertjes = new ArrayList<>();
 
     private @Getter @Setter String avatarBase64;
     private @Getter @Setter String avatarUploadId;
@@ -123,7 +124,7 @@ public class User implements Serializable, Principal {
      */
     public boolean addZoekertjeAanAlleZoekertjes(Zoekopdracht zoekopdracht) {
         try {
-            alleZoekertjes.put((alleZoekertjes.size() + 1), zoekopdracht);
+            alleZoekertjes.add(zoekopdracht);
             return true;
         } catch (Exception e) {
             System.out.println("Je kan niet meer dan 10000 zoekopdrachten hebben");
