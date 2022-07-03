@@ -3,13 +3,12 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link href="zoekopdrachtAdvanced.css" rel="stylesheet" />
     <link href="/style-index.css" rel="stylesheet" />
-    <link href="table.css" rel="stylesheet" />
     <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
     <script src="/js/themeManager.js" type="text/javascript"></script>
     <!-- themeManager be uppermost imported script due to const localhost global usage -->
     <script src="/zoeken-advanced/advanced-zoeken.js" type="text/javascript"></script>
-
     <title>Advanced Zoeken</title>
 </head>
 
@@ -61,43 +60,43 @@
                     <div style="width: 62%">
                         <table>
                             <tr>
-                                <th>
+                                <td>
                                     <label for="archiveAmsterdam">Archief van Amsterdam</label>
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     <input style="float:right" id="archiveAmsterdam" name="archiveAmsterdam"
-                                        type="checkbox" value="true" checked="checked" /><br /><br />
-                                </th>
-                            </tr>
+                                        type="checkbox" value="true" checked="checked" />
+                                </td>
+                            </td>
 
                             <tr>
-                                <th>
+                                <td>
                                     <label for="openArchive">Open Archive Nederland & Belgie</label>
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     <input style="float:right" id="openArchive" name="openArchive" type="checkbox"
-                                        value="true" disabled="disabled" /><br /><br />
-                                </th>
+                                        value="true" disabled="disabled" />
+                                </td>
                             </tr>
 
                             <tr>
-                                <th>
+                                <td>
                                     <label for="archiveDublin">Archief van Dublin (geen advancedSearch)</label>
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     <input style="float:right" id="archiveDublin" name="archiveDublin" type="checkbox"
-                                        value="true" disabled="disabled" /><br /><br /><br />
-                                </th>
+                                        value="true" disabled="disabled" />
+                                </td>
                             </tr>
 
                             <tr>
-                                <th>
+                                <td>
                                     <label for="archiveNoordHolland">Archief van NH (geen advancedSearch)</label>
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     <input style="float:right" id="archiveNoordHolland" name="archiveNoordHolland"
-                                        type="checkbox" value="true" disabled="disabled" /><br /><br /><br />
-                                </th>
+                                        type="checkbox" value="true" disabled="disabled" />
+                                </td>
                             </tr>
 
                         </table>
@@ -111,29 +110,47 @@
                     value="AdvancedSearch">
 
 
+                <label for="opslaanZoekOpdracht" hidden>Sla de huidige zoekquery op in het account.</label>
+                <input id="opslaanZoekOpdracht" onclick="slaHuidigeZoekertjeOp()" type="button"
+                    value="Bewaar zoekopdracht">
+
                 <label for="resetButton" hidden>Herlaad en leeg het formulier.</label>
                 <input id="resetButton" onclick="window.open('/zoeken-advanced','_self')" type="button"
                     value="Reset velden">
 
-                <label for="printButton" hidden>Herlaad en leeg het formulier.</label>
+                <label for="printButton" hidden>Print resultaten.</label>
                 <input id="printButton" onclick="printData()" type="button"
-                    value="Exporteer resultaten">
+                    value="Print resultaten">
 
                 <br>
                 <span id="feedbackSpan">
                 </span>
-
+                
+                                <br>
+                <table>
+                    <td>
+                <label for="currentUserZoekertjes">Bekijk eerder opgeslagen zoekopdrachten:</label>
+            </td>
+            <td>
+                <select name="currentUserZoekertjes" id="currentUserZoekertjes">
+                  <option value="saab">Saab</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="audi">Audi</option>
+                </select> 
+            </td>
+            </table>
                 <div id="resultatenOmTePrinten">
                     <table id="tableSearchData">
                     </table>
                 </div>
+
+                
             </main>
 
         </div>
         <footer id="footer">
         </footer>
     </div>
-
 </body>
 
 </html>
