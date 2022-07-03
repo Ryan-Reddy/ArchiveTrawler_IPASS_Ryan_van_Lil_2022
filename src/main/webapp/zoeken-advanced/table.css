@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+}
+/* tr #header {
+    background-color: red;
+} */
+table, tr, th {
+    border: 1px solid;
+}
+
+main{
+    max-width: 90%;
+}

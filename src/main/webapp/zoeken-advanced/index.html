@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link href="/style-index.css" rel="stylesheet"/>
+    <link href="table.css" rel="stylesheet"/>
     <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
     <script src="/js/themeManager.js" type="text/javascript"></script>
     <!-- themeManager be uppermost imported script due to const localhost global usage -->
@@ -61,7 +62,7 @@
                         <li>
                             <label for="openArchive">Open Archive Nederland & Belgie</label>
                             <input style="float:right" id="openArchive" name="openArchive" type="checkbox"
-                                   value="true"/><br/><br/>
+                                   value="true" disabled="disabled"/><br/><br/>
                         </li>
                         <li>
                             <label for="archiveDublin">Archief van Dublin (geen advancedSearch)</label>
@@ -78,20 +79,19 @@
                 </div>
 
                 <hr/>
-                <br/>
             </form>
             <!-- // TODO schrijf "search-advanced-service" search fetch -->
             <label for="fetchAdvancedSearchButton" hidden>Zoek advancedSearch.</label>
             <input id="fetchAdvancedSearchButton" onclick="advancedSearchButtonClicked()" type="button"
-                   value="AdvancedSearch">
-
-
+            value="AdvancedSearch">
+            
+            
             <label for="resetButton" hidden>Herlaad en leeg het formulier.</label>
             <input id="resetButton" onclick="window.open('/zoeken-advanced','_self')" type="button"
-                   value="Reset velden">
-
-            <span id="feedbackSpan"><br>Popups toestaan in uw browser, om te genieten van de volledige
-                functionaliteit.<br> 
+            value="Reset velden">
+            
+            <br>
+            <span id="feedbackSpan">
             </span>
             
             <table id="tableSearchData">
