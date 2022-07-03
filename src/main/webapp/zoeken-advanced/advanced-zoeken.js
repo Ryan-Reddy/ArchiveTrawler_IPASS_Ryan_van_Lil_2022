@@ -23,9 +23,10 @@ function advancedSearchButtonClicked() {
       if (response.status === 200) {
         // er is een account gevonden !
         const myJson = await response.json(); // return the search results incl changelog
+        console.log(myJson);
         const myJsonString = JSON.stringify(myJson, null, 2)
         feedbackSpan.innerHTML = myJsonString.replace(/[\n\r]/g, ' ');
-        console.log(JSON.stringify(myJson, null, 2));
+        console.log(myJsonString);
       }
       if (response.status === 403) {
         feedbackSpan.innerHTML = '<p>Check of je bent ingelogd!</p>';

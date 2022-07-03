@@ -67,22 +67,23 @@ public class SearchAdvancedResource {
                 Zoekopdracht zoekopdracht = new Zoekopdracht(archiefKeuzesArrayList, keyWords,
 //                        tussenVoegsel, voorNaam, achterNaam, 1000, 2022, // is lastig met meerdere archieven
                         theUser);
-                Map<String, Object> messages = new HashMap<>();
+                Map<String, JSONObject> messages = new HashMap<>();
 
                 for (String zoekUri : zoekopdracht.getZoekUris()) {
 //                    String resultaat = fetchSearchResult(zoekUri);
 //                    JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
 //                    String prettyJson = json.toString(4);
 //                    System.out.println(prettyJson); // Print it with specified indentation
-                    String resultaat = fetchSearchResult(zoekUri);
-                    System.out.println(resultaat);
-                    JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
-                    String prettyJson = json.toString(4);
+//                    JSONObject resultaat = fetchSearchResult(zoekUri);
+//                    System.out.println(resultaat);
+//                    JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
+//                    String prettyJson = fetchSearchResult(zoekUri).toString(4);
 //                    System.out.println(prettyJson); // Print it with specified indentation
 
-                    messages.put("zoekopdracht",
-                            prettyJson
-                    );
+                return Response.ok().entity(fetchSearchResult(zoekUri).toString()).build();
+//                    messages.put("zoekopdracht",
+//                            fetchSearchResult(zoekUri).toString()
+//                    );
                 }
 
                 //  3. run fetch in backend
@@ -104,7 +105,7 @@ public class SearchAdvancedResource {
         }
     }
 
-    public String fetchSearchResult(String theURL) throws IOException {
+    public JSONObject fetchSearchResult(String theURL) throws IOException {
         URL url = new URL(theURL);
         InputStream is = url.openStream();
         int ptr = 0;
@@ -112,6 +113,6 @@ public class SearchAdvancedResource {
         while ((ptr = is.read()) != -1) {
             buffer.append((char) ptr); //append elke character 1 voor 1
         }
-        return buffer.toString();
+        return new JSONObject(buffer.toString());
     }
 }
