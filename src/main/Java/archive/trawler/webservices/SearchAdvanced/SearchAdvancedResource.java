@@ -67,29 +67,13 @@ public class SearchAdvancedResource {
                 Zoekopdracht zoekopdracht = new Zoekopdracht(archiefKeuzesArrayList, keyWords,
 //                        tussenVoegsel, voorNaam, achterNaam, 1000, 2022, // is lastig met meerdere archieven
                         theUser);
-                Map<String, JSONObject> messages = new HashMap<>();
 
                 for (String zoekUri : zoekopdracht.getZoekUris()) {
-//                    String resultaat = fetchSearchResult(zoekUri);
-//                    JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
-//                    String prettyJson = json.toString(4);
-//                    System.out.println(prettyJson); // Print it with specified indentation
-//                    JSONObject resultaat = fetchSearchResult(zoekUri);
-//                    System.out.println(resultaat);
-//                    JSONObject json = new JSONObject(resultaat); // Convert jsontext naar object
-//                    String prettyJson = fetchSearchResult(zoekUri).toString(4);
-//                    System.out.println(prettyJson); // Print it with specified indentation
-
-                return Response.ok().entity(fetchSearchResult(zoekUri).toString()).build();
-//                    messages.put("zoekopdracht",
-//                            fetchSearchResult(zoekUri).toString()
-//                    );
+                    return Response.ok().entity(fetchSearchResult(zoekUri).toString()).build();
                 }
 
-                //  3. run fetch in backend
 
-//                return Response.ok(messages).build();
-                return Response.ok().entity(messages).build();
+//                return Response.ok().entity(messages).build();
 
 
                 // TODO schrijf handle de input van searchQuery
