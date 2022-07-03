@@ -7,7 +7,14 @@ table {
 table, tr, th {
     border: 1px solid;
 }
+tr:hover #resultaten{
+    background-color: red;
+}
 
 main{
     max-width: 90%;
+}
+
+input :disabled, input[disabled] {
+    background-color: gray;
 }

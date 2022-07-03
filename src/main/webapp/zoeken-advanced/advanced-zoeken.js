@@ -51,7 +51,7 @@ function advancedSearchButtonClicked() {
           + `<th>${element.metadata.register_gemeente}</th> `
           + ` <th>${element.metadata.datum_geboorte}</th> `
           + ` <th>${element.metadata.modified_time}</th> `
-          + ` <th><a href="https://archief.amsterdam/indexen/deeds/${element.deed_id}?person=${element.id}">Link</a></th></tr>`;
+          + ` <th id="resultaten"><a href="https://archief.amsterdam/indexen/deeds/${element.deed_id}?person=${element.id}">Link</a></th></tr>`;
         });
       }
       if (response.status === 403) {
