@@ -2,5 +2,5 @@ package archive.trawler.webservices.dto;
 
 public class ZoekQueryOpslaan {
     public String keywords;
-    public String archiveAmsterdam;
+    public boolean archiveAmsterdam;
 }

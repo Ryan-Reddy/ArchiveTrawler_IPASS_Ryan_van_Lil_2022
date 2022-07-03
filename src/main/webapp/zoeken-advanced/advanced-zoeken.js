@@ -1,10 +1,12 @@
 console.log('loading advanced-zoeken.js');
+const feedbackSpan = document.getElementById('feedbackSpan');
 
 /** Haalt opgeslagen zoekqueries op vanaf de server.
  *
  */
 function laadZoekertjesVanGebruiker() {
   console.log('loading laadZoekertjesVanGebruiker()');
+  document.getElementById('feedbackSpan');
 
   const combobox = document.getElementById('currentUserZoekertjes');
   var option = document.createElement('option');
@@ -21,11 +23,14 @@ function laadZoekertjesVanGebruiker() {
       'Content-Type': 'application/json',
     },
   };
-  fetch(`${localhost}restservices/opgeslagen-zoekertjes`, fetchOptions).then(
+  fetch(`${localhost}restservices/zoekertjes/haal-op`, fetchOptions).then(
     async (response) => {
       if (response.status === 200) {
         const myJson = await response.json(); // return the search results incl changelog
         console.log(myJson);
+      }
+      if (response.status === 401 || response.status === 403) {
+        feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
     },
   );
@@ -49,11 +54,18 @@ function slaHuidigeZoekertjeOp() {
       'Content-Type': 'application/json',
     },
   };
-  fetch(`${localhost}restservices/opgeslagen-zoekertjes`, fetchOptions).then(
+  fetch(`${localhost}restservices/zoekertjes/sla-op`, fetchOptions).then(
     async (response) => {
       if (response.status === 200) {
         const myJson = await response.json(); // return the search results incl changelog
         console.log(myJson);
+        const myPrettyJsonString = JSON.stringify(myJson, null, 2);
+        console.log(myPrettyJsonString);
+        const JsonPersonsAsArray = JSON.parse(myPrettyJsonString);
+        console.log(JsonPersonsAsArray);
+      }
+      if (response.status === 401 || response.status === 403) {
+        feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
     },
   );
@@ -151,6 +163,6 @@ function fetchOpenArch(link) {
 }
 
 window.addEventListener('load', () => {
-  console.log('window loaded')
+  console.log('window loaded');
   laadZoekertjesVanGebruiker();
 });
