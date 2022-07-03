@@ -25,7 +25,7 @@ function advancedSearchButtonClicked() {
         const myJson = await response.json(); // return the search results incl changelog
         console.log(myJson);
         const myJsonString = JSON.stringify(myJson, null, 2)
-        feedbackSpan.innerHTML = myJsonString.replace(/[\n\r]/g, ' ');
+        feedbackSpan.innerHTML = myJsonString;
         console.log(myJsonString);
       }
       if (response.status === 403) {
