@@ -156,7 +156,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | actor heeft de site open, vult een zoekterm in en klikt op ok.                                                                                               |
 | Stappenplan/scenario | 1. De actor vult zoektermen in de invoervakken,<br/>2. klikt op zoek<br/>3. Het systeem opent meerdere tabs met de ingevulde zoektermen op aparte databases. |
 | Postcondities        | De actor kan nu navigeren naar de nieuw geopende tabs.     👍                                                                                                |
-
+| Frameworks           | JAX-RS                                                                                                                                                            |
 <br/>
 
 #### ID 1.0  Inloggen.
@@ -166,6 +166,8 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is een database met alle gebruikers, en de actor heeft hier een account in.                                                                                                                                                   |
 | Stappenplan/scenario | 1. De actor vult zijn inloggegevens in, en klikt op inloggen. <br/>2. Het systeem verifiert of deze overeenkomen met een actor.<br/>3. Als dit lukt is de actor nu ingelogd.<br/>3b. Zo niet, dan toont het systeem een melding. |
 | Postcondities        | De actor is nu ingelogd in zijn eigen omgeving.<br/>Of<br/>De actor kan het nogmaals proberen/een nieuw account aanmaken.    👍                                                                                                  |
+| Frameworks           | JAX-RS , JSONWEBTOKEN                                                                                                                                                                                                            |
+
 <br/>
 
 #### ID 1.1  Nieuwe gebruiker aanmaken.
@@ -175,6 +177,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | De actor is nog niet ingelogd. En kijkt naar de inlogpagina.                                                                                                                                                                                                                          |
 | Stappenplan/scenario | 1. De actor klikt op de link: <Nieuwe gebruiker aanmaken><br/>2. Vervolgens vult deze de gevraagde gegevens in.<br/>4. Het systeem verifieert of er nog geen actor is met die gegevens.<br/>5. Als dit alles lukt is er een nieuw account aangemaakt, en krijgt de actor bevestiging. |
 | Postcondities        | De actor heeft nu een account aangemaakt, of deze bestond al en wordt doorverwezen naar wachtwoord resetten: Use case 1.2  👍                                                                                                                                                         |
+| Frameworks           | JAX-RS                                                                                                                                                                                                                                                                                |
 
 <br/>
 
@@ -185,6 +188,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | De actor heeft een account en is op de wachtwoord wijzig pagina.                                                                                                             |
 | Stappenplan/scenario | 1. De actor vult de benodigde accountgegevens in<br/>2. het systeem controleert dit en geeft vervolgens als de info klopt: Een email met mogelijkheden tot wachtwoord reset. |
 | Postcondities        | De actor heeft zijn wachtwoord gewijzigd en kan nu in het vervolg hiermee inloggen.  👍                                                                                      |
+| Frameworks           | JAX-RS , JSONWEBTOKEN                                                                                                                                                                                                            |
 
 <br/>
 
@@ -195,6 +199,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | De actor is ingelogd en kijkt naar de Accountinformatie wijzigen pagina.                                                                            |
 | Stappenplan/scenario | 1. De actor vult de benodigde informatie in<br/>2. klikt op opslaan.<br/>3. Het systeem wijzigt de bestaande gegevens en geeft hiervan een melding. |
 | Postcondities        | De gegevens van het account zijn gewijzigd.   👍                                                                                                    |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -205,6 +210,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | De actor is ingelogd, en wil iets zoeken.                                                                                                                                                     |
 | Stappenplan/scenario | 1. De actor vult de gegevens in die opgezocht moeten worden.<br/>2. En klikt op zoeken.<br/>3. Het systeem neemt deze gegevens aan,<br/>4. maakt hier zoekqueries van,<br/>5. voert deze uit. |
 | Postcondities        | De actor kan nu de zoekresultaten laten tonen door het systeem.    👍                                                                                                                         |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -215,6 +221,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is een zoekopdracht aangemaakt door de gebruiker.                                                                                                                                                                                                          |
 | Stappenplan/scenario | 1. De actor kiest een zoekopdracht of heeft deze net aangemaakt. <br/>2. Vervolgens kiest deze om deze te tonen.<br/>3. Het systeem voert de zoekopdracht uit/heeft dit onlangs gedaan en toont de resultaten.<br/>4. De actor kan ze nu zien en doorklikken. |
 | Postcondities        | De actor heeft de zoekresultaten gezien, kan doorklikken naar de betreffende links, <br/>en kan ook de resultaten zelf exporteren/opslaan. De zoekopdracht zelf kan nu ook opgeslagen worden.    👍                                                           |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -225,6 +232,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is een zoekopdracht aangemaakt door de actor, de resultaten kunnen ingekeken worden.                                                                          |
 | Stappenplan/scenario | 1. De actor kiest er voor om de zoekopdracht op te slaan. <br/>2. Het systeem controleert of deze nog niet opgeslagen staat, en schrijft vervolgens een log bij. |
 | Postcondities        | De zoekopdracht is opgeslagen, de actor kan deze van nu af aan op een later moment bekijken en beheren.      👍                                                  |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -235,6 +243,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is eerder een zoekopdracht opgeslagen.                                                                                                                                                             |
 | Stappenplan/scenario | 1. De actor selecteert een zoekopdracht uit de lijst.<br/>2. Het systeem voert deze uit en toont de resultaten.                                                                                       |
 | Postcondities        | De actor kan nu de zoekresultaten aanklikken, maar ook inzien of de links al eerder bekeken zijn en zo ja, hoe vaak.  👌 de logs van de zoekresultaten zijn nog niet geimplementeerd, ze bestaan wel. |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -245,6 +254,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er zijn zoekopdrachten opgeslagen.                                                                                                                                                                                          |
 | Stappenplan/scenario | 1. Met enige regelmaat, stel 1x per dag, voert het systeem alle zoekopdrachten uit.<br/>2. Het systeem controleert of er sinds de vorige keer nieuwe resultaten bij zijn gekomen.<br/>3. Zo ja, dan geeft deze een melding. |
 | Postcondities        | De actor weet nu dat er nieuwe resultaten zijn, en kan deze opzoeken via het systeem.   👎   De gebruiker ontvangt geen meldingen, automatisch herhalende zoekopdrachten is nog niet geimplementeerd.                       |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -255,6 +265,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is een zoekopdracht uitgevoerd.                                                                                                       |
 | Stappenplan/scenario | 1. De actor kiest om de zoekresultaten op te slaan.<br/>2. Het systeem maakt hier een mooi bestandje van en biedt deze ter download aan. |
 | Postcondities        | De actor kan nu op zijn/haar systeem kiezen waar deze op te slaan.    👍                                                                 |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -265,6 +276,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is een zoekopdracht uitgevoerd of opgeslagen                                                                                                                                     |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
 | Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.   👌 - ze kunnen verwijderd worden, en ook gewijzigde en nogmaals opgeslagen.                           |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -275,6 +287,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
 | Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.    👌 - zoekfilters zijn beperkt, in de simpelzoeken pagina zijn ze wel een stuk breder.                |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -285,6 +298,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
 | Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.    👍 - de mogelijkheid is er.                                                                          |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -295,6 +309,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Precondities         | De actor heeft toegang tot het systeem.                                                                                                                                                                                                                                                                                                                        |
 | Stappenplan/scenario | 1. Er is een onderzoek gedaan naar wat hiervoor nodig is vanuit het nieuwe archief.<br/>2. De actor voegt deze toe aan het systeem.<br/>3. Het systeem geeft de user de optie deze toe te voegen aan de zoekopdrachten.<br/>4. Het systeem voegt deze ook automatisch toe aan alle bestaande zoekopdrachten.                                                   |
 | Postcondities        | Er is nu een nieuwe optie voor keuze van websites die doorgespit moeten worden. <br/>Ook zijn alle bestaande zoekopdrachten nu uitgebreid met een nieuwe zoekopdracht.<br/> Zo kan de user zonder extra werk nu wellicht nieuwe zoekresultaten ontvangen.         👍 - zoals in de planning stond is dit wel heel technisch en alleen voor het developer team. |
+| Frameworks           | JAX-RS , JSONWEBTOKEN, JSON                                                                                                                                                                      |
 
 <br/>
 
@@ -377,12 +392,14 @@ De wireframes bij de use cases, laatste iteratie ook screenshots toegevoegd.
 
 ### Business rules
 - Per email-adres EN user-naam mag er maar 1 user zijn.
+- ![img_1.png](IMAGES/unitTesting/testCommunity.png)
 - De entiteit Websites zullen altijd gebruikersgebonden zijn. <br/>
 Er kunnen dus meerdere keren dezelfde link voorkomen, maar met andere gebruikers.
 - Als een website link wordt aangeklikt, moet de datum en tijd opgeslagen worden, en het aantal keer geklikt +1
 - De entiteit Zoekopdrachten zullen ook altijd gebruikersgebonden zijn,  <br/>
 dit om te voorkomen dat er door een gebruiker een zoekopdracht gewijzigd worden  <br/>
 die een andere gebruiker ook toevallig had opgeslagen.
+- ![img_1.png](img_1.png)
 
 ![img.png](../img.png)
 
@@ -395,24 +412,19 @@ Voor het realiseren van de applicatie wordt gebruik van de volgende methodieken 
 
 Qua frameworks wordt gebruik gemaakt van:
 
-| Framework                        | Version | Licensemodel |
-|----------------------------------|---------|-------------|
-| javax.servlet                    | 4.0.1   ||
-| org.glassfish.jersey.media       | 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception|
-|org.glassfish.jersey.containers| 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception|
-|org.glassfish.jersey.inject| 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception|
-|com.azure| 12.6.1  |MIT license|
-|org.junit.jupiter| 5.8.2   |EPL-2.0|
-|io.jsonwebtoken| 0.9.1   |jsonwebtoken|
-|org.glassfish| 1.0.4   |Artistic-1.0/GPL-2.0|
-|org.slf4j| 1.7.30  |Apache-2.0|
-
-
-
-
-_**Vooralsnog geen frameworks**_
-
-[//]: # (Beschrijf ook welke frameworks je gebruikt, hiervan neem je ook de versie en het licentiemodel op.)
+| Framework                       | Version | Licensemodel                                  | Wat             |
+|---------------------------------|---------|-----------------------------------------------|-----------------|
+| javax.servlet                   | 4.0.1   |                                               |                 |
+| org.glassfish.jersey.media      | 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception | jab job writer  |
+| org.glassfish.jersey.containers | 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception | jab job builder |
+| org.glassfish.jersey.inject     | 2.30.1  | EPL 2.0 and GPL 2.0 with Class-path Exception | JWT maker       |
+ | org.projectlombok               | 1.18.22 | MIT license                                   | Setters/Getters | 
+| com.azure                       | 12.6.1  | MIT license                                   | blob            |
+| org.junit.jupiter               | 5.8.2   | EPL-2.0                                       | unit testing    |
+| io.jsonwebtoken                 | 0.9.1   | jsonwebtoken                                  |                 |
+| org.glassfish                   | 1.0.4   | Artistic-1.0/GPL-2.0                          |                 |
+| org.slf4j                       | 1.7.30  | Apache-2.0                                    |                 |
+| com.sun.mail                    | 1.6.2   | java                                          | email sturen    | 
 
 ## 6 Overdracht
 
@@ -435,4 +447,6 @@ _Bronnenlijst in APA stijl._
 
 HU. (2022). _IPASS - Plan van Aanpak Template_.docx
 HU. (2022). _IPASS - Ontwerp Template_.docx
+HU. (2022). _LesMateriaal BEP
+HU. (2022). _LesMateriaal FEP
 

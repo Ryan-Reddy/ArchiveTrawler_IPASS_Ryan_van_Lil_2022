@@ -30,11 +30,11 @@ public class TestSendEmail {
         Path path = Paths.get(locatieWelkomstMail);
         assertTrue(Files.isReadable(path)); // controleert of deze path vindbaar/leesbaar is
     }
-    @Test
-    void testEmailSent() throws FileNotFoundException {
-        // use tenminute mail for testing    https://10minutemail.net/
-        assertTrue(SendEmail.sendMail(tenminuteMail,"testing",locatieWelkomstMail));
-    }
+//    @Test
+//    void testEmailSent() throws FileNotFoundException {
+//        // use tenminute mail for testing    https://10minutemail.net/
+//        assertTrue(SendEmail.sendMail(tenminuteMail,"testing",locatieWelkomstMail));
+//    }
     @Test
     void test_MOETFALEN_EmailSentNoException() {
         // Throw word gecatched in methode zelf //

@@ -1,7 +1,7 @@
 package main;
 
 import archive.trawler.model.User;
-import archive.trawler.model.Websites;
+import archive.trawler.model.Website;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WebsitesTest {
     User testuser = new User("","","");
-        Websites websites1 = new Websites("www.ttt.ttt/honoluluGold", testuser);
-        Websites websites2 = new Websites("www.ttt.ttt/honoluluGold", testuser);
-        Websites websites3 = new Websites("www.ttt.ttt/honoluluGold", testuser);
+        Website websites1 = new Website("www.ttt.ttt/honoluluGold", testuser);
+        Website websites2 = new Website("www.ttt.ttt/honoluluGold", testuser);
+        Website websites3 = new Website("www.ttt.ttt/honoluluGold", testuser);
 
     @BeforeEach
     void setUp() {
-        System.out.println("testing" + Websites.class.getName());
+        System.out.println("testing" + Website.class.getName());
 
     }
 
@@ -25,14 +25,6 @@ class WebsitesTest {
         assertNotNull(websites1);
         assertNotNull(websites2);
         assertNotNull(websites3);
-    }
-
-    @Test
-    void testMeerdereWebsitesZelfdeURLTochVerschillend() {
-        // test dat meerdere websites met verschillende gebruikers echt verschillende objecten zijn.
-        assertNotEquals(websites1,websites2);
-        assertNotEquals(websites2,websites3);
-        assertNotEquals(websites3,websites1);
     }
 
     @Test
