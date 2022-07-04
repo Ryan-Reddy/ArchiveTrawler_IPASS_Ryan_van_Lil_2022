@@ -32,23 +32,28 @@ Voor een gedetailleer overzicht van de revisiehistorie zal ik dan toch verwijzen
 
 ## Inhoudsopgave
 
-| nr. | Naam                                          |
-|-----|-----------------------------------------------|
- | 1   | [Inleiding](#1-inleiding)                     |
- | 1.1 | [Doelgroep (lezersgroep)](#1.1-doelgroep)     |
- | 1.2 | [Leeswijzer](#1.2-leeswijzer)                 |
-| 2   | [Overzicht         ](#2-overzicht)            |
-| 3   | [Uses cases        ](#3-use-cases)            |
-| 3.1 | [Actoren           ](#3.1-actoren)            |
-| 3.2 | [Use case templates](#3.2-use-case-templates) |
-| 3.3 | [Wireframes        ](#3.3-wireframes)         |
-| 4   | [Domeinmodel       ](#4-domeinmodel)          |
-| 5   | [Technologieën     ](#5-technologieën)        |
-| 6   | [Overdracht        ](#6-overdracht)           |
-| 7   | [Referenties       ](#7-referenties)          | 
+| nr.  | Naam                                          |
+|------|-----------------------------------------------|
+ | 1    | [Inleiding](#1-inleiding)                     |
+ | 1.01 | [Leeswijzer](#1.2-leeswijzer)                 |
+ | 1.1  | [Doelgroep (lezersgroep)](#1.1-doelgroep)     |
+| 2    | [Overzicht         ](#2-overzicht)            |
+| 3    | [Uses cases        ](#3-use-cases)            |
+| 3.1  | [Actoren           ](#3.1-actoren)            |
+| 3.2  | [Use case templates](#3.2-use-case-templates) |
+| 3.3  | [Wireframes        ](#3.3-wireframes)         |
+| 4    | [Domeinmodel       ](#4-domeinmodel)          |
+| 5    | [Technologieën     ](#5-technologieën)        |
+| 6    | [Overdracht        ](#6-overdracht)           |
+| 7    | [Referenties       ](#7-referenties)          | 
 
 ## 1 Inleiding
 
+#### 1.01 Leeswijzer
+Dit document omvat het hele ontwerp en het ontwerp proces, 
+het zal hier zo beknopt doch gedetailleerd mogelijk getoond worden.
+Via de inhoudsopgave boven kan je direct naar de juiste informatie gaan.
+Ook zal dit automatisch links creeeren die dan gedeeld/opgeslagen kunnen worden.
 Neem hier op hoe het ontwerp tot stand gekomen is alsmede voor wie het bedoeld is met eventueel een lezersadvies.
 
 ### 1.1 Doelgroep
@@ -73,11 +78,6 @@ _Ze zullen graag op een desktop werken, vanwege de betrouwbaarheid en gemakken, 
 - Een desktopversie.
 
 
-#### 1.2 Leeswijzer
-Dit document omvat het hele ontwerp en het ontwerp proces, 
-het zal hier zo beknopt doch gedetailleerd mogelijk getoond worden.
-Via de inhoudsopgave boven kan je direct naar de juiste informatie gaan.
-Ook zal dit automatisch links creeeren die dan gedeeld/opgeslagen kunnen worden.
 
 ## 2 Overzicht
 
@@ -275,7 +275,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 3.0   Naam Websites om te doorzoeken toevoegen.
+#### ID 3.0    Websites om te doorzoeken toevoegen.
 | Actoren              | Developer                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Er zijn altijd nieuwe archief om te doorspitten, deze kunnen worden toegevoegd aan het systeem. Het is in de scope van dit project vooralsnog iets voor de programmeur.                                                                                                                                                                                        |
@@ -285,28 +285,44 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
+
 ### 3.3 Wireframes
 
-De wireframes bij de use cases.
+De wireframes bij de use cases, laatste iteratie ook screenshots toegevoegd.
 
-![](../DIAGRAMS/InlogPagina.png) ![img_1.png](IMAGES/Screenshots/LoginPageScreenshot.png)
+### Login Pagina
+<img src="../DIAGRAMS/InlogPagina.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/LoginPageScreenshot.png" alt="drawing" width="800"/>
 
-![](../DIAGRAMS/Nieuwe%20Gebruiker%20aanmaken.png) ![img.png](IMAGES/Screenshots/NieuweGebruikerScreenshot.png)
+### Nieuw gebruikersaccount aanmaken
+<img src="../DIAGRAMS/Nieuwe%20Gebruiker%20aanmaken.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/NieuweGebruikerScreenshot.png" alt="drawing" width="800"/>
 
-![](../DIAGRAMS/Wachtwoord%20kwijt.png) ![img_1.png](IMAGES/Screenshots/WWresetEmailOpvragen.png)
+### Wachtwoord reset email aanvragen
+<img src="../DIAGRAMS/Wachtwoord%20kwijt.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/WWresetEmailOpvragen.png" alt="drawing" width="800"/>
 
-![](../DIAGRAMS/Accountpagina.png) ![img_4.png](IMAGES/Screenshots/AccountInfoWijzigenSS.png)
+### Accountinformatie inzien en wijzigen
+<img src="../DIAGRAMS/Accountpagina.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/AccountInfoWijzigenSS.png" alt="drawing" width="800"/>
 
-#### Simpel zoeken, meerdere archieven tegelijk openen:
-![](../DIAGRAMS/zoekfunctie.png) ![img.png](IMAGES/Screenshots/SimpelZoeken.png)
+### Simpel zoeken, meerdere archieven tegelijk openen:
+<img src="../DIAGRAMS/zoekfunctie.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/SimpelZoeken.png" alt="drawing" width="800"/>
 
-#### Geavanceerd zoeken:
-![](../DIAGRAMS/zoekfunctie.png) ![img_1.png](IMAGES/Screenshots/ZoekfunctieGeavanc1.png)
+### Geavanceerd zoeken:
+<img src="../DIAGRAMS/zoekfunctie.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/ZoekfunctieGeavanc1.png" alt="drawing" width="800"/>
 
 
-![](../DIAGRAMS/Resultaten%20Scherm.png) ![img_2.png](IMAGES/Screenshots/ZoekfunctieGeavanc2.png)
+### Zoekresultaten
+<img src="../DIAGRAMS/Resultaten%20Scherm.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/ZoekfunctieGeavanc2.png" alt="drawing" width="800"/>
 
-![](../DIAGRAMS/Opgeslagen%20zoekopdrachten.png) ![img_3.png](IMAGES/Screenshots/OpgeslagenZoekQueriesPerGebruiker.png)
+### Opgeslagen zoekopdrachten
+<img src="../DIAGRAMS/Opgeslagen%20zoekopdrachten.png" alt="drawing" width="800"/>
+<img src="IMAGES/Screenshots/OpgeslagenZoekQueriesPerGebruiker.png" alt="drawing" width="800"/>
+
 
 
 ## 4 Domeinmodel
