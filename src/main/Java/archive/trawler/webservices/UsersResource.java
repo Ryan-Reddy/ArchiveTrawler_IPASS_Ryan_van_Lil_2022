@@ -105,40 +105,13 @@ public class UsersResource {
 
 
     }
-    //    @POST
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("")
-//    public Response createNewUser(NewAccount info) {
-//        try {
-//            if (User.getUserByEmail(info.email) != null) {  // als er al een useraccount met dit email bestaat:
-//                return Response.status(Response.Status.CONFLICT).entity("Klant bestaat al !").build();
-//            }
-//            User newUser = new User(info.name, info.email, info.password);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        Map<String, String> messages = new HashMap<>();
-//        messages.put("SUCCES", "klant bestond nog niet, is nu aangemaakt nog niet! Welkom, " + info.name);
-//        return ok(messages).build();
-//    }
-//    @POST
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response createAccountFullJackson(User account) { // check wether to use DTO or not
-//    if (Community.getCommunity().addUserToMap(account)) {
-////            if (!account.getAvatarBase64().isEmpty()) {
-////                EncodedBase64 base64 = new EncodedBase64(account.getAvatarBase64());
-////                String uploadId = UploadsManager.uploadToAzure(base64); // upload Id is de unieke blob voor deze upload
-////                account.setAvatarUploadId(uploadId);
-////            }
-//
-//            return Response.ok(account).build();
-//        } else {
-//            return Response.status(Response.Status.CONFLICT).build();
-//        }
-//    }
 
-
+    /**
+     * Rest service om de informatie van de gebruiker te wijzigen
+     * @param info De informatie uit het wijzigingen formulier
+     * @param sc De security context, oftewel JWT.
+     * @return Een Jackson response met daarin of het gelukt is of niet.
+     */
     @PATCH
     @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -148,9 +121,9 @@ public class UsersResource {
         if (sc.getUserPrincipal() instanceof User) {
             User currentUser = (User) sc.getUserPrincipal();
             try {
-                currentUser.setEmail(info.email);
+                currentUser.setEmail(info.email); // geeft info mee aan de DTO.
                 currentUser.setNaam(info.naam);
-                return Response.ok().build();
+                return Response.ok("Het wijzigen is gelukt.").build();
             } catch (Exception e) {
                 e.printStackTrace();
             }

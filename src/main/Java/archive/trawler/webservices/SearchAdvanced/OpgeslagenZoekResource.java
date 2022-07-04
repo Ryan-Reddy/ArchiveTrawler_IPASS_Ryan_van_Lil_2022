@@ -37,6 +37,12 @@ public class OpgeslagenZoekResource {
         return Response.status(Response.Status.UNAUTHORIZED).build();
     }
 
+    /**
+     * Sla een nieuwe zoekopdracht op en voeg deze toe aan de lijst van deze gebruiker.
+     * @param input De queryparameters die nodig zijn voor een nieuwe zoekopdracht.
+     * @param sc SecurityContext, JTW.
+     * @return Response of het gelukt is of niet.
+     */
     @POST
     @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)

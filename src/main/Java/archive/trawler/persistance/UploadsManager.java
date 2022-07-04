@@ -10,8 +10,12 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Base64;
-/** Deze klasse zorgt voor individuele blobs voor elk aangemaakte account in de uploadcontainer*/
 
+/** Deze klasse zorgt voor individuele blobs voor de Community als geheel in de uploadcontainer
+ * @Method public loadEncodedUploadFromAzure() Decodeerd downloads
+ * @Method public loadDecodedUploadFromAzure() Encodeerd downloads
+ *
+ */
 public class UploadsManager {
     private final static String ENDPOINT = "https://ryanreddyipass.blob.core.windows.net/";
     private final static String SASTOKEN = "sp=racwdli&st=2022-06-27T12:11:40Z&se=2032-06-27T20:11:40Z&spr=https&sv=2021-06-08&sr=c&sig=i%2FYZLSbI5JckGxzQ%2BSh3suduRszln5gCIkpk53JLXBA%3D";
@@ -23,6 +27,11 @@ public class UploadsManager {
             .containerName(CONTAINER)
             .buildClient();
 
+    /**
+     * Deze encodeerd aparte blobs van azure.
+     * @param uploadId de upload ID
+     * @return EncodedBase64
+     */
     public static EncodedBase64 loadEncodedUploadFromAzure(String uploadId) {
         if (!blobContainer.exists())
             throw new IllegalStateException("Container does not exist!");
@@ -44,6 +53,11 @@ public class UploadsManager {
         return new EncodedBase64(new String(bytez));
     }
 
+    /**
+     * Deze decodeerd upload aparte blobs van azure.
+     * @param uploadId String die als identifyer gebruikt wordt/
+     * @return DecodedBase64
+     */
     public static DecodedBase64 loadDecodedUploadFromAzure(String uploadId) {
         String base64str = loadEncodedUploadFromAzure(uploadId).getBase64str();
 
@@ -55,10 +69,10 @@ public class UploadsManager {
     }
 
     /**
-     * Deze uploadToAzure upload elke image apart naar de backup
+     * Decodeerd EncodedBase64
      * Handig voor profielfoto's bijvoorbeeld
      * @param upload upload van n image of andere file
-     * @return
+     * @return String
      */
     public static String uploadToAzure(EncodedBase64 upload) {
         if (!blobContainer.exists())

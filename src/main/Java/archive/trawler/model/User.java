@@ -1,6 +1,7 @@
 package archive.trawler.model;
 
 import archive.trawler.persistance.Community;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ import java.util.Map;
 /**
  * Klasse die gebruikt word om de users te creeeren.
  */
+@Data
 public class User implements Serializable, Principal {
     /** Uniek ID nummer van gebruiker*/
     private @Getter @Setter int ID;
@@ -57,6 +59,7 @@ public class User implements Serializable, Principal {
         this.role = "user";
         Community.addUserToMap(this);
     }
+
     /**
      * @param email email adres, is gelijk ook de username van de inlog
      * @param naam  persoonlijke naam, voor en/of achternaam
@@ -77,17 +80,6 @@ public class User implements Serializable, Principal {
 
         return (int) (epochSecond + (min + (Math.random() * max))); // TODO doe iets met de uniqueID danwel in user, danwel in de zoekkant van website
     }
-
-
-//    //Domain endpoint to actually add a MyUser class
-//    public static boolean registerUser(User user) {
-//        try {
-//            return addUserToMap(user);
-//        } catch (Exception e) {
-//            return false;
-//        }
-//    }
-
 
     /**
      * Zoekt de user die hoort bij dit emailadres
@@ -133,22 +125,22 @@ public class User implements Serializable, Principal {
         }
     }
 
+    /**
+     * Haalt de naam op van deze User
+     * @return String naam;
+     */
     @Override
     public String getName() {
         return naam;
     }
 
+    /**
+     * Security Context methode.
+     * @param subject the {@code Subject}
+     * @return boolean true or no.
+     */
     @Override
     public boolean implies(Subject subject) {
         return Principal.super.implies(subject);
     }
-
-
-//    public int getID() {
-//        return identificationNum;
-//    }
-//
-//    public void setID(int id) {
-//        this.ID = id;
-//    }
 }

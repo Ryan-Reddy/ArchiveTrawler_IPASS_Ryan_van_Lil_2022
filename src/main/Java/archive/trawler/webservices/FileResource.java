@@ -8,6 +8,7 @@
 //import javax.ws.rs.PathParam;
 //import javax.ws.rs.core.Response;
 //
+// /** Een resource waarmee ik per Object een individuele blob kan aanmakne.
 //@Path("/files/{fileId}")
 //public class FileResource {
 //

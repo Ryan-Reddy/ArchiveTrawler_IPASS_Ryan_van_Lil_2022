@@ -51,8 +51,7 @@ public class SendEmail {
         session.setDebug(true);
 
         try {
-            // Creeer een message van HTML file keuze.
-
+            // Creeer een bericht van HTML file keuze.
             String htmlMessage = htmlToString(htmlFileFromRoot);
 
             // Create a default MimeMessage object.
@@ -79,6 +78,7 @@ public class SendEmail {
             mex.printStackTrace();
         }
     }
+
     /**
      * SendMail haalt een html file op, leest deze in als string en verstuurt deze via gmail naar opgegeven Email adres.
      *
@@ -111,8 +111,8 @@ public class SendEmail {
         // Used to debug SMTP issues
         session.setDebug(true);
         try {
-        //String fileName = (resources/) implied "resetmail.html";
-        String fileName = "resetmail.html";
+            //String fileName = (resources/) implied "resetmail.html";
+            String fileName = "resetmail.html";
 
 
             String htmlMessage = htmlToString(fileName);
@@ -143,10 +143,12 @@ public class SendEmail {
         }
     }
 
-    /** Leest html file, retourneert String, denk erom om met exape characters te programmeren.
-     * @param fileName Html filename, als string vanuit resources:
+    /**
+     * Leest html file, retourneert String, denk erom om met exape characters te programmeren.
      *
-     *                         "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
+     * @param fileName Html filename, als string vanuit resources:
+     *                 <p>
+     *                 "./src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
      * @return String met contents
      */
     public static String htmlToString(String fileName) {
@@ -177,17 +179,6 @@ public class SendEmail {
             return contentBuilder.toString();
         }
     }
-
-
-    // print input stream
-
-        public static void main (String[]args) throws IOException {
-            //String fileName = "database.properties";
-            String fileName = "resetmail.html";
-            htmlToString(fileName);
-        }
-
-
 }
 
 

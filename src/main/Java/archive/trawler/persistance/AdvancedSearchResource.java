@@ -6,7 +6,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
 
-public class AdvancedSearchManager {
+public class AdvancedSearchResource {
     public static void main(String[] args) {
         String content = null;
         URLConnection connection;
@@ -23,7 +23,7 @@ public class AdvancedSearchManager {
         JSONObject json = new JSONObject(content); // Converteer text naar JSONObject
         System.out.println(json.toString(4)); // Print het PRETTY
 
-        // TODO Schrijf een plek om dit weg te schrijven, evt file en dan blob.
+        // TODO Schrijf een plek om de resultaten weg te schrijven, evt file en dan blob.
         //  zorg ervoor dat deze functie wordt aangeroepen bij opstarten van de server/regelamtig
         //  labels: ARCHIEFTRAWLER
     }

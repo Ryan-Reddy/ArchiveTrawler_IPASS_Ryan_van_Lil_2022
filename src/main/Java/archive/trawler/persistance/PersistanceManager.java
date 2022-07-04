@@ -33,9 +33,11 @@ public class PersistanceManager {
 
     /**
      * ~~~~~~~~~~~~~~~~~~~ LOADING FROM AZURE:  ~~~~~~~~~~~~~~~~~~~
-     * Tijdens opstarten van de app.
+     * Tijdens opstarten van de app. Haalt de data op van de azure blob storage container
+     * Maakt deze ook als die er nog niet was.
+     * Vervolgens maakt deze een backup naar een tweede container.
+     * En laadt de data in.
      */
-
     public static void loadFromAzure() throws IOException, ClassNotFoundException {
 
         if (communityContainer.exists()) {

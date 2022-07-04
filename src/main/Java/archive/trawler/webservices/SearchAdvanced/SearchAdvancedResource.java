@@ -22,11 +22,15 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * REST service klasse met daarin de methodes om te kunnen advanced-zoeken.
+ * @Method advancedSearchProcess()
+ * @Method fetchSearchResult()
+ */
 @Path("search-advanced-service")
 public class SearchAdvancedResource {
     /**
      * advanced search, handled de zoekquery vanuit zoeken-advanced formulier op de website.
-     *
      * @param searchQuery searchquery van het type JSON > vorm: DTO SearchAdvancedInput
      */
     @POST
@@ -87,6 +91,11 @@ public class SearchAdvancedResource {
         }
     }
 
+    /** Deze functie haalt daadwerkelijk de html file op en leest deze character voor character uit.
+     * @param theURL de URI met daarin de zoekqueries verwerkt.
+     * @return JSONObject met daarin de html
+     * @throws IOException
+     */
     public JSONObject fetchSearchResult(String theURL) throws IOException {
         URL url = new URL(theURL);
         InputStream is = url.openStream();

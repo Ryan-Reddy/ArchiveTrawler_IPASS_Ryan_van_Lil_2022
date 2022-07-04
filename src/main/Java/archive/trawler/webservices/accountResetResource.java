@@ -17,6 +17,13 @@ import static archive.trawler.security.AuthenticationResource.createToken;
 
 @Path("account-reset")
 public class accountResetResource {
+    /**
+     * Reset WW email aanvraag. Controleert of het wachtwoord overeenkomt met een gebruikersaccount.
+     * Als er een gebruiker is met dit email adres ontvangt deze een email,
+     * met een login token die tijdelijk geldig is.
+     * @param resetAccount De door de gebruiker ingevoerde email.
+     * @return Een Response object of het gelukt is of niet.
+     */
     @POST
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
@@ -35,6 +42,12 @@ public class accountResetResource {
         }
     }
 
+    /**
+     * Wachtwoord reset REST resource.
+     * @param info Niewe wachtwoord, 2x herhaald ter verificatie.
+     * @param sc SecurityContext, de JWT token, danwel als ingelogde gebruiker of als eenmalige email login token.
+     * @return Jackson Response of het gelukt is of niet.
+     */
     @PATCH
     @RolesAllowed("user")
     @Consumes(MediaType.APPLICATION_JSON)

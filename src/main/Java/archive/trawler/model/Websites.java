@@ -1,5 +1,6 @@
 package archive.trawler.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ import java.util.*;
  * @aantalKeerBezocht aantalkeer dat deze link is aangeklikt, default is 0
  * @datumBezocht Lijst met data waarop de bezoeker deze link heeft aangeklikt
  * */
+@Data
 public class Websites {
     private @Getter @Setter String resultaatURL;
     private @Getter @Setter  int aantalKeerBezocht;
@@ -47,35 +49,6 @@ public class Websites {
     /** Haalt een lijst met alle keren dat de User deze specifieke link heeft aangeklikt. */
     public ArrayList<LocalDateTime> getDatumBezocht() {
         return datumBezocht;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Websites websites = (Websites) o;
-        return aantalKeerBezocht == websites.aantalKeerBezocht && Objects.equals(resultaatURL,
-                                                                                 websites.resultaatURL) && Objects.equals(userID,
-                                                                                                                          websites.userID) && Objects.equals(datumBezocht,
-                                                                                                                                                             websites.datumBezocht);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(resultaatURL,
-                            aantalKeerBezocht,
-                            userID,
-                            datumBezocht);
-    }
-
-    @Override
-    public String toString() {
-        return "Websites{" +
-                "resultaatURL='" + resultaatURL + '\'' +
-                ", aantalKeerBezocht=" + aantalKeerBezocht +
-                ", userID='" + userID + '\'' +
-                ", datumBezocht=" + datumBezocht +
-                '}';
     }
 }
 
