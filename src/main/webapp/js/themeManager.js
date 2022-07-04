@@ -1,6 +1,6 @@
 // LET OP: dit adres wordt in alle fetches gebruikt in *.js
 // const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-const localhost = ''; // TODO toggle for heroku
+const localhost = '/'; // TODO toggle for heroku
 // LET OP: dit adres wordt in alle fetches gebruikt in *.js
 
 function setFooter() {
