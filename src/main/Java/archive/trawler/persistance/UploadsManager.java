@@ -21,7 +21,7 @@ public class UploadsManager {
     private final static String SASTOKEN = "sp=racwdli&st=2022-06-27T12:11:40Z&se=2032-06-27T20:11:40Z&spr=https&sv=2021-06-08&sr=c&sig=i%2FYZLSbI5JckGxzQ%2BSh3suduRszln5gCIkpk53JLXBA%3D";
     private final static String CONTAINER = "uploadscontainer";
 
-    private static BlobContainerClient blobContainer = new BlobContainerClientBuilder()
+    private static final BlobContainerClient blobContainer = new BlobContainerClientBuilder()
             .endpoint(ENDPOINT)
             .sasToken(SASTOKEN)
             .containerName(CONTAINER)

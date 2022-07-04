@@ -10,9 +10,7 @@ import java.io.Serializable;
 import java.security.Principal;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Klasse die gebruikt word om de users te creeeren.

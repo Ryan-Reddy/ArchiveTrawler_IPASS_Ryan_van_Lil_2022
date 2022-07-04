@@ -40,7 +40,7 @@ public class AuthenticationResource {
     @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response authenticateUser(LoginRequest logonRequest) { /** Log-in */
+    public Response authenticateUser(LoginRequest logonRequest) { /* Log-in */
         try {
             String role = MyUser.validateLogin(logonRequest.email, logonRequest.password);
             if (role == null) throw new IllegalArgumentException("No user found");
@@ -60,8 +60,8 @@ public class AuthenticationResource {
      * Bestaat uit drie door punten gescheiden onderdelen:<br>
      * Een Header met het token-type en signature algoritme - Base64Url encoded<br>
      * Een Payload met claims (statements over de gebruiker) - Base64Url encoded<br>
-     * “Reserved” claims (bijvoorbeeld: issuer, expiration time, subject)<br>
-     * “Private” claims (bijvoorbeeld: userrole)
+     * Reserved claims (bijvoorbeeld: issuer, expiration time, subject)<br>
+     * Private claims (bijvoorbeeld: userrole)
      *
      * @param email de gebruikersnaam in context van deze app is dat een email
      * @param role  de rol van de gebruiker

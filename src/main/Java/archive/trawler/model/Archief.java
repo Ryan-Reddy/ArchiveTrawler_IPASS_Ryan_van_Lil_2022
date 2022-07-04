@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Objects;
 
 
 /** Deze klasse behoud alle informatie van individuele (externe) archieven.
@@ -31,9 +30,9 @@ public class Archief implements Serializable {
 
     /**
      * Deze methode creeert een link vanuit de basis URI die hoort bij het archief.
-     * @param keyWords
-     * @param userID
-     * @return
+     * @param keyWords Hoofd keywords query
+     * @param userID ID van de user
+     * @return String met de link (nog niet web safe)
      */
      public String createLink(String keyWords, int userID ) {
          try {

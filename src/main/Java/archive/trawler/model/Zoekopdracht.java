@@ -69,6 +69,7 @@ public class Zoekopdracht implements Serializable {
 //        this.jaarTot = jaarTot;
         this.userOwner = user;
         this.zoekOpdrachtID = genereerZoekOpdrachtID(this.userOwner);
+
         Community.getZoekOpdrachtMap().put(this.zoekOpdrachtID,this);
         this.genereerZoekURIs();
     }

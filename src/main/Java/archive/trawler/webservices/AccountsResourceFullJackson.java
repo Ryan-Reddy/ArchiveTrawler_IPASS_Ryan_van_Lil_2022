@@ -7,7 +7,6 @@ import archive.trawler.persistance.Community;
 //import nl.hu.bep.referenceproject.persistence.EncodedBase64;
 //import nl.hu.bep.referenceproject.persistence.UploadsManager;
 
-import javax.mail.MessagingException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -21,10 +20,10 @@ public class AccountsResourceFullJackson {
     @Path("")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createAccountFullJackson(User account) throws IOException {
+    public Response createAccountFullJackson(User account) {
         Map<String, String> messages = new HashMap<>();
         if (Community.addUserToMap(account)) {
-            /** alleen nodig als ik een file wil koppelen aan User*/
+            /* alleen nodig als ik een file wil koppelen aan User*/
 //            if (!account.getAvatarBase64().isEmpty()) {
 //        }
 //                EncodedBase64 base64 = new EncodedBase64(account.getAvatarBase64());

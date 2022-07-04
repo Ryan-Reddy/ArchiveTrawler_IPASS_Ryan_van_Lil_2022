@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-/** Status check REST resources.
+/** Status check of the REST services.
  */
 @Path("status")
 public class testResource {

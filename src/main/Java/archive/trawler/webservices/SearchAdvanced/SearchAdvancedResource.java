@@ -47,7 +47,7 @@ public class SearchAdvancedResource {
 
                 //  2.1 define query
                 String keyWords = new String(searchQuery.keywords);
-                /** VOOR EEN LATERE SPRINT:
+                /* VOOR EEN LATERE SPRINT:
                  //                String achterNaam = new String(searchQuery.achternaam);
                  //                String voorNaam = new String(searchQuery.voorNaam);
                  //                String tussenVoegsel = new String(searchQuery.tussenvoegsel);

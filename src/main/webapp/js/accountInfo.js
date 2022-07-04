@@ -92,6 +92,7 @@ async function wijzigAccount() {
 // ***************************************
 /** Dit draait bij het openen pagina: */
 console.log('window on load');
-window.addEventListener('load', () => fetchCurrentUser());
+window.addEventListener('load', () => {fetchCurrentUser()
 }
+);
 // ***************************************

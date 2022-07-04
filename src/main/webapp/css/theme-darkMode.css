@@ -1,15 +1,18 @@
 /* DARK MODE: */
 .bodyDark {
-    background-color: #051622;
+    background-image: linear-gradient(to bottom right, #0f2557, #3778c2);
+
+    /*background-color: #051622;*/
     /* background-color: #394952; */
     caret-color: #ccc;
     accent-color: #ccc;
     color: #deb992;
     font-family: 'Bookman Old Style', serif;
-    border-color: header;
-
 }
 .bodyDark main {
+    /*background-image: linear-gradient(to bottom right, #deb992, #051622);*/
+    background-color: #051622;
+
     border-color: #deb992;
 }
 .bodyDark .header {

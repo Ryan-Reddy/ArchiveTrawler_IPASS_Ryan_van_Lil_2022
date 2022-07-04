@@ -1,28 +1,24 @@
 /** Globale inputs en buttons. 
 */
-input[type=text]{
-    width: 75%
-  }
-  input[type=email]{
-    width: 75%
-  }
-  input[type=password]{
-    width: 75%
-  }
+input[type=text], input[type=email], input[type=password] ,input[type=number]{
+    width: 72%
+}
     input[type=button] {
-      width:auto;
+      min-width:9rem;
+      width: auto;
 
     }
     input[type="button"], button{
       /* outline-style: groove; */
-      /* button-outline: none;
-      button-shadow:none !important; */
-      /* background-color:#18b6d6; */   
+      button-outline: none;
+      button-shadow:none !important;
+      background-color:#18b6d6;
       border: none;
-      margin: 8px;
+      margin: 10px;
+      color: black;
 
       border-radius: 15px;
-      background: linear-gradient(to top, slate 0px, darkgray 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+      background: linear-gradient(to top, lightgrey 0%, darkgray 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
       box-shadow: 0 0 8px rgb(207, 207, 207);
     }
     
@@ -41,7 +37,7 @@ input[type=text]{
       .advanced-search {
           background-color:#deb992;
           color: #181818;
-          background: linear-gradient(to top, slate 0px, darkgray 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+          background: linear-gradient(to top, lightgrey 0px, darkgray 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
       }
 
        

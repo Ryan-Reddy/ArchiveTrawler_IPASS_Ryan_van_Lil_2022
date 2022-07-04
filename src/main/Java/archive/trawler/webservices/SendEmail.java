@@ -9,7 +9,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import java.io.*;
-import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
@@ -87,7 +86,7 @@ public class SendEmail {
      *                    <br> "src/main/Java/archive/trawler/webservices/emailHTMLTemplates/verificationMail.html"
      * @param token
      */
-    public static void sendMailWithToken(String sendTo, String subjectLine, String token) throws IOException {
+    public static void sendMailWithToken(String sendTo, String subjectLine, String token) {
         System.out.println("received request to sendMailWithToken");
         String from = "no_reply@archive-trawler.com";        // Sender's email ID needs to be mentioned
         String host = "smtp.gmail.com";

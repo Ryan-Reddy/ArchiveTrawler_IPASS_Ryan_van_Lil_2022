@@ -5,16 +5,16 @@ body {
   min-height: 80vh;
 }
 main {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 44rem; /* +-700px */
+  margin-left: 21rem;
+  margin-right: 21rem;
+  min-width: auto; /* +-700px */
   /* background: #394952; */
-  padding: 3rem;
+  padding: 4rem;
   margin 8rem;
   margin-bottom: +10rem;
   align-self: center;
   border-style: solid;
-  border-width: 5rem;
+  border-width: 4rem;
 }
 
 main label {
