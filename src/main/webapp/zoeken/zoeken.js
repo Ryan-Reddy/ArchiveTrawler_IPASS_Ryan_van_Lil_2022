@@ -12,6 +12,9 @@ const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
 //   }
 // }
 
+/** Dit is de basiczoekfunctie, deze opent de verschillende sites afzonderlijk,
+ *  en toont de resultaten op de website zelf.
+ */
 function zoekButtonClicked() {
   const voornaam = document.getElementById('voornaam').value;
   const achternaam = document.getElementById('achternaam').value;
@@ -51,27 +54,28 @@ function zoekButtonClicked() {
   }
 }
 
-function fetchFunctionForTesting() {
-  const feedbackElement = document.getElementById('postresponse');
+/** Deze functies zijn momenteel niet geimplementeerd, maar eventueel in een later stadium wel: */
+// function fetchFunctionForTesting() {
+//   const feedbackElement = document.getElementById('postresponse');
 
-  fetch('https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22henk%22%7D')
-    .then((response) =>
-      // When the page is loaded convert it to text
-      response.text())
-    .then((html) => {
-      // Initialize the DOM parser
-      const parser = new DOMParser();
-      // Parse the text
-      const doc = parser.parseFromString(html, 'text/html');
-      // You can now even select part of that html as you would in the regular DOM
-      // Example:
-      // var docArticle = doc.querySelector('article').innerHTML;
-      console.log(doc);
-    })
-    .catch((err) => {
-      console.log('Failed to fetch page: ', err);
-    });
-}
+//   fetch('https://archief.amsterdam/indexen/persons?ss=%7B%22q%22:%22henk%22%7D')
+//     .then((response) =>
+//       // When the page is loaded convert it to text
+//       response.text())
+//     .then((html) => {
+//       // Initialize the DOM parser
+//       const parser = new DOMParser();
+//       // Parse the text
+//       const doc = parser.parseFromString(html, 'text/html');
+//       // You can now even select part of that html as you would in the regular DOM
+//       // Example:
+//       // var docArticle = doc.querySelector('article').innerHTML;
+//       console.log(doc);
+//     })
+//     .catch((err) => {
+//       console.log('Failed to fetch page: ', err);
+//     });
+// }
 
 // function fetchFunctionForTesting() {
 //   const elem = document.getElementById('postresponse');

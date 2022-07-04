@@ -1,8 +1,12 @@
-  
-  input[type=text]{
+/** Globale inputs en buttons. 
+*/
+input[type=text]{
     width: 75%
   }
   input[type=email]{
+    width: 75%
+  }
+  input[type=password]{
     width: 75%
   }
     input[type=button] {

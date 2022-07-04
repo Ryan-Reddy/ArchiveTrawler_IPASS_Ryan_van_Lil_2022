@@ -27,10 +27,10 @@ function stuurWachtwoordReset() {
       if (response.status === 200) { // er is een account gevonden !
         const feedback = response.json();
         console.log('Er is een email gestuurd naar uw account.');
-        feedbackspan.innerText = feedback;
+        feedbackspan.innerText = 'Als er een account bestaat met die gegevens is er een email gestuurd naar u.';
       }
       if (response.status === 204) { // no content
-        const feedback = 'geen content gevonden voor die input';
+        const feedback = 'Als er een account bestaat met die gegevens is er een email gestuurd naar u.';
         console.log(feedback);
         feedbackspan.innerText = feedback;
       }
@@ -41,7 +41,3 @@ function stuurWachtwoordReset() {
       feedbackspan.innerText = feedback;
     });
 }
-
-
-
-// document.getElementById('stuurEmailMetWachtwoordReset').addEventListener('click', stuurEmailMetWachtwoordReset());

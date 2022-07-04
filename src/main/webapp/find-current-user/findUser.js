@@ -30,7 +30,7 @@ async function fetchSingleUser() {
         // testingspaceSpan.innerHTML += '<br>email: ' + myJson.email;
         // testingspaceSpan.innerHTML += '<br>rol:   ' + myJson.role;
       }
-      if (response.status === 204) { //no content
+      if (response.status === 204) {
         const message = 'geen content gevonden voor dit account';
         feedbackspan.innerHTML = message;
         console.log(message);
@@ -41,7 +41,11 @@ async function fetchSingleUser() {
     });
 }
 
-document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPageAmsterdamArchief()})
+document
+  .getElementById('searchUserButton')
+  .addEventListener('click', (event) => {
+    fetchToPageAmsterdamArchief();
+  });
 document
   .getElementById('searchUserButton')
   .addEventListener('click', (event) => {

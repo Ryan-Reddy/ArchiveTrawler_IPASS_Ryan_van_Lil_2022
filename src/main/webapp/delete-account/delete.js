@@ -7,21 +7,18 @@
 // }
 
 import jwt_decode from 'jwt-decode';
-
+/**
+ * Deze functie delete de huidige gebruikers account.
+ * Dit doet hij d.m.v. een fetch naar de backend, waar deze authenticeert met de JWT
+ * En het gekoppelde account ook gelijk zo opzoekt. 
+ * Het account wordt niet echt verwijderd, de login wordt alleen geblokkeerd. 
+ * Bij de volgende backup wordt deze welliswaar niet meegenomen en is deze voor altijd verwijderd. 
+ */
 async function deleteAccount() {
   const feedbackspan = document.getElementById('feedbackspan');
   console.log('deleting account');
   const jsonRequestBody = {};
-
-  // let formData = new FormData(document.querySelector('#deleteAccount-form'));
-  // formData.forEach((value, key) => (jsonRequestBody[key] = value));
   const JWT = sessionStorage.getItem('JWT');
-  console.log(JWT);
-  // console.log(getParsedJwt(JWT));
-  // console.log(getParsedJwt(JWT).sub);
-  console.log(jwt_decode(JWT));
-  console.log(jwt_decode(JWT).sub);
-
   const fetchOptions = {
     method: 'DELETE',
     body: JSON.stringify(jsonRequestBody),

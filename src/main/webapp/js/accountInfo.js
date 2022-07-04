@@ -1,6 +1,9 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // |    getting current account:                                               |
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+/** Get de info van de huidige ingelogde en stop het gelijk in het wijzig info formulier.
+ * Mocht de gebruiker info willen wijzigen kan dat dan gelijk.
+ */
 async function fetchCurrentUser() {
   console.log('fetchSingleUser() (jwt.thisUser)');
   const jsonRequestBody = {};
@@ -23,7 +26,8 @@ async function fetchCurrentUser() {
   // eslint-disable-next-line no-undef
   await fetch(`${localhost}restservices/users/getAccount/`, fetchOptions) // een POST naar dit adres maakt een nieuw acc.
     .then(async (response) => {
-      if (response.status === 200) { // er is een account gevonden !
+      if (response.status === 200) {
+        // er is een account gevonden !
         const myJson = await response.json();
         console.log(myJson);
         document.getElementById('naam').value = myJson.naam;
@@ -32,7 +36,8 @@ async function fetchCurrentUser() {
         // testingspaceSpan.innerHTML += '<br>email: ' + myJson.email;
         // testingspaceSpan.innerHTML += '<br>rol:   ' + myJson.role;
       }
-      if (response.status === 204) { // no content
+      if (response.status === 204) {
+        // no content
         console.log('geen content gevonden voor die input');
       }
     })
@@ -43,9 +48,12 @@ async function fetchCurrentUser() {
 // ***************************************
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-// |   Post fetch om account info te wijzigen, heeft nog werk nodig.           |
+// |   Post fetch om account info te wijzigen.                                 |
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
+/** Wijzig account info, deze haalt de info op uit het formulier en stuurt dit naar de backend.
+ * In de Java Rest API wordt dit dan verder gewijzigd, 
+ * en deze functie geeft een melding of dat gelukt is of niet.
+ */
 async function wijzigAccount() {
   const feedbackspan = document.getElementById('feedbackspan');
   feedbackspan.innerText = 'Attempting to edit account info.';
@@ -85,5 +93,5 @@ async function wijzigAccount() {
 /** Dit draait bij het openen pagina: */
 console.log('window on load');
 window.addEventListener('load', () => fetchCurrentUser());
+}
 // ***************************************
-// document.getElementById('searchUserButton').addEventListener('click', (event) => {fetchToPage()})

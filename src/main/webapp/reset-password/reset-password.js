@@ -1,3 +1,7 @@
+/** Deze functie controleert het nieuwe wachtwoord, en geeft deze
+ * aan de backend via een fetch PATCH. De backend regelt dan verder de wijzigingen.
+ * Vervolgens geeft deze functie weer feedback aan de gebruiker. 
+ */
 async function wijzigWachtwoord() {
   const feedbackspan = document.getElementById('postresponse');
   const ww1 = document.getElementById('password').value;
@@ -32,7 +36,7 @@ async function wijzigWachtwoord() {
         }
         feedbackspan.innerText = 'bent u ingelogd?';
         throw 'er ging iets mis';
-        // if !200 there will be no body
+        // als het niet response 200 is dan is er iets mis gegaan.
       })
       .catch((error) => {
         console.log(error);
@@ -42,7 +46,7 @@ async function wijzigWachtwoord() {
   }
 }
 
-/** Deze functie togglet de zichtbaarheid van het wachtwoord heen en weer
+/** Deze functie togglet de zichtbaarheid van het wachtwoord heen en weer.
  *   @Function wwZichtbaarToggle()
  *   @returns void
  */

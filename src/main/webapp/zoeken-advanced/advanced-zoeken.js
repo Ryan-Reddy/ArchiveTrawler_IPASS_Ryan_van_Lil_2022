@@ -2,7 +2,9 @@ console.log('loading advanced-zoeken.js');
 const feedbackSpan = document.getElementById('feedbackSpan');
 
 /** Haalt opgeslagen zoekqueries op vanaf de server.
- *
+ * zet deze dan gelijk als opties in de combobox.
+ * Dit script runt bij het laden van de pagina,
+ * dus als je bent ingelogd met JWT dan staan ze gelijk klaar voor je.
  */
 function laadZoekertjesVanGebruiker() {
   console.log('loading laadZoekertjesVanGebruiker()');
@@ -36,11 +38,11 @@ function laadZoekertjesVanGebruiker() {
       if (response.status === 401 || response.status === 403) {
         feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
-    }
+    },
   );
 }
-/** Delete ALLE opgeslagen zoekqueries vanaf de server.
- *
+/** Delete ALLE opgeslagen zoekqueries van de ingelogde user vanaf de server.
+ * Alles, enkele zou handig zijn maar komt later.
  */
 function deleteZoekertjesVanGebruiker() {
   console.log('deleting laadZoekertjesVanGebruiker()');
@@ -63,11 +65,12 @@ function deleteZoekertjesVanGebruiker() {
       if (response.status === 401 || response.status === 403) {
         feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
-    }
+    },
   );
 }
 /** Haalt opgeslagen zoekqueries op vanaf de server.
- *
+ * Deze functie runt bij het laden van de pagina,
+ * zolang je ingelogd bent(met JWT in de sessionstorage)
  */
 function slaHuidigeZoekertjeOp() {
   console.log('opslag van huidige zoekopdracht begonnen');
@@ -98,10 +101,14 @@ function slaHuidigeZoekertjeOp() {
       if (response.status === 401 || response.status === 403) {
         feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
-    }
+    },
   );
 }
-
+/** Dit is de uitgebreide zoekfunctie
+ * Deze geeft de data door aan de backend ,
+ * die verantwoordelijk is voor de fetches en datamangement.
+ *
+ */
 function advancedSearchButtonClicked() {
   console.log('advancedSearchButtonClicked()');
   const jsonRequestBody = {};
@@ -136,29 +143,29 @@ function advancedSearchButtonClicked() {
         searchDataTable.innerHTML = ''; // reset de tabel data
         const JsonPersonsAsArrayArchAms = JSON.parse(myPrettyJsonString).person;
         // const JsonPersonsAsArrayOpenArch = JSON.parse(myPrettyJsonString);
-        searchDataTable.innerHTML +=
-          '' +
-          ` <tr><th class="header">Voornaam</th> ` +
-          ` <th class="header">Achternaam</th> ` +
-          ` <th class="header">Rol</th> ` +
-          ` <th class="header">Datum</th> ` +
-          ` <th class="header">Plaats</th> ` +
-          ` <th class="header">Geboorte</th> ` +
-          ` <th class="header">Gewijzigd</th> ` +
-          ` <th class="header">Link</th></tr>`;
+        searchDataTable.innerHTML
+          += ''
+          + ' <tr><th class="header">Voornaam</th> '
+          + ' <th class="header">Achternaam</th> '
+          + ' <th class="header">Rol</th> '
+          + ' <th class="header">Datum</th> '
+          + ' <th class="header">Plaats</th> '
+          + ' <th class="header">Geboorte</th> '
+          + ' <th class="header">Gewijzigd</th> '
+          + ' <th class="header">Link</th></tr>';
 
         JsonPersonsAsArrayArchAms.forEach((element) => {
           // for amsterdam archive
-          searchDataTable.innerHTML +=
-            '' +
-            ` <tr><th class="resultaten">${element.metadata.voornaam}</th> ` +
-            ` <th class="resultaten">${element.metadata.achternaam}</th> ` +
-            ` <th class="resultaten">${element.metadata.deed_type_title}</th> ` +
-            ` <th class="resultaten">${element.metadata.datum}</th> ` +
-            `<th  class="resultaten">${element.metadata.register_gemeente}</th> ` +
-            ` <th class="resultaten">${element.metadata.datum_geboorte}</th> ` +
-            ` <th class="resultaten">${element.metadata.modified_time}</th> ` +
-            ` <th class="resultaten"><a href="https://archief.amsterdam/indexen/deeds/${element.deed_id}?person=${element.id}">Link</a></th></tr>`;
+          searchDataTable.innerHTML
+            += ''
+            + ` <tr><th class="resultaten">${element.metadata.voornaam}</th> `
+            + ` <th class="resultaten">${element.metadata.achternaam}</th> `
+            + ` <th class="resultaten">${element.metadata.deed_type_title}</th> `
+            + ` <th class="resultaten">${element.metadata.datum}</th> `
+            + `<th  class="resultaten">${element.metadata.register_gemeente}</th> `
+            + ` <th class="resultaten">${element.metadata.datum_geboorte}</th> `
+            + ` <th class="resultaten">${element.metadata.modified_time}</th> `
+            + ` <th class="resultaten"><a href="https://archief.amsterdam/indexen/deeds/${element.deed_id}?person=${element.id}">Link</a></th></tr>`;
         });
       }
       if (response.status === 403) {
@@ -192,9 +199,12 @@ function fetchOpenArch(link) {
   // fetch("https://api.openarch.nl/1.0/records/search.json?name=van%20Lil&lang=nl&number_show=100&sort=1&start=0&archive", fetchOptions) //
   fetch(link, fetchOptions).then().catch();
 }
-
+/** ClickSelectmenu is wat werkt wanneer de gebruiker een opgeslagen zoekfunctie aanklikt.
+ * Het formulier wordt ingevuld, opdat de gebruiker deze mag wijzigen of nogmaals uitvoeren.
+ */
 function clickSelectMenu() {
   document.getElementById('keywords').value = document.getElementById('currentUserZoekertjes').value;
+
 }
 
 window.addEventListener('load', () => {

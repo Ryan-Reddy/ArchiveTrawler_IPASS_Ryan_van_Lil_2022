@@ -1,3 +1,4 @@
+/** Stijling voor de footer op elke pagina*/
 #footer {
     position: absolute; /* zet de pagina footer onderaan vast */
     bottom: 0;
@@ -56,3 +57,7 @@
     /*float: right;*/
     /*margin-right: 5rem;*/
 }
+
+.themeIcon {
+    max-width: 34px; /* Sizing of the descriptor Icon*/
+  }

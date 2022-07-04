@@ -1,3 +1,8 @@
+/**Deze CSS geeft een kleur bij het invullen van het nieuwAccount formulier. 
+*  Dit is om het de gebruiker extra makkelijk te maken, 
+*  om te begrijpen welk deel deze nogmaals moet invoeren.
+*/
+
 .formIncomplete {
     border-color: crimson;
     border-style: double;

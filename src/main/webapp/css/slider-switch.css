@@ -27,10 +27,6 @@
     margin-left: 44px; /* space left for the themeIcon */
   }
 
-  .themeIcon {
-    max-width: 34px; /* Sizing of the descriptor Icon*/
-  }
-
   .slider:before {
     position: absolute;
     content: "";

@@ -23,7 +23,6 @@ document.addEventListener('keydown', async (event) => {
   //            ////////////////////////////////////////////////////////////////
 });
 
-
 /** Login
  * gebruikt informatie van het formulier
  * slaat bij succes de JWToken op in de sessionstorage client side.
