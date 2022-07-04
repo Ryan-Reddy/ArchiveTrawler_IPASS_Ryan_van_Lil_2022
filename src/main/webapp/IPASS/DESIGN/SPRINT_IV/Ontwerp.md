@@ -146,7 +146,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 1.0   Naam Inloggen.
+#### ID 1.0  Inloggen.
 | Actoren              | User                                                                                                                                                                                                                             |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Het inloggen als gebruiker in zijn eigen omgeving.                                                                                                                                                                               |
@@ -155,7 +155,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Postcondities        | De actor is nu ingelogd in zijn eigen omgeving.<br/>Of<br/>De actor kan het nogmaals proberen/een nieuw account aanmaken.    👍                                                                                                  |
 <br/>
 
-#### ID 1.1   Naam Nieuwe gebruiker aanmaken.
+#### ID 1.1  Nieuwe gebruiker aanmaken.
 | Actoren              | User                                                                                                                                                                                                                                                                                  |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Nieuw gebruikersaccount aanmaken.                                                                                                                                                                                                                                                     |
@@ -165,7 +165,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 1.2   Naam Wachtwoord wijzigen.
+#### ID 1.2  Wachtwoord wijzigen.
 | Actoren              | User                                                                                                                                                                             |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Wachtwoord van een bestaand account wijzigen.                                                                                                                                    |
@@ -225,7 +225,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 2.2.2   Meldingen van nieuwe resultaten ontvangen.
+#### ID 2.2.2  Meldingen van nieuwe resultaten ontvangen.
 | Actoren              | User                                                                                                                                                                                                                        |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | De gebruiker ontvangt meldingen van nieuwe resultaten op opgeslagen zoekresultaten. Of via de mail of in de gebruikers omgeving.                                                                                            |
@@ -235,7 +235,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 2.3   Zoekresultaten opslaan/exporteren.
+#### ID 2.3  Zoekresultaten opslaan/exporteren.
 | Actoren              | User                                                                                                                                     |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Zoekresultaten die getoond worden kunnen ook geexporteerd worden. Deze worden als een lijst van links in een bestand gedownload.         |
@@ -245,7 +245,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 2.4   Zoekopdracht wijzigen.
+#### ID 2.4  Zoekopdracht wijzigen.
 | Actoren              | User                                                                                                                                                                                |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Het algemeen wijzigen van een opgeslagen/net uitgevoerde zoekopdracht.                                                                                                              |
@@ -255,7 +255,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 2.4.1   Filters kiezen.
+#### ID 2.4.1  Filters kiezen.
 | Actoren              | User                                                                                                                                                                                |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv bepaalde zoekfilters.                                                                                                              |
@@ -265,7 +265,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 <br/>
 
-#### ID 2.4.2   Naam Kiezen welke websites.
+#### ID 2.4.2   Kiezen welke websites.
 | Actoren              | User                                                                                                                                                                                |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv keuze welke archief te doorzoeken.                                                                                                 |
@@ -290,40 +290,38 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 
 De wireframes bij de use cases, laatste iteratie ook screenshots toegevoegd.
 
-### Login Pagina
+### ID 1.0 Login Pagina
 <img src="../DIAGRAMS/InlogPagina.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/LoginPageScreenshot.png" alt="drawing" width="800"/>
 
-### Nieuw gebruikersaccount aanmaken
+### ID 1.1 Nieuw gebruikersaccount aanmaken
 <img src="../DIAGRAMS/Nieuwe%20Gebruiker%20aanmaken.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/NieuweGebruikerScreenshot.png" alt="drawing" width="800"/>
 
-### Wachtwoord reset email aanvragen
+### ID 1.2 Wachtwoord reset email aanvragen
 <img src="../DIAGRAMS/Wachtwoord%20kwijt.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/WWresetEmailOpvragen.png" alt="drawing" width="800"/>
 
-### Accountinformatie inzien en wijzigen
+### ID 1.3  Accountinformatie inzien en wijzigen
 <img src="../DIAGRAMS/Accountpagina.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/AccountInfoWijzigenSS.png" alt="drawing" width="800"/>
 
-### Simpel zoeken, meerdere archieven tegelijk openen:
+### ID 2.0 Zoekopdracht aanmaken, Simpel zoeken, meerdere archieven tegelijk openen:
 <img src="../DIAGRAMS/zoekfunctie.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/SimpelZoeken.png" alt="drawing" width="800"/>
 
-### Geavanceerd zoeken:
+### ID 2.0 Zoekopdracht aanmaken, Geavanceerd zoeken, met data opslaan:
 <img src="../DIAGRAMS/zoekfunctie.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/ZoekfunctieGeavanc1.png" alt="drawing" width="800"/>
 
 
-### Zoekresultaten
+### ID 2.1 Zoekresultaten bekijken.
 <img src="../DIAGRAMS/Resultaten%20Scherm.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/ZoekfunctieGeavanc2.png" alt="drawing" width="800"/>
 
-### Opgeslagen zoekopdrachten
+### ID 2.2 Zoekopdracht opslaan.
 <img src="../DIAGRAMS/Opgeslagen%20zoekopdrachten.png" alt="drawing" width="800"/>
 <img src="IMAGES/Screenshots/OpgeslagenZoekQueriesPerGebruiker.png" alt="drawing" width="800"/>
-
-
 
 ## 4 Domeinmodel
 
