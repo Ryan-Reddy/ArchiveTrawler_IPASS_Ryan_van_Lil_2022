@@ -193,6 +193,10 @@ function fetchOpenArch(link) {
   fetch(link, fetchOptions).then().catch();
 }
 
+function clickSelectMenu() {
+  document.getElementById('keywords').value = document.getElementById('currentUserZoekertjes').value;
+}
+
 window.addEventListener('load', () => {
   console.log('window loaded');
   laadZoekertjesVanGebruiker();
