@@ -30,6 +30,7 @@
     <orderEntry type="library" name="@types/jquery" level="application" />
     <orderEntry type="library" name="@types/jquery-ajax-chain" level="application" />
     <orderEntry type="library" name="codehaus.groovy.all" level="project" />
+    <orderEntry type="library" name="@webcomponents/webcomponentsjs" level="application" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:2.35" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:2.35" level="project" />
@@ -105,6 +106,5 @@
     <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.2" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20220320" level="project" />
-    <orderEntry type="library" name="@webcomponents/webcomponentsjs" level="application" />
   </component>
 </module>
