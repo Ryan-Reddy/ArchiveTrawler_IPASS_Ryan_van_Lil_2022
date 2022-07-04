@@ -143,17 +143,14 @@
             </plugins>
         </pluginManagement>
 
-        <plugins>
+        <plugins><!-- als deze er bij jou niet staat, maak 'm dan aan, inclusief sluit-tag NA de onderstaande plugin-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.8</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
+                        <goals><goal>copy</goal></goals>
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
