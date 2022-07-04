@@ -12,7 +12,7 @@
     font-weight: bold;
     align-items: center;
     align-content: center;
-
+    
 }
 
 .grid-container {
@@ -21,6 +21,7 @@
     grid-template-columns: auto auto auto;
     background-color: #2196F3;
     padding: 10rem;
+
 
 }
 
