@@ -1,17 +1,3 @@
-const localhost = 'http://localhost:8080/'; // TODO toggle for heroku
-// const localhost = '/';
-
-// function pupupMagOfNiet() {
-//   const firstNewWin = window.open('html/zoeken.htm');
-//   const newWin = window.open('html/zoeken.htm');
-
-//   if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
-//     alert(
-//       'Popups toestaan in uw browser, om te genieten van de volledige functionaliteit.',
-//     );
-//   }
-// }
-
 /** Dit is de basiczoekfunctie, deze opent de verschillende sites afzonderlijk,
  *  en toont de resultaten op de website zelf.
  */
