@@ -55,7 +55,7 @@
                         </li>
                     </ul>
                     <hr />
-                    <h3>Archieven te doorzoeken</h3>
+                    <h2>Archieven te doorzoeken</h2>
                     <!--                <div style="width: 60%">-->
                     <div style="width: 62%">
                         <table style="padding: 1rem">
@@ -68,6 +68,7 @@
                                         type="checkbox" value="true" checked="checked" />
                                 </td>
                                 </td>
+                            </tr>
 
                             <tr>
                                 <td>
@@ -106,7 +107,7 @@
                 </form>
                 <!-- // TODO schrijf "search-advanced-service" search fetch -->
                 <label for="fetchAdvancedSearchButton" hidden>Zoek advancedSearch.</label>
-                <input id="fetchAdvancedSearchButton" onclick="advancedSearchButtonClicked()" type="button"
+                <input class="advanced-search" id="fetchAdvancedSearchButton" onclick="advancedSearchButtonClicked()" type="button"
                     value="AdvancedSearch">
 
 
@@ -135,10 +136,10 @@
                             <option value="saab">Opgeslagen zoekopdrachten</option>
                         </select>
                     </td>
-                    <td style="width: 7rem">
-                        <label for="deleteZoekertjesButton">Delete ALLE zoekopdrachten.</label>
-                        <input id="deleteZoekertjesButton" onclick="deleteZoekertjesVanGebruiker()" type="button"
-                            value="!delete!">
+                    <td>
+                        <label for="deleteZoekertjesButton" hidden>Delete ALLE zoekopdrachten.</label>
+                        <input class="button-delete" id="deleteZoekertjesButton" onclick="deleteZoekertjesVanGebruiker()" type="button"
+                            value="!Delete ALLE zoekopdrachten.!">
                     </td>
                 </table>
                 <div id="resultatenOmTePrinten">

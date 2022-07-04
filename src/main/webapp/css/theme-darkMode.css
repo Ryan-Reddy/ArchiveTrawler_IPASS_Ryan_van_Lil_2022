@@ -1,29 +1,29 @@
 /* DARK MODE: */
 .bodyDark {
-    background-color: #282828;
+    background-color: #051622;
     /* background-color: #394952; */
     caret-color: #ccc;
     accent-color: #ccc;
-    color: #ccc;
+    color: #deb992;
     font-family: 'Bookman Old Style', serif;
 }
 .bodyDark main {
-    border-color: #ccc;
+    border-color: #deb992;
 }
 .bodyDark .header {
-    background: rgb(94, 94, 12);
+    background: rgb(6, 47, 67);
   }
   .bodyDark #footer {
     background: rgb(6, 47, 67);
   }
 /* unvisited link */
 .bodyDark a:link {
-    color: #ccc;
+    color: #deb992;
 }
 
 /* visited link */
 .bodyDark a:visited {
-    color: #ccc;
+    color: #deb992;
 }
 
 /* mouse over link */
