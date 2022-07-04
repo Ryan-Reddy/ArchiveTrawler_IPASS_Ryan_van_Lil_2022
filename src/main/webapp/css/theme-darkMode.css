@@ -13,7 +13,7 @@
     /*background-image: linear-gradient(to bottom right, #deb992, #051622);*/
     background-color: #051622;
 
-    border-color: #deb992;
+    border-color: rgb(6, 47, 67);
 }
 .bodyDark .header {
     background: rgb(6, 47, 67);

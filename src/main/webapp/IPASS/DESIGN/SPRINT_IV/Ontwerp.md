@@ -63,7 +63,7 @@ Het type klant dat ik probeer te bereiken:
 ##### Psychografie
 
 - Wil graag van bepaalde historische mensen informatie vinden.
-- Wil graag in bepaalde archief zoeken.
+- Wil graag in bepaalde archieven zoeken.
 - Vindt het belangrijk dat ze niet dubbel werk verrichten.
 
 ##### Uitdagingen
@@ -166,12 +166,12 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 <br/>
 
 #### ID 1.2  Wachtwoord wijzigen.
-| Actoren              | User                                                                                                                                                                             |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Wachtwoord van een bestaand account wijzigen.                                                                                                                                    |
+| Actoren              | User                                                                                                                                                                         |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Wachtwoord van een bestaand account wijzigen.                                                                                                                                |
 | Precondities         | De actor heeft een account en is op de wachtwoord wijzig pagina.                                                                                                             |
 | Stappenplan/scenario | 1. De actor vult de benodigde accountgegevens in<br/>2. het systeem controleert dit en geeft vervolgens als de info klopt: Een email met mogelijkheden tot wachtwoord reset. |
-| Postcondities        | De actor heeft zijn wachtwoord gewijzigd en kan nu in het vervolg hiermee inloggen.  👍                                                                                        |
+| Postcondities        | De actor heeft zijn wachtwoord gewijzigd en kan nu in het vervolg hiermee inloggen.  👍                                                                                      |
 
 <br/>
 
@@ -261,7 +261,7 @@ Ik heb er een emoji bijgezet om aan te geven of dit,
 | Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv bepaalde zoekfilters.                                                                                                              |
 | Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
-| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.    👌 - zoekfilters zijn beperkt, in de simpelzoeken pagina zijn ze wel een stuk breder.                     |
+| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.    👌 - zoekfilters zijn beperkt, in de simpelzoeken pagina zijn ze wel een stuk breder.                |
 
 <br/>
 
@@ -405,9 +405,9 @@ Om gebruik te maken van de functionaliteit daarentegen zal een log in wel vereis
 3. Log in op de website.
 4. Van nu af aan kunt u alle functionaliteiten gebruiken zoals het aanmaken van een nieuwe zoekopdracht,  <br/>het opslaan en beheren van deze, zoekresultaten bekijken etc. etc..
 
-_een test account zal te bereiken zijn via: <br/>
-gebruikersnaam: Test <br/>
-wachtwoord: Wachtwoord123!@# <br/>_
+#### Een test account zal te bereiken zijn via: <br/>
+gebruikersnaam:  test@mail.com<br/>
+wachtwoord:      password<br/>_
 
 ## 7 Referenties
 
