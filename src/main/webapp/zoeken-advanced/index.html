@@ -58,7 +58,7 @@
                     <h3>Archieven te doorzoeken</h3>
                     <!--                <div style="width: 60%">-->
                     <div style="width: 62%">
-                        <table>
+                        <table style="padding: 1rem">
                             <tr>
                                 <td>
                                     <label for="archiveAmsterdam">Archief van Amsterdam</label>
@@ -67,7 +67,7 @@
                                     <input style="float:right" id="archiveAmsterdam" name="archiveAmsterdam"
                                         type="checkbox" value="true" checked="checked" />
                                 </td>
-                            </td>
+                                </td>
 
                             <tr>
                                 <td>
@@ -119,36 +119,34 @@
                     value="Reset velden">
 
                 <label for="printButton" hidden>Print resultaten.</label>
-                <input id="printButton" onclick="printData()" type="button"
-                    value="Print resultaten">
+                <input id="printButton" onclick="printData()" type="button" value="Print resultaten">
 
                 <br>
                 <span id="feedbackSpan">
                 </span>
-                
-                                <br>
-                <table>
-                    <td>
-                    <label for="currentUserZoekertjes">Bekijk eerder opgeslagen zoekopdrachten:</label>
-                </td>
-                <td>
-                    <select name="currentUserZoekertjes" id="currentUserZoekertjes">
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select> 
-                </td>
-                <td>
-                    <label for="deleteZoekertjesButton">Delete ALLE zoekopdrachten.</label>
-                    <input id="deleteZoekertjesButton" onclick="deleteZoekertjesVanGebruiker()" type="button" value="!delete!">
-                </td>
-            </table>
-            <div id="resultatenOmTePrinten">
-                <table id="tableSearchData">
-                </table>
-            </div>
 
-                
+                <br>
+                <table style="padding: 1rem">
+                    <td>
+                        <label for="currentUserZoekertjes" style="width: 4rem" hidden>Opgeslagen zoekopdrachten:</label>
+                    </td>
+                    <td>
+                        <select name="currentUserZoekertjes" id="currentUserZoekertjes" style="width: 100%">
+                            <option value="saab">Opgeslagen zoekopdrachten</option>
+                        </select>
+                    </td>
+                    <td style="width: 7rem">
+                        <label for="deleteZoekertjesButton">Delete ALLE zoekopdrachten.</label>
+                        <input id="deleteZoekertjesButton" onclick="deleteZoekertjesVanGebruiker()" type="button"
+                            value="!delete!">
+                    </td>
+                </table>
+                <div id="resultatenOmTePrinten">
+                    <table id="tableSearchData">
+                    </table>
+                </div>
+
+
             </main>
 
         </div>

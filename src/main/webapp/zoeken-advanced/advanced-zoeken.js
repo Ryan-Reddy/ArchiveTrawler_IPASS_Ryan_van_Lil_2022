@@ -8,13 +8,6 @@ function laadZoekertjesVanGebruiker() {
   console.log('loading laadZoekertjesVanGebruiker()');
   document.getElementById('feedbackSpan');
 
-  const combobox = document.getElementById('currentUserZoekertjes');
-  var option = document.createElement('option');
-  option.value = 'hand';
-  console.log(option.value);
-  option.text = 'Hand';
-  combobox.add(option);
-
   const fetchOptions = {
     method: 'GET',
     headers: {
@@ -29,13 +22,21 @@ function laadZoekertjesVanGebruiker() {
         const myJson = await response.json(); // return the search results incl changelog
 
         console.log(myJson);
-        console.log(myJson.forEach((element) => console.log(JSON.stringify(element))));
+        myJson.forEach((element) => {
+          const combobox = document.getElementById('currentUserZoekertjes');
+
+          console.log(element.keyWords);
+          const optie = document.createElement('option');
+          optie.value = element.keyWords;
+          optie.text = element.keyWords;
+          combobox.add(optie);
+        });
         // console.log(JSON.parse(myJson));
       }
       if (response.status === 401 || response.status === 403) {
         feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
-    },
+    }
   );
 }
 /** Delete ALLE opgeslagen zoekqueries vanaf de server.
@@ -62,7 +63,7 @@ function deleteZoekertjesVanGebruiker() {
       if (response.status === 401 || response.status === 403) {
         feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
-    },
+    }
   );
 }
 /** Haalt opgeslagen zoekqueries op vanaf de server.
@@ -97,7 +98,7 @@ function slaHuidigeZoekertjeOp() {
       if (response.status === 401 || response.status === 403) {
         feedbackSpan.innerHTML = 'Controleer dat je bent ingelogd.';
       }
-    },
+    }
   );
 }
 
