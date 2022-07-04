@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Main Landing page-->
+<head>
+    <meta charset="UTF-8" />
+    <link href="/style-index.css" id="theme" rel="stylesheet" type="text/css" />
+    <link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+    <title>Index</title>
+    <script src="/js/themeManager.js" type="text/javascript"></script> <!-- must be uppermost imported script due to const localhost global usage -->
+</head>
+
+<h1 class="header">Index</h1>
+
+<body class="bodyDark" id="body">
+    <div id="page-container">
+        <div id="content-wrap">
+    <div id="discoball" style="display: none;"><img alt="discoBallGif" src="/assets/discoBallGif.gif">
+    </div>
+    <main>
+        <hr />
+        <h2>HTML pages
+        </h2>
+        <ul>
+            <li>
+                <a href="/login">Log in.</a>
+            </li>
+            <li>
+                <a href="/new-account">Make a new account.</a>
+            </li>
+            <li>
+                <a href="/logout">Log out.</a>
+            </li>
+            <li>
+                <a href="/restservices/status">Server Status </a>
+            </li>
+            <li>
+                <a href="/reset-account">Reset password dmv account.</a>
+            </li>
+        </ul>
+
+        <br>
+
+        Deze werken als je als gebruiker bent ingelogd :
+        <ul>
+            <h3>AccountServices</h3>
+            <li>
+                <a href="../reset-password">New password.</a>
+            </li>
+            <li>
+                <a href="../account-info-wijzigen">Account info wijzigen</a>
+            </li>
+            <li>
+                <a href="../reset-account">Account info opvragen</a>
+            </li>
+            <h3>Zoeken</h3>
+            <li>
+                <a href="../zoeken">Zoekopdracht aanmaken/uitvoeren.</a>
+            </li>
+            <li>
+                <a href="../zoeken-advanced">Geavanceerde Zoekopdracht aanmaken/uitvoeren.</a>
+            </li>
+            <br>
+            <li>
+                <a href="../zoekresultaten">Zoekresultaten.</a>
+            </li>
+            <li>
+                <a href="fetchTrawler/">FetchTest page.</a>
+            </li>
+            <h3>GebruikersAccount</h3>
+            <li>
+                <a href="../find-all-users">GET allusers/ restservice</a>
+            </li>
+            <li>
+                <a href="../delete-account">Delete account.</a>
+            </li>
+        </ul>
+        <hr />
+    </main>
+    </div>
+    <footer id="footer">
+    </footer>
+</div>
+</body>
+<link href="/assets/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+
+</html>

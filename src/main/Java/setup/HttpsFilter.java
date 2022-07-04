@@ -9,6 +9,10 @@ package setup;
         import javax.servlet.http.HttpServletRequest;
         import javax.servlet.http.HttpServletResponse;
         import java.io.IOException;
+
+/**HTTPS filter, zorgt ervoor dat alles over https gaat.
+ *
+ */
 @WebFilter(urlPatterns = "/*")
 public class HttpsFilter extends HttpFilter {
     public static final String X_FORWARDED_PROTO = "X-Forwarded-Proto";

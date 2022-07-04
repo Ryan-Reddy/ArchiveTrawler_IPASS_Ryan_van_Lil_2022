@@ -6,6 +6,8 @@
     accent-color: #ccc;
     color: #deb992;
     font-family: 'Bookman Old Style', serif;
+    border-color: header;
+
 }
 .bodyDark main {
     border-color: #deb992;
