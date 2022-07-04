@@ -1,0 +1,8 @@
+archive.trawler.model
+archive.trawler.persistance
+archive.trawler.security
+archive.trawler.security.dto
+archive.trawler.webservices
+archive.trawler.webservices.dto
+archive.trawler.webservices.SearchAdvanced
+setup

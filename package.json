@@ -20,7 +20,8 @@
   "devDependencies": {
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "marked": "^4.0.17"
   },
   "scripts": {
     "test:eslint": "eslint src/**/*.js"
@@ -29,6 +30,7 @@
     "filesaver": "^0.0.13",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
-    "tableexport": "^3.3.13"
+    "tableexport": "^3.3.13",
+    "zero-md": "^2.3.5"
   }
 }

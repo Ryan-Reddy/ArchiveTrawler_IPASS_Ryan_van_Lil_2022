@@ -5,13 +5,13 @@ body {
   min-height: 80vh;
 }
 main {
+  margin: 8rem;
+  margin-bottom: +10rem;
   margin-left: 21rem;
   margin-right: 21rem;
   min-width: auto; /* +-700px */
   /* background: #394952; */
   padding: 4rem;
-  margin 8rem;
-  margin-bottom: +10rem;
   align-self: center;
   border-style: solid;
   border-width: 4rem;

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"archive.trawler.model"},{"l":"archive.trawler.persistance"},{"l":"archive.trawler.security"},{"l":"archive.trawler.security.dto"},{"l":"archive.trawler.webservices"},{"l":"archive.trawler.webservices.dto"},{"l":"archive.trawler.webservices.SearchAdvanced"},{"l":"setup"}];updateSearchResults();

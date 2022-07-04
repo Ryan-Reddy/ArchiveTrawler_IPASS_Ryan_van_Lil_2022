@@ -87,7 +87,7 @@ public class UsersResource {
 
     /**
      * deleteUserAccount
-     * will delete the MyUser account associated with this email adres.
+     * will delete the User account associated with this email adres.
      * User part of the account WILL NOT be deleted by this resource, but will not be accessable by the end user.
      */
     @DELETE
