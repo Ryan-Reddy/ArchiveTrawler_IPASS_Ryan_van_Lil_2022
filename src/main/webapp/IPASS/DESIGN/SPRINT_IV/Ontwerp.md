@@ -291,19 +291,22 @@ De wireframes bij de use cases.
 
 ![](../DIAGRAMS/InlogPagina.png) ![img_1.png](IMAGES/Screenshots/LoginPageScreenshot.png)
 
-![](../DIAGRAMS/zoekfunctie.png)
-
 ![](../DIAGRAMS/Nieuwe%20Gebruiker%20aanmaken.png) ![img.png](IMAGES/Screenshots/NieuweGebruikerScreenshot.png)
 
 ![](../DIAGRAMS/Wachtwoord%20kwijt.png) ![img_1.png](IMAGES/Screenshots/WWresetEmailOpvragen.png)
 
-![](../DIAGRAMS/Accountpagina.png)
+![](../DIAGRAMS/Accountpagina.png) ![img_4.png](IMAGES/Screenshots/AccountInfoWijzigenSS.png)
 
-![](../DIAGRAMS/zoekfunctie.png)
+#### Simpel zoeken, meerdere archieven tegelijk openen:
+![](../DIAGRAMS/zoekfunctie.png) ![img.png](IMAGES/Screenshots/SimpelZoeken.png)
 
-![](../DIAGRAMS/Resultaten%20Scherm.png)
+#### Geavanceerd zoeken:
+![](../DIAGRAMS/zoekfunctie.png) ![img_1.png](IMAGES/Screenshots/ZoekfunctieGeavanc1.png)
 
-![](../DIAGRAMS/Opgeslagen%20zoekopdrachten.png)
+
+![](../DIAGRAMS/Resultaten%20Scherm.png) ![img_2.png](IMAGES/Screenshots/ZoekfunctieGeavanc2.png)
+
+![](../DIAGRAMS/Opgeslagen%20zoekopdrachten.png) ![img_3.png](IMAGES/Screenshots/OpgeslagenZoekQueriesPerGebruiker.png)
 
 
 ## 4 Domeinmodel
