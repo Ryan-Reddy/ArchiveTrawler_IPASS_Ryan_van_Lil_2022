@@ -99,7 +99,7 @@ De gebruiker kan in zijn eigen omgeving ook zijn gegevens wijzigen. En zijn zoek
 
 ## 3 Use cases
 
-![Use Case diagram](DIAGRAMS/Use Case Diagram1.png)
+![](DIAGRAMS/Use Case Diagram1.png)
 
 De use case diagram is redelijk uitvoerig. 
 Per use case zijn er sub use-cases vermeldt, dit ter verdieping.
@@ -124,9 +124,9 @@ Deze voert alleen een use case uit die eigenlijk buiten de scope van dit project
 
 ### 3.2 Use Case Templates
 
-Use case templates, per use case een paragraaf met de template beschrijving e.d. zoals geleerd bij Modelling.
-
-
+Hieronder volgen per use case een paragraaf met de template beschrijving e.d. zoals geleerd bij Modelling.
+Ik heb er een emoji bijgezet om aan te geven of dit,
+*niet* werkend = 👎,  deels geimplementeerd = 👌 of *volledig* = 👍 werkend is op moment van schrijven
 
 | nr.  | Naam                                                      |
 |------|-----------------------------------------------------------|
@@ -136,32 +136,32 @@ Use case templates, per use case een paragraaf met de template beschrijving e.d.
 
 <br/>
 
-#### ID 0.1   Naam Zoekopdracht starten op meerdere sites.
+####  ID 0.1   Naam Zoekopdracht starten op meerdere sites. 
 | Actoren              | User                                                                                                                                                         |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | Proof of concept:<br/>Zoekopdracht starten op externe website, <br/>en deze geladen openen.                                                                  |
-| Precondities         | actor heeft de site open, vult een zoekterm in en klikt op ok.                                                                                                |
+| Precondities         | actor heeft de site open, vult een zoekterm in en klikt op ok.                                                                                               |
 | Stappenplan/scenario | 1. De actor vult zoektermen in de invoervakken,<br/>2. klikt op zoek<br/>3. Het systeem opent meerdere tabs met de ingevulde zoektermen op aparte databases. |
-| Postcondities        | De actor kan nu navigeren naar de nieuw geopende tabs.                                                                                                        |
+| Postcondities        | De actor kan nu navigeren naar de nieuw geopende tabs.     👍                                                                                                |
 
 <br/>
 
 #### ID 1.0   Naam Inloggen.
-| Actoren              | User                                                                                                                                                                                                                                    |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Het inloggen als gebruiker in zijn eigen omgeving.                                                                                                                                                                                      |
-| Precondities         | Er is een database met alle gebruikers, en de actor heeft hier een account in.                                                                                                                                                      |
+| Actoren              | User                                                                                                                                                                                                                             |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Het inloggen als gebruiker in zijn eigen omgeving.                                                                                                                                                                               |
+| Precondities         | Er is een database met alle gebruikers, en de actor heeft hier een account in.                                                                                                                                                   |
 | Stappenplan/scenario | 1. De actor vult zijn inloggegevens in, en klikt op inloggen. <br/>2. Het systeem verifiert of deze overeenkomen met een actor.<br/>3. Als dit lukt is de actor nu ingelogd.<br/>3b. Zo niet, dan toont het systeem een melding. |
-| Postcondities        | De actor is nu ingelogd in zijn eigen omgeving.<br/>Of<br/>De actor kan het nogmaals proberen/een nieuw account aanmaken.                                                                                                            |
+| Postcondities        | De actor is nu ingelogd in zijn eigen omgeving.<br/>Of<br/>De actor kan het nogmaals proberen/een nieuw account aanmaken.    👍                                                                                                  |
 <br/>
 
 #### ID 1.1   Naam Nieuwe gebruiker aanmaken.
-| Actoren              | User                                                                                                                                                                                                                                                                                              |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Nieuw gebruikersaccount aanmaken.                                                                                                                                                                                                                                                                 |
-| Precondities         | De actor is nog niet ingelogd. En kijkt naar de inlogpagina.                                                                                                                                                                                                                                  |
+| Actoren              | User                                                                                                                                                                                                                                                                                  |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Nieuw gebruikersaccount aanmaken.                                                                                                                                                                                                                                                     |
+| Precondities         | De actor is nog niet ingelogd. En kijkt naar de inlogpagina.                                                                                                                                                                                                                          |
 | Stappenplan/scenario | 1. De actor klikt op de link: <Nieuwe gebruiker aanmaken><br/>2. Vervolgens vult deze de gevraagde gegevens in.<br/>4. Het systeem verifieert of er nog geen actor is met die gegevens.<br/>5. Als dit alles lukt is er een nieuw account aangemaakt, en krijgt de actor bevestiging. |
-| Postcondities        | De actor heeft nu een account aangemaakt, of deze bestond al en wordt doorverwezen naar wachtwoord resetten: Use case 1.2                                                                                                                                                                     |
+| Postcondities        | De actor heeft nu een account aangemaakt, of deze bestond al en wordt doorverwezen naar wachtwoord resetten: Use case 1.2  👍                                                                                                                                                         |
 
 <br/>
 
@@ -171,117 +171,117 @@ Use case templates, per use case een paragraaf met de template beschrijving e.d.
 | Samenvatting         | Wachtwoord van een bestaand account wijzigen.                                                                                                                                    |
 | Precondities         | De actor heeft een account en is op de wachtwoord wijzig pagina.                                                                                                             |
 | Stappenplan/scenario | 1. De actor vult de benodigde accountgegevens in<br/>2. het systeem controleert dit en geeft vervolgens als de info klopt: Een email met mogelijkheden tot wachtwoord reset. |
-| Postcondities        | De actor heeft zijn wachtwoord gewijzigd en kan nu in het vervolg hiermee inloggen.                                                                                          |
+| Postcondities        | De actor heeft zijn wachtwoord gewijzigd en kan nu in het vervolg hiermee inloggen.  👍                                                                                        |
 
 <br/>
 
-#### ID 1.3  Naam Persoonlijke informatie wijzigen.
-| Actoren              | User                                                                                                                                               |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Accountinformatie wijzigen. (behalve het wachtwoord)                                                                                               |
-| Precondities         | De actor is ingelogd en kijkt naar de Accountinformatie wijzigen pagina.                                                                       |
+#### ID 1.3  Persoonlijke informatie wijzigen.
+| Actoren              | User                                                                                                                                                |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Accountinformatie wijzigen. (behalve het wachtwoord)                                                                                                |
+| Precondities         | De actor is ingelogd en kijkt naar de Accountinformatie wijzigen pagina.                                                                            |
 | Stappenplan/scenario | 1. De actor vult de benodigde informatie in<br/>2. klikt op opslaan.<br/>3. Het systeem wijzigt de bestaande gegevens en geeft hiervan een melding. |
-| Postcondities        | De gegevens van het account zijn gewijzigd.                                                                                                        |
+| Postcondities        | De gegevens van het account zijn gewijzigd.   👍                                                                                                    |
 
 <br/>
 
-#### ID 2.0   Naam Zoekopdracht aanmaken.
-| Actoren              | User                                                                                                                                                                                              |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | De hoofdactie van dit systeem.                                                                                                                                                                    |
+#### ID 2.0   Zoekopdracht aanmaken.
+| Actoren              | User                                                                                                                                                                                          |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | De hoofdactie van dit systeem.                                                                                                                                                                |
 | Precondities         | De actor is ingelogd, en wil iets zoeken.                                                                                                                                                     |
 | Stappenplan/scenario | 1. De actor vult de gegevens in die opgezocht moeten worden.<br/>2. En klikt op zoeken.<br/>3. Het systeem neemt deze gegevens aan,<br/>4. maakt hier zoekqueries van,<br/>5. voert deze uit. |
-| Postcondities        | De actor kan nu de zoekresultaten laten tonen door het systeem.                                                                                                                               |
+| Postcondities        | De actor kan nu de zoekresultaten laten tonen door het systeem.    👍                                                                                                                         |
 
 <br/>
 
-#### ID 2.1   Naam Zoekresultaten bekijken.
-| Actoren              | User                                                                                                                                                                                                                                                                  |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Zoekresultaten bekijken.                                                                                                                                                                                                                                              |
-| Precondities         | Er is een zoekopdracht aangemaakt door de gebruiker.                                                                                                                                                                                                                  |
+#### ID 2.1   Zoekresultaten bekijken.
+| Actoren              | User                                                                                                                                                                                                                                                          |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Zoekresultaten bekijken.                                                                                                                                                                                                                                      |
+| Precondities         | Er is een zoekopdracht aangemaakt door de gebruiker.                                                                                                                                                                                                          |
 | Stappenplan/scenario | 1. De actor kiest een zoekopdracht of heeft deze net aangemaakt. <br/>2. Vervolgens kiest deze om deze te tonen.<br/>3. Het systeem voert de zoekopdracht uit/heeft dit onlangs gedaan en toont de resultaten.<br/>4. De actor kan ze nu zien en doorklikken. |
-| Postcondities        | De actor heeft de zoekresultaten gezien, kan doorklikken naar de betreffende links, <br/>en kan ook de resultaten zelf exporteren/opslaan. De zoekopdracht zelf kan nu ook opgeslagen worden.                                                                     |
+| Postcondities        | De actor heeft de zoekresultaten gezien, kan doorklikken naar de betreffende links, <br/>en kan ook de resultaten zelf exporteren/opslaan. De zoekopdracht zelf kan nu ook opgeslagen worden.    👍                                                           |
 
 <br/>
 
-#### ID 2.2   Naam Zoekopdracht opslaan.
-| Actoren              | User                                                                                                                                                                 |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Zoekopdracht opslaan.                                                                                                                                                |
+#### ID 2.2   Zoekopdracht opslaan.
+| Actoren              | User                                                                                                                                                             |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Zoekopdracht opslaan.                                                                                                                                            |
 | Precondities         | Er is een zoekopdracht aangemaakt door de actor, de resultaten kunnen ingekeken worden.                                                                          |
 | Stappenplan/scenario | 1. De actor kiest er voor om de zoekopdracht op te slaan. <br/>2. Het systeem controleert of deze nog niet opgeslagen staat, en schrijft vervolgens een log bij. |
-| Postcondities        | De zoekopdracht is opgeslagen, de actor kan deze van nu af aan op een later moment bekijken en beheren.                                                          |
+| Postcondities        | De zoekopdracht is opgeslagen, de actor kan deze van nu af aan op een later moment bekijken en beheren.      👍                                                  |
 
 <br/>
 
-#### ID 2.2.1   Naam Zoekopdracht herhalen.
-| Actoren              | User                                                                                                                     |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Een eerder opgeslagen zoekopdracht herhalen.                                                                             |
-| Precondities         | Er is eerder een zoekopdracht opgeslagen.                                                                                |
-| Stappenplan/scenario | 1. De actor selecteert een zoekopdracht uit de lijst.<br/>2. Het systeem voert deze uit en toont de resultaten.      |
-| Postcondities        | De actor kan nu de zoekresultaten aanklikken, maar ook inzien of de links al eerder bekeken zijn en zo ja, hoe vaak. |
+#### ID 2.2.1   Zoekopdracht herhalen.
+| Actoren              | User                                                                                                                                                                                                  |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Een eerder opgeslagen zoekopdracht herhalen.                                                                                                                                                          |
+| Precondities         | Er is eerder een zoekopdracht opgeslagen.                                                                                                                                                             |
+| Stappenplan/scenario | 1. De actor selecteert een zoekopdracht uit de lijst.<br/>2. Het systeem voert deze uit en toont de resultaten.                                                                                       |
+| Postcondities        | De actor kan nu de zoekresultaten aanklikken, maar ook inzien of de links al eerder bekeken zijn en zo ja, hoe vaak.  👌 de logs van de zoekresultaten zijn nog niet geimplementeerd, ze bestaan wel. |
 
 <br/>
 
-#### ID 2.2.2   Naam Meldingen van nieuwe resultaten ontvangen.
+#### ID 2.2.2   Meldingen van nieuwe resultaten ontvangen.
 | Actoren              | User                                                                                                                                                                                                                        |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Samenvatting         | De gebruiker ontvangt meldingen van nieuwe resultaten op opgeslagen zoekresultaten. Of via de mail of in de gebruikers omgeving.                                                                                            |
 | Precondities         | Er zijn zoekopdrachten opgeslagen.                                                                                                                                                                                          |
 | Stappenplan/scenario | 1. Met enige regelmaat, stel 1x per dag, voert het systeem alle zoekopdrachten uit.<br/>2. Het systeem controleert of er sinds de vorige keer nieuwe resultaten bij zijn gekomen.<br/>3. Zo ja, dan geeft deze een melding. |
-| Postcondities        | De actor weet nu dat er nieuwe resultaten zijn, en kan deze opzoeken via het systeem.                                                                                                                                   |
+| Postcondities        | De actor weet nu dat er nieuwe resultaten zijn, en kan deze opzoeken via het systeem.   👎   De gebruiker ontvangt geen meldingen, automatisch herhalende zoekopdrachten is nog niet geimplementeerd.                       |
 
 <br/>
 
-#### ID 2.3   Naam Zoekresultaten opslaan/exporteren.
-| Actoren              | User                                                                                                                                         |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Zoekresultaten die getoond worden kunnen ook geexporteerd worden. Deze worden als een lijst van links in een bestand gedownload.             |
-| Precondities         | Er is een zoekopdracht uitgevoerd.                                                                                                           |
+#### ID 2.3   Zoekresultaten opslaan/exporteren.
+| Actoren              | User                                                                                                                                     |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Zoekresultaten die getoond worden kunnen ook geexporteerd worden. Deze worden als een lijst van links in een bestand gedownload.         |
+| Precondities         | Er is een zoekopdracht uitgevoerd.                                                                                                       |
 | Stappenplan/scenario | 1. De actor kiest om de zoekresultaten op te slaan.<br/>2. Het systeem maakt hier een mooi bestandje van en biedt deze ter download aan. |
-| Postcondities        | De actor kan nu op zijn/haar systeem kiezen waar deze op te slaan.                                                                       |
+| Postcondities        | De actor kan nu op zijn/haar systeem kiezen waar deze op te slaan.    👍                                                                 |
 
 <br/>
 
-#### ID 2.4   Naam Zoekopdracht wijzigen.
-| Actoren              | User                                                                                                                                                                                    |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Het algemeen wijzigen van een opgeslagen/net uitgevoerde zoekopdracht.                                                                                                                  |
-| Precondities         | Er is een zoekopdracht uitgevoerd of opgeslagen                                                                                                                                         |
+#### ID 2.4   Zoekopdracht wijzigen.
+| Actoren              | User                                                                                                                                                                                |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Het algemeen wijzigen van een opgeslagen/net uitgevoerde zoekopdracht.                                                                                                              |
+| Precondities         | Er is een zoekopdracht uitgevoerd of opgeslagen                                                                                                                                     |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
-| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.                                                                                                             |
+| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.   👌 - ze kunnen verwijderd worden, en ook gewijzigde en nogmaals opgeslagen.                           |
 
 <br/>
 
-#### ID 2.4.1   Naam Filters kiezen.
-| Actoren              | User                                                                                                                                                                                    |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv bepaalde zoekfilters.                                                                                                                  |
-| Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                    |
+#### ID 2.4.1   Filters kiezen.
+| Actoren              | User                                                                                                                                                                                |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv bepaalde zoekfilters.                                                                                                              |
+| Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
-| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.                                                                                                             |
+| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.    👌 - zoekfilters zijn beperkt, in de simpelzoeken pagina zijn ze wel een stuk breder.                     |
 
 <br/>
 
 #### ID 2.4.2   Naam Kiezen welke websites.
-| Actoren              | User                                                                                  |
-|----------------------|---------------------------------------------------------------------------------------|
-| Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv keuze welke archief te doorzoeken. |
-| Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                    |
+| Actoren              | User                                                                                                                                                                                |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | De gebruiker kan een zoekopdracht definieren dmv keuze welke archief te doorzoeken.                                                                                                 |
+| Precondities         | Er is een zoekopdracht opgeslagen of net uitgevoerd in werkgeheugen.                                                                                                                |
 | Stappenplan/scenario | 1. De actor selecteert de zoekopdracht die gewijzigd moet worden.<br/>2.De benodigde wijzigingen worden ingevoerd.<br/>3. Het systeem vervangt de oude zoekopdracht met een nieuwe. |
-| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.                                                                                                             |
+| Postcondities        | Er is een nieuwe zoekopdracht, deze kan opgeslagen worden en/of uitgevoerd.    👍 - de mogelijkheid is er.                                                                          |
 
 <br/>
 
 #### ID 3.0   Naam Websites om te doorzoeken toevoegen.
-| Actoren              | Developer                                                                                                                                                                                                                                                                                                    |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Samenvatting         | Er zijn altijd nieuwe archief om te doorspitten, deze kunnen worden toegevoegd aan het systeem. Het is in de scope van dit project vooralsnog iets voor de programmeur.                                                                                                                                    |
-| Precondities         | De actor heeft toegang tot het systeem.                                                                                                                                                                                                                                                                      |
-| Stappenplan/scenario | 1. Er is een onderzoek gedaan naar wat hiervoor nodig is vanuit het nieuwe archief.<br/>2. De actor voegt deze toe aan het systeem.<br/>3. Het systeem geeft de user de optie deze toe te voegen aan de zoekopdrachten.<br/>4. Het systeem voegt deze ook automatisch toe aan alle bestaande zoekopdrachten. |
-| Postcondities        | Er is nu een nieuwe optie voor keuze van websites die doorgespit moeten worden. <br/>Ook zijn alle bestaande zoekopdrachten nu uitgebreid met een nieuwe zoekopdracht.<br/> Zo kan de user zonder extra werk nu wellicht nieuwe zoekresultaten ontvangen.                                                    |
+| Actoren              | Developer                                                                                                                                                                                                                                                                                                                                                      |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samenvatting         | Er zijn altijd nieuwe archief om te doorspitten, deze kunnen worden toegevoegd aan het systeem. Het is in de scope van dit project vooralsnog iets voor de programmeur.                                                                                                                                                                                        |
+| Precondities         | De actor heeft toegang tot het systeem.                                                                                                                                                                                                                                                                                                                        |
+| Stappenplan/scenario | 1. Er is een onderzoek gedaan naar wat hiervoor nodig is vanuit het nieuwe archief.<br/>2. De actor voegt deze toe aan het systeem.<br/>3. Het systeem geeft de user de optie deze toe te voegen aan de zoekopdrachten.<br/>4. Het systeem voegt deze ook automatisch toe aan alle bestaande zoekopdrachten.                                                   |
+| Postcondities        | Er is nu een nieuwe optie voor keuze van websites die doorgespit moeten worden. <br/>Ook zijn alle bestaande zoekopdrachten nu uitgebreid met een nieuwe zoekopdracht.<br/> Zo kan de user zonder extra werk nu wellicht nieuwe zoekresultaten ontvangen.         👍 - zoals in de planning stond is dit wel heel technisch en alleen voor het developer team. |
 
 <br/>
 
