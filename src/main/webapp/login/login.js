@@ -37,7 +37,7 @@ async function login() {
   // LETOP als fetch niet werkt door missende localhost,
   // check dat de HTTP file themeManager.js importeert als eerste.
   // eslint-disable-next-line no-undef
-  await fetch(`${localhost}restservices/authentication/`, {
+  await fetch('/restservices/authentication/', {
     // needs to start with / for heroku
     method: 'POST',
     headers: {
