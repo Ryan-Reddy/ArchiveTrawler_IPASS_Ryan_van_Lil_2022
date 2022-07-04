@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>redirect to html page</title>
+    <script src="/js/themeManager.js" type="text/javascript"></script>
+
 </head>
 <body>
 <script type="text/javascript">
-    window.onload(window.open(`${localhost}home`,'_self'));
+  console.log('opening webapp/index.html')
+  document.addEventListener("open", openFunction());
+  function openFunction() {
+    console.log(`${localhost}home`)
+    window.open(`${localhost}home`,'_self')
+  };
 </script>
 </body>
 </html>
