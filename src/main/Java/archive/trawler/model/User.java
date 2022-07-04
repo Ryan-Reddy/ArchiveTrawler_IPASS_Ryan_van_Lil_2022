@@ -27,15 +27,12 @@ public class User implements Serializable, Principal {
     private @Getter @Setter String email;
     /**rol van de gebruiker.     */
     private @Getter @Setter String role;
-    /** id nummer van gebruiker, is uniek. */
-    private @Getter @Setter int identificationNum;
 
     /** Alle zoekopdrachten van deze gebruiker, in de vorm van een genummerde map.  */
     private @Getter
     @Setter ArrayList<Zoekopdracht> alleZoekertjes = new ArrayList<>();
 
-    private @Getter @Setter String avatarBase64;
-    private @Getter @Setter String avatarUploadId;
+
 
     /** Lege constructor voor User.
      */
@@ -44,19 +41,18 @@ public class User implements Serializable, Principal {
         this.naam = "";
     }
 
-    /**
-     * @param email email adres, is gelijk ook de username van de inlog
-     * @param naam  persoonlijke naam, voor en/of achternaam
-     * @param password ww
-     * @param avatarBase64 encryption based accountinfo
-     */
-    public User(String naam, String email, String password, String avatarBase64) {
-        this.naam = naam;
-        this.email = email;
-        this.password = password;
-        this.role = "user";
-        Community.addUserToMap(this);
-    }
+//    /**
+//     * @param email email adres, is gelijk ook de username van de inlog
+//     * @param naam  persoonlijke naam, voor en/of achternaam
+//     * @param password ww
+//     */
+//    public User(String naam, String email, String password) {
+//        this.naam = naam;
+//        this.email = email;
+//        this.password = password;
+//        this.role = "user";
+//        Community.addUserToMap(this);
+//    }
 
     /**
      * @param email email adres, is gelijk ook de username van de inlog

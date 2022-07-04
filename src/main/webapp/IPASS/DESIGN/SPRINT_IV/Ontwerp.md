@@ -37,6 +37,7 @@ Voor een gedetailleer overzicht van de revisiehistorie zal ik dan toch verwijzen
  | 1    | [Inleiding](#1-inleiding)                     |
  | 1.01 | [Leeswijzer](#1.2-leeswijzer)                 |
  | 1.1  | [Doelgroep (lezersgroep)](#1.1-doelgroep)     |
+ | 1.2  | [Toegankelijkheid](#1.2-toegankelijkheid)     |
 | 2    | [Overzicht         ](#2-overzicht)            |
 | 3    | [Uses cases        ](#3-use-cases)            |
 | 3.1  | [Actoren           ](#3.1-actoren)            |
@@ -72,12 +73,24 @@ Het type klant dat ik probeer te bereiken:
 
 ##### Voorkeurskanalen
 - Websites of webapps.<br>
-_Ze zullen graag op een desktop werken, vanwege de betrouwbaarheid en gemakken, bijvoorbeeld printers en scanners._
+- Ze zullen graag op een desktop werken, vanwege de betrouwbaarheid en gemakken, bijvoorbeeld printers en scanners._
 - E-mail notificaties.
-
 - Een desktopversie.
 
+### 1.2 Toegankelijkheid
 
+Uiteraard wil ik een product hebben dat toegankelijk is. Vandaar ik rekening heb gehouden met slechtzienden en zelfs blinde mensen.
+- Dit heb ik gedaan door ervoor te zorgen dat ik hoog genoeg contrast heb, groot genoege letters, en duidelijke simpele vormen.
+- Ook heb ik ervoor gekozen tekst kort en bondig te houden, om de informatievoorziening concreet te houden.
+- Een ander belangrijk element is het feit dat ik aan alles omschrijvende labels heb toegevoegd. 
+Dit is voor blinden een must om de app te kunnen navigeren.
+
+Hieronder een paar voorbeelden van testcases door middel van Wave:
+
+<img src="IMAGES/WaveScreenshotrs/Index_DarkMode_Wave.jpeg" alt="drawing" width="800"/>
+<img src="IMAGES/WaveScreenshotrs/Index_DiscoMode_Wave.jpeg" alt="drawing" width="800"/>
+<img src="IMAGES/WaveScreenshotrs/Index_LightMode_Wave.jpeg" alt="drawing" width="800"/>
+<img src="IMAGES/WaveScreenshotrs/Login_LightMode_Wave.jpeg" alt="drawing" width="800"/>
 
 ## 2 Overzicht
 
@@ -325,9 +338,8 @@ De wireframes bij de use cases, laatste iteratie ook screenshots toegevoegd.
 
 ## 4 Domeinmodel
 
-![](../DIAGRAMS/Class%20Diagram1.png)
+![](DIAGRAMS/ClassDiagramFinal.png)
 
-[//]: # (De meeste entiteiten uit het conceptueel datamodel hebben een tegenhanger in de vorm van een JAVA domeinklasse. Van de student wordt verwacht dat er een UML klassen diagram wordt opgeleverd voor de domeinklassen. Zorg dat je UML klassendiagram volledig is.)
 
 [//]: # ()
 [//]: # (Aandachtspunten:)
@@ -344,16 +356,24 @@ De wireframes bij de use cases, laatste iteratie ook screenshots toegevoegd.
 [//]: # ()
 [//]: # (Neem het diagram op met daarbij een korte beschrijving van alle entiteiten. Zie bij de cursus modelling hoe je dit model maakt.)
 
-| Entiteit       | 	Beschrijving                                                                                                                                                                                                                                                                                                            |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| User           | De gebruikers zelf, hierin worden alle gebruikersgegevens beheerd. Inclusief wachtwoord.                                                                                                                                                                                                                                 |
-| ZoekOpdrachten | Door de gebruiker ingevoerde zoekopdrachten, worden hier gemaakt en beheerd. <br/>Er zit een methode in die met de ingevoerde informatie een URI aanmaakt dmv entiteit Archieven.<br/> En slaat deze vervolgens op in zijn eigen URI lijst.                                                                              |
-| Archieven      | Hier worden de bruikbare archief opgeslagen. Dit zijn externe archief waar de developer toegang toe heeft gegeven. Er wordt hier op basis van de ingevoerde zoekopdracht een URI aangemaakt en terug gegeven.<br/>Deze kan vervolgens zelfstandig vanuit de Zoekopdracht uitgevoerd worden.                          |
-| Zoekresultaten | Hier worden de response URLs opgeslagen. Ook wordt er de eerste keer gelijk een telling gemaakt van de URLs(oudeTellingURLS), en elke keer worden de nieuwe resultaten weer vergeleken. <br/>Mocht er dan een verschil tussen nieuw en oud zijn in de positief, dan wordt hier een melding van gegeven aan de gebruiker. |
-| Websites       | Hier worden alle response URLs afzonderlijk opgeslagen, opdat er bij nieuwe zoekresultaten of zoekresultaten van andere ZoekOpdrachten kan worden weergegeven wanneer, en hoe vaak deze door de gebruiker al bekeken zijn.                                                                                               |
+| Entiteit       | 	Beschrijving                                                                                                                                                                                                                                                                               |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| User           | Klasse die gebruikt wordt om de gebruikersaccounts te creeeren.                                                                                                                                                                                                                             |
+|                | Parameters: email - email adres, is gelijk ook de username van de inlog, naam - persoonlijke naam, voor en/of achternaam, password - wachtwoord, role - rol van de user = user; alleZoekertjes - alle huidige opgeslagen zoekopdrachten van deze, ID - uniek nummer;                        |
+| ZoekOpdrachten | De zoekopdracht die de User heeft aangemaakt, deze hoeft niet per definitie opgeslagen te worden.                                                                                                                                                                                           |
+|                | Parameters: archiefKeuzes - keuze van de archieven, keyWords - de queryZoekwoorden, user - de gebruiker die eigenaar is van deze zoekopdracht                                                                                                                                               |
+| Archieven      | Hier worden de bruikbare archief opgeslagen. Dit zijn externe archief waar de developer toegang toe heeft gegeven. Er wordt hier op basis van de ingevoerde zoekopdracht een URI aangemaakt en terug gegeven.<br/>Deze kan vervolgens zelfstandig vanuit de Zoekopdracht uitgevoerd worden. |
+|                | Parameters: naam - Hierin staat de naam van het archief, basisURI - Hierin staat de basis URI, waarop je vervolgens kan bouwen met queryParameters                                                                                                                                          |
+| Zoekresultaten | Hier worden de response URLs opgeslagen. Ook wordt er de eerste keer gelijk een telling gemaakt van de URLs(oudeTellingURLS), en elke keer worden de nieuwe resultaten weer vergeleken, dan wordt hier een melding van gegeven aan de gebruiker.                                            |
+|                | Parameters: resultatenURLsLijst - de links die voortkomen uit deze zoekopdracht, boolean bekeken - of deze al bekeken is, int oudeTellingURLs - log van hoeveelheid URLs er worden opgehaald, int nieuweTellingURLs - nieuwe lijst ter vergelijking, int verschilTelling                    |
+| Websites       | Hier worden alle response URLs afzonderlijk opgeslagen, opdat er bij nieuwe zoekresultaten of zoekresultaten van andere ZoekOpdrachten kan worden weergegeven wanneer, en hoe vaak deze door de gebruiker al bekeken zijn.                                                                  |
+|                | Parameters: resultaatURL - URL uit de zoekresultaten, thisUser - User die hoort bij deze zoekopdracht.                                                                                                                                                                                      |
+| Community      | Community klas is een behouder van alle informatie, creeert 1 globale community met alle data.                                                                                                                                                                                              |
+|                | Parameters: userMap - lijst met alle users, ArchiefMap - lijst met alle archieven, zoekOpdrachtMap - lijst met alle zoekopdrachten                                                                                                                                                          |
+| MyUser         | Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata. Overerving vanuit User klasse, kan dus alle methodes gebruiken, maar bevat zelf geen instances.                                                                                                                         |
+|                | Parameters: zelfde als User                                                                                                                                                                                                                                                                 |
 
 
-[//]: # (Daarnaast kent een domein model eventueel extra regels op het domein &#40;business rules&#41; die je niet goed in UML kan vertalen. Deze regels neem je hier puntsgewijs op.)
 
 ### Business rules
 - Per email-adres EN user-naam mag er maar 1 user zijn.

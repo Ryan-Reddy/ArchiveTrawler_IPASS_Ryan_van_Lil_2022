@@ -14,7 +14,7 @@ import java.util.*;
  * @datumBezocht Lijst met data waarop de bezoeker deze link heeft aangeklikt
  * */
 @Data
-public class Websites {
+public class Website {
     private @Getter @Setter String resultaatURL;
     private @Getter @Setter  int aantalKeerBezocht;
     private @Getter @Setter  User userID;
@@ -24,7 +24,7 @@ public class Websites {
      * @param resultaatURL  URL uit de zoekresultaten.
      * @param thisUser      User die hoort bij deze zoekopdracht.
      */
-    public Websites(String resultaatURL, User thisUser) {
+    public Website(String resultaatURL, User thisUser) {
         this.resultaatURL = resultaatURL;
         this.aantalKeerBezocht = 0;
         this.userID = thisUser;
@@ -35,7 +35,7 @@ public class Websites {
      * @param thisUser User die hoort bij deze zoekopdracht.
      * @param aantalKeerBezocht aantalkeer dat deze link is aangeklikt, default is 0
      */
-    public Websites(String resultaatURL, User thisUser, int aantalKeerBezocht) {
+    public Website(String resultaatURL, User thisUser, int aantalKeerBezocht) {
         this.resultaatURL = resultaatURL;
         this.aantalKeerBezocht = aantalKeerBezocht;
         this.userID = thisUser;

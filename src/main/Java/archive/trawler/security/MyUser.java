@@ -13,14 +13,7 @@ import java.util.List;
 
 /** Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata */
 public abstract class MyUser extends User implements Principal, Serializable {
-//    private @Getter @Setter String email;  //
-//    private String password; //plz only store hashed password
-//    private @Getter String role;
-//    private @Getter User user;
-
-    private static final @Getter List<MyUser> allMyUsers = new ArrayList<>();
-
-    /** Klasse die gebruikt wordt voor het opslaan van gevoelige inlogdata.
+    /** Klasse die gebruikt wordt voor het ophalen van gevoelige inlogdata.
      * @param naam              persoonlijke naam, voor en achternaam wil geen assumpties maken over opbouw
      * @param email             email adres, is gelijk ook de username van de inlog
      * @param role              Rol van de gebruiker, zal doorgaans user zijn

@@ -40,7 +40,7 @@ public class Zoekopdracht implements Serializable {
     private @Getter
     @Setter ArrayList<String> zoekUris; // TODO functie elders
     private @Getter
-    @Setter List<Websites> zoekresultatenIndividueel; // TODO functie elders
+    @Setter List<Website> zoekresultatenIndividueel; // TODO functie elders
 
     /**
      * De zoekopdracht van de gebruiker, deze is aangemaakt
