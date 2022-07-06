@@ -4,6 +4,7 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 
+import javax.servlet.http.HttpFilter;
 import javax.ws.rs.ApplicationPath;
 
 /**
@@ -13,7 +14,7 @@ import javax.ws.rs.ApplicationPath;
  * @Attribute RolesAllowedDynamicFeature Maakt het makkelijk te verifieren wat voor type gebruiker er in de JWT zit.
  * @Attribute JacksonFeature Dit regelt de vertaling naar JSON en terug voor de responses van de services.
  */
-@ApplicationPath("restservices")
+@ApplicationPath("/restservices")
 public class JerseyConfig  extends ResourceConfig {
     public JerseyConfig() {
         System.out.println("[ JerseyConfig ] starting...");
@@ -24,5 +25,6 @@ public class JerseyConfig  extends ResourceConfig {
 //        register(CorsFilter.class);
         register(RolesAllowedDynamicFeature.class);
         register(JacksonFeature.class);
+        register(HttpFilter.class);
     }
 }
