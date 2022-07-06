@@ -14,7 +14,7 @@ import javax.ws.rs.ApplicationPath;
  * @Attribute RolesAllowedDynamicFeature Maakt het makkelijk te verifieren wat voor type gebruiker er in de JWT zit.
  * @Attribute JacksonFeature Dit regelt de vertaling naar JSON en terug voor de responses van de services.
  */
-@ApplicationPath("/restservices")
+@ApplicationPath("restservices")
 public class JerseyConfig  extends ResourceConfig {
     public JerseyConfig() {
         System.out.println("[ JerseyConfig ] starting...");
