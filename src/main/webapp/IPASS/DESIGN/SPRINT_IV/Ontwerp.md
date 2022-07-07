@@ -2,13 +2,9 @@
 # Ontwerp
 
 # ArchiveTrawler
-
-| Datum | : | 12-05-2022 |
-
-| AuteurStudent # | :: | Ryan L.J. van Lil 1818885
- |
- |
- |
+| Datum           | :   | 12-05-2022                |
+|-----------------|-----|---------------------------|
+| AuteurStudent # | ::  | Ryan L.J. van Lil 1818885 |
 
 #### Revisiehistorie
 
@@ -445,8 +441,11 @@ wachtwoord:      password<br/>_
 
 _Bronnenlijst in APA stijl._
 
-HU. (2022). _IPASS - Plan van Aanpak Template_.docx
-HU. (2022). _IPASS - Ontwerp Template_.docx
-HU. (2022). _LesMateriaal BEP
-HU. (2022). _LesMateriaal FEP
-
+| verse                                      | bron                                                                             |
+|--------------------------------------------|----------------------------------------------------------------------------------|
+| HU. (2022).                                | _IPASS - Plan van Aanpak Template_.docx                                          | 
+| HU. (2022).                                | _IPASS - Ontwerp Template_.docx                                                  | 
+| HU. (2022).                                | _LesMateriaal BEP                                                                | 
+| HU. (2022).                                | _LesMateriaal FEP                                                                |
+| MDN. (z.d.). Web Technology for Developers | MDN. Geraadpleegd op juni 2022, van https://developer.mozilla.org/en-US/docs/Web |
+| Oracle Java Documentation. (z.d.).         | Geraadpleegd op 2022, van https://docs.oracle.com/en/java/index.html             |
