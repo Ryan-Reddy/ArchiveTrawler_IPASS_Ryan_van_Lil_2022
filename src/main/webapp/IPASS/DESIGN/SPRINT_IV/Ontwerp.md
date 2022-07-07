@@ -403,8 +403,10 @@ die een andere gebruiker ook toevallig had opgeslagen.
 
 Voor het realiseren van de applicatie wordt gebruik van de volgende methodieken en technieken: 
 <br/> UML, Java, ~~SQL~~, HTML, CSS, J2EE (Servlets), Rest (Jax-RS), Applicatieserver
-![img.png](IMAGES/Languages.png)
 & HTTP-protocol en een datastore. 
+
+![img.png](IMAGES/Languages.png)
+
 
 Qua frameworks wordt gebruik gemaakt van:
 
