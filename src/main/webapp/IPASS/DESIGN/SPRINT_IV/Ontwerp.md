@@ -112,7 +112,7 @@ De gebruiker kan in zijn eigen omgeving ook zijn gegevens wijzigen. En zijn zoek
 
 ## 3 Use cases
 
-![](DIAGRAMS/Use Case Diagram1.png)
+![](DIAGRAMS/UseCases.png)
 
 De use case diagram is redelijk uitvoerig. 
 Per use case zijn er sub use-cases vermeldt, dit ter verdieping.
