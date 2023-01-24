@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "filesaver": "^0.0.13",
+    "firebase": "^9.16.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "tableexport": "^3.3.13",
